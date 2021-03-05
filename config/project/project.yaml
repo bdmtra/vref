@@ -1,0 +1,26 @@
+dateModified: 1614896664
+email:
+  fromEmail: andrew@andrewlynn.co
+  fromName: vref.com
+  transportType: craft\mail\transportadapters\Sendmail
+plugins:
+  mailchimp-subscribe:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.0.0
+  redactor:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.3.0
+system:
+  edition: solo
+  live: true
+  name: vref.com
+  schemaVersion: 3.6.6
+  timeZone: America/Los_Angeles
+users:
+  allowPublicRegistration: false
+  defaultGroup: null
+  photoSubpath: null
+  photoVolumeUid: null
+  requireEmailVerification: true

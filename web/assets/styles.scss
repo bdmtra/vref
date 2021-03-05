@@ -1,0 +1,303 @@
+/*
+ * Entry point of global application style.
+ * Component-specific style should not go here and be included directly as part of the components.
+ */
+
+// Theme variables, must be included before the libraries to allow overriding defaults
+@import "scss/_variables";
+
+/* You can add global styles to this file, and also import other style files */
+@import "scss/slick.scss";
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,400i,500,600,700,800,900|Open+Sans:300,400,400i,600,600i,700,800&display=swap");
+@import "scss/reset.scss";
+@import "scss/model.scss";
+
+@import "scss/main.scss";
+@import "scss/home.scss";
+@import "scss/style.scss";
+@import "scss/responsive.scss";
+
+// Custom css for error-container
+.error-container {
+  margin-top: 10px;
+
+  .error,
+  .validate-message {
+    color: #b00020;
+    font-weight: 600;
+  }
+}
+
+.success-container {
+  margin-top: 10px;
+
+  .validate-message {
+    color: #28a745;
+    font-weight: 600;
+  }
+}
+
+.is-drop-over {
+  border: 2px dashed #34826a;
+}
+
+.ngx-datatable .datatable-body-cell,
+.ngx-datatable .datatable-header-cell {
+  min-height: 15px;
+  line-height: 26px !important;
+}
+
+.common-m-tbl.expandable .datatable-row-wrapper {
+  max-height: none;
+  height: auto !important;
+}
+
+.ellipsis-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.disable-container {
+  pointer-events: none;
+}
+
+.empty-table .empty-row {
+  display: none;
+}
+
+.disabled-input,
+.customer_info .disabled-input {
+  background: #dddddd !important;
+  cursor: default;
+  pointer-events: none;
+}
+
+.uploader input[type="file"] {
+  cursor: pointer;
+}
+
+.aircraft-list {
+  .datatable-body-row {
+    cursor: pointer;
+  }
+}
+
+.no-pointer {
+  cursor: default;
+}
+
+.hide-visibility {
+  visibility: hidden;
+}
+
+.scrollbarHtable .datatable-scroll {
+  display: inherit !important;
+}
+.manage-subscriber {
+  .datatable-row-wrapper,
+  .datatable-body-row {
+    height: 43px;
+  }
+  input[type="text"],
+  input[type="email"] {
+    height: 28px;
+    width: 350px;
+  }
+  select {
+    width: 137px;
+    line-height: 18px;
+    min-width: 137px;
+  }
+}
+.hidden {
+  display: none;
+}
+.footer-container {
+  border-top: 5px solid #34826a;
+  width: 100%;
+  background-color: #222324;
+  padding: 50px 0 0;
+}
+.test-cell span {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+  max-width: 100%;
+}
+// .test-cell{
+//   white-space: nowrap;
+//   overflow: hidden;
+//   text-overflow: ellipsis
+// }
+// VREF-874
+.email-text {
+  text-transform: none;
+}
+
+.alert {
+  position: relative;
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+.alert-dismissible {
+  padding-right: 3.8125rem;
+}
+.alert-success {
+  color: #1b4437;
+  background-color: #d6e6e1;
+  border-color: #c6dcd5;
+}
+.alert-dismissible .close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.75rem 1.25rem;
+  color: inherit;
+}
+.close {
+  float: right;
+  font-size: 1.3125rem;
+  font-weight: 700;
+  line-height: 1;
+  color: #000;
+  text-shadow: 0 1px 0 #fff;
+  opacity: 0.5;
+}
+button.close {
+  padding: 0;
+  background-color: transparent;
+  border: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+.close:hover {
+  color: #000;
+  text-decoration: none;
+  background-color: unset !important;
+}
+.close:not(:disabled):not(.disabled):hover,
+.close:not(:disabled):not(.disabled):focus {
+  opacity: 0.75;
+}
+.green-bg {
+  background-color: #eaf6f2;
+}
+.contact-form-title {
+  font-weight: 700;
+  text-align: center;
+}
+
+.lnews-caption iframe {
+  max-height: 135px;
+  width: auto;
+}
+
+app-advertiser .sm-block-row.pb-dbl {
+  padding-bottom: 66px;
+}
+.has-error {
+  border-color: #b03535 !important;
+}
+.font-weight-600 {
+  font-weight: 600;
+}
+.text-danger {
+  color: #b03535 !important;
+}
+label.text-danger {
+  font-size: 13px;
+  color: #ff615e;
+  text-transform: none;
+  font-weight: 400;
+}
+.discount-close {
+  cursor: pointer;
+}
+.form-placehold-italic {
+  select::-webkit-input-placeholder,
+  textarea::-webkit-input-placeholder,
+  input::-webkit-input-placeholder {
+    font-style: italic;
+  }
+  select:-moz-placeholder,
+  textarea:-moz-placeholder,
+  input:-moz-placeholder {
+    font-style: italic;
+  }
+  select::-moz-placeholder,
+  textarea::-moz-placeholder,
+  input::-moz-placeholder {
+    font-style: italic;
+  }
+  select:-ms-input-placeholder,
+  textarea:-ms-input-placeholder,
+  input:-ms-input-placeholder {
+    font-style: italic;
+  }
+  select::-ms-input-placeholder,
+  textarea::-ms-input-placeholder,
+  input::-ms-input-placeholder {
+    font-style: italic;
+  }
+}
+.grayify {
+  filter: grayscale(100);
+}
+
+/* Show overlay in Internet Explorer */
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  /* overlay styles, all needed */
+  .warning-overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    z-index: 9999;
+  }
+
+  /* just some content with arbitrary styles for explanation purposes */
+  .warning-overlay-content {
+    background-color: #fff;
+    border-radius: 5px;
+    text-align: center;
+    z-index: 11;
+    vertical-align: middle;
+    padding: 20px;
+    font-weight: 500;
+    width: 791px;
+    height: 60px;
+    font-size: 13px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+  }
+  body {
+    overflow: hidden;
+  }
+}
+
+@supports not (-ms-high-contrast: none) {
+  .warning-overlay,
+  .warning-overlay-content {
+    display: none;
+  }
+}
+
+.list-none ul {
+  padding-left: 0;
+  li {
+    list-style: none !important;
+  }
+}

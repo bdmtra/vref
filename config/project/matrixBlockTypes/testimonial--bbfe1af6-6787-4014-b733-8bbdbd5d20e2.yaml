@@ -1,0 +1,138 @@
+field: aa7d232f-992f-4204-8784-c0b71642e11a # Testimonial Groups
+fieldLayouts:
+  94122510-78f9-4ddf-8bf3-1d053d3e8a26:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 9fa60085-cfeb-4d55-a028-363665184cb3 # Testimonial Thumbnail
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 1e6ce2c7-58ad-4ae8-8efb-fc3e02d45e59 # Testimonial Client Name
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 3461fc24-5459-4353-83d0-f4a8b68169a7 # Testimonial Header
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 86d20760-bf12-49c7-9779-bc55621c609b # Testimonial Excerpt
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  1e6ce2c7-58ad-4ae8-8efb-fc3e02d45e59: # Testimonial Client Name
+    contentColumnType: text
+    fieldGroup: null
+    handle: testimonialClientName
+    instructions: ''
+    name: 'Testimonial Client Name'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: 'e.g. John Doe'
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  3461fc24-5459-4353-83d0-f4a8b68169a7: # Testimonial Header
+    contentColumnType: text
+    fieldGroup: null
+    handle: testimonialHeader
+    instructions: ''
+    name: 'Testimonial Header'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: 'Testimonial Header'
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  86d20760-bf12-49c7-9779-bc55621c609b: # Testimonial Excerpt
+    contentColumnType: text
+    fieldGroup: null
+    handle: testimonialExcerpt
+    instructions: 'If the excerpt is longer than 89 characters, end with an ellipses.'
+    name: 'Testimonial Excerpt'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  9fa60085-cfeb-4d55-a028-363665184cb3: # Testimonial Thumbnail
+    contentColumnType: string
+    fieldGroup: null
+    handle: testimonialThumbnail
+    instructions: ''
+    name: 'Testimonial Thumbnail'
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      allowUploads: true
+      allowedKinds:
+        - image
+      defaultUploadLocationSource: 'volume:fb6e2638-c6df-4a24-8de9-422128e80318'
+      defaultUploadLocationSubpath: ''
+      limit: '1'
+      localizeRelations: false
+      previewMode: full
+      restrictFiles: '1'
+      selectionLabel: ''
+      showSiteMenu: true
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      singleUploadLocationSource: 'volume:b5448d96-4178-4e92-bdc8-5e841c0bf592' # Testimonial Images Volume
+      singleUploadLocationSubpath: ''
+      source: null
+      sources: '*'
+      targetSiteId: null
+      useSingleFolder: true
+      validateRelatedElements: false
+      viewMode: large
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+handle: testimonial
+name: Testimonial
+sortOrder: 1

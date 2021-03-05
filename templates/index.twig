@@ -1,0 +1,362 @@
+{% extends "base" %}
+
+{% block content %}
+  <div class="main-banner-area">
+    <div class="banner-img-wrap" style="background-image: url(assets/images/header-homepage1.jpg)">
+      <div class="container">
+        <div class="banner-captions">
+          <h1>Aircraft Appraisals Produced By Aviation Professionals You Can Trust</h1>
+          <p>
+            OVER 27 YEARS OF AIRCRAFT AND ENGINE VALUATION SERVICES FOR THE INTERNATIONAL AVIATION COMMUNITY
+          </p>
+          <div class="btn-group">
+            <a href="javascript:void(0);" class="btn btn-brand">Let's Begin</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="sm-block-row pt-0">
+      <div class="services-wrap flex ai-stretch">
+        <div class="service-item flex">
+          <figure><img src="assets/images/sicon-flight.svg" alt="" /></figure>
+          <div class="service-caprion flex">
+            <div class="caption-text">
+              <h4>VREF Online Software</h4>
+              <h6>Real-time Online Aircraft Valuations</h6>
+              <p>
+                Obtain exclusive access to our aircraft value database featuring a premium selection of aircraft valuation
+                data, optional equipment lists, performance data, and so much more.
+              </p>
+            </div>
+            <div class="service-ftr">
+              <a href="javascript:void(0);" class="btn btn-brand">Sign Up</a>
+            </div>
+          </div>
+        </div>
+        <div class="service-item flex">
+          <figure><img src="assets/images/sicon-screen.svg" alt="" /></figure>
+          <div class="service-caprion flex">
+            <div class="caption-text">
+              <h4>VREF Aircraft Consulting</h4>
+              <h6>USPAP Compliant Aircraft Appraisals On Demand</h6>
+              <p>
+                Comprehensive aircraft appraisals for all aircraft types, including business and commercial jets,
+                turbine/piston helicopters, regional/commuter, and piston aircraft.
+              </p>
+            </div>
+            <div class="service-ftr">
+              <a href="javascript:void(0);" class="btn btn-brand">Request A Quote</a>
+            </div>
+          </div>
+        </div>
+        <div class="service-item flex">
+          <figure><img src="assets/images/sicon-note.svg" alt="" /></figure>
+          <div class="service-caprion flex">
+            <div class="caption-text">
+              <h4>VREF Verified Value Reports</h4>
+              <h6>Shop Smart And Get The Carfax® For Aircraft</h6>
+              <p>
+                Get hold of up-to-date, accurate information on an aircraft before you buy and get the answers you need to
+                make an informed purchase backed by our current On-Demand Aircraft value report.
+              </p>
+            </div>
+            <div class="service-ftr">
+              <a href="javascript:void(0);" class="btn btn-brand">Access Value Report</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {# Begin Client Logo Section #}
+
+  <div class="sm-block-row light-bg pt-dbl">
+    <div class="container">
+      <div class="title-row text-center">
+        <h2>Who We've Served</h2>
+        <p>Providing aircraft appraisal and valuation services for clients on a local and global level.</p>
+      </div>
+      <div class="clients-wrap">
+        <ul id="clients-list" class="clients-logo clearfix client-logo-height">
+          {% for asset in entry.clientImages.all()|sort %}
+            <li>
+              <a class="flex ai-center justify-content-center">
+                <img class="img-style" src="{{ asset.url() }}"/>
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+        <div class="btn-group">
+          <a id="clientId" class="btn btn-brand" href="javascript:void(0);">See More of Our Clients</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {# Begin Client-Testimonial Section #}
+
+  <div class="sm-block-row pt-dbl pb-dbl">
+    <div class="container">
+      <div class="title-row text-center no-subcaption">
+        <h2>Aviation Consulting Services</h2>
+      </div>
+      <div class="row" style="display:flex;">
+        <div class="col-6" style="padding:30px;">
+          <h4>VREF Expert Witness</h4>
+          <h6>LITIGATION AND EXPERT WITNESS SERVICES WHEN NEEDED</h6>
+          <p>
+            Find the support you need with our superior investigative skills, in-depth knowledge, and expertise for trial
+            testimony, deposition, and corporate litigation, focusing on many aircraft-related events.
+          </p>
+          <a class="btn btn-brand" href="/aviation-expert-witness">Read More</a>
+        </div>
+        <div class="col-6" style="padding:30px;">
+          <h4>Worldwide Aircraft Documentation And Recovery Services</h4>
+          <h6>COMPREHENSIVE RECOVERY SUPPORT</h6>
+          <p>
+            Receive 24/7 emergency support as well as fast and safe aircraft recovery, including coverage of needs such as
+            logistics, investigation, on-site collateral inspections, aircraft control, storage, maintenance, and more.
+          </p>
+          <!-- <a class="btn btn-brand" href="/aircraft-values">Learn More</a> -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sm-block-row pt-dbl pb-dbl light-bg">
+    <div class="flex asseen-wrap" style="margin-bottom:90px">
+      <h3>As seen on:</h3>
+      <ul>
+        <li>
+          <a href="javascript:void(0);"><img src="assets/images/as-seen-abc.png" alt=""/></a>
+        </li>
+        <li>
+          <a href="javascript:void(0);"><img src="assets/images/as-seen-cbs.png" alt=""/></a>
+        </li>
+        <li>
+          <a href="javascript:void(0);"><img src="assets/images/as-seen-fox.png" alt=""/></a>
+        </li>
+        <li>
+          <a href="javascript:void(0);"><img src="assets/images/as-seen-cnbc.png" alt=""/></a>
+        </li>
+      </ul>
+    </div>
+    <div class="container">
+      <div class="col-12">
+        <div class="title-row text-center no-subcaption">
+          <h2>Why VREF?</h2>
+        </div>
+        <p>
+          For over 27 years, VREF has stood as a pillar in the aviation community, regularly working with high-profile and
+          smaller-scale clients. With offices located globally, VREF offers vital aircraft and engine valuation services
+          through an online subscription platform. VREF is proud to be an official guide of the AOPA (Aircraft Owners and
+          Pilots Association) for its valuation and appraisal services.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class=" block-row pb-0 vref-packege-row">
+  <div class="container">
+    <div class="title-row text-center white-txt">
+      <h2>VREF Subscription Pricing</h2>
+    </div>
+  </div>
+  <div class="container">
+    <div class="vref-packege-wrap flex ai-stretch justify-content-center">
+      <div class="vpackege-item flex">
+        <div class="vpackege-caption">
+          <h4>VREF Book Subscription</h4>
+          <p class="packege-price"><strong><b>$</b>400</strong>/ yr</p>
+          <ol>
+            <li>4 Quarterly Aircraft Value Guides</li>
+            <li>Shipped to your address</li>
+            <li>Fixed Wing aircraft only</li>
+          </ol>
+        </div>
+        <div class="vpackege-ftr">
+          {% if currentUser %}
+            <a class="btn btn-brand btn-bdr btn-lg">View Tiers</a>
+          {% else %}
+            <a class="btn btn-brand btn-bdr btn-lg">Sign Up Today</a>
+          {% endif %}
+        </div>
+      </div>
+      <div class="vpackege-item flex active">
+        <div class="vpackege-caption">
+          <h4>VREF Online Subscription
+            <span>Starting at</span>
+          </h4>
+          <p class="packege-price"><strong><b>$</b>725</strong>/ yr</p>
+          <ol>
+            <li>Aircraft values (historic and current)</li>
+            <li>Equipment lists, performance data</li>
+            <li>Annual access to VREF Online</li>
+          </ol>
+        </div>
+        <div class="vpackege-ftr">
+          {% if currentUser %}
+            <a class="btn btn-brand btn-lg">View Tiers</a>
+          {% else %}
+            <a class="btn btn-brand btn-lg">Sign Up Today</a>
+          {% endif %}
+        </div>
+      </div>
+      <div class="vpackege-item flex">
+        <div class="vpackege-caption">
+          <h4>ProPack-VREF Online & Book Annual Subscription</h4>
+          <p class="packege-price"><strong><b>$</b>1,075</strong>/ yr</p>
+          <ol>
+            <li>Best Value</li>
+            <li>1 Subscriber & 4 Published Guides</li>
+            <li>Annual access to VREF Online</li>
+          </ol>
+        </div>
+        <div class="vpackege-ftr">
+          {% if currentUser %}
+            <a class="btn btn-brand btn-bdr btn-lg">View Tiers</a>
+          {% else %}
+            <a class="btn btn-brand btn-bdr btn-lg">Sign Up Today</a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  {# Begin Client Slider Section #}
+
+  <div class="sm-block-row pt-dbl pb-dbl">
+  <div class="container">
+    <div class="title-row text-center no-subcaption">
+      <h2>Client Testimonials</h2>
+    </div>
+    <div class="testi-wrap">
+      <div class="testi-slider-wrap flex">
+        <div class="testi-profile-wrap">
+          <div class="testi-profiles">
+            {% for block in entry.testimonialGroups.all() %}
+              <div class="testi-item">
+                <p>{{ block.testimonialClientName }}</p>
+                {% for asset in block.testimonialThumbnail %}
+                  <figure><img src="./assets/images/testimonials/{{ asset.filename }}" alt="" width="100%" /></figure>
+                {% endfor %}
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+        <div class="testi-caption-wrap">
+          <div class="testi-captions">
+            {% for block in entry.testimonialGroups.all() %}
+              <div class="testi-item">
+                <div id="testimonial_">
+                  <h6>{{ block.testimonialHeader }}</h6>
+                  <p>{{ block.testimonialExcerpt }}</p>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+
+  {# Begin Newsletter Section #}
+
+  <div class="sm-block-row pb-dbl full-mob-container">
+  <div class="container">
+    <div class="newsletter-wrap flex ai-center justify-content-center" style="background-image: url(assets/images/news-overlay.png);">
+      <div>
+        <div class="title-row white-txt text-center">
+          <h3>Don't Miss Out On News & Insights</h3>
+          <br />
+          <p>
+            Join VREF and the AOPA community for the latest information<br />
+            and updates through our blogs and newsletters.
+          </p>
+        </div>
+        <form class="newsletter-form flex ai-stretch" action="" method="post">
+            {{ csrfInput() }}
+            <input type="hidden" name="action" value="mailchimp-subscribe/audience/subscribe">
+            {% set subscribeResponse = mailchimpSubscribe is defined and mailchimpSubscribe.action == 'subscribe' ? mailchimpSubscribe : null %}
+            {% if subscribeResponse %}
+                {% if not subscribeResponse.success %} <p>An error occured: {{ subscribeResponse.message }}</p> {% endif %}
+            {% endif %}
+            <input id="emailInput" type="email" name="email" {% if subscribeResponse and not subscribeResponse.success %}value="{{ subscribeResponse.values.email ?? '' }}"{% endif %}/>
+            <input class="btn btn-lg btn-warning" type="submit" name="" value="I Want In"/>
+        </form>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  {# <div class="model transition verify-model" id="verifiedReportWarning">
+  <div class="model-contain">
+    <div class="model-header">
+      <h4>VREF Verified Report</h4>
+    </div>
+    <div class="model-body">
+      <p>
+        You have at least one VREF Verified Report that you've purchased but haven't yet submitted to VREF to complete.
+        If you're ready to submit your aircraft info, we can start preparing your verified valuation.
+      </p>
+
+      <div class="fitem-check build-info-head" [formGroup]="reminderForm" *ngIf="userDetails">
+        <input
+          type="checkbox"
+          class="fitem-ck-input"
+          id="info-check"
+          name="remindValue"
+          formControlName="remindValue"
+        />
+        <label for="info-check" class="fitem-ck-txt"><strong>Don't remind me again</strong></label>
+      </div>
+      <div class="model-footer d-flex justify-content-end">
+        <button
+          type="button"
+          class="btn btn-brand btn-lg btn-bdr"
+          (click)="closeModal('verifiedReportWarning', 'close')"
+        >
+          I'll do it later
+        </button>
+        <button type="button" class="btn btn-brand btn-lg" (click)="closeModal('verifiedReportWarning')">
+          Submit details
+        </button>
+      </div>
+    </div>
+  </div>
+  </div> #}
+  <script src="./assets/scripts/slick-1.8.1/slick/slick.min.js"></script>
+  <script>
+    $( document ).ready(function() {
+      $('.testi-profiles').slick({
+        adaptiveHeight: true,
+        dots: true,
+        fade: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        asNavFor: '.testi-captions'
+      });
+      $('.testi-captions').slick({
+        adaptiveHeight: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        asNavFor: '.testi-profiles',
+        arrows: false,
+        fade: true,
+        centerMode: false,
+        focusOnSelect: true
+      });
+    });
+
+    $("#clientId").click(function(){
+      $("#clients-list").toggleClass("client-logo-height");
+    })
+  </script>
+
+{% endblock %}

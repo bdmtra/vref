@@ -1,0 +1,29 @@
+{
+  "require": {
+    "aelvan/mailchimp-subscribe": "3.0.3",
+    "craftcms/cms": "^3.6.4",
+    "craftcms/redactor": "2.8.5",
+    "twbs/bootstrap": "5.0.0-beta2",
+    "vlucas/phpdotenv": "^3.4.0"
+  },
+  "require-dev": {
+    "yiisoft/yii2-shell": "^2.0.3"
+  },
+  "autoload": {
+    "psr-4": {
+      "modules\\": "modules/"
+    }
+  },
+  "config": {
+    "sort-packages": true,
+    "optimize-autoloader": true,
+    "platform": {
+      "php": "7.2.5"
+    }
+  },
+  "scripts": {
+    "post-root-package-install": [
+      "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+    ]
+  }
+}

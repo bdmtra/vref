@@ -1,0 +1,33 @@
+contentColumnType: string
+fieldGroup: b50b9ada-b26b-42ed-83f0-de7ce60c770c
+handle: clientImages
+instructions: ''
+name: 'Client Images'
+searchable: false
+settings:
+  allowSelfRelations: false
+  allowUploads: true
+  allowedKinds:
+    - image
+  defaultUploadLocationSource: 'volume:fb6e2638-c6df-4a24-8de9-422128e80318'
+  defaultUploadLocationSubpath: ''
+  limit: ''
+  localizeRelations: false
+  previewMode: full
+  restrictFiles: '1'
+  selectionLabel: 'Add Client Image'
+  showSiteMenu: false
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: false
+  singleUploadLocationSource: 'volume:fb6e2638-c6df-4a24-8de9-422128e80318'
+  singleUploadLocationSubpath: ''
+  source: null
+  sources:
+    - 'volume:fb6e2638-c6df-4a24-8de9-422128e80318'
+  targetSiteId: null
+  useSingleFolder: false
+  validateRelatedElements: false
+  viewMode: list
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Assets

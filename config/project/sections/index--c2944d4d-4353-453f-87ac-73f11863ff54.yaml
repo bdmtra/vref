@@ -1,0 +1,11 @@
+enableVersioning: true
+handle: index
+name: index
+propagationMethod: all
+siteSettings:
+  d66119ad-8f5f-41e8-8169-49f2c51c36b6:
+    enabledByDefault: true
+    hasUrls: true
+    template: index
+    uriFormat: __home__
+type: single
