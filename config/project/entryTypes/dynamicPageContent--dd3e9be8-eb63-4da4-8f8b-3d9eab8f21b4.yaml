@@ -1,5 +1,5 @@
 fieldLayouts:
-  37326814-957d-4026-b385-9d52b5c7bd3e:
+  e248e46a-593d-41f6-994f-8b4cb6d7f35a:
     tabs:
       -
         elements:
@@ -10,8 +10,8 @@ fieldLayouts:
             class: null
             disabled: false
             id: null
-            instructions: null
-            label: null
+            instructions: ''
+            label: __blank__
             max: null
             min: null
             name: null
@@ -27,25 +27,34 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            fieldUid: 21c2cbf7-45d7-4a9b-a7e3-af6c1f76b31f # Page Title
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 5cd981cc-c08e-44dc-84d9-83f97da456f5 # Page Subtitle
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: ee572f12-34a8-4f92-9e75-5d82225cdead # Header Image
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
             fieldUid: 563bfcb1-fa15-4a2b-aaa3-aca5388caab2
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-          -
-            fieldUid: aa7d232f-992f-4204-8784-c0b71642e11a # Testimonial Groups
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-          -
-            fieldUid: 7cff5bc5-7660-409a-9e68-3118cdbaa1c6 # Client Images
             instructions: null
             label: null
             required: false
@@ -55,11 +64,11 @@ fieldLayouts:
             width: 100
         name: Content
         sortOrder: 1
-handle: index
-hasTitleField: false
-name: index
-section: c2944d4d-4353-453f-87ac-73f11863ff54
+handle: dynamicPageContent
+hasTitleField: true
+name: 'Dynamic Page Content'
+section: ae36c8fb-655b-43a2-a284-e1d0554f3c3d # Dynamic Pages
 sortOrder: 1
-titleFormat: '{section.name|raw}'
+titleFormat: null
 titleTranslationKeyFormat: null
 titleTranslationMethod: site

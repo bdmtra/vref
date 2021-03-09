@@ -1,8 +1,8 @@
 contentColumnType: string
-fieldGroup: 8bdbfb54-3634-4bbd-be60-9d3da26b94ec
-handle: clientImages
-instructions: ''
-name: 'Client Images'
+fieldGroup: dcc71ec4-79e4-4b6a-a941-31c6a78a39c3 # Dynamic Pages
+handle: headerImage
+instructions: 'Banner image displayed behind the title.'
+name: 'Header Image'
 searchable: false
 settings:
   allowSelfRelations: false
@@ -11,23 +11,22 @@ settings:
     - image
   defaultUploadLocationSource: 'volume:fb6e2638-c6df-4a24-8de9-422128e80318'
   defaultUploadLocationSubpath: ''
-  limit: ''
+  limit: '1'
   localizeRelations: false
   previewMode: full
   restrictFiles: '1'
-  selectionLabel: 'Add Client Image'
+  selectionLabel: ''
   showSiteMenu: true
   showUnpermittedFiles: false
   showUnpermittedVolumes: false
-  singleUploadLocationSource: 'volume:fb6e2638-c6df-4a24-8de9-422128e80318'
+  singleUploadLocationSource: 'volume:898c39e0-9724-4a3b-9ea4-fc1f44479824' # Header Images
   singleUploadLocationSubpath: ''
   source: null
-  sources:
-    - 'volume:fb6e2638-c6df-4a24-8de9-422128e80318'
+  sources: '*'
   targetSiteId: null
-  useSingleFolder: false
+  useSingleFolder: true
   validateRelatedElements: false
-  viewMode: list
+  viewMode: large
 translationKeyFormat: null
 translationMethod: site
 type: craft\fields\Assets

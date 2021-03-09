@@ -1,0 +1,14 @@
+enableVersioning: true
+handle: dynamicPages
+name: 'Dynamic Pages'
+propagationMethod: all
+siteSettings:
+  d66119ad-8f5f-41e8-8169-49f2c51c36b6:
+    enabledByDefault: true
+    hasUrls: true
+    template: dynamic
+    uriFormat: '{slug}'
+structure:
+  maxLevels: null
+  uid: d43ac9da-52cb-4a3f-a2f2-1cb02e22553b
+type: structure

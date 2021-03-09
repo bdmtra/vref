@@ -1,0 +1,39 @@
+.dark-bg-img:before {
+  background-color: transparent !important;
+  background: -webkit-gradient(linear, left top, right top, from(black), color-stop(10%, black), color-stop(71%, rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0)));
+  background: linear-gradient(to right, black 0%, black 10%, rgba(0, 0, 0, 0) 71%, rgba(0, 0, 0, 0) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#00000000',GradientType=1 );
+}
+
+.title-row {
+  padding: 0;
+}
+
+.title-row h1 {
+  padding-bottom: 0;
+  margin-bottom: 0;
+  font-size: 50px;
+}
+
+.title-row h1:before {
+  display: none;
+}
+
+.block-row.ptb-full {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 40px 0;
+}
+
+.about-half-wrap.aboutprint-half-wrap {
+  max-width: 700px;
+}
+
+.lines-btm-warn:after {
+  display: none;
+}
+/*# sourceMappingURL=dynamic-pages.css.map */

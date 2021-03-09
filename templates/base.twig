@@ -7,14 +7,307 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="./assets/scripts/slick-1.8.1/slick/slick.css"/>
   <link rel="stylesheet" href="./assets/styles.css">
+  {% block css %}
+  {% endblock %}
   <script src="./assets/scripts/jquery-3.6.0.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
 </head>
 
 <body>
 
+  {# Begin Header/Navbar Section #}
+
+    <header>
+      <div class="header-top-wrap">
+        <div class="lg-container flex">
+          <p>Questions? Call <a href="javascript:void(0)" class="call">844.303.VREF</a> | <a href="mailto:info@vref.com">info@vref.com</a></p>
+          <div class="hdr-top-rpart">
+            <a href="https://values.vref.com/account/aircraft-selection/list" class="btn btn-brand" id="onlineBtn">VREF Online</a>
+            <ul class="header-top-menu">
+              <li class="mydropdown about-us" style="filter:grayscale(100%);">
+                <a class="login-btn" href="javascript:void(0);" style="color:unset;">About Us</a>
+                <span class="d-desk-none mob-arrow" style="color:unset;"></span>
+                <ul class="mydropdown-list">
+                  <li><a href="/about/overview">About VREF</a></li>
+                  <li><a href="/contact">Contact</a></li>
+                  <li><a href="/faq">FAQ</a></li>
+                  <li><a href="/pages/b2b-solutions">B2B Solutions</a></li>
+                </ul>
+              </li>
+              <li><a href="/news">News</a></li>
+              {% if not currentUser %}
+                <li><a class="login-btn rsidebar-toggle" href="javascript:void(0);">Login/Register</a></li>
+              {% else %}
+                <li class="mydropdown">
+                  <a class="login-btn" href="javascript:void(0);">My Account</a>
+                  <ul class="mydropdown-list myacc-dropdownmenu">
+                    <li><a href="/account/overview"><i><img src="assets/images/acc-overview.svg" alt=""/></i>Account Overview</a></li>
+                    <li><a href="/account/verified-reports"><i><img src="assets/images/acc-ver-report.svg" alt=""/></i>Verified Reports</a></li>
+                    <li><a href="/account/subscriptions"><i><img src="assets/images/subscriptions.svg" alt=""/></i>Subscriptions</a></li>
+                    <li><a href="/account/order-history"><i><img src="assets/images/order-history.svg" alt=""/></i>Order History</a></li>
+                    <li><a href="/account/payment-detail"><i><img src="assets/images/payment-details.svg" alt=""/></i>Payment Details</a></li>
+                    <li><a href="/account/changePassword"><i><img src="assets/images/cahnge-pwd.svg" alt=""/></i>Change Password</a></li>
+                    <li><a href="javascript:void(0);"><i><img src="assets/images/signout.png" alt=""/></i>Log Out</a></li>
+                  </ul>
+                </li>
+              {% endif %}
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="header-main">
+        <button type="button" class="menu-toggle">
+          <span class="top-bar"></span>
+          <span class="middle-bar"></span>
+          <span class="bottom-bar"></span>
+        </button>
+        <div class="lg-container flex">
+          <a href="/" class="logo"><img src="assets/images/logo.png" alt="VREF" /></a>
+          <a class="cart-icons" href="/store/cart"><img src="assets/images/cart-icon-white.png" alt="" /></a>
+          <div class="right-main-nav flex">
+            <div class="aside-main-menu">
+              <ul>
+                <li><a href="/account/overview"><i><img src="assets/images/acc-overview.svg" alt=""/></i>Account Overview</a></li>
+                <li><a href="/account/verified-reports"><i><img src="assets/images/acc-ver-report.svg" alt=""/></i>Verified Reports</a></li>
+                <li><a href="/account/subscriptions"><i><img src="assets/images/subscriptions.svg" alt=""/></i>Subscriptions</a></li>
+                <li><a href="/account/order-history"><i><img src="assets/images/order-history.svg" alt=""/></i>Order History</a></li>
+                <li><a href="/account/payment-detail"><i><img src="assets/images/payment-details.svg" alt=""/></i>Payment Details</a></li>
+                <li><a href="/account/changePassword"><i><img src="assets/images/cahnge-pwd.svg" alt=""/></i>Change Password</a></li>
+              </ul>
+            </div>
+            <nav>
+              <ul>
+                <li><a href="/aircraft-values">Aircraft Value Guides</a></li>
+                <li class="dropdown">
+                  <a href="javascript:void(0);">Aircraft Appraisals</a>
+                  <span class="menu-arrow"></span>
+                  <ul class="sub-menu">
+                    <li><a href="/aircraft-appraisals">Aircraft Appraisal Services</a></li>
+                    <li><a href="/aircraft-appraisals/faq"> Aircraft Appraisal FAQ</a></li>
+                    <li><a href="/aircraft-appraisals/uspap">USPAP Appraisal Standards</a></li>
+                    <li><a href="/aircraft-appraisals/asa">ASA Appraisal Standards</a></li>
+                  </ul>
+                </li>
+                <li class="dropdown">
+                  <a href="javascript:void(0);">Aircraft Value Reports</a>
+                  <span class="menu-arrow"></span>
+                  <ul class="sub-menu">
+                    <li><a href="/aircraft-values/verified">Verified Value Reports</a></li>
+                    <li><a href="/aircraft-values/residual">Residual Value Reports</a></li>
+                  </ul>
+                </li>
+                <li><a href="/aviation-expert-witness">Aviation Expert Witness</a></li>
+                <li><a href="/aviation-blockchain">VREF Vault</a></li>
+              </ul>
+            </nav>
+            <ul class="cart-menu">
+              <li><a href="/shopsubscription/">Order Subscriptions</a></li>
+              <li><a href="/store/">Store</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+
+  {# Begin Login/Signup/Forgot password/Reset password Section #}
+
+    <div class="rsidebar-wrap">
+      <div class="rsidebar-inner flex">
+        <div class="rsidebar-header">
+          <a class="close-rsidebar rsidebar-toggle"><img src="assets/images/close-icon-white.png" alt=""/></a>
+        </div>
+        <div class="rsidebar-content flex">
+          <app-login class="form-wrap"></app-login>
+          <app-sign-up class="form-wrap"></app-sign-up>
+          <app-forgot-password class="form-wrap"></app-forgot-password>
+          <app-reset-password class="form-wrap"></app-reset-password>
+        </div>
+      </div>
+    </div>
+  
+  {# Begin Content Section #}
+  
     {% block content %}
     {% endblock %}
+
+  {# Begin Advertising Section #}
+
+    <div class="block-row pb-0">
+      <div class="adds-row dark-bg sm-block-row pt-0 pb-dbl">
+        <div class="container">
+          <div class="title-row white-txt">
+            <h4>Our Advertisers</h4>
+          </div>
+          <div class="adds-wrap">
+            <div class="client-slider">
+              {% for asset in craft.assets().volume('ourAdvertisers').all() %}
+                <div>
+                  <a class="client-slide-img" target="_blank" href=""><img src="./assets/images/advertisers/{{ asset.filename }}" alt="" title="" /></a>
+                </div>
+              {% endfor %}
+            <div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  {# Begin Sidebar Section
+
+    <form class="contact-form-wrap form-group lbl-left-gourp" action="https://forms.zohopublic.com/vrefaircraftvaluereference/form/VrefMarketingContactForm/formperma/dDiWSeKYnTQFrs8XdITzyzOx6KEFwiKXLBoPL0upm1k/htmlRecords/submit" name="zohoForm" id="apparaisal-form" method="POST" accept-charset="UTF-8" enctype="multipart/form-data" #zohoForm [formGroup]="contactForm">
+      <input type="hidden" name="zf_redirect_url" value="(( redirectionURL ))" />
+      <div class="pt-20 pb-20">
+        <a href="/aircraft-values"><img src="assets/images/button-vrefonline.png" alt="" /></a>
+        <a href="/aircraft-appraisals"><img src="assets/images/button-vref-appraisals.png" alt="" /></a>
+        <a href="/aircraft-values/verified"><img src="assets/images/button-vref-verified.png" alt="" /></a>
+        <a href=="/aviation-expert-witness"><img src="assets/images/button-vref-expert-witness.png" alt="" /></a>
+      </div>
+      <h5 class="contact-form-title">Request More Information</h5>
+      <div class="light-bg green-bg form-group">
+        <div class="fitem">
+          <div class="alert alert-success alert-dismissible fade show" role="alert">
+            Your request has been submitted!
+            <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>
+        </div>
+        <div class="fitem">
+          <label for="">Interested in</label>
+          <select name="Dropdown" class="form-control" formControlName="feilds">
+            <option value="" disabled>Choose one...</option>
+            <option value="Online&#x20;Subscription">Online Subscription</option>
+            <option value="Printed&#x20;Value&#x20;Guide">Printed Value Guide</option>
+            <option value="Appraisals">Appraisals</option>
+            <option value="Verified&#x20;Opinions">Verified Opinions</option>
+            <option value="Expert&#x20;Witness">Expert Witness</option>
+            <option value="General&#x20;Inquiry">General Inquiry</option>
+          </select>
+        </div>
+        <!--First Name-->
+        <div class="fitem">
+          <label for="firstName">First Name<em>*</em></label>
+          <input id="firstName" type="text" maxlength="255" name="Name_First" fieldType="7" class="form-control" formControlName="firstName"/>
+        </div>
+
+        <!--Last Name-->
+        <div class="fitem">
+          <label for="lastName">Last Name<em>*</em>
+          </label>
+          <input id="lastName" type="text" maxlength="255" name="Name_Last" fieldType="7" class="form-control" formControlName="lastName"/>
+        </div>
+
+        <!--Email-->
+        <div class="fitem">
+          <label>Email<em>*</em></label>
+          <input type="text" maxlength="255" name="Email" value="" fieldType="9" class="form-control" formControlName="email"/>
+        </div>
+
+        <!--Company -->
+        <div class="fitem">
+          <label>Company (if applicable) </label>
+          <input type="text" name="SingleLine" value="" fieldType="1" maxlength="255" class="form-control" formControlName="company"/>
+        </div>
+
+        <!--Phone-->
+        <div class="fitem">
+          <label>Phone number<em>*</em>
+          </label>
+          <input type="text" compname="PhoneNumber" name="PhoneNumber_countrycode" phoneFormat="1" isCountryCodeEnabled="false" maxlength="15" value="" fieldType="11" id="international_PhoneNumber_countrycode" class="form-control" formControlName="number"/>
+        </div>
+        <div class="fitem check">
+          <div class="fitem-check">
+            <input type="checkbox" id="urgentFeild" name="Checkbox" value="This&#x20;is&#x20;urgent" class="fitem-ck-input"/>
+            <label class="fitem-ck-txt" for="urgentFeild">This&#x20;is&#x20;urgent</label>
+          </div>
+        </div>
+        <div class="fitem">
+          <label>Message<em>*</em></label>
+          <textarea name="MultiLine" maxlength="65535" class="form-control" formControlName="message" placeholder="Type message here..."></textarea>
+        </div>
+        <div class="fitem">
+          <button type="submit" class="btn btn-brand btn-lg btn-full" (click)="submitZohoForm()">Submit</button>
+        </div>
+      </div>
+    </form> #}
+
+
+  {# Begin Footer Section #}
+  
+    <footer class="footer-container">
+      <div class="container">
+        <div class="main-footer-wrap">
+          <div class="ftr-about-caption">
+            <a href="/"><img src="assets/images/logo.png" alt=""/></a>
+            <p>FOOTER DESCRIPTION</p>
+          </div>
+          <div class="ftr-contact-caption">
+            <h6>Contact us</h6>
+            <address> FOOTER ADDRESS</address>
+            <a href="callto:844.303.VREF"><img src="assets/images/call-icon-white.png" alt="" /> FOOTER PHONE NUMBER</a>
+            <a href="mailto:((EMAILADDRESS))"><img src="assets/images/mail-icon-white.png" alt="" /> FOOTER EMAIL ADDRESS</a>
+          </div>
+          <div class="ftr-news-caption">
+            <h6>Sign up for our newsletter</h6>
+            <form class="ftr-newsltr-wrap" action="" method="post">
+              {{ csrfInput() }}
+              <input type="hidden" name="action" value="mailchimp-subscribe/audience/subscribe">
+              {% set subscribeResponse = mailchimpSubscribe is defined and mailchimpSubscribe.action == 'subscribe' ? mailchimpSubscribe : null %}
+              {% if subscribeResponse %}
+                  {% if not subscribeResponse.success %} <p>An error occured: {{ subscribeResponse.message }}</p> {% endif %}
+              {% endif %}
+              <input id="emailInput" type="email" name="email" class="input-bdr" placeholder="Enter your email" {% if subscribeResponse and not subscribeResponse.success %}value="{{ subscribeResponse.values.email ?? '' }}"{% endif %}/>
+              <input class="btn btn-brand btn-sent" type="submit" name="" value="Submit"/>
+            </form>
+            <ul class="social-media">
+              <li><a href="(( footerData?.INSTAGRAM_LINK ))"><img src="assets/images/linked_in.svg" width="33" alt=""/></a></li>
+              <li><a href="(( footerData?.FACEBOOK_LINK ))"><img src="assets/images/social-fb.svg" alt=""/></a></li>
+              <li><a href="(( footerData?.TWITTER_LINK ))"><img src="assets/images/social-twit.svg" alt=""/></a></li>
+            </ul>
+          </div>
+          <div class="ftr-assoc-caption">
+            <h6>Associations & Affiliations</h6>
+            <div class="offi-gui flex">
+              <p>Official Guide of</p>
+              <img src="assets/images/ftr-lg-aopa.png" alt="" />
+            </div>
+            <div class="ftr-lg-wrap">
+              <figure><img src="assets/images/ftr-lg-nbaa.png" alt="" /></figure>
+              <figure><img src="assets/images/ftr-lg-eaa.png" alt="" /></figure>
+              <figure><img src="assets/images/ftr-lg-nafa.png" alt="" /></figure>
+              <figure><img src="assets/images/ftr-lg-auvsi.png" alt="" /></figure>
+              <figure><img src="assets/images/ftr-lg-embry.png" alt="" /></figure>
+              <figure><img src="assets/images/ftr-lg-helicopter.png" alt="" /></figure>
+              <figure><img src="assets/images/ftr-lg-aic.png" alt="" /></figure>
+              <figure><img src="assets/images/ftr-lg-asa.png" alt="" /></figure>
+              <figure><img src="assets/images/ftr-lg-elfa.png" alt="" /></figure>
+              <figure><img src="assets/images/ftr-lg-lawyer.png" alt="" /></figure>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-btm-wrap">
+        <div class="container flex">
+          <p class="mx-0">
+            © Copyright {{ now.year }} VREF Aircraft Value Reference and Appraisal Services/VREF Publishing Inc. | All Rights Reserved | <a href="/vref-privacy-policy"> Privacy Policy</a> | <a href="/vref-licence-agreement">Terms of Service</a>
+          </p>
+        </div>
+      </div>
+    </footer>
+  {# Begin Script Section #}
+    <script src="./assets/scripts/slick-1.8.1/slick/slick.min.js"></script>
+    <script>
+      $( document ).ready(function() {
+        $('.rsidebar-toggle').click(function() {
+          $('.rsidebar-wrap').toggleClass('rsidebar-open');
+        })
+        $('.client-slider').slick({
+          dots: true,
+          arrows: true,
+          slidesToShow: 4,
+          slidesToScroll: 1,
+          autoplay: false,
+          autoplaySpeed: 3000,
+          responsive: [ { breakpoint: 992, settings: { slidesToShow: 3 } }, { breakpoint: 768, settings: { slidesToShow: 1 } } ]
+        });
+      })
+    </script>
 
 </body>
 

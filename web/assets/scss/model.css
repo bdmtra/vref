@@ -1,0 +1,166 @@
+.model {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1050;
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch;
+  outline: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.model.open {
+  opacity: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: block;
+  visibility: visible;
+  pointer-events: all;
+}
+
+.model.open .model-contain {
+  opacity: 1;
+  -webkit-transform: translateY(0px);
+  transform: translateY(0px);
+}
+
+.model .model-contain {
+  width: 95%;
+  max-width: 570px;
+  margin: 0 auto;
+  min-height: 100px;
+  background-color: #fff;
+  margin-top: 100px;
+  margin-bottom: 30px;
+  opacity: 0;
+  -webkit-transform: translateY(-100px);
+  transform: translateY(-100px);
+  position: relative;
+  -webkit-box-shadow: 0 5px 25px -5px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 5px 25px -5px rgba(0, 0, 0, 0.25);
+}
+
+.model .model-contain.model-sm {
+  max-width: 470px;
+}
+
+.model .model-contain.model-xl {
+  max-width: 1270px;
+}
+
+.model .model-contain.model-xl .model-header {
+  padding: 40px 50px 10px;
+}
+
+.model .model-contain.model-xl .model-body {
+  padding: 0 50px 40px 50px;
+}
+
+.model .model-contain.model-lg {
+  max-width: 1170px;
+}
+
+.model .model-contain.fullwidth {
+  max-width: 90%;
+}
+
+.model .model-contain .model-header {
+  color: #5d5f61;
+  text-align: center;
+  padding: 30px 30px 10px;
+  position: relative;
+}
+
+.model .model-contain .model-header h2 {
+  display: inline-block;
+  text-transform: none;
+  margin: 0;
+  padding-top: 20px;
+  margin-bottom: 5px;
+}
+
+.model .model-contain .model-header p {
+  font-size: 14px;
+  color: #59595c;
+  margin: 0 auto;
+}
+
+.model .model-contain .model-header .icon-close,
+.model .model-contain .model-header .model-close {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border: none;
+  line-height: 40px;
+  font-size: 12px;
+  text-transform: uppercase;
+  vertical-align: middle;
+  position: absolute;
+  right: 8px;
+  cursor: pointer;
+  top: 8px;
+}
+
+.model .model-contain .model-header .icon-close img,
+.model .model-contain .model-header .model-close img {
+  display: inline-block;
+  margin: auto;
+  line-height: 40px;
+  vertical-align: middle;
+}
+
+.model .model-contain .model-header .icon-close:hover,
+.model .model-contain .model-header .model-close:hover {
+  color: #34826a;
+}
+
+.model .model-contain .model-header .icon-close.out-side,
+.model .model-contain .model-header .model-close.out-side {
+  top: -45px;
+  right: -10px;
+}
+
+.model .model-contain .model-header .icon-close img,
+.model .model-contain .model-header .model-close img {
+  display: inline-block;
+  margin: auto;
+  line-height: 40px;
+  vertical-align: middle;
+}
+
+.model .model-contain .model-header .icon-close:hover,
+.model .model-contain .model-header .model-close:hover {
+  color: #34826a;
+}
+
+.model .model-contain.no-pad .model-header,
+.model .model-contain.no-pad .model-body {
+  padding: 0;
+}
+
+.model .model-contain .model-body {
+  padding: 0 30px 20px 30px;
+  color: #59595c;
+}
+
+.model .model-contain .model-body ol li {
+  color: #59595c;
+  font-size: 13px;
+  line-height: 24px;
+  padding: 0;
+}
+
+.model .model-contain .model-body p strong {
+  font-size: 14px;
+  color: #59595c;
+}
+
+.model .model-contain .model-body .form-group > .fitem:last-child {
+  margin-bottom: 10px;
+}
+/*# sourceMappingURL=model.css.map */

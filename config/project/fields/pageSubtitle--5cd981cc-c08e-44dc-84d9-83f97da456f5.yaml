@@ -1,0 +1,18 @@
+contentColumnType: text
+fieldGroup: dcc71ec4-79e4-4b6a-a941-31c6a78a39c3 # Dynamic Pages
+handle: pageSubtitle
+instructions: ''
+name: 'Page Subtitle'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: ''
+  columnType: null
+  initialRows: '4'
+  multiline: ''
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText
