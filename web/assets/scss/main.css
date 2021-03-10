@@ -1059,7 +1059,7 @@
   left: 0;
   position: absolute;
   content: "";
-  background-color: #34826a;
+  background-color: #34826a !important;
   z-index: 1;
   width: 50%;
 }
@@ -1384,12 +1384,13 @@
 }
 
 .fix-banner-dark .breadcrumb li {
+  margin: 0 !important;
   display: inline-block;
   vertical-align: middle;
   position: relative;
   padding: 0 10px;
   padding-left: 15px;
-  color: #fff;
+  color: #ffffff;
 }
 
 .fix-banner-dark .breadcrumb li:first-child {

@@ -963,7 +963,7 @@
         left: 0;
         position: absolute;
         content: "";
-        background-color: #34826a;
+        background-color: #34826a !important;
         z-index: 1;
         width: 50%;
       }
@@ -1258,12 +1258,13 @@
       padding: 30px 0;
     }
     li {
+      margin: 0 !important;
       display: inline-block;
       vertical-align: middle;
       position: relative;
       padding: 0 10px;
       padding-left: 15px;
-      color: #fff;
+      color: #ffffff;
       &:first-child {
         padding-left: 0;
         &:before {

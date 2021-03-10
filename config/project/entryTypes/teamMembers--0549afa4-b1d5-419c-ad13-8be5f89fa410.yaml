@@ -1,5 +1,5 @@
 fieldLayouts:
-  e248e46a-593d-41f6-994f-8b4cb6d7f35a:
+  4fe6e8c8-9c79-4c24-8ead-c90c0d6ddbc0:
     tabs:
       -
         elements:
@@ -10,8 +10,8 @@ fieldLayouts:
             class: null
             disabled: false
             id: null
-            instructions: ''
-            label: 'Meta Title'
+            instructions: null
+            label: null
             max: null
             min: null
             name: null
@@ -27,7 +27,16 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: a4a5a6a9-c7ca-43f7-8860-564dbfe475a2 # Meta Description
+            fieldUid: df11e104-0dcb-4f4e-9110-5da83d21673b # Name
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: dbd6f2df-fd5a-4a4f-a0f4-e4d9b7ffbe50 # Designation
             instructions: null
             label: null
             required: false
@@ -38,7 +47,7 @@ fieldLayouts:
           -
             type: craft\fieldlayoutelements\HorizontalRule
           -
-            fieldUid: 21c2cbf7-45d7-4a9b-a7e3-af6c1f76b31f # Page Title
+            fieldUid: d3d0d635-a856-430f-8c74-1817c1db62f2 # Links
             instructions: null
             label: null
             required: false
@@ -47,16 +56,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 5cd981cc-c08e-44dc-84d9-83f97da456f5 # Page Subtitle
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-          -
-            fieldUid: ee572f12-34a8-4f92-9e75-5d82225cdead # Header Image
+            fieldUid: 765b4eda-726f-471b-bb9c-5aeccc438260 # Profile Picture
             instructions: null
             label: null
             required: false
@@ -75,11 +75,11 @@ fieldLayouts:
             width: 100
         name: Content
         sortOrder: 1
-handle: dynamicPageContent
+handle: teamMembers
 hasTitleField: true
-name: 'Dynamic Page Content'
-section: ae36c8fb-655b-43a2-a284-e1d0554f3c3d # Dynamic Pages
+name: 'Team Members'
+section: 94808026-41ac-431a-a183-8ad8d9a55bff # Team Members
 sortOrder: 1
-titleFormat: null
+titleFormat: '{section.name|raw}'
 titleTranslationKeyFormat: null
 titleTranslationMethod: site

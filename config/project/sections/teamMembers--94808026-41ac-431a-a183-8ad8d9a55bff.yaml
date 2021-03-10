@@ -1,0 +1,14 @@
+enableVersioning: true
+handle: teamMembers
+name: 'Team Members'
+propagationMethod: all
+siteSettings:
+  d66119ad-8f5f-41e8-8169-49f2c51c36b6:
+    enabledByDefault: true
+    hasUrls: true
+    template: about_details
+    uriFormat: 'about/{slug}'
+structure:
+  maxLevels: null
+  uid: 683e0835-15fb-428b-a814-1dfde6238c30
+type: structure

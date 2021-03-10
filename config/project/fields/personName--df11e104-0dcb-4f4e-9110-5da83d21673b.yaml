@@ -1,0 +1,18 @@
+contentColumnType: text
+fieldGroup: 73b6d2ea-435b-418f-93b9-a529b2acf34a # Team Elements
+handle: personName
+instructions: ''
+name: Name
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: ''
+  columnType: null
+  initialRows: '4'
+  multiline: ''
+  placeholder: Name
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText
