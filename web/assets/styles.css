@@ -4163,7 +4163,7 @@ footer .footer-btm-wrap p a:hover {
 }
 
 .services-wrap .service-item {
-  width: calc(100% / 3 - 22px);
+  width: calc(100% / 4 - 22px);
   -webkit-box-shadow: 0 5px 25px -5px rgba(0, 0, 0, 0.25);
   box-shadow: 0 5px 25px -5px rgba(0, 0, 0, 0.25);
   -moz-flex-direction: column;
@@ -13264,6 +13264,12 @@ button.menu-toggle {
   * {
     cursor: pointer;
   }
+}
+
+.gen-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .error-container {

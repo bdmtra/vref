@@ -1,0 +1,358 @@
+field: 04f22786-68a2-49d1-a67b-92b74dc87cc1 # Contact Group
+fieldLayouts:
+  049e3988-bb57-4e96-baaf-382ca405a8a3:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 1305d777-915e-4241-b464-ffc7c5e393e9 # Main Phone Number
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 7dfcc86c-007c-4ce2-9f5c-f60b1eec2ee1 # Email Display Name
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 50
+          -
+            fieldUid: 9d62d0c1-6d81-49eb-9b9f-6abb29f26ea2 # Email URL
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 50
+          -
+            fieldUid: 13c59cab-1cca-4b39-ae97-98b1577bb5e8 # Business Name
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 74a6e309-8f5f-4819-bfcc-8d3416801089 # Address Line 1
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: eb7bb1ec-b0db-4a15-bc1b-d312b0f01869 # Address Line 2
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 1a074184-5c1a-4f59-a843-61ecd2e176e1 # City
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 73c7c5dd-5930-4485-9986-ab79b8af30ca # State Abbreviation
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: d47ea014-8526-4d9f-aeb5-52ecd00941e8 # Postal Code
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: a734f12e-a2ce-4c16-a610-f23b61fc5886 # Country Abbreviation
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 2d959181-9b9a-43ff-926c-6e09a2b62237 # Secondary Phone Number
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 99503dda-6be2-4cc1-b516-3bedf8c9d687 # Map Image
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  1305d777-915e-4241-b464-ffc7c5e393e9: # Main Phone Number
+    contentColumnType: text
+    fieldGroup: null
+    handle: mainPhoneNumber
+    instructions: ''
+    name: 'Main Phone Number'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  13c59cab-1cca-4b39-ae97-98b1577bb5e8: # Business Name
+    contentColumnType: text
+    fieldGroup: null
+    handle: businessName
+    instructions: ''
+    name: 'Business Name'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  1a074184-5c1a-4f59-a843-61ecd2e176e1: # City
+    contentColumnType: text
+    fieldGroup: null
+    handle: city
+    instructions: ''
+    name: City
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  2d959181-9b9a-43ff-926c-6e09a2b62237: # Secondary Phone Number
+    contentColumnType: text
+    fieldGroup: null
+    handle: secondaryPhoneNumber
+    instructions: ''
+    name: 'Secondary Phone Number'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  73c7c5dd-5930-4485-9986-ab79b8af30ca: # State Abbreviation
+    contentColumnType: text
+    fieldGroup: null
+    handle: stateAbbreviation
+    instructions: ''
+    name: 'State Abbreviation'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  74a6e309-8f5f-4819-bfcc-8d3416801089: # Address Line 1
+    contentColumnType: text
+    fieldGroup: null
+    handle: addressLine1
+    instructions: ''
+    name: 'Address Line 1'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  7dfcc86c-007c-4ce2-9f5c-f60b1eec2ee1: # Email Display Name
+    contentColumnType: text
+    fieldGroup: null
+    handle: emailDisplayName
+    instructions: ''
+    name: 'Email Display Name'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  99503dda-6be2-4cc1-b516-3bedf8c9d687: # Map Image
+    contentColumnType: string
+    fieldGroup: null
+    handle: mapImage
+    instructions: ''
+    name: 'Map Image'
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      allowUploads: true
+      allowedKinds:
+        - image
+      defaultUploadLocationSource: 'volume:fb6e2638-c6df-4a24-8de9-422128e80318'
+      defaultUploadLocationSubpath: ''
+      limit: '1'
+      localizeRelations: false
+      previewMode: full
+      restrictFiles: '1'
+      selectionLabel: ''
+      showSiteMenu: false
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      singleUploadLocationSource: 'volume:03197854-99c7-4a5e-be15-34ca422064c0' # State Map Images
+      singleUploadLocationSubpath: ''
+      source: null
+      sources: '*'
+      targetSiteId: null
+      useSingleFolder: true
+      validateRelatedElements: false
+      viewMode: large
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+  9d62d0c1-6d81-49eb-9b9f-6abb29f26ea2: # Email URL
+    contentColumnType: string(255)
+    fieldGroup: null
+    handle: email
+    instructions: ''
+    name: 'Email URL'
+    searchable: false
+    settings:
+      maxLength: '255'
+      placeholder: null
+      types:
+        - email
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Url
+  a734f12e-a2ce-4c16-a610-f23b61fc5886: # Country Abbreviation
+    contentColumnType: text
+    fieldGroup: null
+    handle: countryAbbreviation
+    instructions: ''
+    name: 'Country Abbreviation'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  d47ea014-8526-4d9f-aeb5-52ecd00941e8: # Postal Code
+    contentColumnType: text
+    fieldGroup: null
+    handle: postalCode
+    instructions: ''
+    name: 'Postal Code'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  eb7bb1ec-b0db-4a15-bc1b-d312b0f01869: # Address Line 2
+    contentColumnType: text
+    fieldGroup: null
+    handle: addressLine2
+    instructions: ''
+    name: 'Address Line 2'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: headquartersBlock
+name: 'Headquarters Block'
+sortOrder: 1

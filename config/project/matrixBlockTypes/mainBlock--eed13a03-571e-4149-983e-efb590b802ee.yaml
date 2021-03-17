@@ -1,0 +1,334 @@
+field: 04f22786-68a2-49d1-a67b-92b74dc87cc1 # Contact Group
+fieldLayouts:
+  181e98bc-9927-4d8c-ad8f-f5b92ea01816:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: d281a1c6-f0e8-426b-a4de-8921939bc245 # State/Country Name
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 7bb3d454-6dd9-407f-a34e-329fbbfe4ac9 # Address Line 1
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: e96480f8-8707-4fd4-ac38-8b9ca72dfc66 # Address Line 2
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: d7e297a7-cc87-40d3-b19d-1b0048d4a2ed # City
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 88b0aca6-aaa2-4c0f-92f7-c35929807071 # State Abbreviation
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: f55d0dcf-6f7e-4d65-8ecb-7b0bb813feff # Postal Code
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 9f8fed56-fc3e-4e70-af5c-625c6a72a0a4 # Country Abbreviation
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: db71c03b-e7f4-4766-bfe4-e74ae321c23c # Phone Number 1
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: a1d548fe-fa2d-4798-86ff-51eeba9f962c # Phone Number 2
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 9c67d7ba-e3d1-4a5d-a6d6-ec0ee08c31fd # Phone Number 3
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: b11e5561-34cc-4144-9ab8-82857783392b # Map Image
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  7bb3d454-6dd9-407f-a34e-329fbbfe4ac9: # Address Line 1
+    contentColumnType: text
+    fieldGroup: null
+    handle: addressLine1
+    instructions: ''
+    name: 'Address Line 1'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  88b0aca6-aaa2-4c0f-92f7-c35929807071: # State Abbreviation
+    contentColumnType: text
+    fieldGroup: null
+    handle: stateAbbreviation
+    instructions: ''
+    name: 'State Abbreviation'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  9c67d7ba-e3d1-4a5d-a6d6-ec0ee08c31fd: # Phone Number 3
+    contentColumnType: text
+    fieldGroup: null
+    handle: phoneNumber3
+    instructions: ''
+    name: 'Phone Number 3'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  9f8fed56-fc3e-4e70-af5c-625c6a72a0a4: # Country Abbreviation
+    contentColumnType: text
+    fieldGroup: null
+    handle: countryAbbreviation
+    instructions: ''
+    name: 'Country Abbreviation'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  a1d548fe-fa2d-4798-86ff-51eeba9f962c: # Phone Number 2
+    contentColumnType: text
+    fieldGroup: null
+    handle: phoneNumber2
+    instructions: ''
+    name: 'Phone Number 2'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  b11e5561-34cc-4144-9ab8-82857783392b: # Map Image
+    contentColumnType: string
+    fieldGroup: null
+    handle: mapImage
+    instructions: ''
+    name: 'Map Image'
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      allowUploads: true
+      allowedKinds:
+        - image
+      defaultUploadLocationSource: 'volume:fb6e2638-c6df-4a24-8de9-422128e80318'
+      defaultUploadLocationSubpath: ''
+      limit: '1'
+      localizeRelations: false
+      previewMode: full
+      restrictFiles: '1'
+      selectionLabel: ''
+      showSiteMenu: true
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      singleUploadLocationSource: 'volume:03197854-99c7-4a5e-be15-34ca422064c0' # State Map Images
+      singleUploadLocationSubpath: ''
+      source: null
+      sources: '*'
+      targetSiteId: null
+      useSingleFolder: true
+      validateRelatedElements: false
+      viewMode: large
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+  d281a1c6-f0e8-426b-a4de-8921939bc245: # State/Country Name
+    contentColumnType: text
+    fieldGroup: null
+    handle: stateName
+    instructions: ''
+    name: 'State/Country Name'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  d7e297a7-cc87-40d3-b19d-1b0048d4a2ed: # City
+    contentColumnType: text
+    fieldGroup: null
+    handle: cityName
+    instructions: ''
+    name: City
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  db71c03b-e7f4-4766-bfe4-e74ae321c23c: # Phone Number 1
+    contentColumnType: text
+    fieldGroup: null
+    handle: phoneNumber1
+    instructions: ''
+    name: 'Phone Number 1'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  e96480f8-8707-4fd4-ac38-8b9ca72dfc66: # Address Line 2
+    contentColumnType: text
+    fieldGroup: null
+    handle: addressLine2
+    instructions: ''
+    name: 'Address Line 2'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  f55d0dcf-6f7e-4d65-8ecb-7b0bb813feff: # Postal Code
+    contentColumnType: text
+    fieldGroup: null
+    handle: postalCode
+    instructions: ''
+    name: 'Postal Code'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: mainBlock
+name: 'Main Block'
+sortOrder: 2

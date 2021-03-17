@@ -29,7 +29,7 @@
                 <span class="d-desk-none mob-arrow" style="color:unset;"></span>
                 <ul class="mydropdown-list">
                   <li><a href="/about">About VREF</a></li>
-                  <li><a href="/pages/b2b-solutions">B2B Solutions</a></li>
+                  <li><a href="/b2b-solutions">B2B Solutions</a></li>
                   <li><a href="/contact">Contact</a></li>
                   <li><a href="/faq">FAQ</a></li>
                   <li><a href="/services">Services</a></li>
@@ -132,88 +132,29 @@
     {% endblock %}
 
   {# Begin Advertising Section #}
-
-    <div class="block-row pb-0">
-      <div class="adds-row dark-bg sm-block-row pt-0 pb-dbl">
-        <div class="container">
-          <div class="title-row white-txt">
-            <h4>Our Advertisers</h4>
-          </div>
-          <div class="adds-wrap">
-            <div class="client-slider">
-              {% for asset in craft.assets().volume('ourAdvertisers').all() %}
-                <div>
-                  <a class="client-slide-img" target="_blank" href=""><img src="/assets/images/advertisers/{{ asset.filename }}" alt="" title="" /></a>
-                </div>
-              {% endfor %}
-            <div>
+    {% if not craft.app.request.segments|first == "contact" %}
+      <div class="block-row pb-0">
+        <div class="adds-row dark-bg sm-block-row pt-0 pb-dbl">
+          <div class="container">
+            <div class="title-row white-txt">
+              <h4>Our Advertisers</h4>
+            </div>
+            <div class="adds-wrap">
+              <div class="client-slider">
+                {% for asset in craft.assets().volume('ourAdvertisers').all() %}
+                  <div>
+                    <a class="client-slide-img" target="_blank" href=""><img src="/assets/images/advertisers/{{ asset.filename }}" alt="" title="" /></a>
+                  </div>
+                {% endfor %}
+              <div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    {% endif %}
 
   {# Begin Footer Section #}
-  
-    <footer class="footer-container">
-      <div class="container">
-        <div class="main-footer-wrap">
-          <div class="ftr-about-caption">
-            <a href="/"><img src="/assets/images/logo.png" alt=""/></a>
-            <p>FOOTER DESCRIPTION</p>
-          </div>
-          <div class="ftr-contact-caption">
-            <h6>Contact us</h6>
-            <address> FOOTER ADDRESS</address>
-            <a href="callto:844.303.VREF"><img src="/assets/images/call-icon-white.png" alt="" /> FOOTER PHONE NUMBER</a>
-            <a href="mailto:((EMAILADDRESS))"><img src="/assets/images/mail-icon-white.png" alt="" /> FOOTER EMAIL ADDRESS</a>
-          </div>
-          <div class="ftr-news-caption">
-            <h6>Sign up for our newsletter</h6>
-            <form class="ftr-newsltr-wrap" action="" method="post">
-              {{ csrfInput() }}
-              <input type="hidden" name="action" value="mailchimp-subscribe/audience/subscribe">
-              {% set subscribeResponse = mailchimpSubscribe is defined and mailchimpSubscribe.action == 'subscribe' ? mailchimpSubscribe : null %}
-              {% if subscribeResponse %}
-                  {% if not subscribeResponse.success %} <p>An error occured: {{ subscribeResponse.message }}</p> {% endif %}
-              {% endif %}
-              <input id="emailInput" type="email" name="email" class="input-bdr" placeholder="Enter your email" {% if subscribeResponse and not subscribeResponse.success %}value="{{ subscribeResponse.values.email ?? '' }}"{% endif %}/>
-              <input class="btn btn-brand btn-sent" type="submit" name="" value="Submit"/>
-            </form>
-            <ul class="social-media">
-              <li><a href="(( footerData?.INSTAGRAM_LINK ))"><img src="/assets/images/linked_in.svg" width="33" alt=""/></a></li>
-              <li><a href="(( footerData?.FACEBOOK_LINK ))"><img src="/assets/images/social-fb.svg" alt=""/></a></li>
-              <li><a href="(( footerData?.TWITTER_LINK ))"><img src="/assets/images/social-twit.svg" alt=""/></a></li>
-            </ul>
-          </div>
-          <div class="ftr-assoc-caption">
-            <h6>Associations & Affiliations</h6>
-            <div class="offi-gui flex">
-              <p>Official Guide of</p>
-              <img src="/assets/images/ftr-lg-aopa.png" alt="" />
-            </div>
-            <div class="ftr-lg-wrap">
-              <figure><img src="/assets/images/ftr-lg-nbaa.png" alt="" /></figure>
-              <figure><img src="/assets/images/ftr-lg-eaa.png" alt="" /></figure>
-              <figure><img src="/assets/images/ftr-lg-nafa.png" alt="" /></figure>
-              <figure><img src="/assets/images/ftr-lg-auvsi.png" alt="" /></figure>
-              <figure><img src="/assets/images/ftr-lg-embry.png" alt="" /></figure>
-              <figure><img src="/assets/images/ftr-lg-helicopter.png" alt="" /></figure>
-              <figure><img src="/assets/images/ftr-lg-aic.png" alt="" /></figure>
-              <figure><img src="/assets/images/ftr-lg-asa.png" alt="" /></figure>
-              <figure><img src="/assets/images/ftr-lg-elfa.png" alt="" /></figure>
-              <figure><img src="/assets/images/ftr-lg-lawyer.png" alt="" /></figure>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="footer-btm-wrap">
-        <div class="container flex">
-          <p class="mx-0">
-            © Copyright {{ now.year }} VREF Aircraft Value Reference and Appraisal Services/VREF Publishing Inc. | All Rights Reserved | <a href="/vref-privacy-policy"> Privacy Policy</a> | <a href="/vref-licence-agreement">Terms of Service</a>
-          </p>
-        </div>
-      </div>
-    </footer>
+    {% include 'partials/_footer' %}
   {# Begin Script Section #}
     <script src="/assets/scripts/slick-1.8.1/slick/slick.min.js"></script>
     <script>

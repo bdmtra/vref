@@ -65,7 +65,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 563bfcb1-fa15-4a2b-aaa3-aca5388caab2
+            fieldUid: 563bfcb1-fa15-4a2b-aaa3-aca5388caab2 # Rich Text
             instructions: null
             label: null
             required: false

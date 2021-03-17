@@ -1,5 +1,5 @@
 fieldLayouts:
-  37326814-957d-4026-b385-9d52b5c7bd3e:
+  49b57e75-8da3-49e9-8043-8a4b6f8b14ab:
     tabs:
       -
         elements:
@@ -10,8 +10,8 @@ fieldLayouts:
             class: null
             disabled: false
             id: null
-            instructions: null
-            label: null
+            instructions: ''
+            label: 'Meta Page Title'
             max: null
             min: null
             name: null
@@ -27,25 +27,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 563bfcb1-fa15-4a2b-aaa3-aca5388caab2 # Rich Text
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-          -
-            fieldUid: aa7d232f-992f-4204-8784-c0b71642e11a # Testimonial Groups
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-          -
-            fieldUid: 7cff5bc5-7660-409a-9e68-3118cdbaa1c6 # Client Images
+            fieldUid: 04f22786-68a2-49d1-a67b-92b74dc87cc1 # Contact Group
             instructions: null
             label: null
             required: false
@@ -55,10 +37,10 @@ fieldLayouts:
             width: 100
         name: Content
         sortOrder: 1
-handle: index
-hasTitleField: false
-name: index
-section: c2944d4d-4353-453f-87ac-73f11863ff54
+handle: contact
+hasTitleField: true
+name: Contact
+section: 48a78aeb-a351-4dc4-9ba5-86d2d939865a # Contact
 sortOrder: 1
 titleFormat: '{section.name|raw}'
 titleTranslationKeyFormat: null

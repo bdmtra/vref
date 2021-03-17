@@ -1,0 +1,14 @@
+contentColumnType: string
+fieldGroup: 36c5fee6-6297-427a-ba47-a4942114347e # Contact
+handle: contactGroup
+instructions: ''
+name: 'Contact Group'
+searchable: false
+settings:
+  contentTable: '{{%matrixcontent_contactgroup}}'
+  maxBlocks: ''
+  minBlocks: ''
+  propagationMethod: all
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

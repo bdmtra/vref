@@ -1,11 +1,11 @@
 {% extends "base" %}
 
 {% block css %}
-  <link rel="stylesheet" href="./assets/scss/dynamic-pages.css">
+  <link rel="stylesheet" href="/assets/scss/dynamic-pages.css">
 {% endblock %}
 
 {% block content %}
-  {% set image = entry.headerImage.first() %}
+  {% set image = entry.headerImage.one() %}
   <div class="inner-banner ptb-full block-row dark-bg-img lines-btm-warn" {% if image %} style="background-image:url( {{ image.getUrl() }} )" {% endif %}>
     <div class="container">
       <div class="about-half-wrap">

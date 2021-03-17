@@ -1,0 +1,78 @@
+contentColumnType: string
+fieldGroup: 97fbedf2-c447-4906-82b4-10bb514f649a # News
+handle: category
+instructions: ''
+name: Category
+searchable: true
+settings:
+  optgroups: true
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - Appraisals
+        -
+          - value
+          - appraisals
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Educational
+        -
+          - value
+          - educational
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Financial
+        -
+          - value
+          - financial
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Newsletter
+        -
+          - value
+          - newsletter
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Press Release'
+        -
+          - value
+          - pressRelease
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Uncategorized
+        -
+          - value
+          - uncategorized
+        -
+          - default
+          - '1'
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

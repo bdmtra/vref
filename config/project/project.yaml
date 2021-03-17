@@ -1,9 +1,13 @@
-dateModified: 1615412679
+dateModified: 1616003789
 email:
   fromEmail: andrew@andrewlynn.co
   fromName: vref.com
   transportType: craft\mail\transportadapters\Sendmail
 plugins:
+  element-api:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
   mailchimp-subscribe:
     edition: standard
     enabled: true
@@ -16,8 +20,9 @@ system:
   edition: solo
   live: true
   name: vref.com
+  retryDuration: null
   schemaVersion: 3.6.6
-  timeZone: America/Los_Angeles
+  timeZone: America/Chicago
 users:
   allowPublicRegistration: false
   defaultGroup: null

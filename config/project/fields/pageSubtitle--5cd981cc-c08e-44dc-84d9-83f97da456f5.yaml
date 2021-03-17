@@ -3,7 +3,7 @@ fieldGroup: dcc71ec4-79e4-4b6a-a941-31c6a78a39c3 # Dynamic Pages
 handle: pageSubtitle
 instructions: ''
 name: 'Page Subtitle'
-searchable: false
+searchable: true
 settings:
   byteLimit: null
   charLimit: null

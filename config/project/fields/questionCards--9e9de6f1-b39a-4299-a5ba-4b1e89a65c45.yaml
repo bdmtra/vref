@@ -1,0 +1,14 @@
+contentColumnType: string
+fieldGroup: 9df1cafd-03ca-4b6f-bda0-d8f72e558e77 # FAQ
+handle: questionCards
+instructions: ''
+name: 'Question Cards'
+searchable: false
+settings:
+  contentTable: '{{%matrixcontent_questioncards}}'
+  maxBlocks: ''
+  minBlocks: ''
+  propagationMethod: all
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

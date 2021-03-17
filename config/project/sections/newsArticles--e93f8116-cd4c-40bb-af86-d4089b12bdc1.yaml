@@ -1,14 +1,14 @@
 enableVersioning: true
-handle: dynamicPages
-name: 'Dynamic Pages'
+handle: newsArticles
+name: 'News Articles'
 propagationMethod: all
 siteSettings:
   d66119ad-8f5f-41e8-8169-49f2c51c36b6:
     enabledByDefault: true
     hasUrls: true
-    template: dynamic
-    uriFormat: '{parent.uri}/{slug}'
+    template: article
+    uriFormat: 'news/{slug}'
 structure:
   maxLevels: null
-  uid: d43ac9da-52cb-4a3f-a2f2-1cb02e22553b
+  uid: 197de7a1-d7b8-42df-afe6-1a6b34009228
 type: structure

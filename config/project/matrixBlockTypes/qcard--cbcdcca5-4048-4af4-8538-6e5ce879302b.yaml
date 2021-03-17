@@ -1,0 +1,77 @@
+field: 9e9de6f1-b39a-4299-a5ba-4b1e89a65c45 # Question Cards
+fieldLayouts:
+  ec010448-2eed-4e10-b2aa-16ae570062e5:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 6b7128a1-a63b-45ef-bdff-fce376a2202f # Question Title
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 69ce6034-0cb9-4289-b2c7-54861d16c147 # Answer
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  69ce6034-0cb9-4289-b2c7-54861d16c147: # Answer
+    contentColumnType: text
+    fieldGroup: null
+    handle: answer
+    instructions: ''
+    name: Answer
+    searchable: false
+    settings:
+      availableTransforms: '*'
+      availableVolumes: '*'
+      cleanupHtml: true
+      columnType: text
+      configSelectionMode: choose
+      defaultTransform: ''
+      manualConfig: ''
+      purifierConfig: ''
+      purifyHtml: '1'
+      redactorConfig: ''
+      removeEmptyTags: '1'
+      removeInlineStyles: '1'
+      removeNbsp: '1'
+      showHtmlButtonForNonAdmins: ''
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      uiMode: enlarged
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field
+  6b7128a1-a63b-45ef-bdff-fce376a2202f: # Question Title
+    contentColumnType: text
+    fieldGroup: null
+    handle: questionTitle
+    instructions: ''
+    name: 'Question Title'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: qcard
+name: qcard
+sortOrder: 1

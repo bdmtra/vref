@@ -1,0 +1,116 @@
+{% extends "base" %}
+
+{# {% block css %}
+  <link rel="stylesheet" href="/assets/scss/dynamic-pages.css">
+{% endblock %} #}
+
+{% block content %}
+  {% set image = entry.headerImage.one() %}
+  <div class="inner-banner lines-btm-bdr">
+    <figure class="full-img">
+      {% if image %}
+        <img src="{{ image.getUrl() }}" alt="" />
+      {% else %}
+        <img src="assets/images/inner-banner-bg.png" alt=""/>
+      {% endif %}
+    </figure>
+  </div>
+  <div class="sm-block-row white-bg">
+    <div class="container">
+      <div class="flex-content flex flex-news-blog-row mt--80">
+        <div class="flex-content-main">
+          <div class="news-details-wrap ">
+            <h3>{{ entry.pageTitle }}</h3>
+            <div class="post-by">
+              <a class="post-owner" href="javascript:void">By {{ entry.pageSubtitle }}</a>
+              <p>
+                {{ entry.originalPostedDate|date("long")  }}
+                {% if entry.category %} <a href="javascript:void(0);" style="text-transform:uppercase;">{{ entry.category }}</a> {% endif %}
+              </p>
+            </div>
+            <p>{{ entry.richText }}</p>
+
+            <div class="social-media-wrap">
+              <label for="">Share this story, choose your platform!</label>
+              <ul class="social-media">
+                <li>
+                  <a shareButton="facebook">
+                    <img src="/assets/images/fb-gray.png" alt="" />
+                  </a>
+                </li>
+                <li>
+                  <a shareButton="linkedin">
+                    <img src="/assets/images/linkedin-gray.png" alt="" />
+                  </a>
+                </li>
+                <li>
+                  <a shareButton="twitter">
+                    <img src="/assets/images/twitt-gray.png" alt=""/>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <aside class="flex-content-aside">
+          <div class="news-search-wrap mt-10">
+            <form class="form-group" action="{{ url('/news') }}">
+              <div class="news-search-inner">
+                <input class="form-control"  type="search" name="q" aria-label="Search" placeholder="Search News" id="searchInput" />
+                <button type="submit">Go</button>
+              </div>
+            </form>
+          </div>
+          <div class="artical-wrap">
+            <h6 class="aside-title">Recent News</h6>
+            <div class="artical-list">
+              {% for article in craft.entries.section('newsArticles').limit(5).all() %}
+                <div class="artical-item">
+                  <div href="javascript:void(0);" class="artical-inner flex">
+                    <figure>
+                      {% set image = article.headerImage.one() %}
+                      {% if image %}
+                        <img src="{{ image.getUrl() }}" alt="" />
+                      {% else %}
+                        <img src="assets/images/inner-banner-bg.png" alt=""/>
+                      {% endif %}
+                    </figure>
+                    <p><a href="/news/{{article.slug}}">{{ article.pageTitle }}<span>{{ article.originalPostedDate|date("long") }}</span></a></p>
+                  </div>
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+          {% set allEntries = craft.entries().section('newsArticles').all() %}
+          <div class="archives-wrap">
+            <h6 class="aside-title">Archives</h6>
+            <ul class="archives-list">
+              {% for date, entries in allEntries|group("originalPostedDate|date('F Y')") %}
+                <li><a href="/news?archiveFilter={{date}}">{{ date }}</a></li>
+              {% endfor %}
+            </ul>
+          </div>
+          {% include 'partials/_sidebar' %}
+        </aside>
+      </div>
+    </div>
+  </div>
+  {# <div class="white-bg">
+    <div class="lg-container ">
+      <div class="new-news-wrap flex">
+        <div class="new-news-item">
+          <a href="javascript:void(0)">
+            <figure>
+              <img src="{{ (category?.news_media)[0] }}" alt=""/>
+              <span class="news-lbl">{{ (category?.news_category)[0] }}</span>
+              <img src="assets/images/inner-banner-bg.png" alt="" />
+            </figure>
+            <h5>{{ category?.news_title }}</h5>
+            <p></p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div> #}
+
+{% endblock %}

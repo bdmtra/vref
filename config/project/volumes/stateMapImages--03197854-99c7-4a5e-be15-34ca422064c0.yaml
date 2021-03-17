@@ -1,0 +1,40 @@
+fieldLayouts:
+  76217f41-d64b-4938-9e43-a8eb64a3191b:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\AssetTitleField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+handle: stateMapImages
+hasUrls: true
+name: 'State Map Images'
+settings:
+  path: '@webroot/assets/images/maps'
+sortOrder: 4
+titleTranslationKeyFormat: null
+titleTranslationMethod: null
+type: craft\volumes\Local
+url: /assets/images/maps

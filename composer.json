@@ -2,6 +2,7 @@
   "require": {
     "aelvan/mailchimp-subscribe": "3.0.3",
     "craftcms/cms": "3.6.10",
+    "craftcms/element-api": "2.6.0",
     "craftcms/redactor": "2.8.5",
     "twbs/bootstrap": "5.0.0-beta2",
     "vlucas/phpdotenv": "^3.4.0"

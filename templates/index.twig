@@ -67,6 +67,27 @@
             </div>
           </div>
         </div>
+        <div class="service-item flex">
+          <figure><img src="assets/images/sicon-town.svg" alt="" /></figure>
+          <div class="service-caprion flex">
+            <div class="caption-text">
+              <h4>VREF Expert Witness</h4>
+              <h6>Litigation and Expert Witness Services</h6>
+              <p>
+                VREF Expert Witness and Legal Services offers Litigation and Expert Witness support. VREF provides
+                superior investigative skills, in-depth knowledge and expertise. Services include deposition and
+                deposition support, consulting witness, and testifying in court. Our staff of appraisers have testified in
+                U.S. Federal Court, are trusted by numerous Aircraft Manufactures, Banks, and the leading law firms in the
+                USA.
+              </p>
+            </div>
+            <div class="service-ftr">
+              <a href="javascript:void(0);" class="btn btn-brand" [routerLink]="['/aviation-expert-witness']"
+                >Find Out More...</a
+              >
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -245,7 +266,7 @@
             {% for block in entry.testimonialGroups.all() %}
               <div class="testi-item">
                 <p>{{ block.testimonialClientName }}</p>
-                {% for asset in block.testimonialThumbnail %}
+                {% for asset in block.testimonialThumbnail.all() %}
                   <figure><img src="./assets/images/testimonials/{{ asset.filename }}" alt="" width="100%" /></figure>
                 {% endfor %}
               </div>

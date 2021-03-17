@@ -1,0 +1,133 @@
+{% extends "base" %}
+
+{# settings #}
+
+{% set searchQuery = craft.app.request.getParam('q') %}
+{% set archiveFilter = craft.app.request.getParam('archiveFilter') %}
+{% set entries = craft.entries().section('newsArticles').search(searchQuery).orderBy('score').all() %}
+
+{% set element_api_url = 'lazy-load' %}
+{% set settings = { section: 'newsArticles', search: searchQuery,  order: 'score', limit: 5 } %}
+{% set setVars = { variableName: 'article', templatePath: 'partials/_article.twig', } %}
+
+{# hashed settings #}
+{% set hashed_settings = [] %}
+{% for key, setting in settings %}
+   {% set hashed_settings = hashed_settings|merge({(key): setting|hash}) %}
+{% endfor %}
+
+
+{% block content %}
+  <div class="container">
+    <div class="block-row pt-full">
+      <div class="main-title-row">
+        <h3>VREF News</h3>
+      </div>
+      <div class="flex-content flex flex-news-blog-row">
+        <div class="flex-content-main">
+          <div class="news-list-wrap">
+            {% if entries|length %}
+              {# initial content #}
+              <div class="js-lazy-wrapper">
+                  <ul class="js-lazy-list" style="margin:0;">
+                  {% if archiveFilter is not empty %}
+                    {% for page in craft.entries(settings)|filter(v => v.originalPostedDate|date('F Y') == archiveFilter) %}
+                      {% include setVars.templatePath with {(setVars.variableName): page} %}
+                    {% endfor %}
+                  {% else %}
+                    {% for page in craft.entries(settings)%}
+                      {% include setVars.templatePath with {(setVars.variableName): page} %}
+                    {% endfor %}
+                  {% endif %}
+                  </ul>
+                  <button class="button js-load-more btn btn-full btn-lg btn-brand">{{'More Articles'|t}}</button>
+              </div>
+            {% else %}
+              <p>Your search for “{{ searchQuery }}” didn’t return any results.</p>
+            {% endif %}
+          </div>
+        </div>
+
+        <aside class="flex-content-aside">
+          <div class="news-search-wrap mt-10">
+            <form class="form-group" action="{{ url('/news') }}">
+              <div class="news-search-inner">
+                <input class="form-control"  type="search" name="q" aria-label="Search" placeholder="Search News" id="searchInput" />
+                <button type="submit">Go</button>
+              </div>
+            </form>
+          </div>
+          <div class="artical-wrap">
+            <h6 class="aside-title">Recent News</h6>
+            <div class="artical-list">
+              {% for article in craft.entries.section('newsArticles').limit(5).all() %}
+                <div class="artical-item">
+                  <div href="javascript:void(0);" class="artical-inner flex">
+                    <figure>
+                      {% set image = article.headerImage.one() %}
+                      {% if image %}
+                        <img src="{{ image.getUrl() }}" alt="" />
+                      {% else %}
+                        <img src="assets/images/inner-banner-bg.png" alt=""/>
+                      {% endif %}
+                    </figure>
+                    <p><a href="/news/{{article.slug}}">{{ article.pageTitle }}<span>{{ article.originalPostedDate|date("long") }}</span></a></p>
+                  </div>
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+          {% include 'partials/_sidebar' %}
+        </aside>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{# ajax request #}
+{% js %}
+// twig to js
+var lazy_settings = {{hashed_settings|json_encode|raw}};
+var element_api_url = '{{url(element_api_url)}}';
+
+//variables
+var lazy_offset = 1
+var current_request = null;
+
+//html elements
+var lazy_wrapper = $('.js-lazy-wrapper');
+var lazy_button = lazy_wrapper.find('.js-load-more');
+var lazy_list = lazy_wrapper.find('.js-lazy-list');
+
+lazy_button.on('click', function(){
+  if (current_request == null){
+
+    current_request = $.ajax({
+      url: element_api_url,
+      method: 'GET',
+      data: {
+        offset: lazy_offset,
+        settings: lazy_settings,
+      },
+      beforeSend: function(){
+        lazy_button.addClass('is-loading');
+      },        
+    }).always(function(returned) {
+        lazy_button.removeClass('is-loading');
+        current_request = null;
+    }).done(function(returned) {
+      lazy_offset ++
+      var html = ''
+      $.each(returned.data, function(index, article){
+        html += article.html
+      })
+      lazy_list.append(html)
+      if(returned.data.length == 0){
+        lazy_button.hide();
+      }
+    }).fail(function(data){
+      alert('error');
+    })
+  }
+});
+{% endjs %}

@@ -1,5 +1,5 @@
 fieldLayouts:
-  e248e46a-593d-41f6-994f-8b4cb6d7f35a:
+  15e43d37-9225-48eb-901f-0bcf99a4159b:
     tabs:
       -
         elements:
@@ -39,15 +39,33 @@ fieldLayouts:
             type: craft\fieldlayoutelements\HorizontalRule
           -
             fieldUid: 21c2cbf7-45d7-4a9b-a7e3-af6c1f76b31f # Page Title
-            instructions: null
-            label: null
-            required: false
+            instructions: ''
+            label: 'Article Title'
+            required: '1'
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null
             width: 100
           -
             fieldUid: 5cd981cc-c08e-44dc-84d9-83f97da456f5 # Page Subtitle
+            instructions: ''
+            label: Author
+            required: '1'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 50
+          -
+            fieldUid: 6a839141-25ac-4c8b-b1c1-088168de2f14 # Original Posted Date
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 50
+          -
+            fieldUid: 39096ec8-bb1f-441a-a9bc-db86730e48d2 # Category
             instructions: null
             label: null
             required: false
@@ -66,19 +84,19 @@ fieldLayouts:
             width: 100
           -
             fieldUid: 563bfcb1-fa15-4a2b-aaa3-aca5388caab2 # Rich Text
-            instructions: null
-            label: null
-            required: false
+            instructions: ''
+            label: ''
+            required: '1'
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null
             width: 100
         name: Content
         sortOrder: 1
-handle: dynamicPageContent
+handle: newsArticles
 hasTitleField: true
-name: 'Dynamic Page Content'
-section: ae36c8fb-655b-43a2-a284-e1d0554f3c3d # Dynamic Pages
+name: 'News Articles'
+section: e93f8116-cd4c-40bb-af86-d4089b12bdc1 # News Articles
 sortOrder: 1
 titleFormat: null
 titleTranslationKeyFormat: null

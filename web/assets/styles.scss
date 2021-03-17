@@ -18,6 +18,10 @@
 @import "scss/responsive.scss";
 
 // Custom css for error-container
+.gen-flex {
+  display: flex;
+}
+
 .error-container {
   margin-top: 10px;
 

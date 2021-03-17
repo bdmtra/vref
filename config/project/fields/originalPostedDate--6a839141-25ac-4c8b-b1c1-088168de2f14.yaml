@@ -1,0 +1,15 @@
+contentColumnType: datetime
+fieldGroup: 97fbedf2-c447-4906-82b4-10bb514f649a # News
+handle: originalPostedDate
+instructions: 'If re-publishing an old article, you may wish to keep the original posted date. If so, enter that here; otherwise, you may ignore this section.'
+name: 'Original Posted Date'
+searchable: true
+settings:
+  max: null
+  min: null
+  minuteIncrement: '30'
+  showDate: true
+  showTime: false
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Date

@@ -1,0 +1,312 @@
+field: 1c5c40c3-3565-4caa-9924-8d1d3c242d57 # Footer Info
+fieldLayouts:
+  12af0b4c-cf95-4ed7-9386-41c49e81a4e2:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 75fc700e-0983-4332-9e5d-e9ffc085579d # Footer Description
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: a3e34391-cbfa-4879-94ff-74bfd1720698 # Business Name
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: c41c5a7c-2c91-4800-b627-9cf1f2b4d529 # Address Line 1
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 67f39e67-ce1f-4ded-a32a-baefdada0cb6 # Address Line 2
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 5eaf1d77-8a55-47a9-bf35-937db9f2e7d7 # City
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 50
+          -
+            fieldUid: 38dd7d60-66a6-47f0-b490-a122394a332b # State Abbreviation
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 50
+          -
+            fieldUid: cb195804-2de6-4393-8c59-16ec10b0c3b5 # Postal Code
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: f8d62d3e-757f-4248-92df-ae26cd767184 # Phone Number Display
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 50
+          -
+            fieldUid: aab40aa7-a4b9-41c9-accd-88ff7faa4662 # Phone Number URL
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 50
+          -
+            fieldUid: f9a4207f-4f67-4ad3-9146-2a2fd9f783f5 # Email Display
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 50
+          -
+            fieldUid: fa6d128d-6a0e-4f6a-8bd8-3dddd7fe934a # Email URL
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 50
+        name: Content
+        sortOrder: 1
+fields:
+  38dd7d60-66a6-47f0-b490-a122394a332b: # State Abbreviation
+    contentColumnType: text
+    fieldGroup: null
+    handle: stateAbbreviation
+    instructions: ''
+    name: 'State Abbreviation'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  5eaf1d77-8a55-47a9-bf35-937db9f2e7d7: # City
+    contentColumnType: text
+    fieldGroup: null
+    handle: city
+    instructions: ''
+    name: City
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  67f39e67-ce1f-4ded-a32a-baefdada0cb6: # Address Line 2
+    contentColumnType: text
+    fieldGroup: null
+    handle: addressLine2
+    instructions: ''
+    name: 'Address Line 2'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  75fc700e-0983-4332-9e5d-e9ffc085579d: # Footer Description
+    contentColumnType: text
+    fieldGroup: null
+    handle: footerDescription
+    instructions: ''
+    name: 'Footer Description'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: '1'
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  a3e34391-cbfa-4879-94ff-74bfd1720698: # Business Name
+    contentColumnType: text
+    fieldGroup: null
+    handle: businessName
+    instructions: ''
+    name: 'Business Name'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  aab40aa7-a4b9-41c9-accd-88ff7faa4662: # Phone Number URL
+    contentColumnType: string(255)
+    fieldGroup: null
+    handle: phoneNumberUrl
+    instructions: ''
+    name: 'Phone Number URL'
+    searchable: false
+    settings:
+      maxLength: '255'
+      placeholder: null
+      types:
+        - tel
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Url
+  c41c5a7c-2c91-4800-b627-9cf1f2b4d529: # Address Line 1
+    contentColumnType: text
+    fieldGroup: null
+    handle: addressLine1
+    instructions: ''
+    name: 'Address Line 1'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  cb195804-2de6-4393-8c59-16ec10b0c3b5: # Postal Code
+    contentColumnType: text
+    fieldGroup: null
+    handle: postalCode
+    instructions: ''
+    name: 'Postal Code'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  f8d62d3e-757f-4248-92df-ae26cd767184: # Phone Number Display
+    contentColumnType: text
+    fieldGroup: null
+    handle: phoneNumberDisplay
+    instructions: ''
+    name: 'Phone Number Display'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  f9a4207f-4f67-4ad3-9146-2a2fd9f783f5: # Email Display
+    contentColumnType: text
+    fieldGroup: null
+    handle: emailDisplay
+    instructions: ''
+    name: 'Email Display'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  fa6d128d-6a0e-4f6a-8bd8-3dddd7fe934a: # Email URL
+    contentColumnType: string(255)
+    fieldGroup: null
+    handle: emailUrl
+    instructions: ''
+    name: 'Email URL'
+    searchable: false
+    settings:
+      maxLength: '255'
+      placeholder: null
+      types:
+        - email
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Url
+handle: main
+name: main
+sortOrder: 1

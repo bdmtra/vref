@@ -2,8 +2,8 @@
 <div class="lines-tp-brand ptb-full dark-bg-img" style="background-image: url(/assets/images/team-bg.png);">
   <div class="container">
     <div class="team-wrap flex">
-      {% for person in persons %}
-        {% set image = person.profilePicture.first() %}
+      {% for person in persons.all() %}
+        {% set image = person.profilePicture.one() %}
         <div class="team-item">
           <figure><img {% if image %} src="{{ image.getUrl() }}" {% endif %} /></figure>
           <h6>{{ person.personName }}<span>{{ person.personDesignation }}</span></h6>
