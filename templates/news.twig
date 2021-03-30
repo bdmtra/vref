@@ -7,8 +7,8 @@
 {% set entries = craft.entries().section('newsArticles').search(searchQuery).orderBy('score').all() %}
 
 {% set element_api_url = 'lazy-load' %}
-{% set settings = { section: 'newsArticles', search: searchQuery,  order: 'score', limit: 5 } %}
-{% set setVars = { variableName: 'article', templatePath: 'partials/_article.twig', } %}
+{# {% set settings = { section: 'newsArticles', search: searchQuery,  order: 'score', limit: 5 } %} #}
+{% set settings = { section: 'newsArticles', variableName: 'article', templatePath: 'partials/_article.twig', orderBy: 'score', limit: 5, searchQuery: craft.app.request.getParam('q') } %}
 
 {# hashed settings #}
 {% set hashed_settings = [] %}
@@ -31,12 +31,12 @@
               <div class="js-lazy-wrapper">
                   <ul class="js-lazy-list" style="margin:0;">
                   {% if archiveFilter is not empty %}
-                    {% for page in craft.entries(settings)|filter(v => v.originalPostedDate|date('F Y') == archiveFilter) %}
-                      {% include setVars.templatePath with {(setVars.variableName): page} %}
+                    {% for page in craft.entries.section(settings.section).search(settings.searchQuery).orderBy(settings.orderBy).limit(settings.limit).all()|filter(v => v.originalPostedDate|date('F Y') == archiveFilter) %}
+                      {% include settings.templatePath with {(settings.variableName): page} %}
                     {% endfor %}
                   {% else %}
-                    {% for page in craft.entries(settings)%}
-                      {% include setVars.templatePath with {(setVars.variableName): page} %}
+                    {% for page in craft.entries.section(settings.section).search(settings.searchQuery).orderBy(settings.orderBy).limit(settings.limit).all()%}
+                      {% include settings.templatePath with {(settings.variableName): page} %}
                     {% endfor %}
                   {% endif %}
                   </ul>
@@ -58,9 +58,10 @@
             </form>
           </div>
           <div class="artical-wrap">
-            <h6 class="aside-title">Recent News</h6>
+            <h6 class="aside-title">Featured Articles</h6>
             <div class="artical-list">
-              {% for article in craft.entries.section('newsArticles').limit(5).all() %}
+              {% for article in craft.entryCount.entries.limit(5).all() %}
+              {# {% for article in craft.entries.section('newsArticles').orderBy('count desc').limit(5).all() %} #}
                 <div class="artical-item">
                   <div href="javascript:void(0);" class="artical-inner flex">
                     <figure>
@@ -86,48 +87,43 @@
 
 {# ajax request #}
 {% js %}
-// twig to js
-var lazy_settings = {{hashed_settings|json_encode|raw}};
-var element_api_url = '{{url(element_api_url)}}';
+  var lazy_settings = {{hashed_settings|json_encode|raw}};
+  var element_api_url = '{{url(element_api_url)}}';
+  var lazy_offset = 1
+  var current_request = null;
+  var lazy_wrapper = $('.js-lazy-wrapper');
+  var lazy_button = lazy_wrapper.find('.js-load-more');
+  var lazy_list = lazy_wrapper.find('.js-lazy-list');
 
-//variables
-var lazy_offset = 1
-var current_request = null;
+  lazy_button.on('click', function(){
+    if (current_request == null){
 
-//html elements
-var lazy_wrapper = $('.js-lazy-wrapper');
-var lazy_button = lazy_wrapper.find('.js-load-more');
-var lazy_list = lazy_wrapper.find('.js-lazy-list');
-
-lazy_button.on('click', function(){
-  if (current_request == null){
-
-    current_request = $.ajax({
-      url: element_api_url,
-      method: 'GET',
-      data: {
-        offset: lazy_offset,
-        settings: lazy_settings,
-      },
-      beforeSend: function(){
-        lazy_button.addClass('is-loading');
-      },        
-    }).always(function(returned) {
-        lazy_button.removeClass('is-loading');
-        current_request = null;
-    }).done(function(returned) {
-      lazy_offset ++
-      var html = ''
-      $.each(returned.data, function(index, article){
-        html += article.html
+      current_request = $.ajax({
+        url: element_api_url,
+        method: 'GET',
+        data: {
+          offset: lazy_offset,
+          settings: lazy_settings,
+        },
+        beforeSend: function(){
+          lazy_button.addClass('is-loading');
+        },        
+      }).always(function(returned) {
+          lazy_button.removeClass('is-loading');
+          current_request = null;
+      }).done(function(returned) {
+        lazy_offset ++
+        var html = ''
+        $.each(returned.data, function(index, article){
+          html += article.html
+        })
+        lazy_list.append(html)
+        if(returned.data.length == 0){
+          lazy_button.hide();
+        }
+      }).fail(function(data){
+        alert('error');
       })
-      lazy_list.append(html)
-      if(returned.data.length == 0){
-        lazy_button.hide();
-      }
-    }).fail(function(data){
-      alert('error');
-    })
-  }
-});
+    }
+  });
 {% endjs %}

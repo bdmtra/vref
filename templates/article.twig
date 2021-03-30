@@ -5,7 +5,9 @@
 {% endblock %} #}
 
 {% block content %}
+  {% do craft.entryCount.increment(entry.id) %}
   {% set image = entry.headerImage.one() %}
+  {% set pageurl = craft.app.request.absoluteUrl %}
   <div class="inner-banner lines-btm-bdr">
     <figure class="full-img">
       {% if image %}
@@ -34,17 +36,17 @@
               <label for="">Share this story, choose your platform!</label>
               <ul class="social-media">
                 <li>
-                  <a shareButton="facebook">
+                  <a shareButton="facebook" href="{{ craft.simpleSharing.link(pageurl, 'facebook') }}">
                     <img src="/assets/images/fb-gray.png" alt="" />
                   </a>
                 </li>
                 <li>
-                  <a shareButton="linkedin">
+                  <a shareButton="linkedin" href="{{ craft.simpleSharing.link(pageurl, 'linkedin') }}">
                     <img src="/assets/images/linkedin-gray.png" alt="" />
                   </a>
                 </li>
                 <li>
-                  <a shareButton="twitter">
+                  <a shareButton="twitter" href="{{ craft.simpleSharing.link(pageurl, 'twitter') }}">
                     <img src="/assets/images/twitt-gray.png" alt=""/>
                   </a>
                 </li>
