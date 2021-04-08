@@ -1,6 +1,6 @@
 {
   "require": {
-    "ext-gd": "*", 
+    "ext-gd": "*",
     "aelvan/mailchimp-subscribe": "3.0.3",
     "craftcms/cms": "3.6.10",
     "craftcms/element-api": "2.6.0",
