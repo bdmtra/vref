@@ -24,5 +24,6 @@ return [
     'modules' => [
         'my-module' => \modules\Module::class,
     ],
+    'key' => env('APP_KEY', 'XQysfizkEzOv2ratRAohmtNBdhSYSOM23hoW0ZTn'),
     //'bootstrap' => ['my-module'],
 ];
