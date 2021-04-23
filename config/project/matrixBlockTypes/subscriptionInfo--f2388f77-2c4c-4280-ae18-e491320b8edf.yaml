@@ -1,0 +1,197 @@
+field: 010560f7-d02c-4abb-872c-498adb89461f # Subscription Packages
+fieldLayouts:
+  b7c4e038-8128-407b-8259-32a6fa567e81:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: e1a52b47-06c2-4e52-86d4-0bfa3190dba1 # Product Name
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 7065f5f7-3487-427e-9380-a4221887bc1c # Product Starting Price
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 50
+          -
+            fieldUid: a7664d19-7053-470c-b626-f2fb8ba13523 # Price Period
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 50
+          -
+            fieldUid: aaebf581-bd8a-4ebd-a727-bc0b460ba373 # Product Bullet 1
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 432b4e82-0eee-4d23-be73-4c0a18640010 # Product Bullet 2
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: caa29242-dd28-47fd-a75a-90ddd6db8e6c # Product Bullet 3
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  432b4e82-0eee-4d23-be73-4c0a18640010: # Product Bullet 2
+    contentColumnType: text
+    fieldGroup: null
+    handle: productBullet2
+    instructions: ''
+    name: 'Product Bullet 2'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  7065f5f7-3487-427e-9380-a4221887bc1c: # Product Starting Price
+    contentColumnType: integer(10)
+    fieldGroup: null
+    handle: productStartingPrice
+    instructions: ''
+    name: 'Product Starting Price'
+    searchable: false
+    settings:
+      decimals: 0
+      defaultValue: null
+      max: null
+      min: '0'
+      prefix: null
+      previewCurrency: ''
+      previewFormat: decimal
+      size: null
+      suffix: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Number
+  a7664d19-7053-470c-b626-f2fb8ba13523: # Price Period
+    contentColumnType: string
+    fieldGroup: null
+    handle: pricePeriod
+    instructions: ''
+    name: 'Price Period'
+    searchable: false
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - '/ mo'
+            -
+              - value
+              - mo
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - '/ yr'
+            -
+              - value
+              - yr
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  aaebf581-bd8a-4ebd-a727-bc0b460ba373: # Product Bullet 1
+    contentColumnType: text
+    fieldGroup: null
+    handle: productBullet1
+    instructions: ''
+    name: 'Product Bullet 1'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  caa29242-dd28-47fd-a75a-90ddd6db8e6c: # Product Bullet 3
+    contentColumnType: text
+    fieldGroup: null
+    handle: productBullet3
+    instructions: ''
+    name: 'Product Bullet 3'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  e1a52b47-06c2-4e52-86d4-0bfa3190dba1: # Product Name
+    contentColumnType: text
+    fieldGroup: null
+    handle: productName
+    instructions: ''
+    name: 'Product Name'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: subscriptionInfo
+name: 'Subscription Info'
+sortOrder: 1

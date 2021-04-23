@@ -260,7 +260,7 @@ fields:
       allowUploads: true
       allowedKinds:
         - image
-      defaultUploadLocationSource: 'volume:fb6e2638-c6df-4a24-8de9-422128e80318'
+      defaultUploadLocationSource: 'volume:fb6e2638-c6df-4a24-8de9-422128e80318' # Client Images Volume
       defaultUploadLocationSubpath: ''
       limit: '1'
       localizeRelations: false

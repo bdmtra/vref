@@ -6,6 +6,7 @@
     "craftcms/cms": "3.6.10",
     "craftcms/element-api": "2.6.0",
     "craftcms/redactor": "2.8.5",
+    "dolphiq/redirect": "1.1.1",
     "putyourlightson/craft-entry-count": "2.0.3",
     "twbs/bootstrap": "5.0.0-beta2",
     "vlucas/phpdotenv": "^3.4.0",

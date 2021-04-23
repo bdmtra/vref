@@ -1,0 +1,549 @@
+{% extends "base" %}
+
+{% block css %}
+<link rel="stylesheet" href="/assets/scss/vrefstore.css">
+{% endblock %}
+
+{% block content %}
+<div class="green-strip"></div>
+<div class="inner-banner sm-block-row dark-bg-img lines-btm-warn fix-banner" style="background-image: url(/assets/images/shopsub-bg.png);">
+  <div class="container">
+    <div class="title-row text-center white-txt">
+      <h1>VREF Online & Book Subscriptions</h1>
+    </div>
+  </div>
+</div>
+<div class="shopsub-listing-row ">
+  <div class="gradient-bg"></div>
+  <div class="container">
+    <div class="vref-packege-wrap flex ai-stretch justify-content-center">
+      
+      
+      {% for prod in entry.subscriptionPackages.all() %}
+      <div class="{{ loop.index == 2 ? 'vpackege-item flex active' : 'vpackege-item flex' }}">
+        <div class="vpackege-caption">
+          {% if loop.index == 2 %}
+          <div class="rectangle-5">Most Popular</div>
+          {% endif %}
+          <br />
+          <h4>{{ prod.productName }}</h4>
+          {% if loop.index == 2 %}
+          <div class="start-at">Starting at</div>
+          {% endif %}
+          <p class="packege-price">
+            <strong><b>$</b>{{ prod.productStartingPrice }}</strong>/ {{ prod.pricePeriod }}
+          </p>
+          <ol>
+            <li>{{ prod.productBullet1 }}</li>
+            <li>{{ prod.productBullet2 }}</li>
+            <li>{{ prod.productBullet3 }}</li>
+          </ol>
+        </div>
+        <div class="vpackege-ftr">
+          <button class="btn btn-brand btn-lg mt-20" type="button">Order Subscription</button>
+        </div>
+      </div>
+      {% endfor %}
+      {# 
+        
+        
+        <div class="vpackege-item flex">
+          <div class="vpackege-caption">
+            <div class="rectangle-5">Most Popular</div>
+            <br />
+            <h4></h4>
+            <div class="start-at">Starting at</div>
+            <p class="packege-price">
+              <strong><b>$</b></strong>/ yr
+            </p>
+            <p class="packege-price">
+              <strong><b>$</b>100</strong>/ mo
+            </p>
+            <ol>
+              <li></li>
+              <li></li>
+              <li></li>
+            </ol>
+          </div>
+          <div class="vpackege-ftr">
+            <button class="btn btn-brand btn-lg mt-20" type="button">Sign Up Today</button>
+          </div>
+        </div>
+        
+        #}
+      </div>
+      <div class="book-subscribe" id="#bookTierData">
+        <div class="title-row text-center">
+          <h3>Book Subscriptions</h3>
+        </div>
+        <div class="book-wrap">
+          <div class="inline-row-col-minus d-flex">
+            <div class="inline-col-8">
+              <div class="booksub-left">
+                <p>VREF Book Subscriptions are printed versions of our online database.</p>
+                <div class="date-book">
+                  <h6>Books are mailed out quarterly between:</h6>
+                  <div class="booking-dates d-flex">
+                    <span class="book-card">March 1 – <br /> May 31</span>
+                    <span class="book-card">June 1 – <br />  August 31</span>
+                    <span class="book-card">September 1 – <br />  November 30</span>
+                    <span class="book-card">December 1 – <br />  February 28</span>
+                  </div>
+                  <p>VREF offers a number of packages between these services and products for you to get full access to all our aircraft valuation data on a current basis, with options to add more subscribers to your account, or Valuation Guides to your account as well.</p>
+                  <p>Subscribe now to get full access to our complete library of current and historical aircraft data.</p>
+                  <p>If you would like to order a copy of our latest book please order <a href="https://vref.com/store/preview?id=5">here</a></p>
+                </div>
+              </div>
+              <button class="btn btn-brand btn-lg mt-20" type="button">Order Book Subscription</button>
+            </div>
+            <div class="inline-col-4">
+              <div class="booksub-right">
+                <img alt="" class="mr-0" src="https://vrefprodbucketnew.blob.core.windows.net/media/page/2/vrefbooks-subscription.jpg" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="block-row gradient-bg shopblock-row">
+    <div class="container" id="tirsubscribeonline">
+      <div class="title-row text-center pb-dbl">
+        <h3>VREF Online Subscription Tiers</h3>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <div class="compaire-table flex-table">
+            <div class="titem-row titem-title-row tier-wraps no-after-border">
+              <div class="titem full-titem ai-flex-end">
+                <p class="titem-max">
+                  <strong>Annual Subscription Monthly Subscription</strong>
+                </p>
+              </div>
+              <div class="titem titem-3 active">
+                <div class="tier-box">
+                  <span class="tier-title">
+                    <span class="back-digit">1</span>
+                    <span class="front-digit">Tier 1</span>
+                  </span>
+                  <div class="tier-p-group">
+                    <p>
+                      <strong>$100/mo</strong>
+                      <br />
+                      $725/yr <small>(40% savings)</small>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="titem titem-3">
+                <div class="tier-box">
+                  <span class="tier-title clr-primary">
+                    <span class="back-digit">2</span>
+                    <span class="front-digit">Tier 2</span>
+                  </span>
+                  <div class="tier-p-group">
+                    <p>
+                      <strong>$125/mo</strong>
+                      <br />
+                      $1,000/yr <small>(33% savings)</small>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="titem titem-3">
+                <div class="tier-box">
+                  <span class="tier-title clr-warning">
+                    <span class="back-digit">3</span>
+                    <span class="front-digit">Tier 3</span>
+                  </span>
+                  <div class="tier-p-group">
+                    <p>
+                      <strong>$150/mo</strong>
+                      <br />
+                      $1,250/yr <small>(31% savings)</small>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <h4 class="text-center compaire-head">Add-On Subscribers</h4>
+            <div class="titem-row titem-title-row tier-wraps second-tier">
+              <div class="titem full-titem ai-flex-end">
+                <p class="titem-max">
+                  <strong>Add and manage additional subscribers on your Annual Subscription account</strong>
+                </p>
+              </div>
+              <div class="titem titem-3 active">
+                <div class="tier-box">
+                  <span class="tier-title">
+                    <span class="back-digit">1</span>
+                    <span class="front-digit">Tier 1</span>
+                  </span>
+                  <div class="tier-p-group">
+                    <ul class="yr-list">
+                      <li>Add 1 User: $500/yr</li>
+                      <li>Add 2-5 Users: $400ea/yr</li>
+                      <li> Add 6-15 Users: $325ea/yr</li>
+                    </ul>
+                    <p>
+                      <span>15+ Users please <a href="/contact">Contact us</a></span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="titem titem-3">
+                <div class="tier-box">
+                  <span class="tier-title clr-primary">
+                    <span class="back-digit">2</span>
+                    <span class="front-digit">Tier 2</span>
+                  </span>
+                  <div class="tier-p-group">
+                    <ul class="yr-list">
+                      <li>Add 1 User: $700/yr</li>
+                      <li>Add 2-5 Users: $550ea/yr</li>
+                      <li>Add 6-15 Users: $450ea/yr</li>
+                    </ul>
+                    <p>
+                      <span>15+ Users please <a href="/contact">Contact us</a></span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="titem titem-3">
+                <div class="tier-box">
+                  <span class="tier-title clr-warning">
+                    <span class="back-digit">3</span>
+                    <span class="front-digit">Tier 3</span>
+                  </span>
+                  <div class="tier-p-group">
+                    <ul class="yr-list">
+                      <li>Add 1 User: $850/yr</li>
+                      <li>Add 2-5 Users: $685ea/yr</li>
+                      <li>Add 6-15 Users: $550ea/yr</li>
+                    </ul>
+                    <p>
+                      <span>15+ Users please <a href="/contact">Contact us</a></span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="parent-comparison first-active">
+              <div class="titem-row titem-title-row gray-bg">
+                <div class="titem full-titem">
+                  <h6>Features</h6>
+                </div>
+              </div>
+              <div class="titem-row">
+                <div class="titem full-titem">
+                  <p>Access To The Entire Database Of Aircraft Models</p>
+                </div>
+                <div class="titem titem-3"><i class="checked-icon"><img alt="" src="/assets/images/tick.png"></i></div>
+                <div class="titem titem-3"><i class="checked-icon"><img alt="" src="/assets/images/tick.png"></i></div>
+                <div class="titem titem-3"><i class="checked-icon"><img alt="" src="/assets/images/tick.png"></i></div>
+              </div>
+              <div class="titem-row">
+                <div class="titem full-titem">
+                  <p>Create Unlimited Valuation Custom Reports With Save, Present Value, And Export Capabilities</p>
+                </div>
+                <div class="titem titem-3"><i class="checked-icon"><img alt="" src="/assets/images/tick.png"></i></div>
+                <div class="titem titem-3"><i class="checked-icon"><img alt="" src="/assets/images/tick.png"></i></div>
+                <div class="titem titem-3"><i class="checked-icon"><img alt="" src="/assets/images/tick.png"></i></div>
+              </div>
+              <div class="titem-row">
+                <div class="titem full-titem">
+                  <p>Full Access To Historical Reference Charts, Analytic Charts, And Market Data</p>
+                </div>
+                <div class="titem titem-3"><i class="checked-icon"><img alt="" src="/assets/images/tick.png"></i></div>
+                <div class="titem titem-3"><i class="checked-icon"><img alt="" src="/assets/images/tick.png"></i></div>
+                <div class="titem titem-3"><i class="checked-icon"><img alt="" src="/assets/images/tick.png"></i></div>
+              </div>
+              <div class="titem-row">
+                <div class="titem full-titem">
+                  <p>See The Entire VREF Avionics Database - The Largest Of Its Kind</p>
+                </div>
+                <div class="titem titem-3"><i class="checked-icon"><img alt="" src="/assets/images/tick.png"></i></div>
+                <div class="titem titem-3"><i class="checked-icon"><img alt="" src="/assets/images/tick.png"></i></div>
+                <div class="titem titem-3"><i class="checked-icon"><img alt="" src="/assets/images/tick.png"></i></div>
+              </div>
+              <div class="titem-row">
+                <div class="titem full-titem">
+                  <p>View The Modification And Conversion Database That Includes Popular STCs And Optional Equipment – The Largest Of Its Kind</p>
+                </div>
+                <div class="titem titem-3"><i class="checked-icon"><img alt="" src="/assets/images/tick.png"></i></div>
+                <div class="titem titem-3"><i class="checked-icon"><img alt="" src="/assets/images/tick.png"></i></div>
+                <div class="titem titem-3"><i class="checked-icon"><img alt="" src="/assets/images/tick.png"></i></div>
+              </div>
+              <div class="titem-row">
+                <div class="titem full-titem">
+                  <p>VREF Aircraft Index's By Cabin Classification</p>
+                </div>
+                <div class="titem titem-3"><i class="checked-icon"><img alt="" src="/assets/images/tick.png"></i></div>
+                <div class="titem titem-3"><i class="checked-icon"><img alt="" src="/assets/images/tick.png"></i></div>
+                <div class="titem titem-3"><i class="checked-icon"><img alt="" src="/assets/images/tick.png"></i></div>
+              </div>
+              <div class="titem-row">
+                <div class="titem full-titem">
+                  <p>VREF Custom Reports </p>
+                </div>
+                <div class="titem titem-3"><i class="checked-icon"><img alt="" src="/assets/images/tick.png"></i></div>
+                <div class="titem titem-3"><i class="checked-icon"><img alt="" src="/assets/images/tick.png"></i></div>
+                <div class="titem titem-3"><i class="checked-icon"><img alt="" src="/assets/images/tick.png"></i></div>
+              </div>
+              <div class="titem-row">
+                <div class="titem full-titem">
+                  <p>Historical Airworthiness Directives</p>
+                </div>
+                <div class="titem titem-3"><i class="checked-icon"><img alt="" src="/assets/images/tick.png"></i></div>
+                <div class="titem titem-3"><i class="checked-icon"><img alt="" src="/assets/images/tick.png"></i></div>
+                <div class="titem titem-3"><i class="checked-icon"><img alt="" src="/assets/images/tick.png"></i></div>
+              </div>
+              <div class="titem-row">
+                <div class="titem full-titem">
+                  <p>Interior And Exterior Condition Modifier Tool</p>
+                </div>
+                <div class="titem titem-3"><i class="checked-icon"><img alt="" src="/assets/images/tick.png"></i></div>
+                <div class="titem titem-3"><i class="checked-icon"><img alt="" src="/assets/images/tick.png"></i></div>
+                <div class="titem titem-3"><i class="checked-icon"><img alt="" src="/assets/images/tick.png"></i></div>
+              </div>
+              <div class="titem-row">
+                <div class="titem full-titem">
+                  <p>Engine Conversion Tool</p>
+                </div>
+                <div class="titem titem-3"><i class="checked-icon"><img alt="" src="/assets/images/tick.png"></i></div>
+                <div class="titem titem-3"><i class="checked-icon"><img alt="" src="/assets/images/tick.png"></i></div>
+                <div class="titem titem-3"><i class="checked-icon"><img alt="" src="/assets/images/tick.png"></i></div>
+              </div>
+              <div class="titem-row">
+                <div class="titem full-titem">
+                  <p>Live Chat Support (Ask The Appraiser)</p>
+                </div>
+                <div class="titem titem-3"><i class="checked-icon"><img alt="" src="/assets/images/tick.png"></i></div>
+                <div class="titem titem-3"><i class="checked-icon"><img alt="" src="/assets/images/tick.png"></i></div>
+                <div class="titem titem-3"><i class="checked-icon"><img alt="" src="/assets/images/tick.png"></i></div>
+              </div>
+              <div class="titem-row">
+                <div class="titem full-titem">
+                  <p>Retail And Wholesale Values</p>
+                </div>
+                <div class="titem titem-3"><i class="checked-icon"><img alt="" src="/assets/images/tick.png"></i></div>
+                <div class="titem titem-3"><i class="checked-icon"><img alt="" src="/assets/images/tick.png"></i></div>
+                <div class="titem titem-3"><i class="checked-icon"><img alt="" src="/assets/images/tick.png"></i></div>
+              </div>
+              <div class="titem-row">
+                <div class="titem full-titem">
+                  <p>Aircraft Comparison Tool</p>
+                </div>
+                <div class="titem titem-3 paddingText"><span>2</span></div>
+                <div class="titem titem-3 paddingText"><span>4</span></div>
+                <div class="titem titem-3 paddingText"><span>6</span></div>
+              </div>
+              <div class="titem-row">
+                <div class="titem full-titem">
+                  <p>Custom Indexes For Your Portfolio Or Fleet</p>
+                </div>
+                <div class="titem titem-3">&nbsp;</div>
+                <div class="titem titem-3"><i class="checked-icon"><img alt="" src="/assets/images/tick.png"></i></div>
+                <div class="titem titem-3"><i class="checked-icon"><img alt="" src="/assets/images/tick.png"></i></div>
+              </div>
+              <div class="titem-row">
+                <div class="titem full-titem">
+                  <p>Inventory Value For Brokers And Dealers Looking To Make An Investment</p>
+                </div>
+                <div class="titem titem-3">&nbsp;</div>
+                <div class="titem titem-3"><i class="checked-icon"><img alt="" src="/assets/images/tick.png"></i></div>
+                <div class="titem titem-3"><i class="checked-icon"><img alt="" src="/assets/images/tick.png"></i></div>
+              </div>
+              <div class="titem-row">
+                <div class="titem full-titem">
+                  <p>Orderly Liquidation Values, Forced Liquidation Values And Scrap Value For Finance Institutions And Lenders</p>
+                </div>
+                <div class="titem titem-3">&nbsp;</div>
+                <div class="titem titem-3">&nbsp;</div>
+                <div class="titem titem-3"><i class="checked-icon"><img alt="" src="/assets/images/tick.png"></i></div>
+              </div>
+              <div class="titem-row">
+                <div class="titem full-titem">
+                  <p>Future Projected Residual Values</p>
+                </div>
+                <div class="titem titem-3">Coming Soon</div>
+                <div class="titem titem-3">Coming Soon</div>
+                <div class="titem titem-3">Coming Soon</div>
+              </div>
+              <div class="titem-row">
+                <div class="titem full-titem">
+                  <p>Market Trending Data</p>
+                </div>
+                <div class="titem titem-3">Coming Soon</div>
+                <div class="titem titem-3">Coming Soon</div>
+                <div class="titem titem-3">Coming Soon</div>
+              </div>
+              <div class="titem-row">
+                <div class="titem full-titem">
+                  <p>Ad-Free Experience</p>
+                </div>
+                <div class="titem titem-3">&nbsp;</div>
+                <div class="titem titem-3">&nbsp;</div>
+                <div class="titem titem-3"><i class="checked-icon"><img alt="" src="/assets/images/tick.png"></i></div>
+              </div>
+            </div>
+            <div class="titem-row footer-titems">
+              <div class="titem full-titem build-value d-block">
+              </div>
+              <div class="tier-group first-active">
+                <div class="titem titem-3 d-block">
+                  <span class="tier-label tier-label-black d-block text-center">Tier 1</span>
+                  <button class="btn btn-brand btn-bdr btn-lg" type="button">ORDER TIER 1</button>
+                </div>
+                <div class="titem titem-3 d-block">
+                  <span class="tier-label tier-label-green d-block text-center">Tier 2</span>
+                  <button class="btn btn-brand btn-bdr btn-lg" type="button">ORDER TIER 2</button>
+                </div>
+                <div class="titem titem-3 d-block">
+                  <span class="tier-label tier-label-orange d-block text-center">Tier 3</span>
+                  <button class="btn btn-brand btn-bdr btn-lg" type="button">ORDER TIER 3</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+    <!-- For ProPack -->
+    <div class="block-row gradient-bg shopblock-row">
+      <div class="container" id="tirsubscribepropack">
+        <div class="title-row text-center pb-dbl">
+          <h3>VREF ProPack Subscription Tiers</h3>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <div class="compaire-table flex-table">
+              <div class="titem-row titem-title-row tier-wraps no-after-border">
+                <div class="titem full-titem ai-flex-end">
+                  <p class="titem-max"><strong>Annual Subscription</strong></p>
+                </div>
+                <div class="titem titem-3 active">
+                  <div class="tier-box">
+                    <span class="tier-title">
+                      <span class="back-digit">1</span>
+                      <span class="front-digit">Tier 1</span>
+                    </span>
+                    <div class="tier-p-group">
+                      <p >$1,075/yr</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="titem titem-3">
+                  <div class="tier-box">
+                    <span class="tier-title clr-primary">
+                      <span class="back-digit">2</span>
+                      <span class="front-digit">Tier 2</span>
+                    </span>
+                    <div class="tier-p-group">
+                      <p >$1,350/yr</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="titem titem-3">
+                  <div class="tier-box">
+                    <span class="tier-title clr-warning">
+                      <span class="back-digit">3</span>
+                      <span class="front-digit">Tier 3</span>
+                    </span>
+                    <div class="tier-p-group">
+                      <p>$1,600/yr</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <h4 class="text-center compaire-head">Add-On Subscribers</h4>
+              <div class="titem-row titem-title-row tier-wraps second-tier">
+                <div class="titem full-titem ai-flex-end">
+                  <p class="titem-max">
+                    <strong>Add and manage additional subscribers on your Annual Subscription account</strong>
+                  </p>
+                </div>
+                <div class="titem titem-3 active">
+                  <div class="tier-box">
+                    <span class="tier-title">
+                      <span class="back-digit">1</span>
+                      <span class="front-digit">Tier 1</span>
+                    </span>
+                    <div class="tier-p-group">
+                      <ul class="yr-list">
+                        <li>Add 1 User: $500/yr</li>
+                        <li>Add 2-5 Users: $400ea/yr</li>
+                        <li> Add 6-15 Users: $325ea/yr</li>
+                      </ul>
+                      <p>
+                        <span>15+ Users please <a href="/contact">Contact us</a></span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="titem titem-3">
+                  <div class="tier-box">
+                    <span class="tier-title clr-primary">
+                      <span class="back-digit">2</span>
+                      <span class="front-digit">Tier 2</span>
+                    </span>
+                    <div class="tier-p-group">
+                      <ul class="yr-list">
+                        <li>Add 1 User: $700/yr</li>
+                        <li>Add 2-5 Users: $550ea/yr</li>
+                        <li>Add 6-15 Users: $450ea/yr</li>
+                      </ul>
+                      <p _ngcontent-fba-c9="">
+                        <span>15+ Users please <a href="/contact">Contact us</a></span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="titem titem-3">
+                  <div class="tier-box">
+                    <span class="tier-title clr-warning">
+                      <span class="back-digit">3</span>
+                      <span class="front-digit">Tier 3</span>
+                    </span>
+                    <div class="tier-p-group">
+                      <ul class="yr-list">
+                        <li>Add 1 User: $850/yr</li>
+                        <li>Add 2-5 Users: $685ea/yr</li>
+                        <li>Add 6-15 Users: $550ea/yr</li>
+                      </ul>
+                      <p>
+                        <span>15+ Users please <a href="/contact">Contact us</a></span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <p class="">
+                    <strong></strong>
+                  </p>
+                </div>
+              </div>
+              <div class="titem-row footer-titems">
+                <div class="tier-group first-active">
+                  <div class="titem titem-3 d-block">
+                    <span class="tier-label tier-label-black d-block text-center">Tier 1</span>
+                    <button class="btn btn-brand btn-bdr btn-lg" type="button">ORDER TIER 1</button>
+                  </div>
+                  <div class="titem titem-3 d-block">
+                    <span class="tier-label tier-label-green d-block text-center">Tier 2</span>
+                    <button class="btn btn-brand btn-bdr btn-lg" type="button">ORDER TIER 2</button>
+                  </div>
+                  <div class="titem titem-3 d-block">
+                    <span class="tier-label tier-label-orange d-block text-center">Tier 3</span>
+                    <button  class="btn btn-brand btn-bdr btn-lg" type="button">ORDER TIER 3</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endblock %}

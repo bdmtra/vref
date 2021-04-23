@@ -1,0 +1,14 @@
+contentColumnType: string
+fieldGroup: 0c20921e-02a2-4077-95b2-4e5eead83639 # Order Subscriptions
+handle: subscriptionPackages
+instructions: ''
+name: 'Subscription Packages'
+searchable: false
+settings:
+  contentTable: '{{%matrixcontent_subscriptionpackages}}'
+  maxBlocks: ''
+  minBlocks: ''
+  propagationMethod: all
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

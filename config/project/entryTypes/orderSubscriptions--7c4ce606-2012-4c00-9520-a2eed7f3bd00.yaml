@@ -1,5 +1,5 @@
 fieldLayouts:
-  279b4ca3-837f-4009-a6a6-21297e1f450c:
+  3196f265-01fc-4500-8ed6-f295bb02d8e2:
     tabs:
       -
         elements:
@@ -23,30 +23,25 @@ fieldLayouts:
             step: null
             tip: null
             title: null
-            type: craft\fieldlayoutelements\AssetTitleField
+            type: craft\fieldlayoutelements\EntryTitleField
+            warning: null
+            width: 100
+          -
+            fieldUid: 010560f7-d02c-4abb-872c-498adb89461f # Subscription Packages
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
             warning: null
             width: 100
         name: Content
         sortOrder: 1
-handle: headerImages
-hasUrls: true
-name: 'Header Images'
-settings:
-  addSubfolderToRootUrl: '1'
-  autoFocalPoint: ''
-  bucket: vref-craft-assets
-  bucketSelectionMode: choose
-  cfDistributionId: ''
-  cfPrefix: ''
-  expires: ''
-  keyId: $AWS_CLIENT_ID
-  makeUploadsPublic: '1'
-  region: us-east-2
-  secret: $AWS_CLIENT_SECRET
-  storageClass: ''
-  subfolder: ''
-sortOrder: 0
+handle: orderSubscriptions
+hasTitleField: false
+name: 'Order Subscriptions'
+section: 636d60ad-cfc3-43d1-8d7b-ae8d5b21e661 # Order Subscriptions
+sortOrder: 1
+titleFormat: '{section.name|raw}'
 titleTranslationKeyFormat: null
-titleTranslationMethod: null
-type: craft\awss3\Volume
-url: 'https://s3.us-east-2.amazonaws.com/vref-craft-assets/'
+titleTranslationMethod: site

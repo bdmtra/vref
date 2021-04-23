@@ -1,0 +1,134 @@
+description: ''
+handle: contentEditors
+name: 'Content Editors'
+permissions:
+  - accesssitewhensystemisoff
+  - accesscpwhensystemisoff
+  - performupdates
+  - accessplugin-entry-count
+  - accessplugin-seo
+  - accesscp
+  - customizesources
+  - 'publishentries:48a78aeb-a351-4dc4-9ba5-86d2d939865a' # Contact
+  - 'publishpeerentrydrafts:48a78aeb-a351-4dc4-9ba5-86d2d939865a' # Contact
+  - 'deletepeerentrydrafts:48a78aeb-a351-4dc4-9ba5-86d2d939865a' # Contact
+  - 'editpeerentrydrafts:48a78aeb-a351-4dc4-9ba5-86d2d939865a' # Contact
+  - 'editentries:48a78aeb-a351-4dc4-9ba5-86d2d939865a' # Contact
+  - 'createentries:ae36c8fb-655b-43a2-a284-e1d0554f3c3d' # Dynamic Pages
+  - 'publishentries:ae36c8fb-655b-43a2-a284-e1d0554f3c3d' # Dynamic Pages
+  - 'deleteentries:ae36c8fb-655b-43a2-a284-e1d0554f3c3d' # Dynamic Pages
+  - 'publishpeerentries:ae36c8fb-655b-43a2-a284-e1d0554f3c3d' # Dynamic Pages
+  - 'deletepeerentries:ae36c8fb-655b-43a2-a284-e1d0554f3c3d' # Dynamic Pages
+  - 'editpeerentries:ae36c8fb-655b-43a2-a284-e1d0554f3c3d' # Dynamic Pages
+  - 'publishpeerentrydrafts:ae36c8fb-655b-43a2-a284-e1d0554f3c3d' # Dynamic Pages
+  - 'deletepeerentrydrafts:ae36c8fb-655b-43a2-a284-e1d0554f3c3d' # Dynamic Pages
+  - 'editpeerentrydrafts:ae36c8fb-655b-43a2-a284-e1d0554f3c3d' # Dynamic Pages
+  - 'editentries:ae36c8fb-655b-43a2-a284-e1d0554f3c3d' # Dynamic Pages
+  - 'publishentries:95e80fd1-de9d-4f65-9624-9ce3f368de80' # FAQ
+  - 'publishpeerentrydrafts:95e80fd1-de9d-4f65-9624-9ce3f368de80' # FAQ
+  - 'deletepeerentrydrafts:95e80fd1-de9d-4f65-9624-9ce3f368de80' # FAQ
+  - 'editpeerentrydrafts:95e80fd1-de9d-4f65-9624-9ce3f368de80' # FAQ
+  - 'editentries:95e80fd1-de9d-4f65-9624-9ce3f368de80' # FAQ
+  - 'publishentries:7986fb01-1999-478b-a488-608c9e745cc9' # Footer
+  - 'publishpeerentrydrafts:7986fb01-1999-478b-a488-608c9e745cc9' # Footer
+  - 'deletepeerentrydrafts:7986fb01-1999-478b-a488-608c9e745cc9' # Footer
+  - 'editpeerentrydrafts:7986fb01-1999-478b-a488-608c9e745cc9' # Footer
+  - 'editentries:7986fb01-1999-478b-a488-608c9e745cc9' # Footer
+  - 'publishentries:c2944d4d-4353-453f-87ac-73f11863ff54'
+  - 'publishpeerentrydrafts:c2944d4d-4353-453f-87ac-73f11863ff54'
+  - 'deletepeerentrydrafts:c2944d4d-4353-453f-87ac-73f11863ff54'
+  - 'editpeerentrydrafts:c2944d4d-4353-453f-87ac-73f11863ff54'
+  - 'editentries:c2944d4d-4353-453f-87ac-73f11863ff54'
+  - 'publishentries:99823edf-abdc-4f09-877f-11619c191c1b' # News
+  - 'publishpeerentrydrafts:99823edf-abdc-4f09-877f-11619c191c1b' # News
+  - 'deletepeerentrydrafts:99823edf-abdc-4f09-877f-11619c191c1b' # News
+  - 'editpeerentrydrafts:99823edf-abdc-4f09-877f-11619c191c1b' # News
+  - 'editentries:99823edf-abdc-4f09-877f-11619c191c1b' # News
+  - 'createentries:e93f8116-cd4c-40bb-af86-d4089b12bdc1' # News Articles
+  - 'publishentries:e93f8116-cd4c-40bb-af86-d4089b12bdc1' # News Articles
+  - 'deleteentries:e93f8116-cd4c-40bb-af86-d4089b12bdc1' # News Articles
+  - 'publishpeerentries:e93f8116-cd4c-40bb-af86-d4089b12bdc1' # News Articles
+  - 'deletepeerentries:e93f8116-cd4c-40bb-af86-d4089b12bdc1' # News Articles
+  - 'editpeerentries:e93f8116-cd4c-40bb-af86-d4089b12bdc1' # News Articles
+  - 'publishpeerentrydrafts:e93f8116-cd4c-40bb-af86-d4089b12bdc1' # News Articles
+  - 'deletepeerentrydrafts:e93f8116-cd4c-40bb-af86-d4089b12bdc1' # News Articles
+  - 'editpeerentrydrafts:e93f8116-cd4c-40bb-af86-d4089b12bdc1' # News Articles
+  - 'editentries:e93f8116-cd4c-40bb-af86-d4089b12bdc1' # News Articles
+  - 'createentries:94808026-41ac-431a-a183-8ad8d9a55bff' # Team Members
+  - 'publishentries:94808026-41ac-431a-a183-8ad8d9a55bff' # Team Members
+  - 'deleteentries:94808026-41ac-431a-a183-8ad8d9a55bff' # Team Members
+  - 'publishpeerentries:94808026-41ac-431a-a183-8ad8d9a55bff' # Team Members
+  - 'deletepeerentries:94808026-41ac-431a-a183-8ad8d9a55bff' # Team Members
+  - 'editpeerentries:94808026-41ac-431a-a183-8ad8d9a55bff' # Team Members
+  - 'publishpeerentrydrafts:94808026-41ac-431a-a183-8ad8d9a55bff' # Team Members
+  - 'deletepeerentrydrafts:94808026-41ac-431a-a183-8ad8d9a55bff' # Team Members
+  - 'editpeerentrydrafts:94808026-41ac-431a-a183-8ad8d9a55bff' # Team Members
+  - 'editentries:94808026-41ac-431a-a183-8ad8d9a55bff' # Team Members
+  - 'saveassetinvolume:fb6e2638-c6df-4a24-8de9-422128e80318' # Client Images Volume
+  - 'createfoldersinvolume:fb6e2638-c6df-4a24-8de9-422128e80318' # Client Images Volume
+  - 'deletefilesandfoldersinvolume:fb6e2638-c6df-4a24-8de9-422128e80318' # Client Images Volume
+  - 'replacefilesinvolume:fb6e2638-c6df-4a24-8de9-422128e80318' # Client Images Volume
+  - 'editimagesinvolume:fb6e2638-c6df-4a24-8de9-422128e80318' # Client Images Volume
+  - 'editpeerfilesinvolume:fb6e2638-c6df-4a24-8de9-422128e80318' # Client Images Volume
+  - 'replacepeerfilesinvolume:fb6e2638-c6df-4a24-8de9-422128e80318' # Client Images Volume
+  - 'deletepeerfilesinvolume:fb6e2638-c6df-4a24-8de9-422128e80318' # Client Images Volume
+  - 'editpeerimagesinvolume:fb6e2638-c6df-4a24-8de9-422128e80318' # Client Images Volume
+  - 'viewpeerfilesinvolume:fb6e2638-c6df-4a24-8de9-422128e80318' # Client Images Volume
+  - 'viewvolume:fb6e2638-c6df-4a24-8de9-422128e80318' # Client Images Volume
+  - 'saveassetinvolume:898c39e0-9724-4a3b-9ea4-fc1f44479824' # Header Images
+  - 'createfoldersinvolume:898c39e0-9724-4a3b-9ea4-fc1f44479824' # Header Images
+  - 'deletefilesandfoldersinvolume:898c39e0-9724-4a3b-9ea4-fc1f44479824' # Header Images
+  - 'replacefilesinvolume:898c39e0-9724-4a3b-9ea4-fc1f44479824' # Header Images
+  - 'editimagesinvolume:898c39e0-9724-4a3b-9ea4-fc1f44479824' # Header Images
+  - 'editpeerfilesinvolume:898c39e0-9724-4a3b-9ea4-fc1f44479824' # Header Images
+  - 'replacepeerfilesinvolume:898c39e0-9724-4a3b-9ea4-fc1f44479824' # Header Images
+  - 'deletepeerfilesinvolume:898c39e0-9724-4a3b-9ea4-fc1f44479824' # Header Images
+  - 'editpeerimagesinvolume:898c39e0-9724-4a3b-9ea4-fc1f44479824' # Header Images
+  - 'viewpeerfilesinvolume:898c39e0-9724-4a3b-9ea4-fc1f44479824' # Header Images
+  - 'viewvolume:898c39e0-9724-4a3b-9ea4-fc1f44479824' # Header Images
+  - 'saveassetinvolume:b5448d96-4178-4e92-bdc8-5e841c0bf592' # Testimonial Images Volume
+  - 'createfoldersinvolume:b5448d96-4178-4e92-bdc8-5e841c0bf592' # Testimonial Images Volume
+  - 'deletefilesandfoldersinvolume:b5448d96-4178-4e92-bdc8-5e841c0bf592' # Testimonial Images Volume
+  - 'replacefilesinvolume:b5448d96-4178-4e92-bdc8-5e841c0bf592' # Testimonial Images Volume
+  - 'editimagesinvolume:b5448d96-4178-4e92-bdc8-5e841c0bf592' # Testimonial Images Volume
+  - 'editpeerfilesinvolume:b5448d96-4178-4e92-bdc8-5e841c0bf592' # Testimonial Images Volume
+  - 'replacepeerfilesinvolume:b5448d96-4178-4e92-bdc8-5e841c0bf592' # Testimonial Images Volume
+  - 'deletepeerfilesinvolume:b5448d96-4178-4e92-bdc8-5e841c0bf592' # Testimonial Images Volume
+  - 'editpeerimagesinvolume:b5448d96-4178-4e92-bdc8-5e841c0bf592' # Testimonial Images Volume
+  - 'viewpeerfilesinvolume:b5448d96-4178-4e92-bdc8-5e841c0bf592' # Testimonial Images Volume
+  - 'viewvolume:b5448d96-4178-4e92-bdc8-5e841c0bf592' # Testimonial Images Volume
+  - 'saveassetinvolume:40514668-fb5d-4064-80cb-806cef65d937' # Our Advertisers
+  - 'createfoldersinvolume:40514668-fb5d-4064-80cb-806cef65d937' # Our Advertisers
+  - 'deletefilesandfoldersinvolume:40514668-fb5d-4064-80cb-806cef65d937' # Our Advertisers
+  - 'replacefilesinvolume:40514668-fb5d-4064-80cb-806cef65d937' # Our Advertisers
+  - 'editimagesinvolume:40514668-fb5d-4064-80cb-806cef65d937' # Our Advertisers
+  - 'editpeerfilesinvolume:40514668-fb5d-4064-80cb-806cef65d937' # Our Advertisers
+  - 'replacepeerfilesinvolume:40514668-fb5d-4064-80cb-806cef65d937' # Our Advertisers
+  - 'deletepeerfilesinvolume:40514668-fb5d-4064-80cb-806cef65d937' # Our Advertisers
+  - 'editpeerimagesinvolume:40514668-fb5d-4064-80cb-806cef65d937' # Our Advertisers
+  - 'viewpeerfilesinvolume:40514668-fb5d-4064-80cb-806cef65d937' # Our Advertisers
+  - 'viewvolume:40514668-fb5d-4064-80cb-806cef65d937' # Our Advertisers
+  - 'saveassetinvolume:dc66c469-750b-4b62-843f-488bb881b5f9' # Team Member Images
+  - 'createfoldersinvolume:dc66c469-750b-4b62-843f-488bb881b5f9' # Team Member Images
+  - 'deletefilesandfoldersinvolume:dc66c469-750b-4b62-843f-488bb881b5f9' # Team Member Images
+  - 'replacefilesinvolume:dc66c469-750b-4b62-843f-488bb881b5f9' # Team Member Images
+  - 'editimagesinvolume:dc66c469-750b-4b62-843f-488bb881b5f9' # Team Member Images
+  - 'editpeerfilesinvolume:dc66c469-750b-4b62-843f-488bb881b5f9' # Team Member Images
+  - 'replacepeerfilesinvolume:dc66c469-750b-4b62-843f-488bb881b5f9' # Team Member Images
+  - 'deletepeerfilesinvolume:dc66c469-750b-4b62-843f-488bb881b5f9' # Team Member Images
+  - 'editpeerimagesinvolume:dc66c469-750b-4b62-843f-488bb881b5f9' # Team Member Images
+  - 'viewpeerfilesinvolume:dc66c469-750b-4b62-843f-488bb881b5f9' # Team Member Images
+  - 'viewvolume:dc66c469-750b-4b62-843f-488bb881b5f9' # Team Member Images
+  - 'saveassetinvolume:03197854-99c7-4a5e-be15-34ca422064c0' # State Map Images
+  - 'createfoldersinvolume:03197854-99c7-4a5e-be15-34ca422064c0' # State Map Images
+  - 'deletefilesandfoldersinvolume:03197854-99c7-4a5e-be15-34ca422064c0' # State Map Images
+  - 'replacefilesinvolume:03197854-99c7-4a5e-be15-34ca422064c0' # State Map Images
+  - 'editimagesinvolume:03197854-99c7-4a5e-be15-34ca422064c0' # State Map Images
+  - 'editpeerfilesinvolume:03197854-99c7-4a5e-be15-34ca422064c0' # State Map Images
+  - 'replacepeerfilesinvolume:03197854-99c7-4a5e-be15-34ca422064c0' # State Map Images
+  - 'deletepeerfilesinvolume:03197854-99c7-4a5e-be15-34ca422064c0' # State Map Images
+  - 'editpeerimagesinvolume:03197854-99c7-4a5e-be15-34ca422064c0' # State Map Images
+  - 'viewpeerfilesinvolume:03197854-99c7-4a5e-be15-34ca422064c0' # State Map Images
+  - 'viewvolume:03197854-99c7-4a5e-be15-34ca422064c0' # State Map Images
+  - managesitemap
+  - manageredirects

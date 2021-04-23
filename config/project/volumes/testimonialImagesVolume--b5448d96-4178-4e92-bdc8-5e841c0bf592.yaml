@@ -32,9 +32,21 @@ handle: testimonialImagesVolume
 hasUrls: false
 name: 'Testimonial Images Volume'
 settings:
-  path: '@webroot/assets/images/testimonials'
-sortOrder: 1
+  addSubfolderToRootUrl: '1'
+  autoFocalPoint: ''
+  bucket: vref-craft-assets
+  bucketSelectionMode: choose
+  cfDistributionId: ''
+  cfPrefix: ''
+  expires: ''
+  keyId: $AWS_CLIENT_ID
+  makeUploadsPublic: '1'
+  region: us-east-2
+  secret: $AWS_CLIENT_SECRET
+  storageClass: ''
+  subfolder: ''
+sortOrder: 0
 titleTranslationKeyFormat: null
 titleTranslationMethod: null
-type: craft\volumes\Local
-url: ''
+type: craft\awss3\Volume
+url: 'https://s3.us-east-2.amazonaws.com/vref-craft-assets/'

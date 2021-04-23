@@ -1,0 +1,70 @@
+.back-digit {
+  color: #5d5f61;
+  font-family: "Montserrat", sans-serif;
+  font-size: 80px;
+  font-weight: 700;
+  line-height: 60px;
+  position: absolute;
+  z-index: 0;
+  color: inherit;
+  opacity: 0.05;
+  top: 0;
+  left: 0;
+  display: block;
+  text-align: center;
+}
+
+.front-digit {
+  position: relative;
+}
+
+.rectangle-5 {
+  height: 34px;
+  width: 140px;
+  border-radius: 4px;
+  background-color: #c09434;
+  color: #ffffff;
+  font-family: Montserrat;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 34px;
+  text-align: center;
+}
+
+.start-at {
+  margin-top: -14px;
+  margin-bottom: 20px;
+  color: #222324;
+}
+
+.compaire-table .tier-wraps .titem ul.yr-list {
+  padding: 0;
+  margin: 0;
+}
+
+.compaire-table .tier-wraps .titem ul.yr-list li {
+  font-size: 14px;
+  line-height: 19px;
+  color: #222324;
+  padding: 0;
+  list-style: none;
+}
+
+.compaire-table .titem-row .titem p.titem-max {
+  max-width: 200px;
+  text-align: left;
+}
+
+small {
+  font-size: 12px;
+}
+
+.book-card {
+  width: 100%;
+  font-size: 16px;
+}
+
+.card-body {
+  margin: 0 !important;
+}
+/*# sourceMappingURL=vrefstore.css.map */

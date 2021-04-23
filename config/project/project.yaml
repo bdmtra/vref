@@ -1,9 +1,13 @@
-dateModified: 1616085366
+dateModified: 1619193797
 email:
   fromEmail: andrew@andrewlynn.co
   fromName: vref.com
   transportType: craft\mail\transportadapters\Sendmail
 plugins:
+  aws-s3:
+    edition: standard
+    enabled: true
+    schemaVersion: '1.2'
   element-api:
     edition: standard
     enabled: true
@@ -16,24 +20,33 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 2.0.0
+  minify:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
   redactor:
     edition: standard
     enabled: true
     schemaVersion: 2.3.0
+  redirect:
+    edition: standard
+    enabled: true
+  schema:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  seo:
+    edition: standard
+    enabled: true
+    schemaVersion: 3.1.1
   simple-sharing:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0
 system:
-  edition: solo
+  edition: pro
   live: true
   name: vref.com
   retryDuration: null
   schemaVersion: 3.6.6
   timeZone: America/Chicago
-users:
-  allowPublicRegistration: false
-  defaultGroup: null
-  photoSubpath: null
-  photoVolumeUid: null
-  requireEmailVerification: true
