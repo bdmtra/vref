@@ -19,7 +19,7 @@
                   <h3>Headquarters</h3>
                   <p>
                     {% if block.businessName %} {{block.businessName}} <br /> {% endif %}
-                    {% if block.addressLine1 %} {{block.addressLine1}} <br /> {% endif %}
+                    {% if block.addressLine1 %} {{block.addressLine1}}, {% endif %}
                     {% if block.addressLine2 %} {{block.addressLine2}} <br /> {% endif %}
                     {% if block.city %} {{block.city}}{% endif %}
                     {% if block.stateAbbreviation %}, {{block.stateAbbreviation}} {% endif %}
@@ -56,11 +56,11 @@
                   {% if block.postalCode %} {{block.postalCode}} {% endif %}
                   {% if block.countryAbbreviation %} {{block.countryAbbreviation}} {% endif %}
                 </address>
-                <p class="call-item">
+                {# <p class="call-item">
                   {% if block.phoneNumber1 %} {{block.phoneNumber1}} <br /> {% endif %}
                   {% if block.phoneNumber2 %} {{block.phoneNumber2}} <br /> {% endif %}
                   {% if block.phoneNumber3 %} {{block.phoneNumber3}} {% endif %}
-                </p>
+                </p> #}
               </div>
             </div>
           {% endif %}
@@ -142,7 +142,7 @@
                 <label class="fitem-ck-txt" for="urgentFeild">This&#x20;is&#x20;urgent</label>
               </div>
             </div>
-            <div class="btn-group text-center">
+            <div class="btn-group text-center" style="width:100%;">
               <button id="buttonId" class="btn btn-brand btn-lg" type="submit" (click)="submitZohoForm()">Submit</button>
             </div>
           </form>

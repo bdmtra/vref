@@ -9,15 +9,15 @@
       {% else %}
         <img src="assets/images/inner-banner-bg.png" alt=""/>
       {% endif %}
-      <span class="news-lbl">{{ article.category }}</span>
+      <span class="news-lbl">{{ article.category.label }}</span>
     </figure>
     <div class="news-item-caption">
       <h5>
-        <a href="javascript:void(0);" [routerLink]="['/' + news.news_slug]">{{ article.pageTitle }}</a>
+        <a href="news/{{article.slug}}">{{ article.pageTitle }}</a>
       </h5>
       <div class="news-post-details">
         <p>
-          Posted by <a href="javascript:void(0);">{{ article.pageSubtitle }}</a> / {{ article.originalPostedDate|date("long") }} / <a href="javascript:void(0);">{{ article.category|capitalize }}</a>
+          Posted by <a href="javascript:void(0);">{{ article.author.fullName }}</a> / {{ article.originalPostedDate|date("long") }} / <a href="javascript:void(0);" style="text-transform:uppercase">{{ article.category.label }}</a>
         </p>
       </div>
       <div class="btn-group">

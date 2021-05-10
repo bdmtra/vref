@@ -23,12 +23,12 @@
       <div class="{{ loop.index == 2 ? 'vpackege-item flex active' : 'vpackege-item flex' }}">
         <div class="vpackege-caption">
           {% if loop.index == 2 %}
-          <div class="rectangle-5">Most Popular</div>
+            <div class="rectangle-5">Most Popular</div>
           {% endif %}
           <br />
           <h4>{{ prod.productName }}</h4>
           {% if loop.index == 2 %}
-          <div class="start-at">Starting at</div>
+            <div class="start-at">Starting at</div>
           {% endif %}
           <p class="packege-price">
             <strong><b>$</b>{{ prod.productStartingPrice }}</strong>/ {{ prod.pricePeriod }}
@@ -40,7 +40,13 @@
           </ol>
         </div>
         <div class="vpackege-ftr">
-          <button class="btn btn-brand btn-lg mt-20" type="button">Order Subscription</button>
+          {% if loop.index == 1 %}
+            <a class="btn btn-brand btn-lg mt-20" href="https://values.vref.com/shopsubscription/preview?tier=not_needed">Order Subscription</a>
+          {% elseif loop.index == 2 %}
+            <a class="btn btn-brand btn-lg mt-20" href="https://values.vref.com/shopsubscription/preview?tier=tier_one&prod=online">Order Subscription</a>
+          {% elseif loop.index == 3 %}
+            <a class="btn btn-brand btn-lg mt-20" href="https://values.vref.com/shopsubscription/preview?tier=tier_one&prod=proPack">Order Subscription</a>
+          {% endif %}
         </div>
       </div>
       {% endfor %}
@@ -91,7 +97,7 @@
                   <p>If you would like to order a copy of our latest book please order <a href="https://vref.com/store/preview?id=5">here</a></p>
                 </div>
               </div>
-              <button class="btn btn-brand btn-lg mt-20" type="button">Order Book Subscription</button>
+              <a class="btn btn-brand btn-bdr mt-20" href="https://values.vref.com/shopsubscription/preview?tier=not_needed">Order Book Subscription</a>
             </div>
             <div class="inline-col-4">
               <div class="booksub-right">
@@ -391,15 +397,15 @@
               <div class="tier-group first-active">
                 <div class="titem titem-3 d-block">
                   <span class="tier-label tier-label-black d-block text-center">Tier 1</span>
-                  <button class="btn btn-brand btn-bdr btn-lg" type="button">ORDER TIER 1</button>
+                  <a class="btn btn-brand btn-bdr btn-lg" href="https://values.vref.com/shopsubscription/preview?tier=tier_one&prod=online">ORDER TIER 1</a>
                 </div>
                 <div class="titem titem-3 d-block">
                   <span class="tier-label tier-label-green d-block text-center">Tier 2</span>
-                  <button class="btn btn-brand btn-bdr btn-lg" type="button">ORDER TIER 2</button>
+                  <a class="btn btn-brand btn-bdr btn-lg" href="https://values.vref.com/shopsubscription/preview?tier=tier_two&prod=online">ORDER TIER 2</a>
                 </div>
                 <div class="titem titem-3 d-block">
                   <span class="tier-label tier-label-orange d-block text-center">Tier 3</span>
-                  <button class="btn btn-brand btn-bdr btn-lg" type="button">ORDER TIER 3</button>
+                  <a class="btn btn-brand btn-bdr btn-lg" href="https://values.vref.com/shopsubscription/preview?tier=tier_three&prod=online">ORDER TIER 3</a>
                 </div>
               </div>
             </div>
@@ -526,15 +532,15 @@
                 <div class="tier-group first-active">
                   <div class="titem titem-3 d-block">
                     <span class="tier-label tier-label-black d-block text-center">Tier 1</span>
-                    <button class="btn btn-brand btn-bdr btn-lg" type="button">ORDER TIER 1</button>
+                    <a class="btn btn-brand btn-bdr btn-lg" href="https://values.vref.com/shopsubscription/preview?tier=tier_one&prod=proPack">ORDER TIER 1</a>
                   </div>
                   <div class="titem titem-3 d-block">
                     <span class="tier-label tier-label-green d-block text-center">Tier 2</span>
-                    <button class="btn btn-brand btn-bdr btn-lg" type="button">ORDER TIER 2</button>
+                    <a class="btn btn-brand btn-bdr btn-lg" href="https://values.vref.com/shopsubscription/preview?tier=tier_two&prod=proPack">ORDER TIER 2</a>
                   </div>
                   <div class="titem titem-3 d-block">
                     <span class="tier-label tier-label-orange d-block text-center">Tier 3</span>
-                    <button  class="btn btn-brand btn-bdr btn-lg" type="button">ORDER TIER 3</button>
+                    <a class="btn btn-brand btn-bdr btn-lg" href="https://values.vref.com/shopsubscription/preview?tier=tier_three&prod=proPack">ORDER TIER 3</a>
                   </div>
                 </div>
               </div>

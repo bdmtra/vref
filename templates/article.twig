@@ -24,10 +24,10 @@
           <div class="news-details-wrap ">
             <h3>{{ entry.pageTitle }}</h3>
             <div class="post-by">
-              <a class="post-owner" href="javascript:void">By {{ entry.pageSubtitle }}</a>
+              <a class="post-owner" href="javascript:void">By {{ entry.author.fullName }}</a>
               <p>
                 {{ entry.originalPostedDate|date("long")  }}
-                {% if entry.category %} <a href="javascript:void(0);" style="text-transform:uppercase;">{{ entry.category }}</a> {% endif %}
+                {% if entry.category %} <a href="javascript:void(0);" style="text-transform:uppercase;">{{ entry.category.label }}</a> {% endif %}
               </p>
             </div>
             <p>{{ entry.richText }}</p>

@@ -50,16 +50,7 @@ fieldLayouts:
             fieldUid: 5cd981cc-c08e-44dc-84d9-83f97da456f5 # Page Subtitle
             instructions: ''
             label: Author
-            required: '1'
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 50
-          -
-            fieldUid: 6a839141-25ac-4c8b-b1c1-088168de2f14 # Original Posted Date
-            instructions: null
-            label: null
-            required: false
+            required: ''
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null
@@ -87,15 +78,6 @@ fieldLayouts:
             instructions: ''
             label: ''
             required: '1'
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-          -
-            fieldUid: 4f29fbe4-a94c-4cba-9004-cde3e0e756c2
-            instructions: ''
-            label: __blank__
-            required: ''
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null
