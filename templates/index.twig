@@ -1,4 +1,5 @@
 {% extends "base" %}
+{% set orderSubscriptions = craft.entries.id(816).first() %}
 
 {% block content %}
   <div class="main-banner-area">
@@ -10,7 +11,7 @@
             OVER 27 YEARS OF AIRCRAFT AND ENGINE VALUATION SERVICES FOR THE INTERNATIONAL AVIATION COMMUNITY
           </p>
           <div class="btn-group">
-            <a href="javascript:void(0);" class="btn btn-brand">Let's Begin</a>
+            <a href="/shopsubscription" class="btn btn-brand">Let's Begin</a>
           </div>
         </div>
       </div>
@@ -185,109 +186,154 @@
   {# Begin Pricing Section #}
 
   <div class=" block-row pb-0 vref-packege-row">
-  <div class="container">
-    <div class="title-row text-center white-txt">
-      <h2>VREF Subscription Pricing</h2>
-    </div>
-  </div>
-  <div class="container">
-    <div class="vref-packege-wrap flex ai-stretch justify-content-center">
-      <div class="vpackege-item flex">
-        <div class="vpackege-caption">
-          <h4>VREF Book Subscription</h4>
-          <p class="packege-price"><strong><b>$</b>400</strong>/ yr</p>
-          <ol>
-            <li>4 Quarterly Aircraft Value Guides</li>
-            <li>Shipped to your address</li>
-            <li>Fixed Wing aircraft only</li>
-          </ol>
-        </div>
-        <div class="vpackege-ftr">
-          {% if currentUser %}
-            <a class="btn btn-brand btn-bdr btn-lg">View Tiers</a>
-          {% else %}
-            <a class="btn btn-brand btn-bdr btn-lg">Sign Up Today</a>
-          {% endif %}
-        </div>
-      </div>
-      <div class="vpackege-item flex active">
-        <div class="vpackege-caption">
-          <h4>VREF Online Subscription
-            <span>Starting at</span>
-          </h4>
-          <p class="packege-price"><strong><b>$</b>725</strong>/ yr</p>
-          <ol>
-            <li>Aircraft values (historic and current)</li>
-            <li>Equipment lists, performance data</li>
-            <li>Annual access to VREF Online</li>
-          </ol>
-        </div>
-        <div class="vpackege-ftr">
-          {% if currentUser %}
-            <a class="btn btn-brand btn-lg">View Tiers</a>
-          {% else %}
-            <a class="btn btn-brand btn-lg">Sign Up Today</a>
-          {% endif %}
-        </div>
-      </div>
-      <div class="vpackege-item flex">
-        <div class="vpackege-caption">
-          <h4>ProPack-VREF Online & Book Annual Subscription</h4>
-          <p class="packege-price"><strong><b>$</b>1,075</strong>/ yr</p>
-          <ol>
-            <li>Best Value</li>
-            <li>1 Subscriber & 4 Published Guides</li>
-            <li>Annual access to VREF Online</li>
-          </ol>
-        </div>
-        <div class="vpackege-ftr">
-          {% if currentUser %}
-            <a class="btn btn-brand btn-bdr btn-lg">View Tiers</a>
-          {% else %}
-            <a class="btn btn-brand btn-bdr btn-lg">Sign Up Today</a>
-          {% endif %}
-        </div>
+    <div class="container">
+      <div class="title-row text-center white-txt">
+        <h2>VREF Subscription Pricing</h2>
       </div>
     </div>
+    <div class="container">
+      <div class="vref-packege-wrap flex ai-stretch justify-content-center">
+      {% for prod in orderSubscriptions.subscriptionPackages.all() %}
+        <div class="{{ loop.index == 2 ? 'vpackege-item flex active' : 'vpackege-item flex' }}">
+          <div class="vpackege-caption">
+            {% if loop.index == 2 %}
+              <div class="rectangle-5">Most Popular</div>
+            {% endif %}
+            <br />
+            <h4>{{ prod.productName }}</h4>
+            {% if loop.index == 2 %}
+              <div class="start-at">Starting at</div>
+            {% endif %}
+            <p class="packege-price">
+              <strong><b>$</b>{{ prod.productStartingPrice }}</strong>/ {{ prod.pricePeriod }}
+            </p>
+            <ol>
+              <li>{{ prod.productBullet1 }}</li>
+              <li>{{ prod.productBullet2 }}</li>
+              <li>{{ prod.productBullet3 }}</li>
+            </ol>
+          </div>
+          <div class="vpackege-ftr">
+            {% if loop.index == 1 %}
+              <a class="btn btn-brand btn-lg mt-20" href="https://values.vref.com/shopsubscription/preview?tier=not_needed">SIGN UP TODAY</a>
+            {% elseif loop.index == 2 %}
+              <a class="btn btn-brand btn-lg mt-20" href="https://values.vref.com/shopsubscription/preview?tier=tier_one&prod=online">SIGN UP TODAY</a>
+            {% elseif loop.index == 3 %}
+              <a class="btn btn-brand btn-lg mt-20" href="https://values.vref.com/shopsubscription/preview?tier=tier_one&prod=proPack">SIGN UP TODAY</a>
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+      </div>
+      {# <div class="vref-packege-wrap flex ai-stretch justify-content-center">
+        <div class="vpackege-item flex">
+          <div class="vpackege-caption">
+            <h4>VREF Book Subscription</h4>
+            <p class="packege-price"><strong><b>$</b>400</strong>/ yr</p>
+            <ol>
+              <li>4 Quarterly Aircraft Value Guides</li>
+              <li>Shipped To You</li>
+              <li>Fixed Wing Aircraft Only</li>
+            </ol>
+          </div>
+          <div class="vpackege-ftr">
+            {% if currentUser %}
+              <a class="btn btn-brand btn-bdr btn-lg">View Tiers</a>
+            {% else %}
+              <a class="btn btn-brand btn-bdr btn-lg">SIGN UP TODAY</a>
+            {% endif %}
+          </div>
+        </div>
+        <div class="vpackege-item flex active">
+          <div class="vpackege-caption">
+            <h4>VREF Online Subscription
+              <span>Starting at</span>
+            </h4>
+            <p class="packege-price"><strong><b>$</b>100</strong>/ mo</p>
+            <ol>
+              <li>Aircraft Values (Historic and Current)</li>
+              <li>Equipment Lists and Performance Data</li>
+              <li>Annual Access to VREF Online</li>
+            </ol>
+          </div>
+          <div class="vpackege-ftr">
+            {% if currentUser %}
+              <a class="btn btn-brand btn-lg">View Tiers</a>
+            {% else %}
+              <a class="btn btn-brand btn-lg">SIGN UP TODAY</a>
+            {% endif %}
+          </div>
+        </div>
+        <div class="vpackege-item flex">
+          <div class="vpackege-caption">
+            <h4>ProPack-VREF Online & Book Annual Subscription</h4>
+            <p class="packege-price"><strong><b>$</b>1,075</strong>/ yr</p>
+            <ol>
+              <li>1 Subscriber and 4 Published Guides</li>
+              <li>Annual Access to VREF Online</li>
+            </ol>
+          </div>
+          <div class="vpackege-ftr">
+            {% if currentUser %}
+              <a class="btn btn-brand btn-bdr btn-lg">View Tiers</a>
+            {% else %}
+              <a class="btn btn-brand btn-bdr btn-lg">SIGN UP TODAY</a>
+            {% endif %}
+          </div>
+        </div>
+      </div> #}
+    </div>
   </div>
+
+  {# Begin Comparison Section #}
+  
+  <div class="sm-block-row pt-dbl pb-dbl">
+    <div class="container">
+      <div class="col-12">
+        <div class="title-row text-center no-subcaption">
+          <h3>See Why VREF Is Your Go-To Choice</h3>
+        </div>
+        <img src="assets/images/comp-chart.png" alt=""/>
+      </div>
+    </div>
   </div>
 
   {# Begin Client Slider Section #}
 
-  <div class="sm-block-row pt-dbl pb-dbl">
-  <div class="container">
-    <div class="title-row text-center no-subcaption">
-      <h2>Client Testimonials</h2>
-    </div>
-    <div class="testi-wrap">
-      <div class="testi-slider-wrap flex">
-        <div class="testi-profile-wrap">
-          <div class="testi-profiles">
-            {% for block in entry.testimonialGroups.all() %}
-              <div class="testi-item">
-                <p>{{ block.testimonialClientName }}</p>
-                {% for asset in block.testimonialThumbnail.all() %}
-                  <figure><img src="./assets/images/testimonials/{{ asset.filename }}" alt="" width="100%" /></figure>
-                {% endfor %}
-              </div>
-            {% endfor %}
-          </div>
-        </div>
-        <div class="testi-caption-wrap">
-          <div class="testi-captions">
-            {% for block in entry.testimonialGroups.all() %}
-              <div class="testi-item">
-                <div id="testimonial_">
-                  <h6>{{ block.testimonialHeader }}</h6>
-                  <p>{{ block.testimonialExcerpt }}</p>
+  <div class="sm-block-row pt-dbl pb-dbl light-bg">
+    <div class="container">
+      <div class="title-row text-center no-subcaption">
+        <h2>What Our Clients Are Saying</h2>
+      </div>
+      <div class="testi-wrap">
+        <div class="testi-slider-wrap flex">
+          <div class="testi-profile-wrap">
+            <div class="testi-profiles">
+              {% for block in entry.testimonialGroups.all() %}
+                <div class="testi-item">
+                  <p>{{ block.testimonialClientName }}</p>
+                  {% for asset in block.testimonialThumbnail.all() %}
+                    <figure><img src="./assets/images/testimonials/{{ asset.filename }}" alt="" width="100%" /></figure>
+                  {% endfor %}
                 </div>
-              </div>
-            {% endfor %}
+              {% endfor %}
+            </div>
+          </div>
+          <div class="testi-caption-wrap">
+            <div class="testi-captions">
+              {% for block in entry.testimonialGroups.all() %}
+                <div class="testi-item">
+                  <div id="testimonial_">
+                    <h6>{{ block.testimonialHeader }}</h6>
+                    <p>{{ block.testimonialExcerpt }}</p>
+                  </div>
+                </div>
+              {% endfor %}
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
   </div>
 
   {# Begin Newsletter Section #}

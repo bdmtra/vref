@@ -8,9 +8,11 @@
   {% set image = entry.headerImage.one() %}
   <div class="inner-banner ptb-full block-row dark-bg-img lines-btm-warn" {% if image %} style="background-image:url( {{ image.getUrl() }} )" {% endif %}>
     <div class="container">
-      <div class="about-half-wrap">
+      <div class="about-half-wrap wrap-dynam">
         <div class="title-row white-txt">
           <h1>{{ entry.pageTitle }}</h1>
+          <hr />
+          <p>{{ entry.pageSubtitle }}</p>
         </div>
       </div>
     </div>
@@ -23,13 +25,15 @@
         </div>
         <aside class="flex-content-aside">
           {% include 'partials/_sidebar' %}
-          <div class="valrep-aside mt-30">
-            <img class="valrep-img" src="/assets/images/vref-online-valuations.jpg" alt="" />
-            <div class="valrep-caption">
-              <p>Subscribe now to get full access to our complete library of current and historical aircraft data.</p>
-              <a href="/shopsubscription/shop"><button type="button" class="btn btn-warning btn-block">View Subscriptions </button></a>
+          {% if craft.app.request.segments|first != "about" %}
+            <div class="valrep-aside mt-30">
+              <img class="valrep-img" src="/assets/images/vref-online-valuations.jpg" alt="" />
+              <div class="valrep-caption">
+                <p>Subscribe now to get full access to our complete library of current and historical aircraft data.</p>
+                <a href="/shopsubscription/shop"><button type="button" class="btn btn-warning btn-block">View Subscriptions </button></a>
+              </div>
             </div>
-          </div>
+           {% endif %}
         </aside>
       </div>
     </div>

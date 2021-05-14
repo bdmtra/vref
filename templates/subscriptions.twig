@@ -20,35 +20,35 @@
       
       
       {% for prod in entry.subscriptionPackages.all() %}
-      <div class="{{ loop.index == 2 ? 'vpackege-item flex active' : 'vpackege-item flex' }}">
-        <div class="vpackege-caption">
-          {% if loop.index == 2 %}
-            <div class="rectangle-5">Most Popular</div>
-          {% endif %}
-          <br />
-          <h4>{{ prod.productName }}</h4>
-          {% if loop.index == 2 %}
-            <div class="start-at">Starting at</div>
-          {% endif %}
-          <p class="packege-price">
-            <strong><b>$</b>{{ prod.productStartingPrice }}</strong>/ {{ prod.pricePeriod }}
-          </p>
-          <ol>
-            <li>{{ prod.productBullet1 }}</li>
-            <li>{{ prod.productBullet2 }}</li>
-            <li>{{ prod.productBullet3 }}</li>
-          </ol>
+        <div class="{{ loop.index == 2 ? 'vpackege-item flex active' : 'vpackege-item flex' }}">
+          <div class="vpackege-caption">
+            {% if loop.index == 2 %}
+              <div class="rectangle-5">Most Popular</div>
+            {% endif %}
+            <br />
+            <h4>{{ prod.productName }}</h4>
+            {% if loop.index == 2 %}
+              <div class="start-at">Starting at</div>
+            {% endif %}
+            <p class="packege-price">
+              <strong><b>$</b>{{ prod.productStartingPrice }}</strong>/ {{ prod.pricePeriod }}
+            </p>
+            <ol>
+              <li>{{ prod.productBullet1 }}</li>
+              <li>{{ prod.productBullet2 }}</li>
+              <li>{{ prod.productBullet3 }}</li>
+            </ol>
+          </div>
+          <div class="vpackege-ftr">
+            {% if loop.index == 1 %}
+              <a class="btn btn-brand btn-lg mt-20" href="https://values.vref.com/shopsubscription/preview?tier=not_needed">Order Subscription</a>
+            {% elseif loop.index == 2 %}
+              <a class="btn btn-brand btn-lg mt-20" href="https://values.vref.com/shopsubscription/preview?tier=tier_one&prod=online">Order Subscription</a>
+            {% elseif loop.index == 3 %}
+              <a class="btn btn-brand btn-lg mt-20" href="https://values.vref.com/shopsubscription/preview?tier=tier_one&prod=proPack">Order Subscription</a>
+            {% endif %}
+          </div>
         </div>
-        <div class="vpackege-ftr">
-          {% if loop.index == 1 %}
-            <a class="btn btn-brand btn-lg mt-20" href="https://values.vref.com/shopsubscription/preview?tier=not_needed">Order Subscription</a>
-          {% elseif loop.index == 2 %}
-            <a class="btn btn-brand btn-lg mt-20" href="https://values.vref.com/shopsubscription/preview?tier=tier_one&prod=online">Order Subscription</a>
-          {% elseif loop.index == 3 %}
-            <a class="btn btn-brand btn-lg mt-20" href="https://values.vref.com/shopsubscription/preview?tier=tier_one&prod=proPack">Order Subscription</a>
-          {% endif %}
-        </div>
-      </div>
       {% endfor %}
       {# 
         <div class="vpackege-item flex">

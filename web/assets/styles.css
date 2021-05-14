@@ -3822,6 +3822,10 @@ footer .footer-btm-wrap p a:hover {
   margin-bottom: 10px;
 }
 
+strong {
+  font-weight: bold !important;
+}
+
 /* HEADER STYLE */
 .header-top-wrap {
   padding: 12px 0;

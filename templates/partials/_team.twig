@@ -1,6 +1,10 @@
 {% set persons = craft.entries.section('teamMembers') %}
 <div class="lines-tp-brand ptb-full dark-bg-img" style="background-image: url(/assets/images/team-bg.png);">
   <div class="container">
+    <div class="title-row text-center white-txt" style="padding-top:80px;">
+      <h2>Meet Our Experts</h2>
+      <p style="max-width:900px;">With over 200 years of combined experience, get to know the leadership team behind our aircraft appraisal and valuations services.</p>
+    </div>
     <div class="team-wrap flex">
       {% for person in persons.all() %}
         {% set image = person.profilePicture.one() %}

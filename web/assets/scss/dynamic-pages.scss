@@ -4,7 +4,7 @@
     background: -moz-linear-gradient(
       left,
       rgba(0, 0, 0, 1) 0%,
-      rgba(0, 0, 0, 1) 10%,
+      rgba(0, 0, 0, 1) 33%,
       rgba(0, 0, 0, 0) 71%,
       rgba(0, 0, 0, 0) 100%
     );
@@ -13,35 +13,35 @@
       left top,
       right top,
       color-stop(0%, rgba(0, 0, 0, 1)),
-      color-stop(10%, rgba(0, 0, 0, 1)),
+      color-stop(33%, rgba(0, 0, 0, 1)),
       color-stop(71%, rgba(0, 0, 0, 0)),
       color-stop(100%, rgba(0, 0, 0, 0))
     );
     background: -webkit-linear-gradient(
       left,
       rgba(0, 0, 0, 1) 0%,
-      rgba(0, 0, 0, 1) 10%,
+      rgba(0, 0, 0, 1) 33%,
       rgba(0, 0, 0, 0) 71%,
       rgba(0, 0, 0, 0) 100%
     );
     background: -o-linear-gradient(
       left,
       rgba(0, 0, 0, 1) 0%,
-      rgba(0, 0, 0, 1) 10%,
+      rgba(0, 0, 0, 1) 33%,
       rgba(0, 0, 0, 0) 71%,
       rgba(0, 0, 0, 0) 100%
     );
     background: -ms-linear-gradient(
       left,
       rgba(0, 0, 0, 1) 0%,
-      rgba(0, 0, 0, 1) 10%,
+      rgba(0, 0, 0, 1) 33%,
       rgba(0, 0, 0, 0) 71%,
       rgba(0, 0, 0, 0) 100%
     );
     background: linear-gradient(
       to right,
       rgba(0, 0, 0, 1) 0%,
-      rgba(0, 0, 0, 1) 10%,
+      rgba(0, 0, 0, 1) 33%,
       rgba(0, 0, 0, 0) 71%,
       rgba(0, 0, 0, 0) 100%
     );
@@ -72,9 +72,45 @@
     max-width: 700px;
   }
 }
+.wrap-dynam {
+  max-width: unset !important;
+  width: 78% !important;
+}
 
 .lines-btm-warn {
   &:after {
     display: none;
+  }
+}
+
+.encircle {
+  border-radius:50%;
+}
+
+.appraisal-wrap .very-value-block ol {
+  margin: 20px 0;
+  padding: 0;
+  li {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    padding: 0 0 5px 0;
+    list-style: none;
+    margin-left: 0;
+    padding-left: 30px;
+    position: relative;
+    &:before {
+      background-image: url(../../assets/images/list-icon.png);
+      left: 0;
+      background-size: 100% auto;
+      background-repeat: no-repeat;
+      background-position: center center;
+      height: 18px;
+      width: 18px;
+      position: absolute;
+      content: "";
+      top: 3px;
+      box-sizing: border-box;
+    }
   }
 }

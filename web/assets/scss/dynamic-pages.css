@@ -1,7 +1,7 @@
 .dark-bg-img:before {
   background-color: transparent !important;
-  background: -webkit-gradient(linear, left top, right top, from(black), color-stop(10%, black), color-stop(71%, rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0)));
-  background: linear-gradient(to right, black 0%, black 10%, rgba(0, 0, 0, 0) 71%, rgba(0, 0, 0, 0) 100%);
+  background: -webkit-gradient(linear, left top, right top, from(black), color-stop(33%, black), color-stop(71%, rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0)));
+  background: linear-gradient(to right, black 0%, black 33%, rgba(0, 0, 0, 0) 71%, rgba(0, 0, 0, 0) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#00000000',GradientType=1 );
 }
 
@@ -33,7 +33,47 @@
   max-width: 700px;
 }
 
+.wrap-dynam {
+  max-width: unset !important;
+  width: 78% !important;
+}
+
 .lines-btm-warn:after {
   display: none;
+}
+
+.encircle {
+  border-radius: 50%;
+}
+
+.appraisal-wrap .very-value-block ol {
+  margin: 20px 0;
+  padding: 0;
+}
+
+.appraisal-wrap .very-value-block ol li {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  padding: 0 0 5px 0;
+  list-style: none;
+  margin-left: 0;
+  padding-left: 30px;
+  position: relative;
+}
+
+.appraisal-wrap .very-value-block ol li:before {
+  background-image: url(../../assets/images/list-icon.png);
+  left: 0;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 18px;
+  width: 18px;
+  position: absolute;
+  content: "";
+  top: 3px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 /*# sourceMappingURL=dynamic-pages.css.map */
