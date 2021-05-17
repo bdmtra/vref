@@ -1590,12 +1590,19 @@ strong { font-weight: bold !important}
     letter-spacing: 0.063em;
   }
   .news-search-inner {
+    position: relative;
     input {
       background-color: rgba(0, 0, 0, 0);
       background-image: url("./images/search-icons.png");
       background-repeat: no-repeat;
       background-position: 95% center;
       padding-right: 35px;
+    }
+    button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      opacity: 0;
     }
   }
 }

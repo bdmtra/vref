@@ -1767,12 +1767,23 @@ strong {
   letter-spacing: 0.063em;
 }
 
+.news-search-wrap .news-search-inner {
+  position: relative;
+}
+
 .news-search-wrap .news-search-inner input {
   background-color: rgba(0, 0, 0, 0);
   background-image: url("./images/search-icons.png");
   background-repeat: no-repeat;
   background-position: 95% center;
   padding-right: 35px;
+}
+
+.news-search-wrap .news-search-inner button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: 0;
 }
 
 .artical-wrap {

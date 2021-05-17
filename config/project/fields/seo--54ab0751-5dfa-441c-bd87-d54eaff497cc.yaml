@@ -1,0 +1,45 @@
+contentColumnType: text
+fieldGroup: 9171831a-6cf7-45f1-8b5a-8c51c079c22c # Base
+handle: seo
+instructions: ''
+name: SEO
+searchable: false
+settings:
+  description: 'The largest aircraft appraisal company in the world with a staff of Senior Accredited aircraft appraisers specializing in all aircraft models and categories. VREF Appraisers Determine the current fair market value and forecasted residual value on all aircraft makes, parts, equipment & more.'
+  hideSocial: ''
+  robots:
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+    - ''
+  socialImage: ''
+  suffixAsPrefix: null
+  title:
+    -
+      __assoc__:
+        -
+          - key
+          - '1'
+        -
+          - locked
+          - '0'
+        -
+          - template
+          - '{title}'
+    -
+      __assoc__:
+        -
+          - key
+          - '2'
+        -
+          - locked
+          - '1'
+        -
+          - template
+          - ' | {{ siteName }}'
+  titleSuffix: null
+translationKeyFormat: null
+translationMethod: none
+type: ether\seo\fields\SeoField

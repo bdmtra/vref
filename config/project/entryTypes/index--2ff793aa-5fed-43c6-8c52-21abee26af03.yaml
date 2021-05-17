@@ -53,10 +53,19 @@ fieldLayouts:
             type: craft\fieldlayoutelements\CustomField
             warning: null
             width: 100
+          -
+            fieldUid: 54ab0751-5dfa-441c-bd87-d54eaff497cc # SEO
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
         name: Content
         sortOrder: 1
 handle: index
-hasTitleField: false
+hasTitleField: true
 name: index
 section: c2944d4d-4353-453f-87ac-73f11863ff54
 sortOrder: 1
