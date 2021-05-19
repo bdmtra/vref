@@ -28,7 +28,7 @@
       position: relative;
       transition: all 0.2s ease;
       &:before {
-        background-image: url("assets/images/tick.png");
+        background-image: url("/assets/images/tick.png");
         background-repeat: no-repeat;
         background-position: left top;
         content: "";
@@ -406,7 +406,7 @@
   position: relative;
   input {
     background-color: rgba(0, 0, 0, 0);
-    background-image: url("assets/images/search-icons-light.png");
+    background-image: url("/assets/images/search-icons-light.png");
     background-repeat: no-repeat;
     background-position: 95% center;
     background-position: calc(100% - 10px) center;
@@ -430,7 +430,7 @@
       font-size: 14px;
     }
     .mselect {
-      background: url("assets/images/mselect-down-arrow.png") 94% center no-repeat,
+      background: url("/assets/images/mselect-down-arrow.png") 94% center no-repeat,
         linear-gradient(180deg, #ffffff 0%, #ebebeb 100%);
       max-width: 145px;
       display: block;
@@ -465,15 +465,15 @@
           height: 17px;
           margin-top: -3px;
           margin-left: 4px;
-          background-image: url("assets/images/shorting-arrow.png");
+          background-image: url("/assets/images/shorting-arrow.png");
           background-position: center center;
           background-repeat: no-repeat;
         }
         .sort-asc {
-          background-image: url("assets/images/shorting-arrow-asc.png");
+          background-image: url("/assets/images/shorting-arrow-asc.png");
         }
         .sort-desc {
-          background-image: url("assets/images/shorting-arrow-dec.png");
+          background-image: url("/assets/images/shorting-arrow-dec.png");
         }
       }
     }
@@ -1054,7 +1054,7 @@
   li {
     position: relative;
     padding-left: 20px;
-    background-image: url("assets/images/tick_outlined.png");
+    background-image: url("/assets/images/tick_outlined.png");
     background-position: center left;
     background-repeat: no-repeat;
     padding-bottom: 0;
@@ -1087,7 +1087,7 @@
     width: 65px;
     min-width: 10px;
     margin-right: 10px;
-    background: url("assets/images/mselect-down-arrow.png") 84% center no-repeat,
+    background: url("/assets/images/mselect-down-arrow.png") 84% center no-repeat,
       linear-gradient(180deg, #ffffff 0%, #ebebeb 100%);
     display: block;
   }
@@ -1100,7 +1100,7 @@
   font-weight: 700;
   padding-left: 25px;
   margin-right: 30px;
-  background-image: url("assets/images/long-arrow-left.png");
+  background-image: url("/assets/images/long-arrow-left.png");
   background-position: left center;
   background-repeat: no-repeat;
   margin-left: 0;
@@ -1134,7 +1134,7 @@
 }
 .cancel-image,
 .selected-image {
-  background-image: url("assets/images/btn-close.png");
+  background-image: url("/assets/images/btn-close.png");
   background-position: center center;
   background-repeat: no-repeat;
   width: 20px;
@@ -1148,7 +1148,7 @@
   cursor: pointer;
 }
 .selected-image {
-  background-image: url("assets/images/tick-transparent.png");
+  background-image: url("/assets/images/tick-transparent.png");
   display: none;
 }
 .featured-image-block {

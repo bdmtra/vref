@@ -7,7 +7,7 @@
       {% if image %}
         <img src="{{ image.getUrl() }}" alt="" />
       {% else %}
-        <img src="assets/images/inner-banner-bg.png" alt=""/>
+        <img src="/assets/images/inner-banner-bg.png" alt=""/>
       {% endif %}
       <span class="news-lbl">{{ article.category.label }}</span>
     </figure>
@@ -21,7 +21,7 @@
         </p>
       </div>
       <div class="btn-group">
-        <a class="btn-txt btn-arrow btn-btm-bdr" href="news/{{article.slug}}">Read more <img alt="" src="assets/images/next-arrow.png"/></a>
+        <a class="btn-txt btn-arrow btn-btm-bdr" href="news/{{article.slug}}">Read more <img alt="" src="/assets/images/next-arrow.png"/></a>
       </div>
     </div>
   </div>

@@ -8414,7 +8414,7 @@ h3.subpricing-head {
 }
 
 .subscription_block .card.active:before {
-  background-image: url("assets/images/tick.png");
+  background-image: url("/assets/images/tick.png");
   background-repeat: no-repeat;
   background-position: left top;
   content: "";
@@ -8902,7 +8902,7 @@ h3.subpricing-head {
 
 .inner-search input {
   background-color: rgba(0, 0, 0, 0);
-  background-image: url("assets/images/search-icons-light.png");
+  background-image: url("/assets/images/search-icons-light.png");
   background-repeat: no-repeat;
   background-position: 95% center;
   background-position: calc(100% - 10px) center;
@@ -8936,8 +8936,8 @@ h3.subpricing-head {
 }
 
 .tbl-search-wrap .right-caption .mselect {
-  background: url("assets/images/mselect-down-arrow.png") 94% center no-repeat, -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#ebebeb));
-  background: url("assets/images/mselect-down-arrow.png") 94% center no-repeat, linear-gradient(180deg, #ffffff 0%, #ebebeb 100%);
+  background: url("/assets/images/mselect-down-arrow.png") 94% center no-repeat, -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#ebebeb));
+  background: url("/assets/images/mselect-down-arrow.png") 94% center no-repeat, linear-gradient(180deg, #ffffff 0%, #ebebeb 100%);
   max-width: 145px;
   display: block;
 }
@@ -8972,17 +8972,17 @@ h3.subpricing-head {
   height: 17px;
   margin-top: -3px;
   margin-left: 4px;
-  background-image: url("assets/images/shorting-arrow.png");
+  background-image: url("/assets/images/shorting-arrow.png");
   background-position: center center;
   background-repeat: no-repeat;
 }
 
 .common-m-tbl .datatable-header .datatable-header-cell.sortable .sort-asc {
-  background-image: url("assets/images/shorting-arrow-asc.png");
+  background-image: url("/assets/images/shorting-arrow-asc.png");
 }
 
 .common-m-tbl .datatable-header .datatable-header-cell.sortable .sort-desc {
-  background-image: url("assets/images/shorting-arrow-dec.png");
+  background-image: url("/assets/images/shorting-arrow-dec.png");
 }
 
 .common-m-tbl .datatable-row-wrapper {
@@ -9584,7 +9584,7 @@ h3.subpricing-head {
 .info-list li {
   position: relative;
   padding-left: 20px;
-  background-image: url("assets/images/tick_outlined.png");
+  background-image: url("/assets/images/tick_outlined.png");
   background-position: center left;
   background-repeat: no-repeat;
   padding-bottom: 0;
@@ -9615,8 +9615,8 @@ h3.subpricing-head {
   width: 65px;
   min-width: 10px;
   margin-right: 10px;
-  background: url("assets/images/mselect-down-arrow.png") 84% center no-repeat, -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#ebebeb));
-  background: url("assets/images/mselect-down-arrow.png") 84% center no-repeat, linear-gradient(180deg, #ffffff 0%, #ebebeb 100%);
+  background: url("/assets/images/mselect-down-arrow.png") 84% center no-repeat, -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#ebebeb));
+  background: url("/assets/images/mselect-down-arrow.png") 84% center no-repeat, linear-gradient(180deg, #ffffff 0%, #ebebeb 100%);
   display: block;
 }
 
@@ -9629,7 +9629,7 @@ h3.subpricing-head {
   font-weight: 700;
   padding-left: 25px;
   margin-right: 30px;
-  background-image: url("assets/images/long-arrow-left.png");
+  background-image: url("/assets/images/long-arrow-left.png");
   background-position: left center;
   background-repeat: no-repeat;
   margin-left: 0;
@@ -9665,7 +9665,7 @@ h3.subpricing-head {
 
 .cancel-image,
 .selected-image {
-  background-image: url("assets/images/btn-close.png");
+  background-image: url("/assets/images/btn-close.png");
   background-position: center center;
   background-repeat: no-repeat;
   width: 20px;
@@ -9680,7 +9680,7 @@ h3.subpricing-head {
 }
 
 .selected-image {
-  background-image: url("assets/images/tick-transparent.png");
+  background-image: url("/assets/images/tick-transparent.png");
   display: none;
 }
 
