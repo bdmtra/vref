@@ -68,7 +68,7 @@
                     <figure>
                       {% set image = article.headerImage.one() %}
                       {% if image %}
-                        <img src="{{ image.getUrl() }}" alt="" />
+                        <img src="{{ url(image.getUrl(), {v: image.dateModified.timestamp}) }}" alt="" />
                       {% else %}
                         <img src="/assets/images/inner-banner-bg.png" alt=""/>
                       {% endif %}

@@ -11,7 +11,7 @@
       <div class="flex-content-aside">
         <div class="rounded-rimg">
           {% set image = entry.profilePicture.one() %}
-          <figure><img {% if image %} src="{{ image.getUrl() }}" {% endif %} /></figure>
+          <figure><img {% if image %} src="{{ url(image.getUrl(), {v: image.dateModified.timestamp}) }}" {% endif %} /></figure>
         </div>
       </div>
       <div class="flex-content-main">
