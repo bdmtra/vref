@@ -106,7 +106,7 @@
           {% for asset in entry.clientImages.all()|sort %}
             <li>
               <a class="flex ai-center justify-content-center">
-                <img class="img-style" src="{{ asset.url() }}"/>
+                <img class="img-style" src="{{ url(asset.getUrl(), {v: asset.dateModified.timestamp}) }}"/>
               </a>
             </li>
           {% endfor %}
@@ -313,7 +313,7 @@
                 <div class="testi-item">
                   <p>{{ block.testimonialClientName }}</p>
                   {% for asset in block.testimonialThumbnail.all() %}
-                    <figure><img src="./assets/images/testimonials/{{ asset.filename }}" alt="" width="100%" /></figure>
+                    <figure><img src="{{ url(asset.getUrl(), {v: asset.dateModified.timestamp}) }}" alt="" width="100%" /></figure>
                   {% endfor %}
                 </div>
               {% endfor %}
