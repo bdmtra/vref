@@ -6,6 +6,7 @@
 {% endblock %}
 
 {% block content %}
+  {% cache %}
   {% set image = entry.headerImage.one() %}
   <div class="inner-banner ptb-full block-row dark-bg-img lines-btm-warn" {% if image %} style="background-image:url( {{ image.getUrl() }} )" {% endif %}>
     <div class="container">
@@ -45,4 +46,5 @@
       {% include 'partials/_team' %}
     </div>
   {% endif %}
+  {% endcache %}
 {% endblock %}

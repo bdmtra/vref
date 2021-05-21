@@ -6,6 +6,7 @@
 
 {% block content %}
   {% do craft.entryCount.increment(entry.id) %}
+  {% cache %}
   {% set image = entry.headerImage.one() %}
   {% set pageurl = craft.app.request.absoluteUrl %}
   <div class="inner-banner lines-btm-bdr">
@@ -114,5 +115,5 @@
       </div>
     </div>
   </div> #}
-
+  {% endcache %}
 {% endblock %}

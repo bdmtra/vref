@@ -135,6 +135,8 @@
 
   {# Begin Advertising Section #}
     {% if not craft.app.request.segments|first == "contact" %}
+      {% cache %}
+      {% set advertisers = craft.assets().volume('ourAdvertisers').kind('image').all() %}
       <div class="block-row pb-0">
         <div class="adds-row dark-bg sm-block-row pt-0 pb-dbl">
           <div class="container">
@@ -143,9 +145,9 @@
             </div>
             <div class="adds-wrap">
               <div class="client-slider">
-                {% for asset in craft.assets().volume('ourAdvertisers').all() %}
+                {% for advertiser in advertisers %}
                   <div>
-                    <a class="client-slide-img" target="_blank" href=""><img src="/assets/images/advertisers/{{ asset.filename }}" alt="" title="" /></a>
+                    <a class="client-slide-img" target="_blank" href=""><img src="{{ url(advertiser.getUrl(), {v: advertiser.dateModified.timestamp}) }}" alt="" title="" /></a>
                   </div>
                 {% endfor %}
               <div>
@@ -153,6 +155,7 @@
           </div>
         </div>
       </div>
+      {% endcache %}
     {% endif %}
 
   {# Begin Footer Section #}
