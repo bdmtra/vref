@@ -1322,6 +1322,10 @@ strong {
      object-position: center center;
 }
 
+.team-wrap .team-item p {
+  color: #FFF;
+}
+
 .team-wrap .team-item h6 {
   color: #fff;
   text-align: center;

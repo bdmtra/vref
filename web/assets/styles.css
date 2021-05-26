@@ -440,6 +440,10 @@ img {
   box-sizing: border-box;
 }
 
+sup {
+  top: -.25em !important;
+}
+
 /* 2. Base Typography
 ------------------------------------------------------------------------------*/
 body {
@@ -5144,6 +5148,10 @@ strong {
      object-fit: cover;
   -o-object-position: center center;
      object-position: center center;
+}
+
+.team-wrap .team-item p {
+  color: #FFF;
 }
 
 .team-wrap .team-item h6 {

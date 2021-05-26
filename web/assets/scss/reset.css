@@ -185,6 +185,10 @@ img {
   box-sizing: border-box;
 }
 
+sup {
+  top: -.25em !important;
+}
+
 /* 2. Base Typography
 ------------------------------------------------------------------------------*/
 body {
