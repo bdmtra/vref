@@ -47,6 +47,6 @@ settings:
   subfolder: ''
 sortOrder: 0
 titleTranslationKeyFormat: null
-titleTranslationMethod: null
+titleTranslationMethod: site
 type: craft\awss3\Volume
 url: 'https://s3.us-east-2.amazonaws.com/vref-craft-assets/'
