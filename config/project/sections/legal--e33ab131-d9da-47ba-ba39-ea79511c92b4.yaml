@@ -1,0 +1,26 @@
+enableVersioning: true
+handle: legal
+name: Legal
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primary entry page'
+      -
+        - urlFormat
+        - '{url}'
+      -
+        - refresh
+        - '1'
+propagationMethod: all
+siteSettings:
+  d66119ad-8f5f-41e8-8169-49f2c51c36b6: # VREF Aircraft Values & Appraisals
+    enabledByDefault: true
+    hasUrls: true
+    template: dynamic
+    uriFormat: '{parent.uri}/{slug}'
+structure:
+  maxLevels: null
+  uid: d8bae2ee-70f0-4bf1-aab8-5c3b501b9597
+type: structure
