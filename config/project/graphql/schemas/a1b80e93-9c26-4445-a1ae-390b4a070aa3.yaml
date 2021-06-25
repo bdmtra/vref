@@ -1,2 +1,5 @@
 isPublic: true
 name: 'Public Schema'
+scope:
+  - 'sections.e7db7ebe-1dbe-47a4-86e1-76b2269fcdce:read' # Modal Alerts
+  - 'entrytypes.efb6ce0c-1a38-419c-acfa-9a4a91d98d62:read' # Modal Alerts
