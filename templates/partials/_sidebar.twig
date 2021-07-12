@@ -1,5 +1,5 @@
-<form class="contact-form-wrap form-group lbl-left-gourp" action="https://forms.zohopublic.com/vrefaircraftvaluereference/form/VrefMarketingContactForm/formperma/dDiWSeKYnTQFrs8XdITzyzOx6KEFwiKXLBoPL0upm1k/htmlRecords/submit" name="zohoForm" id="apparaisal-form" method="POST" accept-charset="UTF-8" enctype="multipart/form-data" #zohoForm [formGroup]="contactForm">
-    <input type="hidden" name="zf_redirect_url" value="/" />
+<form class="contact-form-wrap form-group lbl-left-gourp" action="https://forms.zohopublic.com/vrefaircraftvaluereference/form/VrefMarketingContactForm/formperma/dDiWSeKYnTQFrs8XdITzyzOx6KEFwiKXLBoPL0upm1k/htmlRecords/submit" name="zohoForm" id="apparaisal-form" method="POST" accept-charset="UTF-8" enctype="multipart/form-data">
+    <input type="hidden" name="zf_redirect_url" value="https://vref.com/" />
     <div class="pt-20 pb-20">
     <a href="/aircraft-values"><img src="/assets/images/button-vrefonline.png" alt="" /></a>
     <a href="/aircraft-appraisals"><img src="/assets/images/button-vref-appraisals.png" alt="" /></a>
@@ -15,33 +15,33 @@
       </div>
       <div class="fitem">
           <label for="">Interested in</label>
-          <select name="Dropdown" class="form-control" formControlName="feilds">
-          <option value="" disabled selected>Choose one...</option>
-          <option value="Online&#x20;Subscription">Online Subscription</option>
-          <option value="Printed&#x20;Value&#x20;Guide">Printed Value Guide</option>
-          <option value="Appraisals">Appraisals</option>
-          <option value="Verified&#x20;Opinions">Verified Opinions</option>
-          <option value="Expert&#x20;Witness">Expert Witness</option>
-          <option value="General&#x20;Inquiry">General Inquiry</option>
+          <select name="Dropdown" class="form-control" formControlName="feilds" required>
+            <option value="" disabled selected>Choose one...</option>
+            <option value="Online&#x20;Subscription">Online Subscription</option>
+            <option value="Printed&#x20;Value&#x20;Guide">Printed Value Guide</option>
+            <option value="Appraisals">Appraisals</option>
+            <option value="Verified&#x20;Opinions">Verified Opinions</option>
+            <option value="Expert&#x20;Witness">Expert Witness</option>
+            <option value="General&#x20;Inquiry">General Inquiry</option>
           </select>
       </div>
       <!--First Name-->
       <div class="fitem">
           <label for="firstName">First Name<em>*</em></label>
-          <input id="firstName" type="text" maxlength="255" name="Name_First" fieldType="7" class="form-control" formControlName="firstName"/>
+          <input id="firstName" type="text" maxlength="255" name="Name_First" fieldType="7" class="form-control" formControlName="firstName" required/>
       </div>
 
       <!--Last Name-->
       <div class="fitem">
           <label for="lastName">Last Name<em>*</em>
           </label>
-          <input id="lastName" type="text" maxlength="255" name="Name_Last" fieldType="7" class="form-control" formControlName="lastName"/>
+          <input id="lastName" type="text" maxlength="255" name="Name_Last" fieldType="7" class="form-control" formControlName="lastName" required/>
       </div>
 
       <!--Email-->
       <div class="fitem">
           <label>Email<em>*</em></label>
-          <input type="text" maxlength="255" name="Email" value="" fieldType="9" class="form-control" formControlName="email"/>
+          <input type="text" maxlength="255" name="Email" value="" fieldType="9" class="form-control" formControlName="email" required/>
       </div>
 
       <!--Company -->
@@ -54,7 +54,7 @@
       <div class="fitem">
           <label>Phone number<em>*</em>
           </label>
-          <input type="text" compname="PhoneNumber" name="PhoneNumber_countrycode" phoneFormat="1" isCountryCodeEnabled="false" maxlength="15" value="" fieldType="11" id="international_PhoneNumber_countrycode" class="form-control" formControlName="number"/>
+          <input type="text" compname="PhoneNumber" name="PhoneNumber_countrycode" phoneFormat="1" isCountryCodeEnabled="false" maxlength="15" value="" fieldType="11" id="international_PhoneNumber_countrycode" class="form-control" formControlName="number" required/>
       </div>
       <div class="fitem check">
           <div class="fitem-check">
@@ -64,10 +64,10 @@
       </div>
       <div class="fitem">
           <label>Message<em>*</em></label>
-          <textarea name="MultiLine" maxlength="65535" class="form-control" formControlName="message" placeholder="Type message here..."></textarea>
+          <textarea name="MultiLine" maxlength="65535" class="form-control" formControlName="message" placeholder="Type message here..." required></textarea>
       </div>
       <div class="fitem">
-          <button type="submit" class="btn btn-brand btn-lg btn-full" (click)="submitZohoForm()">Submit</button>
+          <button type="submit" class="btn btn-brand btn-lg btn-full">Submit</button>
       </div>
     </div>
 </form>

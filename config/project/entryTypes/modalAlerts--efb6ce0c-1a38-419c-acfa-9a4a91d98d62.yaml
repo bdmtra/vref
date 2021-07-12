@@ -1,5 +1,5 @@
 fieldLayouts:
-  279b4ca3-837f-4009-a6a6-21297e1f450c:
+  bd51f64d-f8cc-4742-9429-edcbfd6f5aab:
     tabs:
       -
         elements:
@@ -23,30 +23,25 @@ fieldLayouts:
             step: null
             tip: null
             title: null
-            type: craft\fieldlayoutelements\AssetTitleField
+            type: craft\fieldlayoutelements\EntryTitleField
+            warning: null
+            width: 100
+          -
+            fieldUid: a4a5a6a9-c7ca-43f7-8860-564dbfe475a2 # Meta Description
+            instructions: ''
+            label: Body
+            required: '1'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
             warning: null
             width: 100
         name: Content
         sortOrder: 1
-handle: headerImages
-hasUrls: true
-name: 'Header Images'
-settings:
-  addSubfolderToRootUrl: '1'
-  autoFocalPoint: ''
-  bucket: vref-craft-assets
-  bucketSelectionMode: choose
-  cfDistributionId: ''
-  cfPrefix: ''
-  expires: ''
-  keyId: $AWS_CLIENT_ID
-  makeUploadsPublic: '1'
-  region: us-east-2
-  secret: $AWS_CLIENT_SECRET
-  storageClass: ''
-  subfolder: ''
-sortOrder: 0
+handle: modalAlerts
+hasTitleField: true
+name: 'Modal Alerts'
+section: e7db7ebe-1dbe-47a4-86e1-76b2269fcdce # Modal Alerts
+sortOrder: 1
+titleFormat: null
 titleTranslationKeyFormat: null
-titleTranslationMethod: null
-type: craft\awss3\Volume
-url: 'https://s3.us-east-2.amazonaws.com/vref-craft-assets/'
+titleTranslationMethod: site
