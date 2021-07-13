@@ -67,7 +67,7 @@ fieldLayouts:
 handle: index
 hasTitleField: true
 name: index
-section: c2944d4d-4353-453f-87ac-73f11863ff54 # index
+section: c2944d4d-4353-453f-87ac-73f11863ff54
 sortOrder: 1
 titleFormat: '{section.name|raw}'
 titleTranslationKeyFormat: null

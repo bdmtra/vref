@@ -34,11 +34,11 @@ permissions:
   - 'deletepeerentrydrafts:7986fb01-1999-478b-a488-608c9e745cc9' # Footer
   - 'editpeerentrydrafts:7986fb01-1999-478b-a488-608c9e745cc9' # Footer
   - 'editentries:7986fb01-1999-478b-a488-608c9e745cc9' # Footer
-  - 'publishentries:c2944d4d-4353-453f-87ac-73f11863ff54' # index
-  - 'publishpeerentrydrafts:c2944d4d-4353-453f-87ac-73f11863ff54' # index
-  - 'deletepeerentrydrafts:c2944d4d-4353-453f-87ac-73f11863ff54' # index
-  - 'editpeerentrydrafts:c2944d4d-4353-453f-87ac-73f11863ff54' # index
-  - 'editentries:c2944d4d-4353-453f-87ac-73f11863ff54' # index
+  - 'publishentries:c2944d4d-4353-453f-87ac-73f11863ff54'
+  - 'publishpeerentrydrafts:c2944d4d-4353-453f-87ac-73f11863ff54'
+  - 'deletepeerentrydrafts:c2944d4d-4353-453f-87ac-73f11863ff54'
+  - 'editpeerentrydrafts:c2944d4d-4353-453f-87ac-73f11863ff54'
+  - 'editentries:c2944d4d-4353-453f-87ac-73f11863ff54'
   - 'publishentries:99823edf-abdc-4f09-877f-11619c191c1b' # News
   - 'publishpeerentrydrafts:99823edf-abdc-4f09-877f-11619c191c1b' # News
   - 'deletepeerentrydrafts:99823edf-abdc-4f09-877f-11619c191c1b' # News
