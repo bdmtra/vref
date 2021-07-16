@@ -30,8 +30,8 @@
             <a href="https://values.vref.com/account/aircraft-selection/list" class="btn btn-brand" id="onlineBtn">VREF Online</a>
             <ul class="header-top-menu">
               <li class="mydropdown about-us" style="filter:grayscale(100%);">
-                <a class="login-btn" href="javascript:void(0);" style="color:unset;">About Us</a>
-                <span class="d-desk-none mob-arrow" style="color:unset;"></span>
+                <a class="login-btn mydt" style="color:unset;">About Us</a>
+                <span class="d-desk-none mob-arrow mydt" style="color:unset;"></span>
                 <ul class="mydropdown-list">
                   <li><a href="/about">About VREF</a></li>
                   <li><a href="/b2b-solutions">B2B Solutions</a></li>
@@ -167,6 +167,15 @@
     <script src="/assets/scripts/slick-1.8.1/slick/slick.min.js"></script>
     <script>
       $( document ).ready(function() {
+        $('.mydt').click(function() {
+          $('.mydropdown-list').toggle();
+        })
+        $('.menu-toggle').click(function() {
+          let val = "0";
+          if ($('.right-main-nav').hasClass("nav-open")) { val = "-110%"; }
+          $('.right-main-nav').toggleClass('nav-open');
+          $('.right-main-nav').css("right", val);
+        })
         $('.rsidebar-toggle').click(function() {
           $('.rsidebar-wrap').toggleClass('rsidebar-open');
         })
