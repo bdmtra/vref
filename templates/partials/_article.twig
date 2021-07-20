@@ -2,7 +2,11 @@
 
   {% set image = article.headerImage.one() %}
   <div class="card news-item">
-    <p class="news-post-date"><strong>{{ article.originalPostedDate|date("d") }}</strong>{{ article.originalPostedDate|date("M") }}</p>
+    {% if article.originalPostedDate %}
+      <p class="news-post-date"><strong>{{ article.originalPostedDate|date("d") }}</strong>{{ article.originalPostedDate|date("M") }}</p>
+    {% else %}
+      <p class="news-post-date"><strong>{{ article.postDate|date("d") }}</strong>{{ article.postDate|date("M") }}</p>
+    {% endif %}
     <figure>
       {% if image %}
         <img src="{{ url(image.getUrl(), {v: image.dateModified.timestamp}) }}" alt="" />
@@ -16,9 +20,15 @@
         <a href="news/{{article.slug}}">{{ article.pageTitle }}</a>
       </h5>
       <div class="news-post-details">
-        <p>
-          Posted by <a href="javascript:void(0);">{{ article.author.fullName }}</a> / {{ article.originalPostedDate|date("long") }} / <a href="javascript:void(0);" style="text-transform:uppercase">{{ article.category.label }}</a>
-        </p>
+        {% if article.originalPostedDate %}
+          <p>
+            Posted by <a href="javascript:void(0);">{{ article.author.fullName }}</a> / {{ article.originalPostedDate|date("long") }} / <a href="javascript:void(0);" style="text-transform:uppercase">{{ article.category.label }}</a>
+          </p>
+        {% else %}
+          <p>
+            Posted by <a href="javascript:void(0);">{{ article.author.fullName }}</a> / {{ article.postDate|date("long") }} / <a href="javascript:void(0);" style="text-transform:uppercase">{{ article.category.label }}</a>
+          </p>
+        {% endif %}
       </div>
       <div class="btn-group">
         <a class="btn-txt btn-arrow btn-btm-bdr" href="news/{{article.slug}}">Read more <img alt="" src="/assets/images/next-arrow.png"/></a>

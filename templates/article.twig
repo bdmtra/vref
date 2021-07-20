@@ -79,7 +79,11 @@
                         <img src="/assets/images/inner-banner-bg.png" alt=""/>
                       {% endif %}
                     </figure>
-                    <p><a href="/news/{{article.slug}}">{{ article.pageTitle }}<span>{{ article.originalPostedDate|date("long") }}</span></a></p>
+                    {% if entry.originalPostedDate %}
+                      <p><a href="/news/{{article.slug}}">{{ article.pageTitle }}<span>{{ article.originalPostedDate|date("long") }}</span></a></p>
+                    {% else %}
+                      <p><a href="/news/{{article.slug}}">{{ article.pageTitle }}<span>{{ article.postDate|date("long") }}</span></a></p>
+                    {% endif %}
                   </div>
                 </div>
               {% endfor %}

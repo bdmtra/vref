@@ -73,7 +73,12 @@
                         <img src="/assets/images/inner-banner-bg.png" alt=""/>
                       {% endif %}
                     </figure>
-                    <p><a href="/news/{{article.slug}}">{{ article.pageTitle }}<span>{{ article.originalPostedDate|date("long") }}</span></a></p>
+                    <p>
+                      <a href="/news/{{article.slug}}">{{ article.pageTitle }}
+                        {% if article.originalPostedDate %} <span>{{ article.originalPostedDate|date("long") }}</span>
+                        {% else %} <span>{{ article.postDate|date("long") }}</span> {% endif %}
+                      </a>
+                    </p>
                   </div>
                 </div>
               {% endfor %}
