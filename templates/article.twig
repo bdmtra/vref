@@ -27,7 +27,8 @@
             <div class="post-by">
               <a class="post-owner" href="/about/{{ entry.author.lastName }}">By {{ entry.author.fullName }}</a>
               <p>
-                {{ entry.originalPostedDate|date("long")  }}
+                {% if entry.originalPostedDate %} {{ entry.originalPostedDate|date("long") }}
+                {% else %} {{ entry.postDate|date("long") }} {% endif %}
                 {% if entry.category %} <a href="javascript:void(0);" style="text-transform:uppercase;">{{ entry.category.label }}</a> {% endif %}
               </p>
             </div>
@@ -78,7 +79,11 @@
                         <img src="/assets/images/inner-banner-bg.png" alt=""/>
                       {% endif %}
                     </figure>
-                    <p><a href="/news/{{article.slug}}">{{ article.pageTitle }}<span>{{ article.originalPostedDate|date("long") }}</span></a></p>
+                    {% if entry.originalPostedDate %}
+                      <p><a href="/news/{{article.slug}}">{{ article.pageTitle }}<span>{{ article.originalPostedDate|date("long") }}</span></a></p>
+                    {% else %}
+                      <p><a href="/news/{{article.slug}}">{{ article.pageTitle }}<span>{{ article.postDate|date("long") }}</span></a></p>
+                    {% endif %}
                   </div>
                 </div>
               {% endfor %}
