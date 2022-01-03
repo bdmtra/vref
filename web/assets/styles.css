@@ -10155,6 +10155,14 @@ h3.subpricing-head {
 /* 1. Mobile and ipad
 ---------------------------------------------------*/
 @media (max-width: 1023px) {
+  .shopsub-tab {
+    max-width: 50% !important;
+    width: 50% !important;
+  }
+  .shopsub-wfix {
+    width: 200% !important;
+    margin-right: 0 !important;
+  }
   .sub-menu {
     position: static;
     opacity: 1;
