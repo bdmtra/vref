@@ -33,7 +33,7 @@
     position: relative;
   }
   .header-main .lg-container .right-main-nav {
-    padding-right: 35px;
+    padding-right: 0;
   }
   .header-main .lg-container .cart-icons {
     position: absolute;
@@ -2784,7 +2784,7 @@ button.menu-toggle {
     position: relative;
   }
   .header-main .lg-container .right-main-nav {
-    padding-right: 35px;
+    padding-right: 0;
   }
   .header-main .lg-container .cart-icons {
     position: absolute;

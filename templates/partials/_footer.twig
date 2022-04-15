@@ -4,25 +4,8 @@
   <footer class="footer-container">
     <div class="container">
       <div class="main-footer-wrap">
-        <div class="ftr-about-caption">
-          <a href="/"><img src="/assets/images/logo.png" alt=""/></a>
-          <p>{{ block.footerDescription }}</p>
-        </div>
-        <div class="ftr-contact-caption">
-          <h6>Contact us</h6>
-          <address>
-            {% if block.businessName %} {{block.businessName}} <br /> {% endif %}
-            {% if block.addressLine1 %} {{block.addressLine1}} <br /> {% endif %}
-            {% if block.addressLine2 %} {{block.addressLine2}} <br /> {% endif %}
-            {% if block.city %} {{block.city}} {% endif %}
-            {% if block.stateAbbreviation %}, {{block.stateAbbreviation}} {% endif %}
-            {% if block.postalCode %} {{block.postalCode}} {% endif %}
-          </address>
-          <a href="{{ block.phoneNumberUrl }}"><img src="/assets/images/call-icon-white.png" alt="" /> {{ block.phoneNumberDisplay }}</a>
-          <a href="{{ block.emailUrl }}"><img src="/assets/images/mail-icon-white.png" alt="" /> {{ block.emailDisplay }}</a>
-        </div>
         <div class="ftr-news-caption">
-          <h6>Sign up for our newsletter</h6>
+          <h6>Sign Up For Our Newsletter</h6>
           <form class="ftr-newsltr-wrap" action="" method="post">
             {{ csrfInput() }}
             <input type="hidden" name="action" value="mailchimp-subscribe/audience/subscribe">
@@ -30,41 +13,49 @@
             {% if subscribeResponse %}
                 {% if not subscribeResponse.success %} <p>An error occured: {{ subscribeResponse.message }}</p> {% endif %}
             {% endif %}
-            <input id="emailInput" type="email" name="email" class="input-bdr" placeholder="Enter your email" {% if subscribeResponse and not subscribeResponse.success %}value="{{ subscribeResponse.values.email ?? '' }}"{% endif %}/>
-            <input class="btn btn-brand btn-sent" type="submit" name="" value="Submit"/>
+            <div class="sign-up-field mx-0">
+              <input id="emailInput" type="email" name="email" class="input-bdr" placeholder="Enter your email" {% if subscribeResponse and not subscribeResponse.success %}value="{{ subscribeResponse.values.email ?? '' }}"{% endif %}/>
+              <input class="btn btn-brand btn-sent" type="submit" name="" value="Sign Up"/>
+            </div>
           </form>
-          <ul class="social-media">
-            <li><a href="https://www.linkedin.com/company/vref/"><img src="/assets/images/linked_in.svg" width="33" alt=""/></a></li>
-            <li><a href="https://www.facebook.com/vrefvalue/"><img src="/assets/images/social-fb.svg" alt=""/></a></li>
-            <li><a href="https://twitter.com/vref17"><img src="/assets/images/social-twit.svg" alt=""/></a></li>
-          </ul>
         </div>
-        <div class="ftr-assoc-caption">
-          <h6>Associations & Affiliations</h6>
-          <div class="offi-gui flex">
-            <p>Official Guide of</p>
-            <img src="/assets/images/ftr-lg-aopa.png" alt="" />
-          </div>
-          <div class="ftr-lg-wrap">
-            <figure><img src="/assets/images/ftr-lg-nbaa.png" alt="" /></figure>
-            <figure><img src="/assets/images/ftr-lg-eaa.png" alt="" /></figure>
-            <figure><img src="/assets/images/ftr-lg-nafa.png" alt="" /></figure>
-            <figure><img src="/assets/images/ftr-lg-auvsi.png" alt="" /></figure>
-            <figure><img src="/assets/images/ftr-lg-embry.png" alt="" /></figure>
-            <figure><img src="/assets/images/ftr-lg-helicopter.png" alt="" /></figure>
-            <figure><img src="/assets/images/ftr-lg-aic.png" alt="" /></figure>
-            <figure><img src="/assets/images/ftr-lg-asa.png" alt="" /></figure>
-            <figure><img src="/assets/images/ftr-lg-elfa.png" alt="" /></figure>
-            <figure><img src="/assets/images/ftr-lg-lawyer.png" alt="" /></figure>
-            <figure><img style="opacity:0.7" src="/assets/images/ftr-lg-glad.png" alt="" /></figure>
-          </div>
+        <div class="ftr-contact-caption">
+          <h6>Company</h6>
+          <a href="/">Who We Are</a>
+          <a href="/">Assets We Cover</a>
+          <a href="/">Data Quality</a>
+          <a href="/">Insights</a>
+          <a href="/">Contact Us</a>
+          <a href="/">Press Room</a>
+        </div>
+        <div class="ftr-contact-caption">
+          <h6>Industries</h6>
+          <a href="/">Finance</a>
+          <a href="/">Brokers & Dealers</a>
+          <a href="/">Manufacturers</a>
+          <a href="/">Insurers</a>
+          <a href="/">Appraisers</a>
+          <a href="/">Charter/Management</a>
+        </div>
+        <div class="ftr-contact-caption">
+          <h6>Solutions</h6>
+          <a href="/">Values</a>
+          <a href="/">Database</a>
+          <a href="/">Reports</a>
+          <a href="/">Consulting</a>
         </div>
       </div>
     </div>
     <div class="footer-btm-wrap">
       <div class="container flex">
+        <p class="mx-0"><a href="/privacy-policy"> Privacy Policy</a> | <a href="/terms-and-conditions">Terms of Service</a></p>
+        <ul class="social-media">
+          <li><a href="https://www.linkedin.com/company/vref/"><img src="/assets/images/linked_in.svg" width="33" alt=""/></a></li>
+          <li><a href="https://www.facebook.com/vrefvalue/"><img src="/assets/images/social-fb.svg" alt=""/></a></li>
+          <li><a href="https://twitter.com/vref17"><img src="/assets/images/social-twit.svg" alt=""/></a></li>
+        </ul>
         <p class="mx-0">
-          © Copyright {{ now|date('Y') }} VREF Aircraft Value Reference and Appraisal Services/VREF Publishing Inc. | All Rights Reserved | <a href="/privacy-policy"> Privacy Policy</a> | <a href="/terms-and-conditions">Terms of Service</a>
+          © Copyright {{ now|date('Y') }} VREF . All Rights Reserved.
         </p>
       </div>
     </div>

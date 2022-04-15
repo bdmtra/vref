@@ -1,0 +1,14 @@
+contentColumnType: string
+fieldGroup: 8bdbfb54-3634-4bbd-be60-9d3da26b94ec # Home
+handle: mediaCluster
+instructions: ''
+name: 'Media Cluster'
+searchable: false
+settings:
+  contentTable: '{{%matrixcontent_mediacluster}}'
+  maxBlocks: ''
+  minBlocks: ''
+  propagationMethod: all
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

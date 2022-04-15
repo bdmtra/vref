@@ -27,7 +27,52 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            fieldUid: ee572f12-34a8-4f92-9e75-5d82225cdead # Header Image
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 21c2cbf7-45d7-4a9b-a7e3-af6c1f76b31f # Page Title
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 5cd981cc-c08e-44dc-84d9-83f97da456f5 # Page Subtitle
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
             fieldUid: 563bfcb1-fa15-4a2b-aaa3-aca5388caab2 # Rich Text
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 08ccff68-eef7-4eda-858a-d96d5001ca9d # Icon Cluster
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 0f4caa01-e20b-4dff-ab17-5f3dcc420286 # Media Cluster
             instructions: null
             label: null
             required: false

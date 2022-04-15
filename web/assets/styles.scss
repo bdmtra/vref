@@ -305,3 +305,60 @@ label.text-danger {
     list-style: none !important;
   }
 }
+
+.btn-secondary {
+  background-color: #f9f9f9;
+  border-color: #f9f9f9;
+  color: #34826a;
+}
+
+nav {
+  display:flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: flex-end;
+  padding-right: 0!important;
+}
+
+nav div {
+  margin:20px 0 -10px 0;
+}
+
+.header-main .lg-container.flex .logo {
+  max-width: none !important;
+  margin-top: 15px !important;
+}
+
+.footer-btm-wrap .flex {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ftr-contact-caption a {
+  color: #d3d3d4 !important;
+}
+
+.ftr-contact-caption {
+  width:20% !important;
+}
+
+.ftr-news-caption {
+  width:40% !important;
+  max-width:480px !important;
+}
+
+.sign-up-field {
+  display:flex;
+  width:90%;
+}
+
+.sign-up-field #emailInput {
+  margin-bottom: 0;
+  background: #f9f9f9;
+  padding: 5px;
+  border-radius: 4px 0 0 4px;
+}
+
+.sign-up-field .btn {
+  border-radius: 0 4px 4px 0 !important;
+}
