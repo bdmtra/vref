@@ -14,7 +14,7 @@
                 {% if not subscribeResponse.success %} <p>An error occured: {{ subscribeResponse.message }}</p> {% endif %}
             {% endif %}
             <div class="sign-up-field mx-0">
-              <input id="emailInput" type="email" name="email" class="input-bdr" placeholder="Enter your email" {% if subscribeResponse and not subscribeResponse.success %}value="{{ subscribeResponse.values.email ?? '' }}"{% endif %}/>
+              <input id="emailInput" type="email" name="email" class="input-bdr px-3" placeholder="Enter your email" {% if subscribeResponse and not subscribeResponse.success %}value="{{ subscribeResponse.values.email ?? '' }}"{% endif %}/>
               <input class="btn btn-brand btn-sent" type="submit" name="" value="Sign Up"/>
             </div>
           </form>

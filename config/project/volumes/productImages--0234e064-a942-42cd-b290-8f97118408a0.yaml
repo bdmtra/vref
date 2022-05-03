@@ -1,0 +1,52 @@
+fieldLayouts:
+  581192d9-d48f-43b0-b546-60af25c3c88d:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\AssetTitleField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+handle: productImages
+hasUrls: true
+name: 'Product Images'
+settings:
+  addSubfolderToRootUrl: '1'
+  autoFocalPoint: ''
+  bucket: vref-craft-assets
+  bucketSelectionMode: choose
+  cfDistributionId: ''
+  cfPrefix: ''
+  expires: ''
+  keyId: $AWS_CLIENT_ID
+  makeUploadsPublic: '1'
+  region: us-east-2
+  secret: $AWS_CLIENT_SECRET
+  storageClass: ''
+  subfolder: ''
+sortOrder: 0
+titleTranslationKeyFormat: null
+titleTranslationMethod: null
+type: craft\awss3\Volume
+url: 'https://s3.us-east-2.amazonaws.com/vref-craft-assets/'

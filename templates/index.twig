@@ -15,29 +15,26 @@
     <span>VREF has been the aviation industry’s most trusted source of analytics, software and advisory services — through both clear skies and turbulence — since 1994.</span>
     <button class="btn btn-brand">Get Started</button>
   </div>
-  <img src="/assets/images/header-homepage1.jpg" class="banner-group-image"></img>
 </div>
 
 {##}
 {# Section 2 #}
 
-<div class="content-group">
+<div class="content-group pb-4">
   <div class="text-group">
     <h2>From C-Suite to Main Street</h2>
     <span>We believe everyone — from top manufacturers to first-time airplane buyers — should have access to the same clear, credible market data. Our products and services are focused on demystifying and democratizing the aviation market for a range of stakeholders.</span>
   </div>
-  <div class="cards-group">
-    {% for i in entry.iconCluster.all() %}
+  <div class="cards-group cards-group-products mt-4">
+    {% for i in craft.entries().section('products').all() %}
       <div class="card-wrapper">
         <div class="card-group">
-          <div class="img-box">
-            {% for asset in i.icon.all() %}
-              <img src="{{ url(asset.getUrl(), {v: asset.dateModified.timestamp}) }}" />
-            {% endfor %}
-          </div>
-          <h3>{{ i.clusterTitle }}</h3>
-          <span>{{ i.subtitle }}</span>
-          <a>Learn More</a>
+          {% for asset in i.featuredImage.all() %}
+            <img src="{{ url(asset.getUrl(), {v: asset.dateModified.timestamp}) }}" />
+          {% endfor %}
+          <h3 class="my-3">{{ i.title }}</h3>
+          <span class="d-block my-2">{{ i.subtitle }}</span>
+          <a href="{{ i.url}}" class="btn btn-brand">Learn More</a>
         </div>
       </div>
     {% endfor %}
@@ -49,18 +46,16 @@
 {# Section 3 #}
 
 <div class="content-group light-bg">
-  <div class="text-group">
+  <div class="text-group w-100">
     <h2>Trusted By Aviation Leaders</h2>
   </div>
-  <div class="cards-group">
+  <div class="cards-group cards-group-leaders">
     {% for i in entry.mediaCluster.all() %}
       <div class="card-wrapper">
         <div class="card-group">
-          <div class="img-box">
-            {% for asset in i.logo.all() %}
-              <img src="{{ url(asset.getUrl(), {v: asset.dateModified.timestamp}) }}" />
-            {% endfor %}
-          </div>
+          {% for asset in i.logo.all() %}
+            <img src="{{ url(asset.getUrl(), {v: asset.dateModified.timestamp}) }}" />
+          {% endfor %}
         </div>
       </div>
     {% endfor %}
@@ -73,7 +68,7 @@
 
 <div class="content-group">
   <div class="cards-group">
-    <div class="">
+    <div class="text-group w-100 mb-4">
       <h2>What Our Clients Are Saying</h2>
     </div>
     <div class="testi-card-cont">
@@ -110,18 +105,16 @@
 {# Section 5 #}
 
 <div class="content-group light-bg">
-  <div class="text-group">
+  <div class="text-group w-100">
     <h2>As Seen In</h2>
   </div>
-  <div class="cards-group">
+  <div class="cards-group cards-group-seen-in">
     {% for i in entry.mediaCluster.all() %}
       <div class="card-wrapper">
         <div class="card-group">
-          <div class="img-box">
-            {% for asset in i.logo.all() %}
-              <img src="{{ url(asset.getUrl(), {v: asset.dateModified.timestamp}) }}" />
-            {% endfor %}
-          </div>
+          {% for asset in i.logo.all() %}
+            <img src="{{ url(asset.getUrl(), {v: asset.dateModified.timestamp}) }}" />
+          {% endfor %}
         </div>
       </div>
     {% endfor %}
@@ -133,8 +126,8 @@
 {# Section 6 #}
 
 <div class="content-group">
-  <div class="text-group">
-    <h2>Prepared For Takeoff?</h2>
+  <div class="text-group w-100">
+    <h2 class="mb-4">Prepared For Takeoff?</h2>
     <button class="btn btn-brand">Get Started</button>
   </div>
 </div>

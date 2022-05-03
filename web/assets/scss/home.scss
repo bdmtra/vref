@@ -186,3 +186,26 @@ p {
 .header-text-group button {
   margin: 40px 0 10px 0;
 }
+
+.cards-group-products {
+  @media (max-width: 992px) {
+    .card-wrapper {
+      padding: 20px;
+    }
+  }
+  @media (max-width: 690px) {
+    .card-wrapper {
+      width: 50%;
+    }
+  }
+  .card-group h3 {
+    height: 2.1em;
+    line-height: 1em;
+    overflow: hidden;
+}
+  .card-group span {
+      height: 2.1em;
+      line-height: 1em;
+      overflow: hidden;
+  }
+}
