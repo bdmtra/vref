@@ -1,0 +1,15 @@
+<div class="container px-4 py-5 text-center">
+    <h2 class="pb-2">{{ entry.featuresTitle|nl2br}}</h2>
+    <p class="lead">{{ entry.featuresTitle|nl2br}}</p>
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+      {% for item in entry.featuresItems.all() %}
+      <div class="col">
+        <div class="feature-img">
+            <img src="{{ item.image.one().getUrl('featuresItemImage') }}" class="img-fluid h-100">
+        </div>
+        <h3 class="h4 mt-3">{{ item.heading|nl2br }}</h3>
+        <p>{{ item.text|nl2br }}</p>
+      </div>
+      {% endfor %}
+    </div>
+</div>

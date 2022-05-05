@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="row flex-lg-row-reverse align-items-center">
+    <div class="col-10 col-sm-8 col-lg-6  my-4 my-lg-0">
+        {% set heroImage = entry.heroImage.one() %}
+        {% if heroImage %}
+        <img src="{{ heroImage.url }}" class="d-block mx-lg-auto img-fluid" alt="{{ entry.heroTitle }}">
+        {% endif %}
+    </div>
+    <div class="col-10 col-lg-6 mt-0 my-4 my-lg-0">
+        <h1 class="display-5 fw-bold lh-1 mb-3">{{ entry.heroTitle|nl2br }}</h1>
+        <p class="lead mb-4">{{ entry.heroText|nl2br }}</p>
+        {% set heroLinkEntry = entry.heroButtonLink.one() %}
+        {% if heroLinkEntry %}
+        <a href="{{ heroLinkEntry.url }}" class="btn btn-brand btn-lg m-0 d-block d-md-inline-block">{{ entry.heroButtonText ?: 'Get Started' }}</a>
+        {% endif %}
+    </div>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+<div class="container px-4 py-5 text-center">
+    <h2 class="pb-2">{{ entry.logosTitle|nl2br}}</h2>
+    <div class="row g-4 py-2 py-lg-4 row-cols-3">
+      {% for item in entry.logosItems.all() %}
+      <div class="col">
+        <div class="logo-img">
+            <img src="{{ item.image.one().getUrl('logosItemImage') }}" class="img-fluid h-100">
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+</div>
