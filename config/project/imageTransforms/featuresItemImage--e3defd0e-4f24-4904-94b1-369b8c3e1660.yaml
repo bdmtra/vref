@@ -1,0 +1,9 @@
+format: webp
+handle: featuresItemImage
+height: 200
+interlace: partition
+mode: fit
+name: 'Features Item Image'
+position: center-center
+quality: 60
+width: null

@@ -1,13 +1,13 @@
 contentColumnType: string
-fieldGroup: 9171831a-6cf7-45f1-8b5a-8c51c079c22c # Base
-handle: testimonialGroups
+fieldGroup: 2a89f2c1-ef93-4f7a-8938-bce5a60aadb9 # Solutions
+handle: servicesList
 instructions: ''
-name: 'Testimonial Groups'
+name: 'Services List'
 searchable: false
 settings:
-  contentTable: '{{%matrixcontent_testimonialgroups}}'
+  contentTable: '{{%matrixcontent_serviceslist}}'
   maxBlocks: ''
-  minBlocks: '1'
+  minBlocks: ''
   propagationMethod: all
 translationKeyFormat: null
 translationMethod: site

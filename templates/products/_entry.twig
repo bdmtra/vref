@@ -1,0 +1,92 @@
+{% extends "base" %}
+
+{% block css %}
+<link rel="stylesheet" href="/assets/scss/solutions.css">
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row flex-lg-row-reverse align-items-center">
+    <div class="col-10 col-sm-8 col-lg-6  my-4 my-lg-0">
+        {% set heroImage = entry.heroImage.one() %}
+        {% if heroImage %}
+        <img src="{{ heroImage.url }}" class="d-block mx-lg-auto img-fluid" alt="{{ entry.heroTitle }}">
+        {% endif %}
+    </div>
+    <div class="col-10 col-lg-6 mt-0 my-4 my-lg-0">
+        <h1 class="display-5 fw-bold lh-1 mb-3">{{ entry.heroTitle|nl2br }}</h1>
+        <p class="lead mb-4">{{ entry.heroText|nl2br }}</p>
+        {% set heroLinkEntry = entry.heroButtonLink.one() %}
+        {% if heroLinkEntry %}
+        <a href="{{ heroLinkEntry.url }}" class="btn btn-brand btn-lg m-0 d-block d-md-inline-block">{{ entry.heroButtonText ?: 'Get Started' }}</a>
+        {% endif %}
+    </div>
+    </div>
+</div>
+<div class="border-bottom"></div>
+<div class="container px-4 py-5 text-center">
+    <h2 class="pb-2">{{ entry.featuresTitle|nl2br}}</h2>
+    <p class="lead">{{ entry.featuresTitle|nl2br}}</p>
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+      {% for item in entry.featuresItems.all() %}
+      <div class="col">
+        <div class="feature-img">
+            <img src="{{ item.image.one().getUrl('featuresItemImage') }}" class="img-fluid h-100">
+        </div>
+        <h3 class="h4 mt-3">{{ item.heading|nl2br }}</h3>
+        <p>{{ item.text|nl2br }}</p>
+      </div>
+      {% endfor %}
+    </div>
+</div>
+<div class="border-bottom"></div>
+{% for item in entry.servicesList.all() %}
+<div class="container">
+    <div class="row {% if loop.index%2 %}flex-lg-row-reverse{% endif%} align-items-center">
+        <div class="col-10 col-sm-8 col-lg-4  my-4">
+            {% set itemHeroImage = item.image.one() %}
+            <img src="{{ itemHeroImage.url }}" class="d-block mx-lg-auto img-fluid" alt="{{ item.heading }}">
+        </div>
+        <div class="col-10 col-lg-8 mt-0 my-4 my-lg-0">
+            <h2 class="fw-bold lh-1 mb-3">{{ item.heading|nl2br }}</h1>
+            <p class="lead mb-4">{{ item.text|nl2br }}</p>
+            {% set itemLinkEntry = item.linkEntry.one() %}
+            {% if itemLinkEntry %}
+                <a href="{{ itemLinkEntry.url }}" class="fw-bold m-0 d-block d-md-inline-block fs-5 text-center">{{ entry.linkText ?: 'Learn More' }} &#8594;</a>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endfor %}
+<div class="border-bottom"></div>
+<div class="container px-4 py-5 text-center">
+    <h2 class="pb-2">{{ entry.logosTitle|nl2br}}</h2>
+    <div class="row g-4 py-2 py-lg-4 row-cols-3">
+      {% for item in entry.logosItems.all() %}
+      <div class="col">
+        <div class="logo-img">
+            <img src="{{ item.image.one().getUrl('logosItemImage') }}" class="img-fluid h-100">
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+</div>
+<div class="border-bottom"></div>
+{% include 'partials/_testimonials' with { title: entry.testimonialTitle, blocks: entry.testimonialGroups.all()} %}
+<div class="border-bottom"></div>
+{% set ctaBackgroundImageAsset = entry.ctaBackgroundImage.one() %}
+<div class="img-cover"  {% if ctaBackgroundImageAsset %}style="background-image: url({{ ctaBackgroundImageAsset.url }})"{% endif %}>
+    <div class="container py-5 text-center">
+        <h2 class="fw-bold text-white">{{ entry.ctaTitle|nl2br }}</h1>
+        <div class="col-lg-6 mx-auto">
+        <p class="lead mb-4 text-white">{{ entry.ctaText|nl2br }}</p>
+        {% set ctaButtonLinkEntry = entry.ctaButtonLink.one() %}
+        {% set ctaButtonLinkText  = entry.ctaButtonText %}
+        {% if ctaButtonLinkEntry and ctaButtonLinkText %}
+        <a href="{{ ctaButtonLinkEntry.url }}" class="btn btn-brand btn-lg m-0 d-block d-md-inline-block">{{ ctaButtonLinkText }}</a>
+        {% endif %}  
+        </div>
+    </div>
+</div>
+{% endblock %}

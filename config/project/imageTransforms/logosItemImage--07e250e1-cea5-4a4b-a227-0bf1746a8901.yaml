@@ -1,0 +1,9 @@
+format: null
+handle: logosItemImage
+height: 50
+interlace: partition
+mode: fit
+name: 'Logos Item Image'
+position: center-center
+quality: 60
+width: null

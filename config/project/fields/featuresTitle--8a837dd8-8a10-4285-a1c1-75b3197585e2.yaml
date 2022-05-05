@@ -1,0 +1,18 @@
+contentColumnType: text
+fieldGroup: 2a89f2c1-ef93-4f7a-8938-bce5a60aadb9 # Solutions
+handle: featuresTitle
+instructions: ''
+name: 'Features Title'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: ''
+  columnType: null
+  initialRows: '2'
+  multiline: '1'
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

@@ -1,0 +1,54 @@
+<div class="content-group">
+  <div class="cards-group">
+    <div class="text-group w-100 mb-4">
+      <h2>{{ title }}</h2>
+    </div>
+    <div class="testi-card-cont">
+      <div class="testi-card">
+        <div id="testi-captions">
+          {% for block in blocks %}
+            <div class="testi-flex">
+              <div id="testimonial_">
+                <h6>{{ block.testimonialHeader }}</h6>
+                <p>{{ block.testimonialExcerpt }}</p>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+        <div class="testi-profiles-cont">
+          <div id="testi-profiles">
+            {% for block in blocks %}
+              <div class="testi-img">
+                {% for asset in block.testimonialThumbnail.all() %}
+                  <img src="{{ url(asset.getUrl(), {v: asset.dateModified.timestamp}) }}" alt="" width="100%" />
+                {% endfor %}
+                <span>{{ block.testimonialClientName }}</span>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+    $( document ).ready(function() {
+      $('#testi-captions').slick({
+        adaptiveHeight: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        fade: true,
+        asNavFor: '#testi-profiles'
+      });
+      $('#testi-profiles').slick({
+        adaptiveHeight: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        asNavFor: '#testi-captions',
+        arrows: false,
+        fade: true,
+        centerMode: false,
+        focusOnSelect: true
+      });
+    });
+</script>      

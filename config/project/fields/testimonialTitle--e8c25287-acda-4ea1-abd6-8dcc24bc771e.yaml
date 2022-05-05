@@ -1,0 +1,18 @@
+contentColumnType: text
+fieldGroup: 9171831a-6cf7-45f1-8b5a-8c51c079c22c # Base
+handle: testimonialTitle
+instructions: ''
+name: 'Testimonial Title'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: ''
+  columnType: null
+  initialRows: '2'
+  multiline: '1'
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

@@ -1,0 +1,55 @@
+field: 8c4e7386-fdd8-4a39-a2b9-5964c26570c5 # Logos Items
+fieldLayouts:
+  7d8db34b-654d-4106-8a4f-b8b324860dbc:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 07ec82bd-a2e3-40d5-801f-b22bf6e020ff # Image
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  07ec82bd-a2e3-40d5-801f-b22bf6e020ff: # Image
+    contentColumnType: string
+    fieldGroup: null
+    handle: image
+    instructions: ''
+    name: Image
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      allowUploads: true
+      allowedKinds:
+        - image
+      defaultUploadLocationSource: 'volume:31fbbb8a-02b3-4d18-ba5f-1046106a8e7c' # Solution Images
+      defaultUploadLocationSubpath: ''
+      limit: '1'
+      localizeRelations: false
+      previewMode: full
+      restrictFiles: '1'
+      selectionLabel: ''
+      showSiteMenu: false
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      singleUploadLocationSource: 'volume:fb6e2638-c6df-4a24-8de9-422128e80318' # Client Images Volume
+      singleUploadLocationSubpath: ''
+      source: null
+      sources:
+        - 'volume:31fbbb8a-02b3-4d18-ba5f-1046106a8e7c' # Solution Images
+      targetSiteId: null
+      useSingleFolder: false
+      validateRelatedElements: false
+      viewMode: large
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+handle: item
+name: item
+sortOrder: 1
