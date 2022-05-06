@@ -1,11 +1,11 @@
 contentColumnType: string
-fieldGroup: e117ded9-ad0d-4a50-bb97-589484d3e503 # Features Section
-handle: featuresItems
+fieldGroup: 0c655ee1-cc7d-4997-ab8f-e34ed61a1378 # Reports Section
+handle: reportsItems
 instructions: ''
-name: 'Features Items'
+name: 'Reports Items'
 searchable: false
 settings:
-  contentTable: '{{%matrixcontent_featuresitems}}'
+  contentTable: '{{%matrixcontent_reportsitems}}'
   maxBlocks: ''
   minBlocks: ''
   propagationMethod: all

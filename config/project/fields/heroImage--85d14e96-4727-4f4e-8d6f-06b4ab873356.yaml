@@ -1,5 +1,5 @@
 contentColumnType: string
-fieldGroup: 2a89f2c1-ef93-4f7a-8938-bce5a60aadb9 # Solutions
+fieldGroup: e9e3bf35-7f73-4c12-8fef-f60ecb59a31b # Hero Section
 handle: heroImage
 instructions: ''
 name: 'Hero Image'
@@ -16,7 +16,7 @@ settings:
   previewMode: full
   restrictFiles: '1'
   selectionLabel: ''
-  showSiteMenu: false
+  showSiteMenu: true
   showUnpermittedFiles: false
   showUnpermittedVolumes: false
   singleUploadLocationSource: 'volume:31fbbb8a-02b3-4d18-ba5f-1046106a8e7c' # Solution Images

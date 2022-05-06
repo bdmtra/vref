@@ -1,15 +1,15 @@
 contentColumnType: text
-fieldGroup: e117ded9-ad0d-4a50-bb97-589484d3e503 # Features Section
-handle: featuresTitle
+fieldGroup: 0c655ee1-cc7d-4997-ab8f-e34ed61a1378 # Reports Section
+handle: reportsText
 instructions: ''
-name: 'Features Title'
+name: 'Reports Text'
 searchable: false
 settings:
   byteLimit: null
   charLimit: null
   code: ''
   columnType: null
-  initialRows: '2'
+  initialRows: '4'
   multiline: '1'
   placeholder: null
   uiMode: normal

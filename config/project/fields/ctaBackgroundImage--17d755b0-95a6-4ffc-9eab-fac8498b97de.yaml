@@ -1,5 +1,5 @@
 contentColumnType: string
-fieldGroup: 2a89f2c1-ef93-4f7a-8938-bce5a60aadb9 # Solutions
+fieldGroup: 0d09437d-cc22-40d2-a504-89155a0b4a52 # CTA Section
 handle: ctaBackgroundImage
 instructions: ''
 name: 'CTA Background Image'
@@ -16,7 +16,7 @@ settings:
   previewMode: full
   restrictFiles: '1'
   selectionLabel: ''
-  showSiteMenu: false
+  showSiteMenu: true
   showUnpermittedFiles: false
   showUnpermittedVolumes: false
   singleUploadLocationSource: 'volume:fb6e2638-c6df-4a24-8de9-422128e80318' # Client Images Volume

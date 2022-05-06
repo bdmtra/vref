@@ -7138,20 +7138,12 @@ h3.subpricing-head {
   display: block;
 }
 
-.border-bottom {
-  border-bottom: 1px solid #34826a !important;
-}
-
-.border-top {
-  border-top: 1px solid #34826a !important;
-}
-
-.border-left {
-  border-bottom: 1px solid #34826a !important;
-}
-
+.border,
+.border-bottom,
+.border-top,
+.border-left,
 .border-right {
-  border-top: 1px solid #34826a !important;
+  border-color: #34826a !important;
 }
 
 .link-lg {
@@ -7266,6 +7258,14 @@ h3.subpricing-head {
 
 .slick-slider .slick-prev:hover, .slick-slider .slick-next:hover {
   opacity: 0.7;
+}
+
+.feature-img {
+  height: 200px;
+}
+
+.logos-img, .report-images {
+  height: 50px;
 }
 
 p {

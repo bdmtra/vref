@@ -1,0 +1,9 @@
+format: null
+handle: reportsItemImage
+height: 50
+interlace: partition
+mode: fit
+name: 'Reports Item Image'
+position: center-center
+quality: 60
+width: null

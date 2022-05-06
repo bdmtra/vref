@@ -1,5 +1,5 @@
 fieldLayouts:
-  8ceef4ee-4bf7-4cb3-9927-6119083d592a:
+  d2ff6f4d-7283-4982-b223-e923677dcadb:
     tabs:
       -
         elements:
@@ -76,7 +76,7 @@ fieldLayouts:
           -
             type: craft\fieldlayoutelements\HorizontalRule
           -
-            fieldUid: 8a837dd8-8a10-4285-a1c1-75b3197585e2 # Features Title
+            fieldUid: 28df3e9c-1067-49b5-9514-12fbf903a20b # Reports Title
             instructions: null
             label: null
             required: false
@@ -85,7 +85,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 082a68f3-58bb-49cf-a0e9-89d10c709ef1 # Features Text
+            fieldUid: 53d5e4a0-cf45-483a-8c27-b91b59197070 # Reports Text
             instructions: null
             label: null
             required: false
@@ -94,7 +94,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 7ddd9958-751d-497e-8f09-9484c3afbea6 # Features Items
+            fieldUid: b6bc6a7b-f0bf-4722-8dbe-820e1bba471c # Reports Items
             instructions: null
             label: null
             required: false
@@ -106,6 +106,26 @@ fieldLayouts:
             type: craft\fieldlayoutelements\HorizontalRule
           -
             fieldUid: d6163fd8-ef19-4bf8-a36a-cc2c73248013 # Services List
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            type: craft\fieldlayoutelements\HorizontalRule
+          -
+            fieldUid: e8c25287-acda-4ea1-abd6-8dcc24bc771e # Testimonial Title
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: aa7d232f-992f-4204-8784-c0b71642e11a # Testimonial Groups
             instructions: null
             label: null
             required: false
@@ -143,7 +163,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 798e5860-2558-4d3d-a18b-a4b58dfe218a # CTA Button Text
+            fieldUid: e9d61c0b-c59a-43e3-a8c5-c6f9f6642a91 # CTA Button Link
             instructions: null
             label: null
             required: false
@@ -152,7 +172,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: e9d61c0b-c59a-43e3-a8c5-c6f9f6642a91 # CTA Button Link
+            fieldUid: 798e5860-2558-4d3d-a18b-a4b58dfe218a # CTA Button Text
             instructions: null
             label: null
             required: false
@@ -191,10 +211,10 @@ fieldLayouts:
             width: 100
         name: Content
         sortOrder: 1
-handle: valuations
+handle: certificates
 hasTitleField: true
-name: Valuations
-section: a709970e-dfd0-4b56-a0a6-30ba0f361731 # Valuations
+name: Certificates
+section: e3844373-0f89-4751-857b-d84ea8dbb4d5 # Certificates
 sortOrder: 1
 titleFormat: null
 titleTranslationKeyFormat: null

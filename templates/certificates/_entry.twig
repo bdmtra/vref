@@ -4,9 +4,11 @@
 
 {% include 'partials/sections/_hero' %}
 <div class="border-bottom"></div>
-{% include 'partials/sections/_features' %}
+{% include 'partials/sections/_reports' %}
 <div class="border-bottom"></div>
 {% include 'partials/sections/_services' %}
+<div class="border-bottom"></div>
+{% include 'partials/sections/_testimonials' with { title: entry.testimonialTitle, blocks: entry.testimonialGroups.all()} %}
 <div class="border-bottom"></div>
 {% include 'partials/sections/_cta' %}
 <div class="border-bottom"></div>

@@ -8,8 +8,10 @@
 <div class="border-bottom"></div>
 {% include 'partials/sections/_services' %}
 <div class="border-bottom"></div>
-{% include 'partials/sections/_cta' %}
+{% include 'partials/sections/_logos' %}
 <div class="border-bottom"></div>
-{% include 'partials/sections/_compare' %}
+{% include 'partials/sections/_testimonials' with { title: entry.testimonialTitle, blocks: entry.testimonialGroups.all()} %}
+<div class="border-bottom"></div>
+{% include 'partials/sections/_cta' %}
 
 {% endblock %}

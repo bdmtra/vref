@@ -1,16 +1,16 @@
 contentColumnType: text
-fieldGroup: e117ded9-ad0d-4a50-bb97-589484d3e503 # Features Section
-handle: featuresTitle
+fieldGroup: 773b0290-b28c-4789-ad92-1a0cec81a9e8 # Compare Section
+handle: compareTable
 instructions: ''
-name: 'Features Title'
+name: 'Compare Table'
 searchable: false
 settings:
   byteLimit: null
   charLimit: null
   code: ''
   columnType: null
-  initialRows: '2'
-  multiline: '1'
+  initialRows: '4'
+  multiline: ''
   placeholder: null
   uiMode: normal
 translationKeyFormat: null
