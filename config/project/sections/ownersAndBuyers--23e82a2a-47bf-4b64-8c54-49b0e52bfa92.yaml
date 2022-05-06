@@ -1,0 +1,20 @@
+enableVersioning: true
+handle: ownersAndBuyers
+name: 'Owners and Buyers'
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primary entry page'
+      -
+        - urlFormat
+        - '{url}'
+propagationMethod: all
+siteSettings:
+  d66119ad-8f5f-41e8-8169-49f2c51c36b6: # VREF Aircraft Values & Appraisals
+    enabledByDefault: true
+    hasUrls: true
+    template: solutions/_entry
+    uriFormat: 'owners-and-buyers/{slug}'
+type: channel
