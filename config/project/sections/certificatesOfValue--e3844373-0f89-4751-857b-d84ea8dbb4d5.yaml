@@ -1,6 +1,6 @@
 enableVersioning: true
-handle: certificates
-name: Certificates
+handle: certificatesOfValue
+name: 'Certificates of Value'
 previewTargets:
   -
     __assoc__:
@@ -18,6 +18,6 @@ siteSettings:
   d66119ad-8f5f-41e8-8169-49f2c51c36b6: # VREF Aircraft Values & Appraisals
     enabledByDefault: true
     hasUrls: true
-    template: certificates/_entry
-    uriFormat: 'certificates/{slug}'
-type: channel
+    template: certificates_of_value
+    uriFormat: certificates-of-value
+type: single

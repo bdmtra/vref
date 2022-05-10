@@ -211,10 +211,10 @@ fieldLayouts:
             width: 100
         name: Content
         sortOrder: 1
-handle: certificates
+handle: certificatesOfValue
 hasTitleField: true
-name: Certificates
-section: e3844373-0f89-4751-857b-d84ea8dbb4d5 # Certificates
+name: 'Certificates of Value'
+section: e3844373-0f89-4751-857b-d84ea8dbb4d5 # Certificates of Value
 sortOrder: 1
 titleFormat: null
 titleTranslationKeyFormat: null

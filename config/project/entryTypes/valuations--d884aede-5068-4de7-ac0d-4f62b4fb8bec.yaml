@@ -193,8 +193,8 @@ fieldLayouts:
         sortOrder: 1
 handle: valuations
 hasTitleField: true
-name: Valuations
-section: a709970e-dfd0-4b56-a0a6-30ba0f361731 # Valuations
+name: 'Aircraft Valuations'
+section: a709970e-dfd0-4b56-a0a6-30ba0f361731 # Aircraft Valuations
 sortOrder: 1
 titleFormat: null
 titleTranslationKeyFormat: null
