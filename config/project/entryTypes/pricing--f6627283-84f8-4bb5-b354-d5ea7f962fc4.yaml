@@ -101,6 +101,37 @@ fieldLayouts:
             width: 100
         name: 'VREF Online'
         sortOrder: 2
+      -
+        elements:
+          -
+            fieldUid: 5bc9461a-5669-490e-a641-356563a6cb29 # VREF Print Pricing Title
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 41f5233c-58c3-455b-8931-23a080cc06bc # VREF Print Pricing Text
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 04691326-dfb1-4320-920d-19a78b16c612 # VREF Print Pricing Items
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: 'VREF Print'
+        sortOrder: 3
 handle: pricing
 hasTitleField: true
 name: Pricing

@@ -60,7 +60,28 @@
                 {% endfor %}
             </div>
         </div>
-        <div class="tab-pane fade" id="vref-print-tab-pane"></div>
+        <div class="tab-pane fade" id="vref-print-tab-pane">
+            <h2 class="mb-4 text-center">{{ entry.vrefPrintPricingTitle|nl2br}}</h2>
+            <p class="fs-6 mb-4 pb-3 text-center">{{ entry.vrefPrintPricingText|nl2br}}</p>
+            <div class="row row-cols-1 row-cols-lg-2">
+                {% for item in entry.vrefPrintPricingItems.all() %}
+                    <div class="col mb-4">
+                        <div class="card card-product p-5 m-0">
+                            <h2 class="fs-4 mb-3 text-center lh-sm">{{ item.heading|nl2br }}</h2>
+                            <p class="mb-3 text-center fs-6">$XX/Copy</p>
+                            <div class="input-group mb-3 w-50">
+                                <input type="number" class="form-control" value="{{ default_copies_number }}" placeholder="{{ default_copies_number }}">
+                                <label class="input-group-text m-0" min="1" max="100">Copies</label>
+                            </div>
+                            <p class="mb-3 text-center fs-6">{{ item.text|nl2br }}</p>
+                            <div class="input-group mb-3 justify-content-center">
+                                <button class="btn btn-brand" type="button">Buy now</button>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
         <div class="tab-pane fade" id="certificate-tab-pane"></div>
         <div class="tab-pane fade" id="consulting-tab-pane"></div>
     </div>
