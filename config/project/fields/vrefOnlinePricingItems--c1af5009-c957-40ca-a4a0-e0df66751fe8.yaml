@@ -1,0 +1,14 @@
+contentColumnType: string
+fieldGroup: b0fd34ef-c714-42db-8998-e629f96a61b2 # Pricing
+handle: vrefOnlinePricingItems
+instructions: ''
+name: 'VREF Online Pricing Items'
+searchable: false
+settings:
+  contentTable: '{{%matrixcontent_vrefonlinepricingitems}}'
+  maxBlocks: ''
+  minBlocks: ''
+  propagationMethod: all
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

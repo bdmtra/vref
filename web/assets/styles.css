@@ -5956,10 +5956,6 @@ input.csc-number {
   max-width: 100%;
 }
 
-.mb-5 {
-  margin-bottom: 5px !important;
-}
-
 .recc-tot-block {
   background-color: #f4f7fb;
   padding: 14px 20px;
@@ -7266,6 +7262,134 @@ h3.subpricing-head {
 
 .logos-img, .report-images {
   height: 50px;
+}
+
+.bg-primary {
+  background-color: #222324 !important;
+}
+
+ul.nav li {
+  list-style: none;
+}
+
+.nav-link {
+  color: #34826a !important;
+}
+
+.nav-item {
+  padding: 0 !important;
+}
+
+.nav-link {
+  cursor: pointer;
+}
+
+.nav-link.active {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.card-product input[type=number]::-webkit-inner-spin-button,
+.card-product input[type=number]::-webkit-outer-spin-button, .card-price-plan-addon input[type=number]::-webkit-inner-spin-button,
+.card-price-plan-addon input[type=number]::-webkit-outer-spin-button {
+  opacity: 1;
+}
+.card-product .input-group-text, .card-price-plan-addon .input-group-text {
+  background: #fff;
+  border-color: #fff;
+}
+
+input[type=radio]:checked + label.btn.btn-brand,
+input[type=radio]:checked + label.btn.btn-brand:hover {
+  background-color: #34826a !important;
+  border-color: #34826a !important;
+  color: #f9f9f9 !important;
+}
+
+label.btn.btn-brand, label.btn.btn-brand:hover {
+  background-color: #fff !important;
+  border-color: #34826a !important;
+  color: #34826a !important;
+}
+
+.input-group-radio-buttons .btn {
+  border-left-width: 0 !important;
+  border-right-width: 0 !important;
+  border-radius: 0 !important;
+  outline: none !important;
+  margin-bottom: 0;
+}
+.input-group-radio-buttons .btn:focus {
+  outline-color: transparent !important;
+  outline-style: none !important;
+  box-shadow: none;
+}
+
+.input-group-radio-buttons .btn-first {
+  border-top-left-radius: 4px !important;
+  border-bottom-left-radius: 4px !important;
+  border-left-width: 1px !important;
+}
+
+.input-group-radio-buttons .btn-last {
+  border-top-right-radius: 4px !important;
+  border-bottom-right-radius: 4px !important;
+  border-right-width: 1px !important;
+}
+
+.card-product ul li {
+  list-style: none;
+  background-image: url(/assets/images/tick.png);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: 2rem;
+  padding: 0.15rem 0 0.55rem 2.6rem;
+  line-height: 1.4rem;
+  font-size: 1rem;
+}
+
+.card-product ul li + li {
+  margin-top: 0.75rem;
+}
+
+.nav-pills .nav-link {
+  text-decoration: none;
+}
+.nav-pills .nav-link b, .nav-pills .nav-link span {
+  display: block;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: #fff !important;
+  background-color: #34826a;
+  font-weight: initial;
+}
+
+.nav-price-plan .nav-item {
+  border: 1px solid #34826a;
+  border-left-width: 0 !important;
+  border-right-width: 0 !important;
+  border-radius: 0 !important;
+}
+
+.nav-price-plan .nav-item:first-child {
+  border-top-left-radius: 4px !important;
+  border-bottom-left-radius: 4px !important;
+  border-left-width: 1px !important;
+}
+
+.nav-price-plan .nav-item:last-child {
+  border-top-right-radius: 4px !important;
+  border-bottom-right-radius: 4px !important;
+  border-right-width: 1px !important;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  background: #34826a;
+}
+
+.card-bg-secondary {
+  background-color: #c7f3e5 !important;
 }
 
 p {

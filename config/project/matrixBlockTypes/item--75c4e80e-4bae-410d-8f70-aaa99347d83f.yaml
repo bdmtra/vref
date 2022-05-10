@@ -1,0 +1,124 @@
+field: c1af5009-c957-40ca-a4a0-e0df66751fe8 # VREF Online Pricing Items
+fieldLayouts:
+  bcf6f9a5-d3e4-43ca-9831-d0f10c90439c:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 2656cadd-5acf-409b-9889-2b2778f4cbb3 # Heading
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 45490903-fc30-4d3a-b0b0-5306b6bd4e0f # Text
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 859655ad-afca-4f40-b948-0183a54c5cd7 # Text Secondary
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 8a6414fe-54a2-4019-be26-fab3be73ad7e # Includes
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  2656cadd-5acf-409b-9889-2b2778f4cbb3: # Heading
+    contentColumnType: text
+    fieldGroup: null
+    handle: heading
+    instructions: ''
+    name: Heading
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '1'
+      multiline: '1'
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  45490903-fc30-4d3a-b0b0-5306b6bd4e0f: # Text
+    contentColumnType: text
+    fieldGroup: null
+    handle: text
+    instructions: ''
+    name: Text
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '2'
+      multiline: '1'
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  859655ad-afca-4f40-b948-0183a54c5cd7: # Text Secondary
+    contentColumnType: text
+    fieldGroup: null
+    handle: textSecondary
+    instructions: ''
+    name: 'Text Secondary'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '2'
+      multiline: '1'
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  8a6414fe-54a2-4019-be26-fab3be73ad7e: # Includes
+    contentColumnType: text
+    fieldGroup: null
+    handle: includes
+    instructions: 'Use line break for new list item'
+    name: Includes
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '6'
+      multiline: '1'
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: item
+name: Item
+sortOrder: 1
