@@ -5,14 +5,12 @@ instructions: ''
 name: 'Compare Table'
 searchable: false
 settings:
-  byteLimit: null
-  charLimit: null
-  code: ''
-  columnType: null
-  initialRows: '4'
-  multiline: ''
-  placeholder: null
-  uiMode: normal
+  columnsAddRowLabel: 'Add column'
+  columnsInstructions: ''
+  columnsLabel: Columns
+  rowsAddRowLabel: 'Add row'
+  rowsInstructions: ''
+  rowsLabel: Rows
 translationKeyFormat: null
 translationMethod: none
-type: craft\fields\PlainText
+type: supercool\tablemaker\fields\TableMakerField
