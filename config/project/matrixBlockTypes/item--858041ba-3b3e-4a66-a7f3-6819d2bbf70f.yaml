@@ -1,0 +1,110 @@
+field: a844aef3-3a84-48b0-ae00-f1a381bcab64 # Values Items
+fieldLayouts:
+  2c58c96a-0e98-40fc-9c4f-e245988ba51b:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 8bbe22c0-a7ff-43df-9030-dfb49a831122 # Heading
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 5033fa9f-d6ec-45fe-b260-cffd9ef39f20 # Text
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: bc804887-fcc4-45c8-bbbc-3f249f074802 # Image
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  5033fa9f-d6ec-45fe-b260-cffd9ef39f20: # Text
+    contentColumnType: text
+    fieldGroup: null
+    handle: text
+    instructions: ''
+    name: Text
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: '1'
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  8bbe22c0-a7ff-43df-9030-dfb49a831122: # Heading
+    contentColumnType: text
+    fieldGroup: null
+    handle: heading
+    instructions: ''
+    name: Heading
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  bc804887-fcc4-45c8-bbbc-3f249f074802: # Image
+    contentColumnType: string
+    fieldGroup: null
+    handle: image
+    instructions: ''
+    name: Image
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      allowUploads: true
+      allowedKinds: null
+      defaultUploadLocationSource: 'volume:fb6e2638-c6df-4a24-8de9-422128e80318' # Client Images Volume
+      defaultUploadLocationSubpath: ''
+      limit: '1'
+      localizeRelations: false
+      previewMode: full
+      restrictFiles: ''
+      selectionLabel: ''
+      showSiteMenu: false
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      singleUploadLocationSource: 'volume:fb6e2638-c6df-4a24-8de9-422128e80318' # Client Images Volume
+      singleUploadLocationSubpath: ''
+      source: null
+      sources:
+        - 'volume:31fbbb8a-02b3-4d18-ba5f-1046106a8e7c' # Solution Images
+      targetSiteId: null
+      useSingleFolder: false
+      validateRelatedElements: false
+      viewMode: large
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+handle: item
+name: Item
+sortOrder: 1

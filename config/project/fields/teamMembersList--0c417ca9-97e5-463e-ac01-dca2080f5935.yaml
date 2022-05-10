@@ -1,0 +1,21 @@
+contentColumnType: string
+fieldGroup: 686836de-a41f-410b-8fd4-d41fbda79814 # Who We Are
+handle: teamMembersList
+instructions: ''
+name: 'Team Members List'
+searchable: false
+settings:
+  allowSelfRelations: false
+  limit: ''
+  localizeRelations: false
+  selectionLabel: ''
+  showSiteMenu: true
+  source: null
+  sources:
+    - 'section:94808026-41ac-431a-a183-8ad8d9a55bff' # Team Members
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: null
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Entries

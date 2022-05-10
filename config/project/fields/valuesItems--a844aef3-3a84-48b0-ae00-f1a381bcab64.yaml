@@ -1,0 +1,14 @@
+contentColumnType: string
+fieldGroup: 686836de-a41f-410b-8fd4-d41fbda79814 # Who We Are
+handle: valuesItems
+instructions: ''
+name: 'Values Items'
+searchable: false
+settings:
+  contentTable: '{{%matrixcontent_valuesitems}}'
+  maxBlocks: ''
+  minBlocks: ''
+  propagationMethod: all
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

@@ -1,0 +1,9 @@
+format: null
+handle: teamMembersItemImage
+height: 366
+interlace: partition
+mode: crop
+name: 'Team Members Item Image'
+position: center-center
+quality: 60
+width: 366

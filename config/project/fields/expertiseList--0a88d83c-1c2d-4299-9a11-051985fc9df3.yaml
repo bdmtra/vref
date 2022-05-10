@@ -1,0 +1,14 @@
+contentColumnType: string
+fieldGroup: 686836de-a41f-410b-8fd4-d41fbda79814 # Who We Are
+handle: expertiseList
+instructions: ''
+name: 'Expertise List'
+searchable: false
+settings:
+  contentTable: '{{%matrixcontent_expertiselist}}'
+  maxBlocks: ''
+  minBlocks: ''
+  propagationMethod: all
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

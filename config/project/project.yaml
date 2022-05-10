@@ -1,4 +1,4 @@
-dateModified: 1652195710
+dateModified: 1652205381
 email:
   fromEmail: andrew@andrewlynn.co
   fromName: vref.com
@@ -24,6 +24,10 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 4.3.0
+  field-manager:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
   mailchimp-subscribe:
     edition: standard
     enabled: true

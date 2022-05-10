@@ -1,20 +1,30 @@
-{% for item in entry.servicesList.all() %}
+{% if offset is not defined %}
+    {% set offset = 0 %}
+{% endif %}
+
+{% if items is not defined %}
+    {% set items = entry.servicesList.all() %}
+{% endif %}
+
+{% for item in items %}
 <div class="container">
-    <div class="row {% if loop.index%2 %}flex-lg-row-reverse{% endif%} align-items-center">
+    <div class="row {% if (loop.index + offset) % 2 %}flex-lg-row-reverse{% endif %} align-items-center">
         <div class="col-10 col-sm-8 col-lg-4  my-4">
             {% set itemHeroImage = item.image.one() %}
             <img src="{{ itemHeroImage.url }}" class="d-block mx-lg-auto img-fluid" alt="{{ item.heading }}">
         </div>
         <div class="col-10 col-lg-8 mt-0 my-4 my-lg-0">
-            <h2 class="fw-bold lh-1 mb-3">{{ item.heading|nl2br }}</h1>
+            <h2 class="fw-bold lh-1 mb-3">{{ item.heading|nl2br }}</h2>
             <p class="lead mb-4">{{ item.text|nl2br }}</p>
-            {% set itemLinkEntry = item.linkEntry.one() %}
-            {% if itemLinkEntry %}
-                <div class="text-center">
-                    <div class="text-lg-start">
-                        <a href="{{ itemLinkEntry.url }}" class="fw-bold d-md-inline-block fs-5 border-bottom text-center">{{ entry.linkText ?: 'Learn More' }} &#8594;</a>
+            {% if item.linkEntry and entry.linkText %}
+                {% set itemLinkEntry = item.linkEntry.one() %}
+                {% if itemLinkEntry %}
+                    <div class="text-center">
+                        <div class="text-lg-start">
+                            <a href="{{ itemLinkEntry.url }}" class="fw-bold d-md-inline-block fs-5 border-bottom text-center">{{ entry.linkText ?: 'Learn More' }} &#8594;</a>
+                        </div>
                     </div>
-                </div>
+                {% endif %}
             {% endif %}
         </div>
     </div>

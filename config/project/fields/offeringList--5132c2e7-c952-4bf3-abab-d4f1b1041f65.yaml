@@ -1,0 +1,14 @@
+contentColumnType: string
+fieldGroup: 686836de-a41f-410b-8fd4-d41fbda79814 # Who We Are
+handle: offeringList
+instructions: ''
+name: 'Offering List'
+searchable: false
+settings:
+  contentTable: '{{%matrixcontent_offeringlist}}'
+  maxBlocks: ''
+  minBlocks: ''
+  propagationMethod: all
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix
