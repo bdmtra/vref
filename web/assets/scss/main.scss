@@ -4231,10 +4231,80 @@ label.btn.btn-brand, label.btn.btn-brand:hover{
 }
 
 input[type='range']::-webkit-slider-thumb {
-
   background: $brand-color;
 }
 
 .card-bg-secondary {
   background-color: #c7f3e5!important;
+}
+
+.table-compare td{
+  font-size: 18px !important;
+  text-align: center !important;
+}
+.table-compare thead th{
+  text-align: center !important;
+}
+
+.table-compare tbody th {
+  font-weight: bold;
+  line-height: 20px !important;
+  text-transform: uppercase;
+  vertical-align: middle;
+  text-align: left;
+  background-color: #34826a;
+  color: #fff !important;
+}
+
+.table-compare > thead > tr th, .table-compare tbody th {
+  padding: 10px;
+  line-height: 40px;
+  font-size: 1rem !important;
+}
+
+.table-compare.table tbody tr:hover {
+  background-color: inherit;
+  -webkit-box-shadow: none;
+  -ms-box-shadow: none;
+  box-shadow: none;
+}
+.table-compare tr.transparent {
+  border-width: 0 !important;
+  td, th, tr {
+    background: transparent !important;
+    border-width: 0 !important;
+  }
+}
+
+.table-compare a {
+  text-decoration: none !important;
+  color: $brand-color !important;
+}
+
+.table-compare img{
+  height: 30px;
+}
+
+.table-compare {
+  > :not(caption) > * > * {
+    border-width: 0 1px !important;
+    border-color: $brand-color !important;
+    border-style: solid !important;
+  }
+
+  > :not(caption) > * {
+    border-width: 1px 0 !important;
+    border-color: $brand-color !important;
+    border-style: solid !important;
+  }
+}
+
+.table tbody tr td {
+  background-color: transparent !important;
+}
+
+@media (max-width: 1023px) {
+  .table-compare {
+    min-width: 760px !important;
+  }
 }
