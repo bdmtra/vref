@@ -82,7 +82,24 @@
                 {% endfor %}
             </div>
         </div>
-        <div class="tab-pane fade" id="certificate-tab-pane"></div>
+        <div class="tab-pane fade" id="certificate-tab-pane">
+            <h2 class="mb-4 text-center">{{ entry.certificatesPricingTitle|nl2br}}</h2>
+            <p class="fs-6 mb-4 pb-3 text-center">{{ entry.certificatesPricingText|nl2br}}</p>
+            <div class="row row-cols-1 row-cols-lg-2">
+                {% for item in entry.certificatesPricingItems.all() %}
+                    <div class="col mb-4">
+                        <div class="card card-product p-5 m-0">
+                            <h2 class="fs-4 mb-3 text-center lh-sm">{{ item.heading|nl2br }}</h2>
+                            <p class="mb-3 text-center fs-6">$XX</p>
+                            <p class="mb-3 text-center fs-6">{{ item.text|nl2br }}</p>
+                            <div class="input-group mb-3 justify-content-center">
+                                <button class="btn btn-brand" type="button">Buy now</button>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
         <div class="tab-pane fade" id="consulting-tab-pane"></div>
     </div>
 </div>

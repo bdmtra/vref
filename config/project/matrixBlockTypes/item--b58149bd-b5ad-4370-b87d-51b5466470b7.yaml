@@ -1,0 +1,68 @@
+field: bc634f9f-b74c-465a-859c-6b0754141a97 # Certificates Pricing Items
+fieldLayouts:
+  571a2cfb-3b29-43c2-8bef-77e62885b3b7:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: ff5cb3a8-ae0d-46d6-b200-8bcaad39e4eb # Heading
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 4f93f475-7347-48e0-927e-ec79c23e7828 # Text
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  4f93f475-7347-48e0-927e-ec79c23e7828: # Text
+    contentColumnType: text
+    fieldGroup: null
+    handle: text
+    instructions: ''
+    name: Text
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '2'
+      multiline: '1'
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  ff5cb3a8-ae0d-46d6-b200-8bcaad39e4eb: # Heading
+    contentColumnType: text
+    fieldGroup: null
+    handle: heading
+    instructions: ''
+    name: Heading
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '1'
+      multiline: '1'
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: item
+name: Item
+sortOrder: 1

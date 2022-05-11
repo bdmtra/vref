@@ -1,0 +1,14 @@
+contentColumnType: string
+fieldGroup: b0fd34ef-c714-42db-8998-e629f96a61b2 # Pricing
+handle: certificatesPricingItems
+instructions: ''
+name: 'Certificates Pricing Items'
+searchable: false
+settings:
+  contentTable: '{{%matrixcontent_certificatespricingitems}}'
+  maxBlocks: ''
+  minBlocks: ''
+  propagationMethod: all
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

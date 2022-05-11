@@ -132,6 +132,37 @@ fieldLayouts:
             width: 100
         name: 'VREF Print'
         sortOrder: 3
+      -
+        elements:
+          -
+            fieldUid: 164e8081-ebeb-4c6c-9a0a-922328b8073a # Certificates Pricing Title
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: f34c1284-829f-4b21-87cd-84a289c8f4fc # Certificates Pricing Text
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: bc634f9f-b74c-465a-859c-6b0754141a97 # Certificates Pricing Items
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Certificates
+        sortOrder: 4
 handle: pricing
 hasTitleField: true
 name: Pricing
