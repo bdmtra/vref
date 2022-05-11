@@ -163,6 +163,19 @@ fieldLayouts:
             width: 100
         name: Certificates
         sortOrder: 4
+      -
+        elements:
+          -
+            fieldUid: 8c606104-3bda-4aca-8d8a-0df389eda91a # Consulting Pricing Title
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Consulting
+        sortOrder: 5
 handle: pricing
 hasTitleField: true
 name: Pricing
