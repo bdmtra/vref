@@ -7,26 +7,38 @@
 {% endif %}
 
 {% for item in items %}
-<div class="container">
-    <div class="row {% if (loop.index + offset) % 2 %}flex-lg-row-reverse{% endif %} align-items-center">
-        <div class="col-10 col-sm-8 col-lg-4  my-4">
-            {% set itemHeroImage = item.image.one() %}
-            <img src="{{ itemHeroImage.url }}" class="d-block mx-lg-auto img-fluid" alt="{{ item.heading }}">
-        </div>
-        <div class="col-10 col-lg-8 mt-0 my-4 my-lg-0">
-            <h2 class="fw-bold lh-1 mb-3">{{ item.heading|nl2br }}</h2>
-            <p class="lead mb-4">{{ item.text|nl2br }}</p>
-            {% if item.linkEntry and entry.linkText %}
-                {% set itemLinkEntry = item.linkEntry.one() %}
-                {% if itemLinkEntry %}
+    {% set itemHeroImage = item.image ? item.image.one() : false %}
+    {% set itemLinkEntry = item.linkEntry ? item.linkEntry.one() : false %}
+    <div class="container">
+        <div class="row flex-lg-row{% if (loop.index + offset) % 2 %}-reverse{% endif %} align-items-center">
+            <div class="col-10 col-sm-8 col-lg-4 px-0 my-4 {% if item.linkPosition == 'side' %} order-1 {% endif %}">
+                {% if itemLinkEntry and item.linkPosition == 'side' %}
                     <div class="text-center">
+                        <div class="{{ (loop.index + offset) % 2 ? 'text-lg-start' : 'text-lg-end' }}">
+                            <a href="{{ itemLinkEntry.url }}"
+                                   class="fw-bold d-md-inline-block fs-5 border-bottom">{{ entry.linkText ?: 'Learn More' }}
+                                    &#8594;</a>
+                        </div>
+                    </div>
+                {% else %}
+                    {% if itemHeroImage %}
+                        <img src="{{ itemHeroImage.url }}" class="d-block mx-lg-auto img-fluid" alt="{{ item.heading }}">
+                    {% endif %}
+                {% endif %}
+            </div>
+            <div class="col-10 col-lg-8 my-0 mt-lg-4 {% if item.linkPosition == 'side' %} order-0 {% endif %}">
+                <h2 class="fw-bold lh-1 my-3">{{ item.heading|nl2br }}</h2>
+                <p class="lead mb-4">{{ item.text|nl2br }}</p>
+                {% if itemLinkEntry and item.linkPosition == 'underText' %}
+                    <div class="text-center mb-4 mb-lg-0">
                         <div class="text-lg-start">
-                            <a href="{{ itemLinkEntry.url }}" class="fw-bold d-md-inline-block fs-5 border-bottom text-center">{{ entry.linkText ?: 'Learn More' }} &#8594;</a>
+                            <a href="{{ itemLinkEntry.url }}"
+                               class="fw-bold d-md-inline-block fs-5 border-bottom text-center">{{ entry.linkText ?: 'Learn More' }}
+                                &#8594;</a>
                         </div>
                     </div>
                 {% endif %}
-            {% endif %}
+            </div>
         </div>
     </div>
-</div>
 {% endfor %}

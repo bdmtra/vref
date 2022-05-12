@@ -31,6 +31,24 @@ fieldLayouts:
             type: craft\fieldlayoutelements\CustomField
             warning: null
             width: 100
+          -
+            fieldUid: 37d8f30b-cca6-4c21-aab1-62e69cc5e9e4 # Link Entry
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 3715ef4e-7f78-4ec4-945f-143b3c820ff5 # Link Text
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
         name: Content
         sortOrder: 1
 fields:
@@ -68,6 +86,46 @@ fields:
     translationKeyFormat: null
     translationMethod: site
     type: craft\fields\Assets
+  3715ef4e-7f78-4ec4-945f-143b3c820ff5: # Link Text
+    contentColumnType: text
+    fieldGroup: null
+    handle: linkText
+    instructions: 'Default: "Learn More"'
+    name: 'Link Text'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  37d8f30b-cca6-4c21-aab1-62e69cc5e9e4: # Link Entry
+    contentColumnType: string
+    fieldGroup: null
+    handle: linkEntry
+    instructions: ''
+    name: 'Link Entry'
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      limit: '1'
+      localizeRelations: false
+      selectionLabel: ''
+      showSiteMenu: true
+      source: null
+      sources: '*'
+      targetSiteId: null
+      validateRelatedElements: false
+      viewMode: null
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Entries
   6ae838aa-9f3f-45a9-861e-d5b9b02c7ff0: # Text
     contentColumnType: text
     fieldGroup: null

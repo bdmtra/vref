@@ -1,17 +1,23 @@
-<div class="container px-4 py-5 text-center">
-    <h2 class="pb-2">{{ entry.featuresTitle|nl2br}}</h2>
-    <p class="lead">{{ entry.featuresText|nl2br}}</p>
+<div class="container px-4 pt-5 pb-0 pb-lg-5 text-center">
+    <h2 class="pb-2">{{ entry.featuresTitle|nl2br }}</h2>
+    <p class="lead">{{ entry.featuresText|nl2br }}</p>
     {% if entry.featuresItems %}
-      <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
-        {% for item in entry.featuresItems.all() %}
-        <div class="col">
-          <div class="feature-img">
-              <img src="{{ item.image.one().getUrl('featuresItemImage') }}" class="img-fluid h-100">
-          </div>
-          <h3 class="h4 mt-3">{{ item.heading|nl2br }}</h3>
-          <p>{{ item.text|nl2br }}</p>
+        <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+            {% for item in entry.featuresItems.all() %}
+                <div class="col">
+                    <div class="feature-img">
+                        <img src="{{ item.image.one().getUrl('featuresItemImage') }}" class="img-fluid h-100">
+                    </div>
+                    <h3 class="h4 mt-3">{{ item.heading|nl2br }}</h3>
+                    <p>{{ item.text|nl2br }}</p>
+                    {% set itemLinkEntry = item.linkEntry ? item.linkEntry.one() : false %}
+                    {% if itemLinkEntry %}
+                        <div class="text-center mt-2">
+                            <a href="{{ itemLinkEntry.url }}" class="d-md-inline-block border-bottom text-center fs-5">{{ entry.linkText ?: 'Learn More' }}</a>
+                        </div>
+                    {% endif %}
+                </div>
+            {% endfor %}
         </div>
-        {% endfor %}
-      </div>
     {% endif %}
 </div>

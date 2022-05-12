@@ -1,14 +1,16 @@
 {% set ctaBackgroundImageAsset = entry.ctaBackgroundImage.one() %}
 <div class="img-cover"  {% if ctaBackgroundImageAsset %}style="background-image: url({{ ctaBackgroundImageAsset.url }})"{% endif %}>
     <div class="container py-5 text-center">
-        <h2 class="fw-bold text-white">{{ entry.ctaTitle|nl2br }}</h1>
-        <div class="col-lg-6 mx-auto">
-        <p class="lead mb-4 text-white">{{ entry.ctaText|nl2br }}</p>
-        {% set ctaButtonLinkEntry = entry.ctaButtonLink.one() %}
-        {% set ctaButtonLinkText  = entry.ctaButtonText %}
-        {% if ctaButtonLinkEntry and ctaButtonLinkText %}
-        <a href="{{ ctaButtonLinkEntry.url }}" class="btn btn-brand btn-lg m-0 d-block d-md-inline-block">{{ ctaButtonLinkText }}</a>
-        {% endif %}  
+        <h2 class="fw-bold text-white">{{ entry.ctaTitle|nl2br }}</h2>
+        <div class="row">
+            <div class="col-lg-6 mx-auto">
+                <p class="lead mb-4 text-white">{{ entry.ctaText|nl2br }}</p>
+                {% set ctaButtonLinkEntry = entry.ctaButtonLink.one() %}
+                {% set ctaButtonLinkText  = entry.ctaButtonText %}
+                {% if ctaButtonLinkEntry and ctaButtonLinkText %}
+                <a href="{{ ctaButtonLinkEntry.url }}" class="btn btn-brand btn-lg m-0 d-block d-md-inline-block">{{ ctaButtonLinkText }}</a>
+                {% endif %}
+            </div>
         </div>
     </div>
 </div>

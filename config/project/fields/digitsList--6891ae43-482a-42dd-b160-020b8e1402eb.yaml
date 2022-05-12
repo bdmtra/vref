@@ -1,0 +1,14 @@
+contentColumnType: string
+fieldGroup: 22bde7f8-0058-4dda-bf71-059c837a03ef # Digits Section
+handle: digitsList
+instructions: ''
+name: 'Digits List'
+searchable: false
+settings:
+  contentTable: '{{%matrixcontent_digitslist}}'
+  maxBlocks: ''
+  minBlocks: ''
+  propagationMethod: all
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

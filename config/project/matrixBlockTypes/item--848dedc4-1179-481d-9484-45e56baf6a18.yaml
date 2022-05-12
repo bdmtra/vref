@@ -26,7 +26,7 @@ fieldLayouts:
             fieldUid: 7013ec57-d2d6-490b-b774-0315ffe7dc4a # Image
             instructions: null
             label: null
-            required: true
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null
@@ -42,6 +42,15 @@ fieldLayouts:
             width: 100
           -
             fieldUid: 1bd89aea-8187-43c4-af6c-dfd49b2347a4 # Link Text
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: a27a6982-eedc-4b9c-86c2-fce4430146e0 # Link Position
             instructions: null
             label: null
             required: false
@@ -126,6 +135,40 @@ fields:
     translationKeyFormat: null
     translationMethod: site
     type: craft\fields\Entries
+  a27a6982-eedc-4b9c-86c2-fce4430146e0: # Link Position
+    contentColumnType: string
+    fieldGroup: null
+    handle: linkPosition
+    instructions: ''
+    name: 'Link Position'
+    searchable: false
+    settings:
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - 'Under Text'
+            -
+              - value
+              - underText
+            -
+              - default
+              - '1'
+        -
+          __assoc__:
+            -
+              - label
+              - Side
+            -
+              - value
+              - side
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\RadioButtons
   a7df4c85-f678-4841-a6c3-ecab30be6b10: # Text
     contentColumnType: text
     fieldGroup: null
