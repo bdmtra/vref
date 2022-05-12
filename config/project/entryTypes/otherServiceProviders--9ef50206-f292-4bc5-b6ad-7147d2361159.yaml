@@ -1,0 +1,38 @@
+fieldLayouts:
+  187c0f93-98af-425c-b0cb-2f02270c35f4:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\EntryTitleField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+handle: otherServiceProviders
+hasTitleField: false
+name: 'Other Service Providers'
+section: 90267ef7-4592-464e-b7ad-d0243c85c1fb # Other Service Providers
+sortOrder: 1
+titleFormat: '{section.name|raw}'
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
