@@ -58,6 +58,15 @@ fieldLayouts:
             type: craft\fieldlayoutelements\CustomField
             warning: null
             width: 100
+          -
+            fieldUid: 322d0c69-9d1b-48dc-a285-821da6da23ad # Subheading
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
         name: Content
         sortOrder: 1
 fields:
@@ -75,6 +84,25 @@ fields:
       columnType: null
       initialRows: '4'
       multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  322d0c69-9d1b-48dc-a285-821da6da23ad: # Subheading
+    contentColumnType: text
+    fieldGroup: null
+    handle: subheading
+    instructions: 'Show above heading'
+    name: Subheading
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '1'
+      multiline: '1'
       placeholder: null
       uiMode: normal
     translationKeyFormat: null
@@ -208,5 +236,5 @@ fields:
     translationMethod: none
     type: craft\fields\PlainText
 handle: item
-name: item
+name: Item
 sortOrder: 1

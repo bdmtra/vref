@@ -10,8 +10,8 @@
     {% set itemHeroImage = item.image ? item.image.one() : false %}
     {% set itemLinkEntry = item.linkEntry ? item.linkEntry.one() : false %}
     <div class="container">
-        <div class="row flex-lg-row{% if (loop.index + offset) % 2 %}-reverse{% endif %} align-items-center">
-            <div class="col-10 col-sm-8 col-lg-4 px-0 my-4 {% if item.linkPosition == 'side' %} order-1 {% endif %}">
+        <div class="row gx-4 flex-lg-row{% if (loop.index + offset) % 2 %}-reverse{% endif %} align-items-center">
+            <div class="col-10 col-sm-8 col-lg-4 my-4 {% if item.linkPosition == 'side' %} order-1 {% endif %}">
                 {% if itemLinkEntry and item.linkPosition == 'side' %}
                     <div class="text-center">
                         <div class="{{ (loop.index + offset) % 2 ? 'text-lg-start' : 'text-lg-end' }}">
@@ -27,6 +27,9 @@
                 {% endif %}
             </div>
             <div class="col-10 col-lg-8 my-0 mt-lg-4 {% if item.linkPosition == 'side' %} order-0 {% endif %}">
+                {% if item.subheading %}
+                    <h3 class="text-uppercase fw-bold lh-1 my-3">{{ item.subheading|nl2br }}</h3>
+                {% endif %}
                 <h2 class="fw-bold lh-1 my-3">{{ item.heading|nl2br }}</h2>
                 <p class="lead mb-4">{{ item.text|nl2br }}</p>
                 {% if itemLinkEntry and item.linkPosition == 'underText' %}
@@ -41,4 +44,5 @@
             </div>
         </div>
     </div>
+    <div class="border-bottom"></div>
 {% endfor %}

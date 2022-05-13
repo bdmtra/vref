@@ -4331,3 +4331,17 @@ input[type='range']::-webkit-slider-thumb {
 .media-outlet-img{
   padding-top: 100%;
 }
+.pagination {
+  li {
+    margin: 0 !important;
+    list-style: none !important;
+  }
+  .page-link {
+    color: $brand-color;
+  }
+  .page-item.active .page-link {
+    background-color: $brand-color;
+    border-color: $brand-color;
+  }
+}
+

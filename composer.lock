@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c63d9d4540863daf0ed9aa95352b90ab",
+    "content-hash": "5f9fec78dccaa452aec2eeef2f52b253",
     "packages": [
         {
             "name": "aelvan/mailchimp-subscribe",
@@ -1753,6 +1753,59 @@
                 "url"
             ],
             "time": "2022-03-20T21:51:18+00:00"
+        },
+        {
+            "name": "hashtagerrors/craft-pagination",
+            "version": "1.0.2",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/hashtagerrors/pagination/zipball/2660da872ef9a96e99a4306a6761438d50123285",
+                "reference": "2660da872ef9a96e99a4306a6761438d50123285",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.0.0-RC1"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Pagination",
+                "handle": "pagination",
+                "hasCpSettings": true,
+                "hasCpSection": false,
+                "changelogUrl": "https://raw.githubusercontent.com/hashtagerrors/craft-pagination/master/CHANGELOG.md",
+                "components": {
+                    "paginationService": "hashtagerrors\\pagination\\services\\PaginationService"
+                },
+                "class": "hashtagerrors\\pagination\\Pagination"
+            },
+            "autoload": {
+                "psr-4": {
+                    "hashtagerrors\\pagination\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Hashtag Errors",
+                    "homepage": "http://hashtagerrors.com"
+                }
+            ],
+            "description": "Pagination plugin for Craft 3",
+            "keywords": [
+                "cms",
+                "craft",
+                "craft-pagination",
+                "craft-plugin",
+                "craftcms",
+                "pagination"
+            ],
+            "support": {
+                "docs": "https://github.com/hashtagerrors/craft-pagination/blob/master/README.md",
+                "issues": "https://github.com/hashtagerrors/craft-pagination/issues"
+            },
+            "time": "2019-08-11T14:21:50+00:00"
         },
         {
             "name": "illuminate/contracts",

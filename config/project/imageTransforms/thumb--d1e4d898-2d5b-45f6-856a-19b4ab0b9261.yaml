@@ -1,0 +1,9 @@
+format: null
+handle: thumb
+height: null
+interlace: partition
+mode: fit
+name: Thumb
+position: center-center
+quality: 60
+width: 767

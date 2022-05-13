@@ -1,0 +1,62 @@
+{% extends "base" %}
+
+{% block content %}
+
+    <div class="container py-5">
+        <h1 class="text-center mb-5">{{ entry.title }}</h1>
+        {% switch entry.section.handle %}
+        {% case 'pressCoverageArchive' %}
+            {% set section = 'pressCoverageEntry' %}
+        {% case 'pressReleaseArchive' %}
+            {% set section = 'pressReleaseEntry' %}
+        {% endswitch %}
+        {% paginate craft.entries.section(section).limit(6) as pageInfo, pageEntries %}
+        {% for page in pageEntries %}
+            <div class="mb-5">
+                <div class="row g-4">
+                    {% set image = page.featuredImage ? page.featuredImage.one() : false  %}
+                    {% if image %}
+                    <div class="col-md-4">
+                        <img src="{{ image.getUrl('thumb') }}" class="img-fluid" alt="{{ page.title }}">
+                    </div>
+                    <div class="col-md-8">
+                    {% else %}
+                    <div class="col-md-12">
+                    {% endif %}
+                        <div class="card-body p-0 text-center">
+                            <div class="text-md-start">
+                                <h2 class="p-0 lh-sm h3 mb-2">{{ page.title }}</h2>
+                                <div>{{ page.summary }}</div>
+                                <div class="mt-3">
+                                    <div class="text-md-start">
+                                        {% switch entry.section.handle %}
+                                        {% case 'pressCoverageArchive' %}
+                                            {% set url = page.sourceUrl %}
+                                            {% set target = '_blank' %}
+                                        {% case 'pressReleaseArchive' %}
+                                            {% set url = entry.url %}
+                                            {% set target = '_self' %}
+                                        {% endswitch %}
+                                        <a href="{{ url }}" target="{{ target }}" class="fw-bold d-inline-block fs-5 border-bottom">Read more &#8594;</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+        {{ craft.pagination.render(pageInfo, 'elipsis', {
+            ulClass: 'pagination justify-content-center pt-4',
+            liClass: 'page-item',
+            aClass: 'page-link fs-5 py-2 px-3',
+            activeClass: 'active',
+            includeFirstLast: true,
+            includePrevNext: true,
+            prevText: '<i class="fa fa-angle-double-left" aria-hidden="true"></i> Prev',
+            nextText: 'Next <i class="fa fa-angle-double-right" aria-hidden="true"></i>',
+            pageRange: 10
+        }) }}
+    </div>
+
+{% endblock %}

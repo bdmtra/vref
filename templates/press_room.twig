@@ -40,13 +40,13 @@
             <div class="col-12 col-lg-3">
                 <div class="text-center">
                     <div class="text-lg-end">
-                        <a href="#" class="fw-bold d-inline-block fs-5 border-bottom">All coverage &#8594;</a>
+                        <a href="{{ craft.entries().section('pressCoverageArchive').one().url }}" class="fw-bold d-inline-block fs-5 border-bottom">All coverage &#8594;</a>
                     </div>
                 </div>
             </div>
         </div>
         <div class="row row-cols-2 row-cols-lg-4 align-items-stretch g-5 pt-5 pb-lg-5 ">
-            {% for item in craft.entries().section('pressCoverage').limit(8).orderBy('id DESC').all() %}
+            {% for item in craft.entries().section('pressCoverageEntry').limit(8).orderBy('id DESC').all() %}
                 <div class="col">
                     <a href="{{ item.sourceUrl}}" class="d-block d-inline-block img-cover media-outlet-img overflow-hidden" style="background-image: url({{ item.mediaOutlet.one().featuredImage.one().url }})"></a>
                 </div>
