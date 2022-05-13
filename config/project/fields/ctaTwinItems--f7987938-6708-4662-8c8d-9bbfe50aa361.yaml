@@ -1,0 +1,14 @@
+contentColumnType: string
+fieldGroup: 17952838-8c53-4a31-ad29-0789cf92f279 # CTA Twin Section
+handle: ctaTwinItems
+instructions: ''
+name: 'CTA Twin Items'
+searchable: false
+settings:
+  contentTable: '{{%matrixcontent_ctatwinitems}}'
+  maxBlocks: '2'
+  minBlocks: '2'
+  propagationMethod: all
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

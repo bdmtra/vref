@@ -1,9 +1,10 @@
-<div class="content-group">
+<div class="container my-3">
   <div class="cards-group">
-    <div class="text-group w-100 mb-4">
-      <h2>{{ title }}</h2>
+    <div class="text-group w-100 ">
+      <h2 class="text-center">{{ entry.testimonialTitle }}</h2>
     </div>
-    <div class="testi-card-cont">
+    {% set blocks = entry.testimonialGroups.all() %}
+    <div class="testi-card-cont my-4">
       <div class="testi-card">
         <div id="testi-captions">
           {% for block in blocks %}
@@ -38,7 +39,7 @@
         slidesToShow: 1,
         slidesToScroll: 1,
         fade: true,
-        asNavFor: '#testi-profiles'
+        asNavFor: '#testi-profiles',
       });
       $('#testi-profiles').slick({
         adaptiveHeight: true,

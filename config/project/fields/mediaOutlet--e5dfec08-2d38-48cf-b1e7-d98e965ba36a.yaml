@@ -1,0 +1,23 @@
+contentColumnType: string
+fieldGroup: 12099ccc-bd0b-494a-9052-08ce8a435f8a # Press Coverage
+handle: mediaOutlet
+instructions: ''
+name: 'Media Outlet'
+searchable: false
+settings:
+  allowLimit: false
+  allowMultipleSources: false
+  allowSelfRelations: false
+  branchLimit: '1'
+  limit: null
+  localizeRelations: false
+  selectionLabel: ''
+  showSiteMenu: false
+  source: 'group:21dc0d38-f447-4ba1-bbbf-dee785088d41' # Media Outlet
+  sources: '*'
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: null
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Categories

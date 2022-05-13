@@ -9,7 +9,7 @@
 
 {# TOP BANNER #}
 
-<div class="content-group no-constrain banner-img-wrap" style="background-image: url(assets/images/header-homepage1.jpg)">
+<div class="content-group no-constrain img-cover img-cover-shadow" style="background-image: url(assets/images/header-homepage1.jpg)">
   <div class="text-group header-text-group constrain">
     <h1>Steady Hands Through Turbulent Times</h1>
     <span>VREF has been the aviation industry’s most trusted source of analytics, software and advisory services — through both clear skies and turbulence — since 1994.</span>
@@ -65,7 +65,7 @@
 {##}
 
 {# Section 4 #}
-{% include 'partials/sections/_testimonials' with { title: 'What Our Clients Are Saying', blocks: entry.testimonialGroups.all()} %}
+{% include 'partials/sections/_testimonials' %}
 {##}
 
 {# Section 5 #}

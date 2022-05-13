@@ -1,0 +1,49 @@
+fieldLayouts:
+  ecf8361f-742f-40c1-84d5-37f0356fddcd:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\TitleField
+            warning: null
+            width: 100
+          -
+            fieldUid: b2fb0203-cf70-441e-bf8c-cf87096644dc # Featured Image
+            instructions: ''
+            label: ''
+            required: '1'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+handle: mediaOutlet
+name: 'Media Outlet'
+siteSettings:
+  d66119ad-8f5f-41e8-8169-49f2c51c36b6: # VREF Aircraft Values & Appraisals
+    hasUrls: false
+    template: null
+    uriFormat: null
+structure:
+  maxLevels: 1
+  uid: a7357186-4fef-4eb8-bd56-4183259c103d

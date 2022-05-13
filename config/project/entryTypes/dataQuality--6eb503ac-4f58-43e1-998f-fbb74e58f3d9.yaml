@@ -1,5 +1,5 @@
 fieldLayouts:
-  37326814-957d-4026-b385-9d52b5c7bd3e:
+  208761f6-4d85-44e7-8fc8-8397b03b615a:
     tabs:
       -
         elements:
@@ -27,7 +27,9 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: ee572f12-34a8-4f92-9e75-5d82225cdead # Header Image
+            type: craft\fieldlayoutelements\HorizontalRule
+          -
+            fieldUid: c95ed69a-7b39-448f-8a34-205bb9e8f1f2 # Hero Title
             instructions: null
             label: null
             required: false
@@ -36,7 +38,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 21c2cbf7-45d7-4a9b-a7e3-af6c1f76b31f # Page Title
+            fieldUid: 426a5015-55d3-434d-bfcc-d7a2d4da4c03 # Hero Text
             instructions: null
             label: null
             required: false
@@ -45,7 +47,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 5cd981cc-c08e-44dc-84d9-83f97da456f5 # Page Subtitle
+            fieldUid: 2d679fb7-0e58-42e4-bf95-609f8442f65d # Hero Button Text
             instructions: null
             label: null
             required: false
@@ -54,7 +56,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 563bfcb1-fa15-4a2b-aaa3-aca5388caab2 # Rich Text
+            fieldUid: 9d2eedef-de79-41c0-8455-32c111fa0738 # Hero Button Link
             instructions: null
             label: null
             required: false
@@ -63,7 +65,9 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 0f4caa01-e20b-4dff-ab17-5f3dcc420286 # Media Cluster
+            type: craft\fieldlayoutelements\HorizontalRule
+          -
+            fieldUid: d6163fd8-ef19-4bf8-a36a-cc2c73248013 # Services List
             instructions: null
             label: null
             required: false
@@ -72,7 +76,9 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: e8c25287-acda-4ea1-abd6-8dcc24bc771e # Testimonial Title
+            type: craft\fieldlayoutelements\HorizontalRule
+          -
+            fieldUid: 48242138-c9b1-4b5f-8426-6fe3a6978e47 # CTA Title
             instructions: null
             label: null
             required: false
@@ -81,7 +87,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: aa7d232f-992f-4204-8784-c0b71642e11a # Testimonial Groups
+            fieldUid: 7749c3ff-f4cb-4817-8f1f-6abcabe18c53 # CTA Text
             instructions: null
             label: null
             required: false
@@ -90,7 +96,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 7cff5bc5-7660-409a-9e68-3118cdbaa1c6 # Client Images
+            fieldUid: 17d755b0-95a6-4ffc-9eab-fac8498b97de # CTA Background Image
             instructions: null
             label: null
             required: false
@@ -99,7 +105,16 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 54ab0751-5dfa-441c-bd87-d54eaff497cc # SEO
+            fieldUid: 798e5860-2558-4d3d-a18b-a4b58dfe218a # CTA Button Text
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: e9d61c0b-c59a-43e3-a8c5-c6f9f6642a91 # CTA Button Link
             instructions: null
             label: null
             required: false
@@ -109,10 +124,10 @@ fieldLayouts:
             width: 100
         name: Content
         sortOrder: 1
-handle: index
-hasTitleField: true
-name: index
-section: c2944d4d-4353-453f-87ac-73f11863ff54 # index
+handle: dataQuality
+hasTitleField: false
+name: 'Data Quality'
+section: 5544311a-5c41-448b-8253-2aba70cbd4a0 # Data Quality
 sortOrder: 1
 titleFormat: '{section.name|raw}'
 titleTranslationKeyFormat: null

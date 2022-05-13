@@ -1,0 +1,14 @@
+contentColumnType: string(255)
+fieldGroup: 12099ccc-bd0b-494a-9052-08ce8a435f8a # Press Coverage
+handle: sourceUrl
+instructions: ''
+name: 'Source URL'
+searchable: false
+settings:
+  maxLength: '255'
+  placeholder: null
+  types:
+    - url
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Url
