@@ -6573,10 +6573,6 @@ hr {
   margin-right: 20px;
 }
 
-.d-none {
-  display: none !important;
-}
-
 .cust-switch {
   position: relative;
   display: block;
@@ -7435,10 +7431,29 @@ input[type=range]::-webkit-slider-thumb {
   color: #fff !important;
 }
 
-.table-compare > thead > tr th, .table-compare tbody th {
-  padding: 10px;
-  line-height: 40px;
+.table.table-compare {
+  min-width: auto !important;
+}
+.table.table-compare th, .table.table-compare td {
+  padding: 10px 20px !important;
+  line-height: 20px !important;
   font-size: 1rem !important;
+  height: 40px !important;
+}
+.table.table-compare th img, .table.table-compare td img {
+  height: 22px;
+}
+@media (min-width: 992px) {
+  .table.table-compare th img, .table.table-compare td img {
+    height: 30px;
+  }
+}
+@media (min-width: 992px) {
+  .table.table-compare th, .table.table-compare td {
+    padding: 10px 20px !important;
+    line-height: 20px !important;
+    height: 55px !important;
+  }
 }
 
 .table-compare.table tbody tr:hover {
@@ -7459,10 +7474,6 @@ input[type=range]::-webkit-slider-thumb {
 .table-compare a {
   text-decoration: none !important;
   color: #34826a !important;
-}
-
-.table-compare img {
-  height: 30px;
 }
 
 .table-compare > :not(caption) > * > * {

@@ -3345,9 +3345,6 @@ hr {
 .mr-20 {
   margin-right: 20px;
 }
-.d-none {
-  display: none !important;
-}
 .cust-switch {
   position: relative;
   display: block;
@@ -4275,10 +4272,25 @@ input[type='range']::-webkit-slider-thumb {
   color: #fff !important;
 }
 
-.table-compare > thead > tr th, .table-compare tbody th {
-  padding: 10px;
-  line-height: 40px;
-  font-size: 1rem !important;
+.table.table-compare {
+  min-width: auto !important;
+  th, td {
+    padding: 10px 20px !important;
+    line-height: 20px !important;
+    font-size: 1rem !important;
+    height: 40px !important;
+    img{
+      height: 22px;
+      @media (min-width: 992px) {
+        height: 30px;
+      }
+    }
+    @media (min-width: 992px) {
+        padding: 10px 20px !important;
+        line-height: 20px !important;
+        height: 55px !important;
+    }
+  }
 }
 
 .table-compare.table tbody tr:hover {
@@ -4300,9 +4312,7 @@ input[type='range']::-webkit-slider-thumb {
   color: $brand-color !important;
 }
 
-.table-compare img{
-  height: 30px;
-}
+
 
 .table-compare {
   > :not(caption) > * > * {
