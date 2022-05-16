@@ -1,4 +1,4 @@
-dateModified: 1652721801
+dateModified: 1652724833
 email:
   fromEmail: andrew@andrewlynn.co
   fromName: vref.com
@@ -32,6 +32,11 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 2.0.0
+  migrationassistant:
+    edition: standard
+    enabled: true
+    licenseKey: JWYTOAPHD85B7ZABO64F4PG8
+    schemaVersion: 1.0.0
   minify:
     edition: standard
     enabled: true

@@ -4,6 +4,10 @@
         <div class="col-12 mt-0 my-4 my-lg-0 text-center py-3">
             <h1 class="display-5 fw-bold lh-1 mb-3 text-white">{{ entry.heroTitle|nl2br }}</h1>
             <p class="lead text-white">{{ entry.heroText|nl2br }}</p>
+            {% set heroLinkEntry = entry.heroButtonLink.one() %}
+            {% if heroLinkEntry %}
+                <a href="{{ heroLinkEntry.url }}" class="btn btn-brand btn-lg m-0 d-block d-md-inline-block">{{ entry.heroButtonText ?: 'Get Started' }}</a>
+            {% endif %}
         </div>
         </div>
     </div>

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5f9fec78dccaa452aec2eeef2f52b253",
+    "content-hash": "97168acd7b83324f7d070894ebe2701a",
     "packages": [
         {
             "name": "aelvan/mailchimp-subscribe",
@@ -1151,6 +1151,59 @@
                 "symmetric key cryptography"
             ],
             "time": "2021-04-09T23:57:26+00:00"
+        },
+        {
+            "name": "dgrigg/craft-migration-assistant",
+            "version": "3.2.7",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dgrigg/craft-migration-assistant/zipball/bb550313f516e3224e3bd2bbb21036d042fff5cb",
+                "reference": "bb550313f516e3224e3bd2bbb21036d042fff5cb",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.0.1"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Migration Assistant",
+                "handle": "migrationassistant",
+                "developer": "DGrigg Dev Inc.",
+                "developerUrl": "https://dgrigg.com",
+                "class": "dgrigg\\migrationassistant\\MigrationAssistant",
+                "hasCpSettings": false,
+                "hasCpSection": true,
+                "changelogUrl": "https://raw.githubusercontent.com/dgrigg/craft-migration-assistant/master/CHANGELOG.md"
+            },
+            "autoload": {
+                "psr-4": {
+                    "dgrigg\\migrationassistant\\": "src/"
+                }
+            },
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "Derrick Grigg",
+                    "email": "derrick@dgrigg.com"
+                }
+            ],
+            "description": "Create migrations for settings and content at the click of a mouse. Keep environments in sync with ease.",
+            "keywords": [
+                "cms",
+                "craft",
+                "craft plugin",
+                "craftcms",
+                "migration",
+                "migration assistant",
+                "migration manager"
+            ],
+            "support": {
+                "docs": "https://github.com/dgrigg/craft-migration-assistant/blob/master/README.md",
+                "issues": "https://github.com/dgrigg/craft-migration-assistant/issues"
+            },
+            "time": "2021-11-19T16:31:43+00:00"
         },
         {
             "name": "doctrine/inflector",
