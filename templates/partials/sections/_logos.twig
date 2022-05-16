@@ -1,8 +1,17 @@
+{% if title is not defined %}
+    {% set title =  entry.logosTitle %}
+{% endif %}
+{% if items is not defined %}
+    {% set items = entry.logosItems.all() %}
+{% endif %}
+{% if columns is not defined %}
+    {% set columns = 4 %}
+{% endif %}
 <div class="container px-4 py-5 text-center">
-    <h2 class="pb-2">{{ entry.logosTitle|nl2br}}</h2>
+    <h2 class="pb-2">{{ title|nl2br}}</h2>
     {% if entry.logosItems %}
-      <div class="row g-4 py-2 py-lg-4 row-cols-3">
-        {% for item in entry.logosItems.all() %}
+      <div class="row g-4 py-2 py-lg-4 row-cols-{{ columns }}">
+        {% for item in items %}
         <div class="col">
           <div class="logo-img">
               <img src="{{ item.image.one().getUrl('logosItemImage') }}" class="img-fluid">

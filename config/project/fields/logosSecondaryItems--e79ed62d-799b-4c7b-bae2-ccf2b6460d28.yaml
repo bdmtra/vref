@@ -1,0 +1,14 @@
+contentColumnType: string
+fieldGroup: 167ecf9b-703f-4c32-871a-46c542514e4b # Logos Secondary Section
+handle: logosSecondaryItems
+instructions: ''
+name: 'Logos Items'
+searchable: false
+settings:
+  contentTable: '{{%matrixcontent_logossecondaryitems}}'
+  maxBlocks: ''
+  minBlocks: ''
+  propagationMethod: all
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

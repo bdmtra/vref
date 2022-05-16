@@ -1,0 +1,33 @@
+contentColumnType: string
+fieldGroup: e9e3bf35-7f73-4c12-8fef-f60ecb59a31b # Hero Section
+handle: heroBackgroundImage
+instructions: ''
+name: 'Hero Background Image'
+searchable: false
+settings:
+  allowSelfRelations: false
+  allowUploads: true
+  allowedKinds:
+    - image
+  defaultUploadLocationSource: 'volume:898c39e0-9724-4a3b-9ea4-fc1f44479824' # Header Images
+  defaultUploadLocationSubpath: ''
+  limit: '1'
+  localizeRelations: false
+  previewMode: full
+  restrictFiles: '1'
+  selectionLabel: ''
+  showSiteMenu: false
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: false
+  singleUploadLocationSource: 'volume:fb6e2638-c6df-4a24-8de9-422128e80318' # Client Images Volume
+  singleUploadLocationSubpath: ''
+  source: null
+  sources:
+    - 'volume:898c39e0-9724-4a3b-9ea4-fc1f44479824' # Header Images
+  targetSiteId: null
+  useSingleFolder: false
+  validateRelatedElements: false
+  viewMode: large
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Assets

@@ -163,7 +163,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: aa7d232f-992f-4204-8784-c0b71642e11a # Testimonial Groups
+            fieldUid: aa7d232f-992f-4204-8784-c0b71642e11a # Testimonial Items
             instructions: null
             label: null
             required: false

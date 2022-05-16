@@ -1,32 +1,20 @@
 <div class="container my-3">
   <div class="cards-group">
     <div class="text-group w-100 ">
-      <h2 class="text-center">{{ entry.testimonialTitle }}</h2>
+      <h2 class="text-center mt-4">{{ entry.testimonialTitle }}</h2>
     </div>
-    {% set blocks = entry.testimonialGroups.all() %}
+    {% set blocks = entry.testimonialItems.all() %}
     <div class="testi-card-cont my-4">
       <div class="testi-card">
         <div id="testi-captions">
           {% for block in blocks %}
             <div class="testi-flex">
-              <div id="testimonial_">
+              <div id="testimonial_{{block.id}}">
                 <h6>{{ block.testimonialHeader }}</h6>
                 <p>{{ block.testimonialExcerpt }}</p>
               </div>
             </div>
           {% endfor %}
-        </div>
-        <div class="testi-profiles-cont">
-          <div id="testi-profiles">
-            {% for block in blocks %}
-              <div class="testi-img">
-                {% for asset in block.testimonialThumbnail.all() %}
-                  <img src="{{ url(asset.getUrl(), {v: asset.dateModified.timestamp}) }}" alt="" width="100%" />
-                {% endfor %}
-                <span>{{ block.testimonialClientName }}</span>
-              </div>
-            {% endfor %}
-          </div>
         </div>
       </div>
     </div>
@@ -39,17 +27,6 @@
         slidesToShow: 1,
         slidesToScroll: 1,
         fade: true,
-        asNavFor: '#testi-profiles',
-      });
-      $('#testi-profiles').slick({
-        adaptiveHeight: true,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        asNavFor: '#testi-captions',
-        arrows: false,
-        fade: true,
-        centerMode: false,
-        focusOnSelect: true
       });
     });
 </script>      

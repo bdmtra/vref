@@ -1,7 +1,8 @@
 <div class="container py-5">
     <h2 class="pb-2 text-center">{{ entry.compareTitle|nl2br }}</h2>
     <p class="lead pb-2 text-center mb-5">{{ entry.compareText|nl2br }}</p>
-    <table class="table table-compare d-none d-lg-block">
+    <div class="d-none d-lg-block">
+        <table class="table table-compare">
         <thead class="text-center">
         <tr>
             {% for key, column in entry.compareTable.columns %}
@@ -31,6 +32,7 @@
         {% endfor %}
         </tbody>
     </table>
+    </div>
     <div class="row row-cols-1 gy-4 d-lg-none">
         {% for key, column in entry.compareTable.columns[1:] %}
             <div class="col">

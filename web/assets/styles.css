@@ -7432,7 +7432,8 @@ input[type=range]::-webkit-slider-thumb {
 }
 
 .table.table-compare {
-  min-width: auto !important;
+  min-width: 100% !important;
+  width: 100% !important;
 }
 .table.table-compare th, .table.table-compare td {
   padding: 10px 20px !important;
@@ -7491,11 +7492,6 @@ input[type=range]::-webkit-slider-thumb {
   background-color: transparent !important;
 }
 
-@media (max-width: 1023px) {
-  .table-compare {
-    min-width: 760px !important;
-  }
-}
 .media-outlet-img {
   padding-top: 100%;
 }

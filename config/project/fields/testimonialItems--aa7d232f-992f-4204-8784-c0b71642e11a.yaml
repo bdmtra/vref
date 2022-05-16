@@ -1,11 +1,11 @@
 contentColumnType: string
 fieldGroup: 98143e5f-d155-4853-a6ec-d1e45efca632 # Testimonials Section
-handle: testimonialGroups
+handle: testimonialItems
 instructions: ''
-name: 'Testimonial Groups'
+name: 'Testimonial Items'
 searchable: false
 settings:
-  contentTable: '{{%matrixcontent_testimonialgroups}}'
+  contentTable: '{{%matrixcontent_testimonialitems}}'
   maxBlocks: ''
   minBlocks: '1'
   propagationMethod: all

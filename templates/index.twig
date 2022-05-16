@@ -1,102 +1,50 @@
 {% extends "base" %}
-{% set orderSubscriptions = craft.entries.id(816).first() %}
-
-{% block css %}
-  <link rel="stylesheet" href="/assets/scss/home.css">
-{% endblock %}
 
 {% block content %}
 
-{# TOP BANNER #}
+    {# TOP BANNER #}
 
-<div class="content-group no-constrain img-cover img-cover-shadow" style="background-image: url(assets/images/header-homepage1.jpg)">
-  <div class="text-group header-text-group constrain">
-    <h1>Steady Hands Through Turbulent Times</h1>
-    <span>VREF has been the aviation industry’s most trusted source of analytics, software and advisory services — through both clear skies and turbulence — since 1994.</span>
-    <button class="btn btn-brand">Get Started</button>
-  </div>
-</div>
-
-{##}
-{# Section 2 #}
-
-<div class="content-group pb-4">
-  <div class="text-group">
-    <h2>From C-Suite to Main Street</h2>
-    <span>We believe everyone — from top manufacturers to first-time airplane buyers — should have access to the same clear, credible market data. Our products and services are focused on demystifying and democratizing the aviation market for a range of stakeholders.</span>
-  </div>
-  <div class="cards-group cards-group-products mt-4">
-    {% for i in craft.entries().section('products').all() %}
-      <div class="card-wrapper">
-        <div class="card-group">
-          {% for asset in i.featuredImage.all() %}
-            <img src="{{ url(asset.getUrl(), {v: asset.dateModified.timestamp}) }}" />
-          {% endfor %}
-          <h3 class="my-3">{{ i.title }}</h3>
-          <span class="d-block my-2">{{ i.subtitle }}</span>
-          <a href="{{ i.url}}" class="btn btn-brand">Learn More</a>
+    {% set backgroundImageAsset = entry.heroBackgroundImage.one() %}
+    <div class="content-group no-constrain img-cover img-cover-shadow"
+         style="background-image: url({{ backgroundImageAsset ? backgroundImageAsset.url : '' }})">
+        <div class="text-group header-text-group constrain">
+            <h1>{{ entry.heroTitle|nl2br }}</h1>
+            <span class="d-block mb-5">{{ entry.heroText|nl2br }}</span>
+            {% set heroLinkEntry = entry.heroButtonLink.one() %}
+            {% if heroLinkEntry %}
+                <a href="{{ heroLinkEntry.url }}"
+                   class="btn btn-brand btn-lg m-0 d-block d-md-inline-block">{{ entry.heroButtonText ?: 'Get Started' }}</a>
+            {% endif %}
         </div>
-      </div>
-    {% endfor %}
-  </div>
-</div>
+    </div>
 
-{##}
+    {# #}
+    <div class="border-bottom"></div>
+    {# Section 2 #}
 
-{# Section 3 #}
+    {% include 'partials/sections/_features' with { columns: 4 } %}
 
-<div class="content-group light-bg">
-  <div class="text-group w-100">
-    <h2>Trusted By Aviation Leaders</h2>
-  </div>
-  <div class="cards-group cards-group-leaders">
-    {% for i in entry.mediaCluster.all() %}
-      <div class="card-wrapper">
-        <div class="card-group">
-          {% for asset in i.logo.all() %}
-            <img src="{{ url(asset.getUrl(), {v: asset.dateModified.timestamp}) }}" />
-          {% endfor %}
-        </div>
-      </div>
-    {% endfor %}
-  </div>
-</div>
+    {# #}
+    <div class="border-bottom"></div>
+    {# Section 3 #}
 
-{##}
+    {% include 'partials/sections/_logos' with { columns: 4 }%}
 
-{# Section 4 #}
-{% include 'partials/sections/_testimonials' %}
-{##}
+    {# #}
+    <div class="border-bottom"></div>
+    {# Section 4 #}
+    {% include 'partials/sections/_testimonials' %}
+    {# #}
+    <div class="border-bottom"></div>
+    {# Section 5 #}
 
-{# Section 5 #}
+    {% include 'partials/sections/_logos' with { title: entry.logosSecondaryTitle, items: entry.logosSecondaryItems.all(), columns: 4 } %}
 
-<div class="content-group light-bg">
-  <div class="text-group w-100">
-    <h2>As Seen In</h2>
-  </div>
-  <div class="cards-group cards-group-seen-in">
-    {% for i in entry.mediaCluster.all() %}
-      <div class="card-wrapper">
-        <div class="card-group">
-          {% for asset in i.logo.all() %}
-            <img src="{{ url(asset.getUrl(), {v: asset.dateModified.timestamp}) }}" />
-          {% endfor %}
-        </div>
-      </div>
-    {% endfor %}
-  </div>
-</div>
+    {# #}
+    <div class="border-bottom"></div>
+    {# Section 6 #}
 
-{##}
+    {% include 'partials/sections/_cta' %}
 
-{# Section 6 #}
-
-<div class="content-group">
-  <div class="text-group w-100">
-    <h2 class="mb-4">Prepared For Takeoff?</h2>
-    <button class="btn btn-brand">Get Started</button>
-  </div>
-</div>
-
-{##}
+    {# #}
 {% endblock %}
