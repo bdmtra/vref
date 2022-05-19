@@ -1,0 +1,14 @@
+contentColumnType: string
+fieldGroup: b0fd34ef-c714-42db-8998-e629f96a61b2 # Pricing
+handle: pricingCalculatorItems
+instructions: ''
+name: 'Pricing Calculator Items'
+searchable: false
+settings:
+  contentTable: '{{%matrixcontent_pricingcalculatoritems}}'
+  maxBlocks: ''
+  minBlocks: ''
+  propagationMethod: all
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

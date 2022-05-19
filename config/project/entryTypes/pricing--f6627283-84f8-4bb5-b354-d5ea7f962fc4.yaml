@@ -68,6 +68,15 @@ fieldLayouts:
             type: craft\fieldlayoutelements\CustomField
             warning: null
             width: 100
+          -
+            fieldUid: 98edc9fe-c294-4f6c-bbc9-6322f7f1937c # Pricing Calculator Items
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
         name: Content
         sortOrder: 1
       -

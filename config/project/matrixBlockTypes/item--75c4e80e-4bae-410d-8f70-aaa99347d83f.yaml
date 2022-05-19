@@ -40,6 +40,24 @@ fieldLayouts:
             type: craft\fieldlayoutelements\CustomField
             warning: null
             width: 100
+          -
+            fieldUid: 8178649c-5fd9-411a-89ba-b3c90d947072 # API Monthly Plan ID
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: cc6b1fce-e2e0-49b7-a23d-56fa32fd4cd9 # API Annual Plan ID
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
         name: Content
         sortOrder: 1
 fields:
@@ -81,6 +99,26 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
+  8178649c-5fd9-411a-89ba-b3c90d947072: # API Monthly Plan ID
+    contentColumnType: integer(10)
+    fieldGroup: null
+    handle: apiMonthlyPlanId
+    instructions: ''
+    name: 'API Monthly Plan ID'
+    searchable: false
+    settings:
+      decimals: 0
+      defaultValue: null
+      max: null
+      min: '1'
+      prefix: null
+      previewCurrency: ''
+      previewFormat: decimal
+      size: null
+      suffix: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Number
   859655ad-afca-4f40-b948-0183a54c5cd7: # Text Secondary
     contentColumnType: text
     fieldGroup: null
@@ -119,6 +157,26 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
+  cc6b1fce-e2e0-49b7-a23d-56fa32fd4cd9: # API Annual Plan ID
+    contentColumnType: integer(10)
+    fieldGroup: null
+    handle: apiAnnualPlanId
+    instructions: ''
+    name: 'API Annual Plan ID'
+    searchable: false
+    settings:
+      decimals: 0
+      defaultValue: null
+      max: null
+      min: '1'
+      prefix: null
+      previewCurrency: ''
+      previewFormat: decimal
+      size: null
+      suffix: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Number
 handle: item
 name: Item
 sortOrder: 1
