@@ -1,0 +1,18 @@
+contentColumnType: text
+fieldGroup: 3579ed8a-9b5f-4725-8f35-a8bdae7f0ab4 # Press Room
+handle: pressCoverageLinkText
+instructions: ''
+name: 'Press Coverage Link Text'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: ''
+  columnType: null
+  initialRows: '4'
+  multiline: ''
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText
