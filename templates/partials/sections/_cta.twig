@@ -1,5 +1,5 @@
 {% set ctaBackgroundImageAsset = entry.ctaBackgroundImage.one() %}
-<div class="img-cover"  {% if ctaBackgroundImageAsset %}style="background-image: url({{ ctaBackgroundImageAsset.url }})"{% endif %}>
+<div class="img-cover img-cover-shadow" {% if ctaBackgroundImageAsset %}style="background-image: url({{ ctaBackgroundImageAsset.url }})"{% endif %}>
     <div class="container py-5 text-center">
         <h2 class="fw-bold text-white">{{ entry.ctaTitle|nl2br }}</h2>
         <div class="row">

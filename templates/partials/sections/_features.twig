@@ -9,7 +9,10 @@
             {% for item in entry.featuresItems.all() %}
                 <div class="col">
                     <div class="feature-img">
-                        <img src="{{ item.image.one().getUrl('featuresItemImage') }}" class="img-fluid">
+                        {% set itemImageAsset = item.image.one() %}
+                        {% if itemImageAsset %}
+                            <img src="{{ itemImageAsset.getUrl('featuresItemImage') }}" class="img-fluid">
+                        {% endif %}
                     </div>
                     <h3 class="h4 mt-3">{{ item.heading|nl2br }}</h3>
                     <p>{{ item.text|nl2br }}</p>

@@ -26,7 +26,7 @@ fieldLayouts:
             fieldUid: 03301072-058c-4f1a-af79-ba1a0f7dd8a6 # Image
             instructions: null
             label: null
-            required: true
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null
