@@ -174,7 +174,7 @@ fieldLayouts:
         name: Content
         sortOrder: 1
 handle: aviationDatabase
-hasTitleField: false
+hasTitleField: true
 name: 'Aviation Database'
 section: 3b5d756b-e570-49cf-b66d-0c414e17d1fe # Aviation Database
 sortOrder: 1

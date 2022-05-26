@@ -125,7 +125,7 @@ fieldLayouts:
         name: Content
         sortOrder: 1
 handle: dataQuality
-hasTitleField: false
+hasTitleField: true
 name: 'Data Quality'
 section: 5544311a-5c41-448b-8253-2aba70cbd4a0 # Data Quality
 sortOrder: 1

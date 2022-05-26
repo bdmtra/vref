@@ -27,24 +27,6 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 0b4967bf-6fe0-4828-a662-26d896c4ed69 # Subtitle
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-          -
-            fieldUid: b2fb0203-cf70-441e-bf8c-cf87096644dc # Featured Image
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-          -
             type: craft\fieldlayoutelements\HorizontalRule
           -
             fieldUid: c95ed69a-7b39-448f-8a34-205bb9e8f1f2 # Hero Title
@@ -219,7 +201,7 @@ fieldLayouts:
             warning: null
             width: 100
         name: Content
-        sortOrder: 0
+        sortOrder: 1
 handle: brokersAndDealers
 hasTitleField: true
 name: 'Brokers and Dealers'

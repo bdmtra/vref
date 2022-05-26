@@ -58,7 +58,7 @@ fieldLayouts:
         name: Content
         sortOrder: 1
 handle: aviationConsulting
-hasTitleField: false
+hasTitleField: true
 name: 'Aviation Consulting'
 section: fd95db1b-2817-45eb-8ec5-bd265813c3a4 # Aviation Consulting
 sortOrder: 1

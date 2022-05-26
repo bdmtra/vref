@@ -120,7 +120,7 @@ fieldLayouts:
         name: Content
         sortOrder: 1
 handle: whoWeAre
-hasTitleField: false
+hasTitleField: true
 name: 'Who We Are'
 section: 8e3318b4-b753-46a4-8914-ac5490ac90bd # Who We Are
 sortOrder: 1
