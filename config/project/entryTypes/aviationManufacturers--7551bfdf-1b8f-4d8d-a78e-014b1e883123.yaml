@@ -1,5 +1,5 @@
 fieldLayouts:
-  93d053cc-f684-4061-977a-d11690d9ed35:
+  abb53ffa-f20d-46f9-9af7-c8a4843206f2:
     tabs:
       -
         elements:
@@ -76,26 +76,6 @@ fieldLayouts:
           -
             type: craft\fieldlayoutelements\HorizontalRule
           -
-            fieldUid: e2828fc9-3418-4389-98bb-a1a27d96667e # Digits Title
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-          -
-            fieldUid: 6891ae43-482a-42dd-b160-020b8e1402eb # Digits List
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
-          -
-            type: craft\fieldlayoutelements\HorizontalRule
-          -
             fieldUid: 8a837dd8-8a10-4285-a1c1-75b3197585e2 # Features Title
             instructions: null
             label: null
@@ -126,6 +106,46 @@ fieldLayouts:
             type: craft\fieldlayoutelements\HorizontalRule
           -
             fieldUid: d6163fd8-ef19-4bf8-a36a-cc2c73248013 # Services List
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            type: craft\fieldlayoutelements\HorizontalRule
+          -
+            fieldUid: acedc3c9-f985-48d6-8a79-78f265b51209 # Logos Title
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: e79ed62d-799b-4c7b-bae2-ccf2b6460d28 # Logos Items
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            type: craft\fieldlayoutelements\HorizontalRule
+          -
+            fieldUid: e8c25287-acda-4ea1-abd6-8dcc24bc771e # Testimonial Title
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: aa7d232f-992f-4204-8784-c0b71642e11a # Testimonial Items
             instructions: null
             label: null
             required: false
@@ -182,10 +202,10 @@ fieldLayouts:
             width: 100
         name: Content
         sortOrder: 1
-handle: aviationDatabase
+handle: aviationManufacturers
 hasTitleField: true
-name: 'Aviation Database'
-section: 3b5d756b-e570-49cf-b66d-0c414e17d1fe # Aviation Database
+name: 'Aviation Manufacturers'
+section: ef4fc45e-b3e3-4a3d-8b3b-7e74d28d27c9 # Aviation Manufacturers
 sortOrder: 1
 titleFormat: '{section.name|raw}'
 titleTranslationKeyFormat: null
