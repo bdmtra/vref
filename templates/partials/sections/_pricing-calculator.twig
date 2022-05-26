@@ -1,0 +1,313 @@
+<div class="container py-5">
+    <h2 class="mb-5 text-center">{{ entry.pricingCalculatorTitle|nl2br }}</h2>
+    <section id="pricing-calculator">
+        <div class="row">
+            <div class="col-12 col-lg-8">
+                <div class="card p-4 m-0">
+                    <div class="row">
+                        <div class="col col-lg-12">
+                            <h3 class="fs-5 mb-3">Select plan</h3>
+                        </div>
+                    </div>
+                    {% set pricingCalculatorItems = entry.pricingCalculatorItems.all() %}
+                    {% set pricingCalculatorDefaultItemIndex = 1 %}
+                    <ul class="nav nav-pills nav-justified nav-price-plan m-0">
+                        {% for item in pricingCalculatorItems %}
+                            <li class="nav-item">
+                                <a class="nav-link fs-6 nav-pricing-calculator-link {{ loop.index == pricingCalculatorDefaultItemIndex ? 'active' : '' }}" data-bs-toggle="tab" aria-controls="plan-tab-pane-{{ item.id }} payment-period-tab-pane-{{ item.id }} plan-summary-tab-pane-{{ item.id }}" role="tab" aria-selected="{{ loop.index == 1 ? 'true' : 'false' }}"><b>{{item.heading}}</b>
+                                    <span data-payment-period-type-id="{{ payment_period_types['monthly'].id }}">${{ plansIndexById[item.apiMonthlyPlanId].recurring_price|number_format }}/Mo</span>
+                                    <span data-payment-period-type-id="{{ payment_period_types['annual'].id }}">${{ plansIndexById[item.apiAnnualPlanId].recurring_price|number_format }}/Year</span>
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                    <div class="tab-content m-0">
+                        {% for item in entry.pricingCalculatorItems.all() %}
+                            <div class="tab-pane tab-pane-{{ item.id }} fade  {{ loop.index == 1 ? 'show active' : '' }}" id="plan-tab-pane-{{ item.id }}">
+                                {% if (item.isPro) %}
+                                    {% set max_user_number_annual = 0 %}
+                                    {% for range in plansIndexById[item.apiAnnualPlanId].addon_pricing_brackets%}
+                                        {% if range.end_quantity > max_user_number_annual %}
+                                            {% set max_user_number_annual = range.end_quantity %}
+                                        {% endif %}
+                                    {% endfor %}
+                                    {% set max_user_number_annual = max_user_number_annual + 1 %}
+                                    <div class="row row-cols-1 row-cols-lg-2 align-items-center price-plan-users-select" data-payment-period-type-id="{{ payment_period_types['annual'].id }}">
+                                        <div class="col col-lg-9">
+                                            <h3 class="fs-5 my-3">Users</h3>
+                                        </div>
+                                        <div class="col col-lg-3">
+                                            <input class="form-control my-3 price-plan-users-number" type="number" placeholder="{{ default_users_number }}" value="{{ default_users_number }}" min="1" max="{{ max_user_number_annual }}" data-addon-pricing="{{ plansIndexById[item.apiMonthlyPlanId].addon_pricing_brackets|json_encode() }}" data-payment-period-type-id="{{ payment_period_types['monthly'].id }}" data-plan-id="{{item.apiMonthlyPlanId}}">
+                                        </div>
+                                        <div class="col w-100">
+                                            <input type="range" class="form-range price-plan-users-range {% if default_payment_period_type == payment_period_types['monthly'].id %}active{% endif %}" min="1" max="{{ max_user_number_annual }}" name="users_number_monthly" value="{{ default_users_number }}" placeholder="{{ default_users_number }}" data-payment-period-type-id="{{ payment_period_types['monthly'].id }}" data-plan-id="{{item.apiMonthlyPlanId}}">
+                                        </div>
+                                    </div>
+                                    {% set max_user_number_monthly = 0 %}
+                                    {% for range in plansIndexById[item.apiMonthlyPlanId].addon_pricing_brackets%}
+                                        {% if range.end_quantity > max_user_number_monthly %}
+                                            {% set max_user_number_monthly = range.end_quantity %}
+                                        {% endif %}
+                                    {% endfor %}
+                                    {% set max_user_number_monthly = max_user_number_monthly + 1 %}
+                                    <div class="row row-cols-1 row-cols-lg-2 align-items-center price-plan-users-select" data-payment-period-type-id="{{ payment_period_types['monthly'].id }}">
+                                        <div class="col col-lg-9">
+                                            <h3 class="fs-5 my-3">Users</h3>
+                                        </div>
+                                        <div class="col col-lg-3">
+                                            <input class="form-control my-3 price-plan-users-number" id="price-plan-users-field" type="number" placeholder="{{ default_users_number }}" value="{{ default_users_number }}" min="1" max="{{ max_user_number_monthly }}"  data-addon-pricing="{{ plansIndexById[item.apiAnnualPlanId].addon_pricing_brackets|json_encode() }}" data-payment-period-type-id="{{ payment_period_types['annual'].id }}" data-plan-id="{{item.apiAnnualPlanId}}">
+                                        </div>
+                                        <div class="col w-100">
+                                            <input type="range" class="form-range price-plan-users-range {% if default_payment_period_type == payment_period_types['annual'].id %}active{% endif %}" min="1" max="{{ max_user_number_monthly }}" name="users_number_annual" value="{{ default_users_number }}" placeholder="{{ default_users_number }}" data-addon-pricing="{{ plansIndexById[item.apiMonthlyPlanId].addon_pricing_brackets|json_encode() }}" data-payment-period-type-id="{{ payment_period_types['annual'].id }}" data-plan-id="{{item.apiAnnualPlanId}}">
+                                        </div>
+                                    </div>
+                                {% endif %}
+                                <div class="row">
+                                    <div class="col">
+                                        <h3 class="fs-5 my-3">Add-ons</h3>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="card card-price-plan-addon price-plan-addon-added p-4 m-0">
+                                            <div class="row row-cols-1 row-cols-lg-2 align-items-center">
+                                                <div class="col col-lg-9">
+                                                    <h4 class="m-0">{{ entry.pricingCalculatorAddonTitle }}</h4>
+                                                </div>
+                                                <div class="col col-lg-3">
+                                                    <div class="input-group">
+                                                        <input type="number" class="form-control price-plan-copies-number" value="{{ default_copies_number }}" placeholder="{{ default_copies_number }}" min="1" max="{{temp_book_addon_pricing_brackets[0].end_quantity}}">
+                                                        <label class="input-group-text m-0">Copies</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <p class="lead mx-0 mt-2 mb-1 text-start d-block">${{temp_book_addon_pricing_brackets[0].price}}/Copy</p>
+                                            <div class="row row-cols-1 row-cols-lg-2 align-items-center">
+                                                <div class="col col-lg-9">
+                                                    <p class="m-0 text-start d-block">{{ entry.pricingCalculatorAddonText }}</p>
+                                                </div>
+                                                <div class="col col-lg-3 text-right">
+                                                    <button class="btn btn-brand button-add-addon" type="button">Add</button>
+                                                    <button class="btn btn-brand button-remove-addon" type="button">Remove</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card card-bg-warning card-price-plan-addon-warning px-3 py-2 mt-2 mb-0 d-none">
+                                            {{ entry.pricingCalculatorAddonWarning }}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-4">
+                <div class="card p-4 m-0">
+                    <div class="tab-content m-0" id="tab-payment-action">
+                        {% for item in pricingCalculatorItems %}
+                            <div class="tab-pane tab-pane-{{ item.id }} fade {{ loop.index == 1 ? 'show active' : '' }}" id="payment-period-tab-pane-{{ item.id }}">
+                                <div class="d-flex mb-3 justify-content-center input-group-radio-buttons">
+                                    <input type="radio" class="btn-check payment-action" id="calculator_payment_action_monthly_{{ item.id }}" autocomplete="off" name="payment_action_{{ item.id }}" value="{{ plansIndexById[item.apiMonthlyPlanId].plan_url }}" {% if default_payment_period_type == payment_period_types['monthly'].id %}checked{% endif %} data-payment-period-type-id="{{ payment_period_types['monthly'].id }}" {% if item.isPro %}data-allow-users="true"{% endif %} data-recurring-price="{{ plansIndexById[item.apiMonthlyPlanId].recurring_price }}" data-plan-id="{{item.apiMonthlyPlanId}}">
+                                    <label class="btn btn-brand btn-first mx-0" for="calculator_payment_action_monthly_{{ item.id }}">Pay Monthly</label>
+                                    <input type="radio" class="btn-check payment-action" id="calculator_payment_action_annual_{{ item.id }}" autocomplete="off" name="payment_action_{{ item.id }}" value="{{ plansIndexById[item.apiAnnualPlanId].plan_url }}" {% if default_payment_period_type == payment_period_types['annual'].id %}checked{% endif %} data-payment-period-type-id="{{ payment_period_types['annual'].id }}" {% if item.isPro %}data-allow-users="true"{% endif %}  data-recurring-price="{{ plansIndexById[item.apiAnnualPlanId].recurring_price }}" data-plan-id="{{item.apiAnnualPlanId}}" data-allow-book-addon="true" data-book-addon-price="{{temp_book_addon_pricing_brackets[0].price}}">
+                                    <label class="btn btn-brand btn-last mx-0" for="calculator_payment_action_annual_{{ item.id }}">Pay Upfront</label>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+
+                    {% for item in pricingCalculatorItems %}
+                        <div class="my-3 text-center payment-amount-block" data-plan-id="{{item.apiMonthlyPlanId}}" data-payment-period-type-id="{{ payment_period_types['monthly'].id }}" data-payment-period-duration="{{ payment_period_types['monthly'].duration }}">
+                            <div class="fs-4 fw-bold"><span class="payment-period-amount"></span>/Mo</div>
+                        </div>
+                        <div class="my-3 text-center payment-amount-block" data-plan-id="{{item.apiAnnualPlanId}}" data-payment-period-type-id="{{ payment_period_types['annual'].id }}" data-payment-period-duration="{{ payment_period_types['annual'].duration }}">
+                            <div class="fs-4 fw-bold"><span class="payment-period-amount"></span>/Mo</div>
+                            <p class="lead">Bill at <span class="payment-year-amount"></span> year</p>
+                        </div>
+                    {% endfor %}
+                    <div class="tab-content m-0" id="tab-payment-action">
+                        {% for item in pricingCalculatorItems %}
+                            <div class="tab-pane tab-pane-{{ item.id }} fade {{ loop.index == 1 ? 'show active' : '' }}" id="plan-summary-tab-pane-{{ item.id }}">
+                                <div class="card card-bg-secondary card-price-plan-summary p-3 w-100 text-start">
+                                    <div class="fs-4 fw-bold m-0">{{ item.heading }}</div>
+                                    <p class="lead m-0" data-payment-period-type-id="{{ payment_period_types['monthly'].id }}"><span class="price-plan-summary-period-amount" data-plan-id="{{item.apiMonthlyPlanId}}">{{ plansIndexById[item.apiMonthlyPlanId].recurring_price|number_format }}</span>/Mo
+                                        {% if item.isPro %}
+                                            | <span class="price-plan-users-text"></span>
+                                        {% endif %}</p>
+                                    <p class="lead m-0" data-payment-period-type-id="{{ payment_period_types['annual'].id }}"><span class="price-plan-summary-period-amount" data-plan-id="{{item.apiAnnualPlanId}}">{{ plansIndexById[item.apiAnnualPlanId].recurring_price|number_format }}</span>/Year
+                                        {% if item.isPro %}
+                                            | <span class="price-plan-users-text"></span>
+                                        {% endif %}
+                                    </p>
+                                </div>
+                                <div class="card card-bg-secondary card-price-plan-addon-summary price-plan-addon-added p-3 w-100 text-start">
+                                    <div class="fs-4 fw-bold m-0">{{ entry.pricingCalculatorAddonShortTitle }}</div>
+                                    <p class="lead m-0">${{ temp_book_addon_pricing_brackets[0].price|number_format }}/Copy | <span class="price-plan-copies-text"></span></p>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                    <form id="pricing-calculator-form">
+                        <div class="input-group mb-3 justify-content-center">
+                            <button class="btn btn-brand" type="submit">Buy now</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<script>
+    /* VREF Online Products */
+
+    $(document).ready(function () {
+        $( ".vref-online-product" ).each(function( index ) {
+            updateProductFields($(this));
+        });
+        $('.vref-online-product').find('.payment-action').change(function () {
+            var productElement = $(this).closest('.vref-online-product');
+            $(productElement).find('.user-number').removeClass('active');
+            $(productElement).find('.user-number[data-payment-period-type-id="'+$(this).data('payment-period-type-id')+'"]').addClass('active');
+            updateProductFields(productElement);
+        });
+        $('.vref-online-product').find('.user-number').change(function () {
+            var productElement = $(this).closest('.vref-online-product');
+            $(this).siblings('.user-number').val($(this).val());
+            updateProductFields(productElement);
+        });
+    });
+
+    function updateProductFields(element) {
+        $(element).find('form').attr('action', $(element).find('.payment-action:checked').val());
+        var userNumberInput = $(element).find('.user-number.active');
+        if (userNumberInput.length) {
+            $(element).find('.addon-number').val(userNumberInput.val() - 1);
+        }
+    }
+
+    /* Plan calculator */
+
+    var currencyFormatter = new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD',
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 2
+    });
+
+    updatePricingCalculatorFields();
+
+    $('#pricing-calculator .nav-pricing-calculator-link[data-bs-toggle="tab"]').on('shown.bs.tab', function (e) {
+        var tabIds = $(this).attr('aria-controls').split(' ');
+        for (i = 0; i < tabIds.length; i++) {
+            $('#'+tabIds[i]).addClass('show active').siblings('.tab-pane').removeClass('show active');
+        }
+        updatePricingCalculatorFields();
+    });
+
+    $('#pricing-calculator #tab-payment-action').find('.payment-action').change(function () {
+        if($(this).is(':checked')) {
+            $(this).closest('#tab-payment-action').find('.payment-action[data-payment-period-type-id="'+$(this).data('payment-period-type-id')+'"]').prop('checked', true).siblings('.payment-action').prop('checked', false);
+        }
+        updatePricingCalculatorFields();
+    });
+
+    $('#pricing-calculator').find('.price-plan-users-number, .price-plan-users-range').on('change, input', function () {
+        var max = parseInt($(this).attr('max'));
+        var min = parseInt($(this).attr('min'));
+        if ($(this).val() > max) {
+            $(this).val(max);
+        }
+        else if ($(this).val() < min) {
+            $(this).val(min);
+        }
+        $('#pricing-calculator .price-plan-users-range').val($(this).val());
+        $('#pricing-calculator .price-plan-users-number').val($(this).val());
+        var textLabel = $(this).val() > 1 ? 'users' : 'user';
+        $('#pricing-calculator .price-plan-users-text').html($(this).val()+' '+ textLabel);
+        updatePricingCalculatorFields();
+    }).trigger('input');
+
+    $('#pricing-calculator').find('.price-plan-copies-number').on('change, input', function () {
+        $('#pricing-calculator .price-plan-copies-number').val($(this).val());
+        var textLabel = $(this).val() > 1 ? 'copies' : 'copy';
+        $('#pricing-calculator .price-plan-copies-text').html($(this).val()+' '+ textLabel);
+        updatePricingCalculatorFields();
+    }).trigger('input');
+
+    $('#pricing-calculator').find('.button-remove-addon, .button-add-addon').on('click', function () {
+        $('.card-price-plan-addon, .card-price-plan-addon-summary').toggleClass('price-plan-addon-added');
+        updatePricingCalculatorFields();
+    });
+
+    function updatePricingCalculatorFields() {
+        var selectedPaymentAction = $('#pricing-calculator #tab-payment-action .tab-pane.active .payment-action:checked');
+        var selectedPaymentPeriodTypeId = selectedPaymentAction.data('payment-period-type-id');
+        var selectedPlanId = selectedPaymentAction.data('plan-id');
+        $('#pricing-calculator .price-plan-users-select').hide().siblings('[data-payment-period-type-id="'+selectedPaymentPeriodTypeId+'"]').show();
+        $('#pricing-calculator .nav-pricing-calculator-link span').hide().siblings('[data-payment-period-type-id="'+selectedPaymentPeriodTypeId+'"]').show();
+
+        $('#pricing-calculator .card-price-plan-summary p').hide().siblings('[data-payment-period-type-id="'+selectedPaymentPeriodTypeId+'"]').show();
+        $('#pricing-calculator .price-plan-summary-period-amount').each(function( index ) {
+            var planId = $(this).data('plan-id');
+            var paymentTypeId = $(this).parent().data('payment-period-type-id');
+            var recurringPrice = $('#pricing-calculator .payment-action[data-plan-id="'+planId+'"][data-payment-period-type-id="'+paymentTypeId+'"]').data('recurring-price');
+            var usersNumberInput = $('#pricing-calculator .price-plan-users-number[data-plan-id="'+planId+'"][data-payment-period-type-id="'+paymentTypeId+'"]');
+            var total = parseInt(recurringPrice);
+            if (usersNumberInput.length) {
+                var addonPricing = usersNumberInput.data('addon-pricing');
+                var usersNumber = usersNumberInput.val();
+                var addonsNumber = usersNumber - 1;
+                var addonPrice = 0;
+                for (i =0; i < addonPricing.length; i++) {
+                    if (parseInt(addonPricing[i]['start_quantity']) <= addonsNumber && parseInt(addonPricing[i]['end_quantity']) >= addonsNumber) {
+                        addonPrice = addonPricing[i]['price'];
+                        break;
+                    }
+                }
+                total += addonPrice * addonsNumber;
+            }
+            $(this).html(currencyFormatter.format(total));
+        });
+
+        $('#pricing-calculator .payment-amount-block').hide().siblings('[data-payment-period-type-id="'+selectedPaymentPeriodTypeId+'"][data-plan-id="'+selectedPlanId+'"]').show();
+        $('#pricing-calculator .payment-amount-block').each(function( index ) {
+            var planId = $(this).data('plan-id');
+            var paymentTypeId = $(this).data('payment-period-type-id');
+            var paymentAction = $('#pricing-calculator .payment-action[data-plan-id="'+planId+'"][data-payment-period-type-id="'+paymentTypeId+'"]');
+            var recurringPrice = paymentAction.data('recurring-price');
+            var usersNumberInput = $('#pricing-calculator .price-plan-users-number[data-plan-id="'+planId+'"][data-payment-period-type-id="'+paymentTypeId+'"]');
+            var perPeriodTotal = parseInt(recurringPrice);
+            if (usersNumberInput.length) {
+                var addonPricing = usersNumberInput.data('addon-pricing');
+                var usersNumber = usersNumberInput.val();
+                var addonsNumber = usersNumber - 1;
+                var addonPrice = 0;
+                for (i = 0; i < addonPricing.length; i++) {
+                    if (parseInt(addonPricing[i]['start_quantity']) <= addonsNumber && parseInt(addonPricing[i]['end_quantity']) >= addonsNumber) {
+                        addonPrice = addonPricing[i]['price'];
+                        break;
+                    }
+                }
+                perPeriodTotal += addonPrice * addonsNumber;
+            }
+            var total = (perPeriodTotal/$(this).data('payment-period-duration')) * 12;
+            if(paymentAction.data('allow-book-addon') && $('.card-price-plan-addon').hasClass('price-plan-addon-added')) {
+                total += parseInt(paymentAction.data('book-addon-price')) * $('#pricing-calculator').find('.price-plan-copies-number').val();
+            }
+            $(this).find('.payment-period-amount').html(currencyFormatter.format(total/12));
+            $(this).find('.payment-year-amount').html(currencyFormatter.format(total));
+        });
+
+        if(!selectedPaymentAction.data('allow-book-addon')) {
+            $('.card-price-plan-addon').addClass('disabled');
+            $('.card-price-plan-addon-summary').addClass('disabled');
+            $('.card-price-plan-addon-warning').removeClass('d-none');
+        } else {
+            $('.card-price-plan-addon').removeClass('disabled');
+            $('.card-price-plan-addon-summary').removeClass('disabled');
+            $('.card-price-plan-addon-warning').addClass('d-none');
+        }
+        $('#pricing-calculator-form').attr('action', $('#tab-payment-action .tab-pane.active .payment-action:checked').val());
+    }
+</script>

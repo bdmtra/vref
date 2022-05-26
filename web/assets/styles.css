@@ -7317,6 +7317,8 @@ ul.nav li {
 .card-product .input-group-text, .card-price-plan-addon .input-group-text {
   background: #fff;
   border-color: #fff;
+  padding-right: 0;
+  border-right: 0;
 }
 
 input[type=radio]:checked + label.btn.btn-brand,
@@ -7410,6 +7412,10 @@ input[type=range]::-webkit-slider-thumb {
 
 .card-bg-secondary {
   background-color: #c7f3e5 !important;
+}
+
+.card-bg-warning {
+  background-color: #dde9e5 !important;
 }
 
 .table-compare td {
@@ -7506,6 +7512,47 @@ input[type=range]::-webkit-slider-thumb {
 .pagination .page-item.active .page-link {
   background-color: #34826a;
   border-color: #34826a;
+}
+
+.card-product .user-number {
+  display: none;
+  border-radius: 0.25rem !important;
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+  margin-left: 0px !important;
+}
+.card-product .user-number.active {
+  display: block;
+}
+
+#pricing-calculator .button-add-addon,
+#pricing-calculator .button-remove-addon {
+  min-width: 110px;
+}
+#pricing-calculator .button-remove-addon {
+  display: none;
+}
+
+#pricing-calculator .price-plan-addon-added .button-add-addon {
+  display: none;
+}
+#pricing-calculator .price-plan-addon-added .button-remove-addon {
+  display: inline-block;
+}
+
+.card-price-plan-addon-summary {
+  display: none;
+}
+.card-price-plan-addon-summary.price-plan-addon-added {
+  display: block;
+}
+
+.card-price-plan-addon-summary.disabled {
+  display: none !important;
+}
+
+.card-price-plan-addon.disabled {
+  opacity: 0.5;
 }
 
 p {

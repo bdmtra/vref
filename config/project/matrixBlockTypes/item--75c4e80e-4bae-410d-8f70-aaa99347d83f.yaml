@@ -58,9 +58,32 @@ fieldLayouts:
             type: craft\fieldlayoutelements\CustomField
             warning: null
             width: 100
+          -
+            fieldUid: 245060c5-4ee8-444a-989a-79673f10d4d5 # is Pro
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
         name: Content
         sortOrder: 1
 fields:
+  245060c5-4ee8-444a-989a-79673f10d4d5: # is Pro
+    contentColumnType: boolean
+    fieldGroup: null
+    handle: isPro
+    instructions: ''
+    name: 'is Pro'
+    searchable: false
+    settings:
+      default: false
+      offLabel: null
+      onLabel: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Lightswitch
   2656cadd-5acf-409b-9889-2b2778f4cbb3: # Heading
     contentColumnType: text
     fieldGroup: null

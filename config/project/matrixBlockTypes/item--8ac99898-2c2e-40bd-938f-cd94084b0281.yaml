@@ -17,13 +17,22 @@ fieldLayouts:
             fieldUid: e78af475-ff00-4f2d-97a1-164f5f7f850c # API Monthly Plan ID
             instructions: null
             label: null
-            required: false
+            required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
             warning: null
             width: 100
           -
             fieldUid: 5f4b2a54-56e8-4c12-86d7-4f49c1a601c1 # API Annual Plan ID
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: d6af4f46-98be-4f40-a2e9-9574adf14d4a # is Pro
             instructions: null
             label: null
             required: false
@@ -73,6 +82,20 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
+  d6af4f46-98be-4f40-a2e9-9574adf14d4a: # is Pro
+    contentColumnType: boolean
+    fieldGroup: null
+    handle: isPro
+    instructions: ''
+    name: 'is Pro'
+    searchable: false
+    settings:
+      default: false
+      offLabel: null
+      onLabel: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Lightswitch
   e78af475-ff00-4f2d-97a1-164f5f7f850c: # API Monthly Plan ID
     contentColumnType: integer(10)
     fieldGroup: null
