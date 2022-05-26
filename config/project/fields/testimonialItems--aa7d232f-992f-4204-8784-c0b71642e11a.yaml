@@ -7,7 +7,7 @@ searchable: false
 settings:
   contentTable: '{{%matrixcontent_testimonialitems}}'
   maxBlocks: ''
-  minBlocks: '1'
+  minBlocks: ''
   propagationMethod: all
 translationKeyFormat: null
 translationMethod: site
