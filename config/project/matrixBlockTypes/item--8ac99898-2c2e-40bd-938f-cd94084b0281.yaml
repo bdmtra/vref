@@ -1,0 +1,121 @@
+field: 98edc9fe-c294-4f6c-bbc9-6322f7f1937c # Pricing Calculator Items
+fieldLayouts:
+  1285afb1-13ac-48fc-992d-e5223f62bbfb:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: d3213fd8-b691-424d-b325-34c86315fd06 # Heading
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: e78af475-ff00-4f2d-97a1-164f5f7f850c # API Monthly Plan ID
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 5f4b2a54-56e8-4c12-86d7-4f49c1a601c1 # API Annual Plan ID
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: d6af4f46-98be-4f40-a2e9-9574adf14d4a # is Pro
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  5f4b2a54-56e8-4c12-86d7-4f49c1a601c1: # API Annual Plan ID
+    contentColumnType: integer(10)
+    fieldGroup: null
+    handle: apiAnnualPlanId
+    instructions: ''
+    name: 'API Annual Plan ID'
+    searchable: false
+    settings:
+      decimals: 0
+      defaultValue: null
+      max: null
+      min: '1'
+      prefix: null
+      previewCurrency: ''
+      previewFormat: decimal
+      size: null
+      suffix: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Number
+  d3213fd8-b691-424d-b325-34c86315fd06: # Heading
+    contentColumnType: text
+    fieldGroup: null
+    handle: heading
+    instructions: ''
+    name: Heading
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  d6af4f46-98be-4f40-a2e9-9574adf14d4a: # is Pro
+    contentColumnType: boolean
+    fieldGroup: null
+    handle: isPro
+    instructions: ''
+    name: 'is Pro'
+    searchable: false
+    settings:
+      default: false
+      offLabel: null
+      onLabel: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Lightswitch
+  e78af475-ff00-4f2d-97a1-164f5f7f850c: # API Monthly Plan ID
+    contentColumnType: integer(10)
+    fieldGroup: null
+    handle: apiMonthlyPlanId
+    instructions: ''
+    name: 'API Monthly Plan ID'
+    searchable: false
+    settings:
+      decimals: 0
+      defaultValue: null
+      max: null
+      min: '1'
+      prefix: null
+      previewCurrency: ''
+      previewFormat: decimal
+      size: null
+      suffix: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Number
+handle: item
+name: Item
+sortOrder: 1

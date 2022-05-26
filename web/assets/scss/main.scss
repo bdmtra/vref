@@ -4163,6 +4163,8 @@ ul.nav li {
   .input-group-text {
     background: #fff;
     border-color: #fff;
+    padding-right: 0;
+    border-right: 0;
   }
 }
 
@@ -4252,6 +4254,9 @@ input[type='range']::-webkit-slider-thumb {
 
 .card-bg-secondary {
   background-color: #c7f3e5!important;
+}
+.card-bg-warning {
+  background-color: #dde9e5!important;
 }
 
 .table-compare td{
@@ -4350,3 +4355,46 @@ input[type='range']::-webkit-slider-thumb {
   }
 }
 
+.card-product .user-number {
+  display: none;
+  border-radius: 0.25rem !important;
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+  margin-left: 0px !important;
+  &.active {
+    display: block;
+  }
+}
+
+#pricing-calculator {
+  .button-add-addon,
+  .button-remove-addon{
+    min-width: 110px;
+  }
+  .button-remove-addon {
+    display: none;
+  }
+}
+
+#pricing-calculator .price-plan-addon-added {
+  .button-add-addon {
+    display: none;
+  }
+  .button-remove-addon {
+    display: inline-block;
+  }
+}
+
+.card-price-plan-addon-summary {
+  display: none;
+  &.price-plan-addon-added {
+    display: block;
+  }
+}
+
+.card-price-plan-addon-summary.disabled{
+  display: none !important;
+}
+.card-price-plan-addon.disabled{
+  opacity: 0.5;
+}

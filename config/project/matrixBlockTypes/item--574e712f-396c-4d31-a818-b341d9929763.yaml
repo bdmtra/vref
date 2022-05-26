@@ -40,6 +40,15 @@ fieldLayouts:
             type: craft\fieldlayoutelements\CustomField
             warning: null
             width: 100
+          -
+            fieldUid: dd8d9df1-917c-46be-873d-404628bec7be # API Plan ID
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
         name: Content
         sortOrder: 1
 fields:
@@ -100,6 +109,26 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
+  dd8d9df1-917c-46be-873d-404628bec7be: # API Plan ID
+    contentColumnType: integer(10)
+    fieldGroup: null
+    handle: apiPlanId
+    instructions: ''
+    name: 'API Plan ID'
+    searchable: false
+    settings:
+      decimals: 0
+      defaultValue: null
+      max: null
+      min: '1'
+      prefix: null
+      previewCurrency: ''
+      previewFormat: decimal
+      size: null
+      suffix: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Number
   f3f50810-6a1f-454b-8238-7275b083d452: # Includes
     contentColumnType: text
     fieldGroup: null
