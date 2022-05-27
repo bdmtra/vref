@@ -1,7 +1,7 @@
 contentColumnType: text
 fieldGroup: 0d09437d-cc22-40d2-a504-89155a0b4a52 # CTA Section
 handle: ctaButtonText
-instructions: ''
+instructions: 'Default: "Get Started"'
 name: 'CTA Button Text'
 searchable: false
 settings:
