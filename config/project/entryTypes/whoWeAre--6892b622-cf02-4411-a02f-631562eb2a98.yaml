@@ -109,6 +109,15 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            fieldUid: 4fadc1a8-e761-4fb6-a0ba-9a4d222cdb89 # Team Members Text
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
             fieldUid: 0c417ca9-97e5-463e-ac01-dca2080f5935 # Team Members List
             instructions: null
             label: null

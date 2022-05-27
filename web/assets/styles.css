@@ -7555,6 +7555,11 @@ input[type=range]::-webkit-slider-thumb {
   opacity: 0.5;
 }
 
+.team-member-title,
+.team-member-designation {
+  min-height: 4rem;
+}
+
 p {
   margin-bottom: 0;
 }

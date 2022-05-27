@@ -38,20 +38,22 @@
     {% include 'partials/sections/_services' with { items: entry.expertiseList.all()} %}
     <div class="border-bottom"></div>
     <div class="container px-4 py-5">
-        <h2 class="pb-2 text-center">{{ entry.teamMembersTitle|nl2br}}</h2>
+        <h2 class="pb-2 text-center">{{ entry.teamMembersTitle|nl2br }}</h2>
+        <p class="lead text-center">{{ entry.teamMembersText|nl2br }}</p>
         {% if entry.teamMembersList %}
-            <div class="row g-4 pt-5 row-cols-2 row-cols-md-3">
+            <div class="row g-4 pt-5 row-cols-2 row-cols-md-3 row-cols-lg-5">
                 {% for item in entry.teamMembersList.all() %}
                     <div class="col">
                         <div class="card card-team-member rounded-5 border h-100">
                             {% set itemImageAsset =  item.profilePicture.one() %}
                             {% if itemImageAsset %}
                                 <div class="w-100">
-                                    <img src="{{ itemImageAsset.getUrl('teamMembersItemImage') }}" class="img-fluid h-100">
+                                    <img src="{{ itemImageAsset.getUrl('teamMembersItemImage') }}" class="img-fluid mb-3">
                                 </div>
                             {% endif %}
-                            <h3 class="h4 my-4 px-3 text-center lh-sm">{{ item.personName|nl2br }}</h3>
-                            <div class="mb-4">
+                            <h3 class="h4 mb-3 px-3 text-center lh-sm team-member-title">{{ item.title|trim|replace(' ', '<br>')|raw }}</h3>
+                            <h4 class="h5 mb-3 px-3 text-center lh-sm team-member-designation">{{ item.personDesignation }}</h4>
+                            <div>
                                 <a href="{{item.url}}" class="fs-5 border-bottom">Read Bio</a>
                             </div>
                         </div>
