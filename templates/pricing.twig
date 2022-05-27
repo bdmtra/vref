@@ -88,12 +88,15 @@
                                     <button class="btn btn-brand" type="submit">Buy now</button>
                                 </div>
                             </form>
-                            <p class="fs-5 fw-bold text-start mt-0 mb-4 w-100">Includes</p>
-                            <ul class="m-0 p-0">
-                                {% for include in item.includes|split('\n') %}
-                                <li>{{ include }}</li>
-                                {% endfor %}
-                            </ul>
+                            {% set includes = item.includes|split('\n')|filter %}
+                            {% if includes is not empty %}
+                                <p class="fs-5 fw-bold text-start mt-0 mb-4 w-100">Includes</p>
+                                <ul class="m-0 p-0">
+                                    {% for include in includes %}
+                                    <li>{{ include }}</li>
+                                    {% endfor %}
+                                </ul>
+                            {% endif %}
                         </div>
                     </div>
                 {% endfor %}
@@ -108,7 +111,7 @@
                         <div class="card card-product p-5 m-0">
                             <h2 class="fs-4 mb-3 text-center lh-sm">{{ item.heading|nl2br }}</h2>
                             <p class="mb-3 text-center fs-6">${{ plansIndexById[item.apiPlanId].recurring_price|number_format }}/Copy</p>
-                            <form action="{{ plansIndexById[item.apiPlanId].plan_url }}">
+                            <form action="{{ plansIndexById[item.apiPlanId].plan_url }}" class="w-100">
                                 <div class="input-group mb-3 w-50">
                                     <input type="number" class="form-control" name="addon_number" value="{{ default_copies_number }}" placeholder="{{ default_copies_number }}" min="1" max="{{ plansIndexById[item.apiPlanId].book_addon_pricing_brackets[0].end_quantity }}">
                                     <label class="input-group-text m-0">Copies</label>
