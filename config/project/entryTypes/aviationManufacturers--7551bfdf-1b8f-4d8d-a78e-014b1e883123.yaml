@@ -116,7 +116,7 @@ fieldLayouts:
           -
             type: craft\fieldlayoutelements\HorizontalRule
           -
-            fieldUid: acedc3c9-f985-48d6-8a79-78f265b51209 # Logos Title
+            fieldUid: acedc3c9-f985-48d6-8a79-78f265b51209 # Media Outlets Title
             instructions: null
             label: null
             required: false
@@ -125,7 +125,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: e79ed62d-799b-4c7b-bae2-ccf2b6460d28 # Logos Items
+            fieldUid: e79ed62d-799b-4c7b-bae2-ccf2b6460d28 # Media Outlets Items
             instructions: null
             label: null
             required: false

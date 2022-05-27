@@ -1,0 +1,21 @@
+contentColumnType: string
+fieldGroup: 167ecf9b-703f-4c32-871a-46c542514e4b # Media Outlets Section
+handle: mediaOutletsItems
+instructions: ''
+name: 'Media Outlets Items'
+searchable: false
+settings:
+  allowSelfRelations: false
+  limit: '4'
+  localizeRelations: false
+  selectionLabel: ''
+  showSiteMenu: true
+  source: null
+  sources:
+    - 'section:071998bd-073b-4853-928e-6da3b345f3ed' # Press Coverage
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: null
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Entries

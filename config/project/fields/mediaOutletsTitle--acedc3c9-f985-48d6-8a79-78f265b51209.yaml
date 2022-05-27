@@ -1,8 +1,8 @@
 contentColumnType: text
-fieldGroup: 167ecf9b-703f-4c32-871a-46c542514e4b # Logos Secondary Section
-handle: logosSecondaryTitle
+fieldGroup: 167ecf9b-703f-4c32-871a-46c542514e4b # Media Outlets Section
+handle: mediaOutletsTitle
 instructions: ''
-name: 'Logos Title'
+name: 'Media Outlets Title'
 searchable: false
 settings:
   byteLimit: null
