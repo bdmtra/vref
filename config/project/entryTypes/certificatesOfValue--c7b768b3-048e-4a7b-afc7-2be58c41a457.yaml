@@ -65,7 +65,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 9d2eedef-de79-41c0-8455-32c111fa0738 # Hero Button Link
+            fieldUid: f4471929-78a0-4cff-bb65-567c6e4892ab # Hero Button Strict Link
             instructions: null
             label: null
             required: false
@@ -163,7 +163,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: e9d61c0b-c59a-43e3-a8c5-c6f9f6642a91 # CTA Button Link
+            fieldUid: 1966d324-4d88-463d-b709-83f82e72a16b # CTA Button Strict Link
             instructions: null
             label: null
             required: false

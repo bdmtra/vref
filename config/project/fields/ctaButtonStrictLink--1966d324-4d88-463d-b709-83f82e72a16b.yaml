@@ -1,0 +1,14 @@
+contentColumnType: string(255)
+fieldGroup: 0d09437d-cc22-40d2-a504-89155a0b4a52 # CTA Section
+handle: ctaButtonStrictLink
+instructions: ''
+name: 'CTA Button Strict Link'
+searchable: false
+settings:
+  maxLength: '255'
+  placeholder: null
+  types:
+    - url
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Url

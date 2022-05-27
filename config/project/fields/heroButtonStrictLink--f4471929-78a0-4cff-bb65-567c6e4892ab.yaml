@@ -1,0 +1,14 @@
+contentColumnType: string(255)
+fieldGroup: e9e3bf35-7f73-4c12-8fef-f60ecb59a31b # Hero Section
+handle: heroButtonStrictLink
+instructions: ''
+name: 'Hero Button Strict Link'
+searchable: false
+settings:
+  maxLength: '255'
+  placeholder: null
+  types:
+    - url
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Url

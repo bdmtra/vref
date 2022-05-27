@@ -5,10 +5,17 @@
         <div class="row">
             <div class="col-lg-6 mx-auto">
                 <p class="lead mb-4 text-white">{{ entry.ctaText|nl2br }}</p>
-                {% set ctaButtonLinkEntry = entry.ctaButtonLink.one() %}
+                {% set ctaLinkUrl = false %}
+                {% set ctaLinkEntry = entry.ctaButtonLink ? entry.ctaButtonLink.one() : false %}
+                {% if ctaLinkEntry %}
+                    {% set ctaLinkUrl = ctaLinkEntry.url %}
+                {% endif %}
+                {% if not ctaLinkUrl and entry.ctaButtonStrictLink is defined and entry.ctaButtonStrictLink %}
+                    {% set ctaLinkUrl = entry.ctaButtonStrictLink %}
+                {% endif %}
                 {% set ctaButtonLinkText  = entry.ctaButtonText %}
-                {% if ctaButtonLinkEntry and ctaButtonLinkText %}
-                <a href="{{ ctaButtonLinkEntry.url }}" class="btn btn-brand btn-lg m-0 d-block d-md-inline-block">{{ ctaButtonLinkText }}</a>
+                {% if ctaLinkUrl and ctaButtonLinkText %}
+                    <a href="{{ ctaLinkUrl }}" class="btn btn-brand btn-lg m-0 d-block d-md-inline-block">{{ ctaButtonLinkText }}</a>
                 {% endif %}
             </div>
         </div>
