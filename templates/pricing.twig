@@ -11,9 +11,9 @@
 {% include 'partials/sections/_hero-no-image' %}
 <div class="border-bottom"></div>
 <div class="container">
-    <ul class="nav justify-content-center mb-4">
+    <ul class="nav justify-content-center mb-4" role="tablist">
         <li class="nav-item">
-            <a class="nav-link fs-6 active" data-bs-toggle="tab" data-bs-target="#vref-online-tab-pane" role="tab" aria-controls="vref-online-tab-pane" aria-selected="true">VREF Online</a>
+            <a class="nav-link fs-6 active" data-bs-toggle="tab" data-bs-target="#vref-online-tab-pane" data-bs-target="#vref-online-tab-pane" role="tab" aria-controls="vref-online-tab-pane" aria-selected="true">VREF Online</a>
         </li>
         <li class="nav-item">
             <a class="nav-link fs-6" data-bs-toggle="tab" data-bs-target="#vref-print-tab-pane" role="tab" aria-controls="vref-print-tab-pane" aria-selected="false">VREF Print</a>
@@ -154,5 +154,32 @@
 {% include 'partials/sections/_services' %}
 <div class="border-bottom"></div>
 {% include 'partials/sections/_pricing-calculator' %}
+<script>
+    $(document).ready(() => {
+        showTab();
+        $('a:not([data-bs-target])').click(function () {
+            showTab($(this));
+        });
+    });
+    function showTab(element = false) {
+        var url = element ? element.attr('href') : window.location.href;
+        console.log(url);
+        if (url.indexOf("#") > -1){
+            var activeTab = url.substring(url.indexOf("#") + 1);
+            console.log(url);
+
+            var nav = $('.nav[role="tablist"]');
+            var tab = nav.find('a[data-bs-target="#'+activeTab+'"]');
+            if (tab.length) {
+                tab.tab('show');
+                var position = nav.offset().top - parseInt(nav.css('marginTop'));
+                $("html, body").animate({
+                    scrollTop: position
+                }, 1000);
+
+            }
+        }
+    }
+</script>
 
 {% endblock %}
