@@ -33,10 +33,14 @@
     verify: false
 } %}
 {% set request = fetch(client, 'GET', '/api/plan') %}
+{% if not request.body or request.body.results is not defined %}
+    {% redirect entry.url %}
+{% endif %}
 {% set plansIndexById = [] %}
 {% for plan in request.body.results %}
     {% set plansIndexById = {(plan.id) : plan} + plansIndexById %}
 {% endfor %}
+
 <div class="container">
     <div class="tab-content py-5">
         <div class="tab-pane fade show active" id="vref-online-tab-pane">
@@ -181,5 +185,4 @@
         }
     }
 </script>
-
 {% endblock %}
