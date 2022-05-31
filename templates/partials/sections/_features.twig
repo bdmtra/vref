@@ -4,15 +4,13 @@
 <div class="container px-4 pt-5 pb-0 pb-lg-5 text-center">
     <h2 class="pb-2">{{ entry.featuresTitle|nl2br }}</h2>
     <p class="lead">{{ entry.featuresText|nl2br }}</p>
+    {% set imageTransformHandle = 'featuresItemImage' %}
     {% if entry.featuresItems %}
-        <div class="row g-4 py-5 row-cols-1 row-cols-lg-{{ columns }}">
+        <div class="row gx-4 gy-5 py-5 row-cols-1 row-cols-lg-{{ columns }} d-flex align-items-start">
             {% for item in entry.featuresItems.all() %}
-                <div class="col">
+                <div class="col-4">
                     <div class="feature-img">
-                        {% set itemImageAsset = item.image.one() %}
-                        {% if itemImageAsset %}
-                            <img src="{{ itemImageAsset.getUrl('featuresItemImage') }}" class="img-fluid">
-                        {% endif %}
+                        <img src="{{ item.image.one().getUrl(imageTransformHandle) ?? (imagePlaceholders.listItemImagePlaceholder.one().getUrl(imageTransformHandle) ?? null) }}" class="img-fluid">
                     </div>
                     <h3 class="h4 mt-3">{{ item.heading|nl2br }}</h3>
                     <p>{{ item.text|nl2br }}</p>
@@ -26,4 +24,5 @@
             {% endfor %}
         </div>
     {% endif %}
+
 </div>

@@ -29,9 +29,7 @@
                         </div>
                     </div>
                 {% else %}
-                    {% if itemImage %}
-                        <img src="{{ itemImage.url }}" class="d-block mx-lg-auto img-fluid" alt="{{ item.heading }}">
-                    {% endif %}
+                    <img src="{{ item.image.one().url ?? (imagePlaceholders.listItemImagePlaceholder.one().url ?? null) }}" class="d-block mx-lg-auto img-fluid" alt="{{ item.heading }}">
                 {% endif %}
             </div>
             <div class="col-10 col-lg-8 my-0 my-lg-4 {% if item.linkPosition == 'side' %} order-0 {% endif %}">

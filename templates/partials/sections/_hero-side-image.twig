@@ -1,10 +1,7 @@
 <div class="container">
     <div class="row flex-lg-row-reverse align-items-center">
     <div class="col-10 col-sm-8 col-lg-6  my-4 my-lg-0">
-        {% set heroImage = entry.heroImage.one() %}
-        {% if heroImage %}
-        <img src="{{ heroImage.url }}" class="d-block mx-lg-auto img-fluid" alt="{{ entry.heroTitle }}">
-        {% endif %}
+        <img src="{{ entry.heroImage.one().url ?? (imagePlaceholders.heroImagePlaceholder.one().url ?? 'null') }}" class="d-block mx-lg-auto img-fluid" alt="{{ entry.heroImage.one().title ?? (imagePlaceholders.heroImagePlaceholder.one().title ?? 'null') }}">
     </div>
     <div class="col-10 col-lg-6 mt-0 my-4 my-lg-0">
         <h1 class="display-5 fw-bold lh-1 mb-3">{{ entry.heroTitle|nl2br }}</h1>

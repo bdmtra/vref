@@ -1,23 +1,19 @@
-{% if title is not defined %}
-    {% set title =  entry.logosTitle %}
+{% set items = entry.logosItems.all() %}
+{% if items is empty %}
+    {% set items = imagePlaceholders.logosItemsPlaceholder.all() %}
 {% endif %}
-{% if items is not defined %}
-    {% set items = entry.logosItems.all() %}
-{% endif %}
-{% if columns is not defined %}
-    {% set columns = 4 %}
-{% endif %}
+{% if entry.logosTitle and items %}
 <div class="container px-4 py-5 text-center">
-    <h2 class="pb-2">{{ title|nl2br}}</h2>
-    {% if entry.logosItems %}
-      <div class="row g-4 py-2 py-lg-4 row-cols-{{ columns }}">
+    <h2 class="pb-2">{{ entry.logosTitle|nl2br}}</h2>
+      <div class="row g-4 py-2 py-lg-4 row-cols-{{ items|length }}">
+        {% set imageTransformHandle = 'logosItemImage' %}
         {% for item in items %}
         <div class="col">
           <div class="logo-img">
-              <img src="{{ item.image.one().getUrl('logosItemImage') }}" class="img-fluid">
+              <img src="{{ item.getUrl(imageTransformHandle) }}" class="img-fluid">
           </div>
         </div>
         {% endfor %}
       </div>
-    {% endif %}
 </div>
+{% endif %}

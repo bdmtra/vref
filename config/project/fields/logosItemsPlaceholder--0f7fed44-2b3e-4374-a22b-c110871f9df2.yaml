@@ -1,8 +1,8 @@
 contentColumnType: string
-fieldGroup: abcbfaff-d169-40db-84ba-c682d3ab6b26 # Logos Section
-handle: logosItems
+fieldGroup: ffbf29b8-aade-4728-a390-7eaa65a92f85 # Image Placeholders
+handle: logosItemsPlaceholder
 instructions: ''
-name: 'Logos Items'
+name: 'Logos Items Placeholder'
 searchable: false
 settings:
   allowSelfRelations: false
@@ -25,7 +25,7 @@ settings:
   targetSiteId: null
   useSingleFolder: false
   validateRelatedElements: false
-  viewMode: list
+  viewMode: large
 translationKeyFormat: null
 translationMethod: site
 type: craft\fields\Assets

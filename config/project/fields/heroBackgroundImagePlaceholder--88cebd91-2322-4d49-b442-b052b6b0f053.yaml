@@ -1,8 +1,8 @@
 contentColumnType: string
-fieldGroup: abcbfaff-d169-40db-84ba-c682d3ab6b26 # Logos Section
-handle: logosItems
+fieldGroup: ffbf29b8-aade-4728-a390-7eaa65a92f85 # Image Placeholders
+handle: heroBackgroundImagePlaceholder
 instructions: ''
-name: 'Logos Items'
+name: 'Hero Background Image Placeholder'
 searchable: false
 settings:
   allowSelfRelations: false
@@ -10,12 +10,12 @@ settings:
   allowedKinds: null
   defaultUploadLocationSource: 'volume:fb6e2638-c6df-4a24-8de9-422128e80318' # Client Images Volume
   defaultUploadLocationSubpath: ''
-  limit: ''
+  limit: '1'
   localizeRelations: false
   previewMode: full
   restrictFiles: ''
   selectionLabel: ''
-  showSiteMenu: true
+  showSiteMenu: false
   showUnpermittedFiles: false
   showUnpermittedVolumes: false
   singleUploadLocationSource: 'volume:fb6e2638-c6df-4a24-8de9-422128e80318' # Client Images Volume
@@ -25,7 +25,7 @@ settings:
   targetSiteId: null
   useSingleFolder: false
   validateRelatedElements: false
-  viewMode: list
+  viewMode: large
 translationKeyFormat: null
 translationMethod: site
 type: craft\fields\Assets

@@ -1,0 +1,54 @@
+fieldLayouts:
+  5f6682f5-add7-4382-b490-e86de06eb0b7:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 88cebd91-2322-4d49-b442-b052b6b0f053 # Hero Background Image Placeholder
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 04432097-5904-4fef-b950-52a8557f3e74 # Hero Image Placeholder
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: cfba22e8-8c08-42cb-99fe-f4c72273de99 # CTA Background Image Placeholder
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 772aeeb5-96a3-425a-a404-0626c2de7c8c # List Item Image Placeholder
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 0f7fed44-2b3e-4374-a22b-c110871f9df2 # Logos Items Placeholder
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Main
+        sortOrder: 1
+handle: imagePlaceholders
+name: 'Image Placeholders'

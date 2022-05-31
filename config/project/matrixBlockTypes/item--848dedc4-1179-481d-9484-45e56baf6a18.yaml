@@ -41,6 +41,15 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            fieldUid: 9d972844-b4e7-46ce-99e6-65f2c3bfa4e6 # Link Strict
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
             fieldUid: 1bd89aea-8187-43c4-af6c-dfd49b2347a4 # Link Text
             instructions: null
             label: null
@@ -163,6 +172,25 @@ fields:
     translationKeyFormat: null
     translationMethod: site
     type: craft\fields\Entries
+  9d972844-b4e7-46ce-99e6-65f2c3bfa4e6: # Link Strict
+    contentColumnType: text
+    fieldGroup: null
+    handle: linkStrict
+    instructions: 'Used if Link Entry not selected'
+    name: 'Link Strict'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
   a27a6982-eedc-4b9c-86c2-fce4430146e0: # Link Position
     contentColumnType: string
     fieldGroup: null

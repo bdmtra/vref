@@ -4,9 +4,8 @@
 
     {# TOP BANNER #}
 
-    {% set backgroundImageAsset = entry.heroBackgroundImage.one() %}
     <div class="content-group no-constrain img-cover img-cover-shadow"
-         style="background-image: url({{ backgroundImageAsset ? backgroundImageAsset.url : '' }})">
+         style="background-image: url({{ entry.heroBackgroundImage.one().url ?? (imagePlaceholders.heroBackgroundImagePlaceholder.one().url ?? null) }})">
         <div class="text-group header-text-group constrain">
             <h1>{{ entry.heroTitle|nl2br }}</h1>
             <span class="d-block mb-5">{{ entry.heroText|nl2br }}</span>

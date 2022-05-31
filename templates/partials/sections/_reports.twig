@@ -5,15 +5,13 @@
     <div class="row">
         <div class="col col-lg-9">
             <div class="row g-4 pt-5 row-cols-1 row-cols-lg-2">
+                {% set imageTransformHandle = 'reportsItemImage' %}
                 {% for item in entry.reportsItems.all() %}
                 <div class="col">
                     <div class="card rounded-5 border p-5 ">
-                        {% set itemImageAsset =  item.image.one() %}
-                        {% if itemImageAsset %}
                         <div class="report-img">
-                            <img src="{{ itemImageAsset.getUrl('reportsItemImage') }}" class="img-fluid h-100">
+                            <img src="{{ item.image.one().getUrl(imageTransformHandle) ?? (imagePlaceholders.listItemImagePlaceholder.one().getUrl(imageTransformHandle) ?? null) }}" class="img-fluid">
                         </div>
-                        {% endif %}
                         <h3 class="h4 mt-3">{{ item.heading|nl2br }}</h3>
                         <p class="mb-4">{{ item.text|nl2br }}</p>
                         {% set itemLinkEntry = item.linkEntry.one() %}
