@@ -16,41 +16,40 @@
     {% if not itemLinkUrl and item.linkStrict is defined and item.linkStrict %}
         {% set itemLinkUrl = item.linkStrict %}
     {% endif %}
-
-    <div class="container">
-        <div class="row gx-4 flex-lg-row{% if (loop.index + offset) % 2 %}-reverse{% endif %} align-items-center">
-            <div class="col-10 col-sm-8 col-lg-4 my-4 {% if item.linkPosition == 'side' %} order-1 {% endif %}">
-                {% if itemLinkUrl and item.linkPosition == 'side' %}
-                    <div class="text-center">
-                        <div class="{{ (loop.index + offset) % 2 ? 'text-lg-start' : 'text-lg-end' }}">
-                            <a href="{{ itemLinkUrl }}"
+    <section>
+        <div class="container">
+            <div class="row gx-4 flex-lg-row{% if (loop.index + offset) % 2 %}-reverse{% endif %} align-items-center">
+                <div class="col-12 col-sm-8 col-lg-4 my-3 my-lg-5 {% if item.linkPosition == 'side' %} order-1 {% endif %}">
+                    {% if itemLinkUrl and item.linkPosition == 'side' %}
+                        <div class="text-center">
+                            <div class="{{ (loop.index + offset) % 2 ? 'text-lg-start' : 'text-lg-end' }}">
+                                <a href="{{ itemLinkUrl }}"
                                    class="fw-bold d-md-inline-block fs-5 border-bottom">{{ item.linkText ?: 'Learn More' }}
                                     &#8594;</a>
+                            </div>
                         </div>
-                    </div>
-                {% else %}
-                    <img src="{{ item.image.one().url ?? (imagePlaceholders.listItemImagePlaceholder.one().url ?? null) }}" class="d-block mx-lg-auto img-fluid" alt="{{ item.heading }}">
-                {% endif %}
-            </div>
-            <div class="col-10 col-lg-8 my-0 my-lg-4 {% if item.linkPosition == 'side' %} order-0 {% endif %}">
-                {% if item.subheading %}
-                    <h3 class="text-uppercase fw-bold lh-1 my-3">{{ item.subheading|nl2br }}</h3>
-                {% endif %}
-                <h2 class="fw-bold lh-1 my-3">{{ item.heading|nl2br }}</h2>
-                <p class="lead mb-4">{{ item.text|nl2br }}</p>
-                {% if itemLinkUrl and item.linkPosition == 'underText' %}
-                    <div class="text-center mb-4 mb-lg-0">
-                        <div class="text-lg-start">
-                            <a href="{{ itemLinkUrl }}"
-                               class="fw-bold d-md-inline-block fs-5 border-bottom text-center">{{ item.linkText ?: 'Learn More' }}
-                                &#8594;</a>
+                    {% else %}
+                        <div class="service-img img-cover"
+                             style="background-image: url({{ item.image.one().url ?? (imagePlaceholders.listItemImagePlaceholder.one().url ?? null) }})"></div>
+                    {% endif %}
+                </div>
+                <div class="col-12 col-lg-8 my-0 my-lg-5 {% if item.linkPosition == 'side' %} order-0 {% endif %} text-center text-lg-start">
+                    {% if item.subheading %}
+                        <h3 class="text-uppercase fw-bold lh-1 my-3">{{ item.subheading|nl2br }}</h3>
+                    {% endif %}
+                    <h2 class="display-6 fw-bold lh-sm mb-3">{{ item.heading|nl2br }}</h2>
+                    <p class="lead mb-4">{{ item.text|nl2br }}</p>
+                    {% if itemLinkUrl and item.linkPosition == 'underText' %}
+                        <div class="text-center mb-4 mb-lg-0">
+                            <div class="text-lg-start">
+                                <a href="{{ itemLinkUrl }}"
+                                   class="fw-bold d-md-inline-block fs-5 border-bottom text-center">{{ item.linkText ?: 'Learn More' }}
+                                    &#8594;</a>
+                            </div>
                         </div>
-                    </div>
-                {% endif %}
+                    {% endif %}
+                </div>
             </div>
         </div>
-    </div>
-    {% if not loop.last %}
-        <div class="border-bottom"></div>
-    {% endif %}
+    </section>
 {% endfor %}

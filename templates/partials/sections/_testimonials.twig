@@ -1,32 +1,34 @@
-<div class="container my-3">
-  <div class="cards-group">
-    <div class="text-group w-100 ">
-      <h2 class="text-center mt-4">{{ entry.testimonialTitle }}</h2>
-    </div>
-    {% set blocks = entry.testimonialItems.all() %}
-    <div class="testi-card-cont my-4">
-      <div class="testi-card">
-        <div id="testi-captions">
-          {% for block in blocks %}
-            <div class="testi-flex">
-              <div id="testimonial_{{block.id}}">
-                <h6>{{ block.testimonialHeader }}</h6>
-                <p>{{ block.testimonialExcerpt }}</p>
-              </div>
+<section>
+    <div class="container p-3 p-md-4 p-lg-5">
+        <div class="cards-group">
+            <div class="text-group w-100 ">
+                <h2 class="display-6 fw-bold lh-sm mb-3 text-center">{{ entry.testimonialTitle }}</h2>
             </div>
-          {% endfor %}
+            {% set blocks = entry.testimonialItems.all() %}
+            <div class="testi-card-cont my-3">
+                <div class="testi-card">
+                    <div id="testi-captions">
+                        {% for block in blocks %}
+                            <div class="testi-flex">
+                                <div id="testimonial_{{ block.id }}">
+                                    <h6>{{ block.testimonialHeader }}</h6>
+                                    <p>{{ block.testimonialExcerpt }}</p>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
-</div>
+</section>
 <script>
-    $( document ).ready(function() {
-      $('#testi-captions').slick({
-        adaptiveHeight: true,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        fade: true,
-      });
+    $(document).ready(function () {
+        $('#testi-captions').slick({
+            adaptiveHeight: true,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            fade: true,
+        });
     });
 </script>      

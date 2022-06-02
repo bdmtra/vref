@@ -2,48 +2,11 @@
 
 {% block content %}
 
-    {# TOP BANNER #}
+{% include 'partials/sections/_hero-bg-image' %}
+{% include 'partials/sections/_features' with { columns: 3} %}
+{% include 'partials/sections/_logos' with { columns: 4 }%}
+{% include 'partials/sections/_testimonials' %}
+{% include 'partials/sections/_media-outlets' %}
+{% include 'partials/sections/_cta' %}
 
-    <div class="content-group no-constrain img-cover img-cover-shadow"
-         style="background-image: url({{ entry.heroBackgroundImage.one().url ?? (imagePlaceholders.heroBackgroundImagePlaceholder.one().url ?? null) }})">
-        <div class="text-group header-text-group constrain">
-            <h1>{{ entry.heroTitle|nl2br }}</h1>
-            <span class="d-block mb-5">{{ entry.heroText|nl2br }}</span>
-            {% set heroLinkEntry = entry.heroButtonLink.one() %}
-            {% if heroLinkEntry %}
-                <a href="{{ heroLinkEntry.url }}"
-                   class="btn btn-brand btn-lg m-0 d-block d-md-inline-block">{{ entry.heroButtonText ?: 'Get Started' }}</a>
-            {% endif %}
-        </div>
-    </div>
-
-    {# #}
-    <div class="border-bottom"></div>
-    {# Section 2 #}
-
-    {% include 'partials/sections/_features' with { columns: 3} %}
-
-    {# #}
-    <div class="border-bottom"></div>
-    {# Section 3 #}
-
-    {% include 'partials/sections/_logos' with { columns: 4 }%}
-
-    {# #}
-    <div class="border-bottom"></div>
-    {# Section 4 #}
-    {% include 'partials/sections/_testimonials' %}
-    {# #}
-    <div class="border-bottom"></div>
-    {# Section 5 #}
-
-    {% include 'partials/sections/_media-outlets' %}
-
-    {# #}
-    <div class="border-bottom"></div>
-    {# Section 6 #}
-
-    {% include 'partials/sections/_cta' %}
-
-    {# #}
 {% endblock %}

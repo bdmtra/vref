@@ -1,0 +1,26 @@
+<section>
+    <div class="container p-3 p-md-4 p-lg-5">
+        <h2 class="display-6 fw-bold lh-sm mb-3 text-center">{{ entry.valuesTitle|nl2br }}</h2>
+        <p class="lead text-center">{{ entry.valuesText|nl2br }}</p>
+        {% if entry.valuesItems %}
+            <div class="row g-4 pt-4 pt-lg-5 row-cols-1 row-cols-sm-2">
+                {% set imageTransformHandle = 'valuesItemImage' %}
+                {% for item in entry.valuesItems.all() %}
+                    <div class="col">
+                        <div class="card rounded-5 border p-4 p-lg-5 text-center text-lg-start h-100">
+                            <div class="row align-items-center mb-3">
+                                <div class="col-4 col-sm-3 col-lg-2 mx-lg-0">
+                                    <div class="value-img" style="background-image: url({{ item.image.one().getUrl(imageTransformHandle) ?? (imagePlaceholders.listItemImagePlaceholder.one().getUrl(imageTransformHandle) ?? null) }})"></div>
+                                </div>
+                                <div class="col-12 col-lg-8 mx-lg-0">
+                                    <h3 class="h4 mt-3 mt-lg-0 mb-0">{{ item.heading|nl2br }}</h3>
+                                </div>
+                            </div>
+                            <p class="mx-0 lead">{{ item.text|nl2br }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+</section>

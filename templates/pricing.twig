@@ -1,188 +1,236 @@
 {% extends "base" %}
 
 {% block content %}
-    
-{% set default_users_number = 1 %}
-{% set payment_period_types = {'monthly': {'id': 1, 'duration': 1}, 'annual': {'id': 2, 'duration': 12}} %}
-{% set default_payment_period_type = payment_period_types['annual'].id %}
-{% set default_copies_number = 1 %}
-{% set temp_book_addon_pricing_brackets = [{"price": 400, "end_quantity": 10,"start_quantity": 1}] %}
 
-{% include 'partials/sections/_hero-no-image' %}
-<div class="border-bottom"></div>
-<div class="container">
-    <ul class="nav justify-content-center mb-4" role="tablist">
-        <li class="nav-item">
-            <a class="nav-link fs-6 active" data-bs-toggle="tab" data-bs-target="#vref-online-tab-pane" data-bs-target="#vref-online-tab-pane" role="tab" aria-controls="vref-online-tab-pane" aria-selected="true">VREF Online</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link fs-6" data-bs-toggle="tab" data-bs-target="#vref-print-tab-pane" role="tab" aria-controls="vref-print-tab-pane" aria-selected="false">VREF Print</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link fs-6" data-bs-toggle="tab" data-bs-target="#certificate-tab-pane" role="tab" aria-controls="certificate-tab-pane" aria-selected="false">Certificate</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link fs-6" data-bs-toggle="tab" data-bs-target="#consulting-tab-pane" role="tab" aria-controls="consulting-tab-pane" aria-selected="false">Consulting</a>
-        </li>
-    </ul>
-</div>
-<div class="border-bottom"></div>
-{% set client = {
-    base_uri : 'https://api.vref.com',
-    timeout : 10,
-    verify: false
-} %}
-{% set request = fetch(client, 'GET', '/api/plan') %}
-{% if not request.body or request.body.results is not defined %}
-    {% redirect entry.url %}
-{% endif %}
-{% set plansIndexById = [] %}
-{% for plan in request.body.results %}
-    {% set plansIndexById = {(plan.id) : plan} + plansIndexById %}
-{% endfor %}
+    {% set default_users_number = 1 %}
+    {% set payment_period_types = {'monthly': {'id': 1, 'duration': 1}, 'annual': {'id': 2, 'duration': 12}} %}
+    {% set default_payment_period_type = payment_period_types['annual'].id %}
+    {% set default_copies_number = 1 %}
+    {% set temp_book_addon_pricing_brackets = [{"price": 400, "end_quantity": 10,"start_quantity": 1}] %}
 
-<div class="container">
-    <div class="tab-content py-5">
-        <div class="tab-pane fade show active" id="vref-online-tab-pane">
-            <h2 class="mb-4 text-center">{{ entry.vrefOnlinePricingTitle|nl2br }}</h2>
-            <p class="fs-6 mb-4 pb-3 text-center">{{ entry.vrefOnlinePricingText|nl2br}}</p>
-            <div class="row row-cols-1 row-cols-lg-2">
-                {% for item in entry.vrefOnlinePricingItems.all() %}
-                    <div class="col mb-4">
-                        <div class="card card-product vref-online-product p-5 m-0">
-                            <h2 class="fs-4 mb-3 text-center lh-sm">{{ item.heading|nl2br }}</h2>
-                            {% if item.text %}
-                            <p class="mb-3 text-center fs-6">{{ item.text|nl2br }}</p>
-                            {% endif %}
-                            {% if item.isPro %}
-                            <div class="input-group mb-3 w-50">
-                                {% set max_user_number_annual = 0 %}
-                                {% for range in plansIndexById[item.apiAnnualPlanId].addon_pricing_brackets%}
-                                    {% if range.end_quantity > max_user_number_annual %}
-                                        {% set max_user_number_annual = range.end_quantity %}
+    {% include 'partials/sections/_hero-no-image' %}
+
+    <section id="pricing-tabs">
+        <div class="container">
+            <ul class="nav justify-content-center mb-4" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link fs-5 active" data-bs-toggle="tab" data-bs-target="#vref-online-tab-pane"
+                       data-bs-target="#vref-online-tab-pane" role="tab" aria-controls="vref-online-tab-pane"
+                       aria-selected="true">VREF Online</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fs-5" data-bs-toggle="tab" data-bs-target="#vref-print-tab-pane" role="tab"
+                       aria-controls="vref-print-tab-pane" aria-selected="false">VREF Print</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fs-5" data-bs-toggle="tab" data-bs-target="#certificate-tab-pane" role="tab"
+                       aria-controls="certificate-tab-pane" aria-selected="false">Certificate</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fs-5" data-bs-toggle="tab" data-bs-target="#consulting-tab-pane" role="tab"
+                       aria-controls="consulting-tab-pane" aria-selected="false">Consulting</a>
+                </li>
+            </ul>
+        </div>
+    </section>
+    {% set client = {
+        base_uri : 'https://api.vref.com',
+        timeout : 10,
+        verify: false
+    } %}
+    {% set request = fetch(client, 'GET', '/api/plan') %}
+    {% if not request.body or request.body.results is not defined %}
+        {% redirect entry.url %}
+    {% endif %}
+    {% set plansIndexById = [] %}
+    {% for plan in request.body.results %}
+        {% set plansIndexById = {(plan.id) : plan} + plansIndexById %}
+    {% endfor %}
+    <section>
+        <div class="container p-3 p-md-4 p-lg-5 text-center">
+            <div class="tab-content">
+                <div class="tab-pane fade show active" id="vref-online-tab-pane">
+                    <h2 class="display-6 fw-bold lh-sm mb-3">{{ entry.vrefOnlinePricingTitle|nl2br }}</h2>
+                    <p class="lead mb-4">{{ entry.vrefOnlinePricingText|nl2br }}</p>
+                    <div class="row row-cols-1 row-cols-lg-2 g-4">
+                        {% for item in entry.vrefOnlinePricingItems.all() %}
+                            <div class="col">
+                                <div class="card card-product vref-online-product p-4 p-lg-5 m-0 h-100">
+                                    <h2 class="fs-4 mb-3 text-center lh-sm">{{ item.heading|nl2br }}</h2>
+                                    {% if item.text %}
+                                        <p class="mb-3 text-center fs-6">{{ item.text|nl2br }}</p>
                                     {% endif %}
-                                {% endfor %}
-                                {% set max_user_number_annual = max_user_number_annual + 1 %}
-                                <input type="number" class="form-control user-number {% if default_payment_period_type == payment_period_types['monthly'].id %}active{% endif %}" min="1" max="{{ max_user_number_annual }}" name="users_number_monthly" value="{{ default_users_number }}" placeholder="{{ default_users_number }}" data-addon-pricing="{{ plansIndexById[item.apiAnnualPlanId].addon_pricing_brackets|json_encode() }}" data-payment-period-type-id="{{ payment_period_types['monthly'].id }}">
-                                {% set max_user_number_monthly = 0 %}
-                                {% for range in plansIndexById[item.apiMonthlyPlanId].addon_pricing_brackets%}
-                                    {% if range.end_quantity > max_user_number_monthly %}
-                                        {% set max_user_number_monthly = range.end_quantity %}
+                                    {% if item.isPro %}
+                                        <div class="input-group mb-3 w-50">
+                                            {#<span class="input-group-btn">
+                                                <button type="button" class="btn btn-brand btn-number" data-type="minus">
+                                                    <img src="/assets/images/minus-solid.svg" alt=""/>
+                                                </button>
+                                            </span>#}
+                                            {% set max_user_number_annual = 0 %}
+                                            {% for range in plansIndexById[item.apiAnnualPlanId].addon_pricing_brackets %}
+                                                {% if range.end_quantity > max_user_number_annual %}
+                                                    {% set max_user_number_annual = range.end_quantity %}
+                                                {% endif %}
+                                            {% endfor %}
+                                            {% set max_user_number_annual = max_user_number_annual + 1 %}
+                                            <input type="number"
+                                                   class="form-control user-number {% if default_payment_period_type == payment_period_types['monthly'].id %}active{% endif %}"
+                                                   min="1" max="{{ max_user_number_annual }}"
+                                                   name="users_number_monthly" value="{{ default_users_number }}"
+                                                   placeholder="{{ default_users_number }}"
+                                                   data-addon-pricing="{{ plansIndexById[item.apiAnnualPlanId].addon_pricing_brackets|json_encode() }}"
+                                                   data-payment-period-type-id="{{ payment_period_types['monthly'].id }}">
+                                            {% set max_user_number_monthly = 0 %}
+                                            {% for range in plansIndexById[item.apiMonthlyPlanId].addon_pricing_brackets %}
+                                                {% if range.end_quantity > max_user_number_monthly %}
+                                                    {% set max_user_number_monthly = range.end_quantity %}
+                                                {% endif %}
+                                            {% endfor %}
+                                            {% set max_user_number_monthly = max_user_number_monthly + 1 %}
+                                            <input type="number"
+                                                   class="form-control user-number {% if default_payment_period_type == payment_period_types['annual'].id %}active{% endif %}"
+                                                   min="1" max="{{ max_user_number_monthly }}"
+                                                   name="users_number_annual" value="{{ default_users_number }}"
+                                                   placeholder="{{ default_users_number }}"
+                                                   data-addon-pricing="{{ plansIndexById[item.apiMonthlyPlanId].addon_pricing_brackets|json_encode() }}"
+                                                   data-payment-period-type-id="{{ payment_period_types['annual'].id }}">
+                                            {#<span class="input-group-btn">
+                                                <button type="button" class="btn btn-brand btn-number" data-type="plus">
+                                                    <img src="/assets/images/plus-solid.svg" alt=""/>
+                                                </button>
+                                            </span>#}
+                                            <label class="input-group-text m-0">Users</label>
+                                        </div>
+                                    {% else %}
+                                        <div class="user-number-note fw-bold lead mb-3 p-1 border border-1 border-transparent">
+                                            1 User
+                                        </div>
                                     {% endif %}
-                                {% endfor %}
-                                {% set max_user_number_monthly = max_user_number_monthly + 1 %}
-                                <input type="number" class="form-control user-number {% if default_payment_period_type == payment_period_types['annual'].id %}active{% endif %}" min="1" max="{{ max_user_number_monthly }}" name="users_number_annual" value="{{ default_users_number }}" placeholder="{{ default_users_number }}" data-addon-pricing="{{ plansIndexById[item.apiMonthlyPlanId].addon_pricing_brackets|json_encode() }}" data-payment-period-type-id="{{ payment_period_types['annual'].id }}">
-                                <label class="input-group-text m-0">Users</label>
-                            </div>
-                            {% endif %}
-                            {% if item.textSecondary %}
-                            <p class="mb-3 text-center fs-6">{{ item.textSecondary|nl2br }}</p>
-                            {% endif %}
-                            <div class="d-flex mb-3 justify-content-center input-group-radio-buttons">
-                                <input type="radio" class="btn-check payment-action" id="payment_action_{{ item.id }}_monthly" autocomplete="off" name="payment_action_{{ item.id }}" value="{{ plansIndexById[item.apiMonthlyPlanId].plan_url }}" {% if default_payment_period_type == payment_period_types['monthly'].id %}checked{% endif %} data-payment-period-type-id="{{ payment_period_types['monthly'].id }}">
-                                <label class="btn btn-brand btn-first" for="payment_action_{{ item.id }}_monthly">Pay Monthly</label>
-                                <input type="radio" class="btn-check payment-action" id="payment_action_{{ item.id }}_annual" autocomplete="off" name="payment_action_{{ item.id }}" value="{{ plansIndexById[item.apiAnnualPlanId].plan_url }}" {% if default_payment_period_type == payment_period_types['annual'].id %}checked{% endif %} data-payment-period-type-id="{{ payment_period_types['annual'].id }}">
-                                <label class="btn btn-brand btn-last" for="payment_action_{{ item.id }}_annual">Pay Upfront</label>
-                            </div>
-                            <form>
-                                {% if item.isPro %}
-                                <input type="hidden" name="addon_number" class="addon-number">
-                                {% endif %}
-                                <div class="input-group mb-3 justify-content-center">
-                                    <button class="btn btn-brand" type="submit">Buy now</button>
+                                    {% if item.textSecondary %}
+                                        <p class="mb-3 text-center fs-6">{{ item.textSecondary|nl2br }}</p>
+                                    {% endif %}
+                                    <div class="d-flex mb-3 justify-content-center input-group-radio-buttons">
+                                        <input type="radio" class="btn-check payment-action"
+                                               id="payment_action_{{ item.id }}_monthly" autocomplete="off"
+                                               name="payment_action_{{ item.id }}"
+                                               value="{{ plansIndexById[item.apiMonthlyPlanId].plan_url }}"
+                                               {% if default_payment_period_type == payment_period_types['monthly'].id %}checked{% endif %}
+                                               data-payment-period-type-id="{{ payment_period_types['monthly'].id }}">
+                                        <label class="btn btn-brand btn-first"
+                                               for="payment_action_{{ item.id }}_monthly">Pay Monthly</label>
+                                        <input type="radio" class="btn-check payment-action"
+                                               id="payment_action_{{ item.id }}_annual" autocomplete="off"
+                                               name="payment_action_{{ item.id }}"
+                                               value="{{ plansIndexById[item.apiAnnualPlanId].plan_url }}"
+                                               {% if default_payment_period_type == payment_period_types['annual'].id %}checked{% endif %}
+                                               data-payment-period-type-id="{{ payment_period_types['annual'].id }}">
+                                        <label class="btn btn-brand btn-last" for="payment_action_{{ item.id }}_annual">Pay
+                                            Upfront</label>
+                                    </div>
+                                    <form>
+                                        {% if item.isPro %}
+                                            <input type="hidden" name="addon_number" class="addon-number">
+                                        {% endif %}
+                                        <div class="input-group justify-content-center">
+                                            <button class="btn btn-brand" type="submit">Buy now</button>
+                                        </div>
+                                    </form>
+                                    {% set includes = item.includes|split('\n')|filter %}
+                                    {% if includes is not empty %}
+                                        <p class="fs-5 fw-bold text-start mt-3 mb-4 w-100">Includes</p>
+                                        <ul class="m-0 p-0">
+                                            {% for include in includes %}
+                                                <li>{{ include }}</li>
+                                            {% endfor %}
+                                        </ul>
+                                    {% endif %}
                                 </div>
-                            </form>
-                            {% set includes = item.includes|split('\n')|filter %}
-                            {% if includes is not empty %}
-                                <p class="fs-5 fw-bold text-start mt-0 mb-4 w-100">Includes</p>
-                                <ul class="m-0 p-0">
-                                    {% for include in includes %}
-                                    <li>{{ include }}</li>
-                                    {% endfor %}
-                                </ul>
-                            {% endif %}
-                        </div>
+                            </div>
+                        {% endfor %}
                     </div>
-                {% endfor %}
-            </div>
-        </div>
-        <div class="tab-pane fade" id="vref-print-tab-pane">
-            <h2 class="mb-4 text-center">{{ entry.vrefPrintPricingTitle|nl2br}}</h2>
-            <p class="fs-6 mb-4 pb-3 text-center">{{ entry.vrefPrintPricingText|nl2br}}</p>
-            <div class="row row-cols-1 row-cols-lg-2">
-                {% for item in entry.vrefPrintPricingItems.all() %}
-                    <div class="col mb-4">
-                        <div class="card card-product p-5 m-0">
-                            <h2 class="fs-4 mb-3 text-center lh-sm">{{ item.heading|nl2br }}</h2>
-                            <p class="mb-3 text-center fs-6">${{ plansIndexById[item.apiPlanId].recurring_price|number_format }}/Copy</p>
-                            <form action="{{ plansIndexById[item.apiPlanId].plan_url }}" class="w-100">
-                                <div class="input-group mb-3 w-50">
-                                    <input type="number" class="form-control" name="addon_number" value="{{ default_copies_number }}" placeholder="{{ default_copies_number }}" min="1" max="{{ plansIndexById[item.apiPlanId].book_addon_pricing_brackets[0].end_quantity }}">
-                                    <label class="input-group-text m-0">Copies</label>
-                                </div>
-                                <p class="mb-3 text-center fs-6">{{ item.text|nl2br }}</p>
+                </div>
+                <div class="tab-pane fade" id="vref-print-tab-pane">
+                    <h2 class="display-6 fw-bold lh-sm mb-3">{{ entry.vrefPrintPricingTitle|nl2br }}</h2>
+                    <p class="lead mb-4">{{ entry.vrefPrintPricingText|nl2br }}</p>
+                    <div class="row row-cols-1 row-cols-lg-2 g-4">
+                        {% for item in entry.vrefPrintPricingItems.all() %}
+                            <div class="col">
+                                <div class="card card-product p-4 p-lg-5 m-0 h-100">
+                                    <h2 class="fs-4 mb-3 text-center lh-sm">{{ item.heading|nl2br }}</h2>
+                                    <p class="mb-3 text-center fs-6">
+                                        ${{ plansIndexById[item.apiPlanId].recurring_price|number_format }}/Copy</p>
+                                    <form action="{{ plansIndexById[item.apiPlanId].plan_url }}" class="w-100">
+                                        <div class="input-group mb-3 w-50">
+                                            <input type="number" class="form-control" name="addon_number"
+                                                   value="{{ default_copies_number }}"
+                                                   placeholder="{{ default_copies_number }}" min="1"
+                                                   max="{{ plansIndexById[item.apiPlanId].book_addon_pricing_brackets[0].end_quantity }}">
+                                            <label class="input-group-text m-0">Copies</label>
+                                        </div>
+                                        <p class="mb-3 text-center fs-6">{{ item.text|nl2br }}</p>
 
-                                <div class="input-group mb-3 justify-content-center">
-                                    <button class="btn btn-brand" type="submit">Buy now</button>
+                                        <div class="input-group justify-content-center">
+                                            <button class="btn btn-brand" type="submit">Buy now</button>
+                                        </div>
+                                    </form>
                                 </div>
-                            </form>
-                        </div>
-                    </div>
-                {% endfor %}
-            </div>
-        </div>
-        <div class="tab-pane fade" id="certificate-tab-pane">
-            <h2 class="mb-4 text-center">{{ entry.certificatesPricingTitle|nl2br}}</h2>
-            <p class="fs-6 mb-4 pb-3 text-center">{{ entry.certificatesPricingText|nl2br}}</p>
-            <div class="row row-cols-1 row-cols-lg-2">
-                {% for item in entry.certificatesPricingItems.all() %}
-                    <div class="col mb-4">
-                        <div class="card card-product p-5 m-0">
-                            <h2 class="fs-4 mb-3 text-center lh-sm">{{ item.heading|nl2br }}</h2>
-                            <p class="mb-3 text-center fs-6">$XX</p>
-                            <p class="mb-3 text-center fs-6">{{ item.text|nl2br }}</p>
-                            <div class="input-group mb-3 justify-content-center">
-                                <button class="btn btn-brand" type="button">Buy now</button>
                             </div>
-                        </div>
+                        {% endfor %}
                     </div>
-                {% endfor %}
+                </div>
+                <div class="tab-pane fade" id="certificate-tab-pane">
+                    <h2 class="display-6 fw-bold lh-sm mb-3">{{ entry.certificatesPricingTitle|nl2br }}</h2>
+                    <p class="lead mb-4">{{ entry.certificatesPricingText|nl2br }}</p>
+                    <div class="row row-cols-1 row-cols-lg-2">
+                        {% for item in entry.certificatesPricingItems.all() %}
+                            <div class="col mb-4">
+                                <div class="card card-product p-5 m-0">
+                                    <h2 class="fs-4 mb-3 text-center lh-sm">{{ item.heading|nl2br }}</h2>
+                                    <p class="mb-3 text-center fs-6">$XX</p>
+                                    <p class="mb-3 text-center fs-6">{{ item.text|nl2br }}</p>
+                                    <div class="input-group mb-3 justify-content-center">
+                                        <button class="btn btn-brand" type="button">Buy now</button>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="consulting-tab-pane">
+                    <h2 class="display-6 fw-bold lh-sm mb-3">{{ entry.consultingPricingTitle|nl2br }}</h2>
+                </div>
             </div>
         </div>
-        <div class="tab-pane fade" id="consulting-tab-pane">
-            <h2 class="mb-4 text-center">{{ entry.consultingPricingTitle|nl2br}}</h2>
-        </div>
-    </div>
-</div>
-<div class="border-bottom"></div>
-{% include 'partials/sections/_services' %}
-<div class="border-bottom"></div>
-{% include 'partials/sections/_pricing-calculator' %}
-<script>
-    $(document).ready(() => {
-        showTab();
-        $('a:not([data-bs-target])').click(function () {
-            showTab($(this));
+    </section>
+    {% include 'partials/sections/_services' %}
+    {% include 'partials/sections/_pricing-calculator' %}
+    <script>
+        $(document).ready(() => {
+            showTab();
+            $('a:not([data-bs-target])').click(function () {
+                showTab($(this));
+            });
         });
-    });
-    function showTab(element = false) {
-        var url = element ? element.attr('href') : window.location.href;
-        console.log(url);
-        if (url.indexOf("#") > -1){
-            var activeTab = url.substring(url.indexOf("#") + 1);
+
+        function showTab(element = false) {
+            var url = element ? element.attr('href') : window.location.href;
             console.log(url);
+            if (url.indexOf("#") > -1) {
+                var activeTab = url.substring(url.indexOf("#") + 1);
+                console.log(url);
 
-            var nav = $('.nav[role="tablist"]');
-            var tab = nav.find('a[data-bs-target="#'+activeTab+'"]');
-            if (tab.length) {
-                tab.tab('show');
-                var position = nav.offset().top - parseInt(nav.css('marginTop'));
-                $("html, body").animate({
-                    scrollTop: position
-                }, 1000);
+                var nav = $('.nav[role="tablist"]');
+                var tab = nav.find('a[data-bs-target="#' + activeTab + '"]');
+                if (tab.length) {
+                    tab.tab('show');
+                    var position = nav.offset().top - parseInt(nav.css('marginTop'));
+                    $("html, body").animate({
+                        scrollTop: position
+                    }, 1000);
 
+                }
             }
         }
-    }
-</script>
+    </script>
 {% endblock %}

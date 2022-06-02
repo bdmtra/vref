@@ -1,21 +1,24 @@
-<div class="container py-5">
-    <div class="row row-cols-1 row-cols-lg-2 align-items-center text-center">
-        <div class="col-12 col-lg-9">
-            <h2 class="text-lg-start mb-3 m-lg-auto">Insights</h2>
+<section>
+    <div class="container py-5">
+        <div class="row row-cols-1 row-cols-lg-2 align-items-center text-center">
+            <div class="col-12 col-lg-9">
+                <h2 class="text-lg-start mb-3 m-lg-auto">Insights</h2>
+            </div>
+            <div class="col-12 col-lg-3">
+                <a href="#" class="fw-bold text-lg-end d-block fs-5 border-bottom">Explore More &#8594;</a>
+            </div>
         </div>
-        <div class="col-12 col-lg-3">
-            <a href="#" class="fw-bold text-lg-end d-block fs-5 border-bottom">Explore More  &#8594;</a>
-        </div>
-    </div>
-    <div class="row row-cols-1 row-cols-lg-2 align-items-stretch g-4 pt-5 pb-lg-5 ">
-        {% for i in [1, 2] %}
-        <div class="col">
-            <a href="#" class="card img-cover h-100 overflow-hidden rounded-5" style="background-image: url(https://picsum.photos/200/300)">
-                <div class="d-flex flex-column h-100 px-5">
-                    <h3 class="pt-7 mt-5 mb-4 display-6 lh-1 fw-bold text-white">Title</h3>
+        <div class="row row-cols-1 row-cols-lg-2 align-items-stretch g-4 pt-5 pb-lg-5 ">
+            {% for i in [1, 2] %}
+                <div class="col">
+                    <a href="#" class="card img-cover h-100 overflow-hidden rounded-5"
+                       style="background-image: url(https://picsum.photos/200/300)">
+                        <div class="d-flex flex-column h-100 px-5">
+                            <h3 class="pt-7 mt-5 mb-4 display-6 lh-1 fw-bold text-white">Title</h3>
+                        </div>
+                    </a>
                 </div>
-            </a>
+            {% endfor %}
         </div>
-        {% endfor %}
     </div>
-</div>
+</section>

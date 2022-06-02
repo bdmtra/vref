@@ -2,85 +2,98 @@
 
 {% block content %}
 
-    {% include 'partials/sections/_hero-no-image' %}
-    <div class="border-bottom"></div>
-    <div class="container my-5">
-        <h2 class="mb-5 text-center">{{ entry.ctaTwinTitle|nl2br}}</h2>
-        <div class="row row-cols-1 row-cols-lg-2">
+{% include 'partials/sections/_hero-no-image' %}
+<section>
+    <div class="container p-3 p-md-4 p-lg-5 text-center">
+        <h2 class="display-6 fw-bold lh-sm mb-4">{{ entry.ctaTwinTitle|nl2br }}</h2>
+        <div class="row row-cols-1 row-cols-sm-2 align-items-stretch">
             {% set imageTransformHandle = 'featuresItemImage' %}
             {% for item in entry.ctaTwinItems.all() %}
                 <div class="col mb-4">
-                    <div class="card card-product p-5 m-0">
-                        <div class="cta-twin-img">
-                            <img src="{{ item.image.one().getUrl(imageTransformHandle) ?? (imagePlaceholders.listItemImagePlaceholder.one().getUrl(imageTransformHandle) ?? null) }}" class="img-fluid h-100">
+                    <div class="card rounded-5 border p-4 p-md-5 m-0">
+                        <div class="w-25">
+                            <div class="cta-twin-img img-cover"
+                                 style="background-image:url({{ item.image.one().getUrl(imageTransformHandle) ?? (imagePlaceholders.listItemImagePlaceholder.one().getUrl(imageTransformHandle) ?? null) }})"></div>
                         </div>
                         <h2 class="fs-4 my-3 text-center lh-sm">{{ item.heading|nl2br }}</h2>
                         <p class="mb-3 text-center fs-6">{{ item.text|nl2br }}</p>
                         <div class="input-group mb-3 justify-content-center">
                             {% switch item.linkType %}
-                                {% case 'asset' %}
-                                    {% set linkAsset = item.linkAsset.one() %}
-                                    {% set url = linkAsset ? linkAsset.url : '#'  %}
-                                    {% set target = '_blank' %}
-                                {% case 'entry' %}
-                                    {% set linkEntry = item.linkEntry.one() %}
-                                    {% set url = linkEntry ? linkEntry.url : '#' %}
-                                    {% set target = '_self' %}
+                            {% case 'asset' %}
+                                {% set linkAsset = item.linkAsset.one() %}
+                                {% set url = linkAsset ? linkAsset.url : '#' %}
+                                {% set target = '_blank' %}
+                            {% case 'entry' %}
+                                {% set linkEntry = item.linkEntry.one() %}
+                                {% set url = linkEntry ? linkEntry.url : '#' %}
+                                {% set target = '_self' %}
                             {% endswitch %}
-                            <a class="btn btn-brand" target="{{ target }}" href="{{ url }}">{{ item.buttonText }}</a>
+                            <a class="btn btn-brand" target="{{ target }}"
+                               href="{{ url }}">{{ item.buttonText }}</a>
                         </div>
                     </div>
                 </div>
             {% endfor %}
         </div>
     </div>
-    <div class="border-bottom"></div>
-    <div class="container py-5">
+</section>
+<section>
+    <div class="container p-3 p-md-4 p-lg-5">
         <div class="row row-cols-1 row-cols-lg-2 align-items-center text-center">
             <div class="col-12 col-lg-9">
-                <h2 class="text-lg-start mb-3 m-lg-auto">{{ entry.pressCoverageListTitle }}</h2>
+                <h2 class="display-6 fw-bold lh-sm text-lg-start mb-3 m-lg-auto">{{ entry.pressCoverageListTitle }}</h2>
             </div>
             <div class="col-12 col-lg-3">
                 <div class="text-center">
                     <div class="text-lg-end">
-                        <a href="{{ craft.entries().section('pressCoverageArchive').one().url }}" class="fw-bold d-inline-block fs-5 border-bottom">{{ entry.pressCoverageLinkText }} &#8594;</a>
+                        <a href="{{ craft.entries().section('pressCoverageArchive').one().url }}"
+                           class="fw-bold d-inline-block fs-5 border-bottom">{{ entry.pressCoverageLinkText }}
+                            &#8594;</a>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="row row-cols-2 row-cols-lg-4 align-items-stretch g-5 pt-5 pb-lg-5 ">
+        <div class="row row-cols-4 align-items-stretch g-4 pt-5">
             {% for item in craft.entries().section('pressCoverageEntry').limit(8).orderBy('id DESC').all() %}
                 <div class="col">
-                    <a href="{{ item.sourceUrl}}" class="d-block d-inline-block img-cover media-outlet-img overflow-hidden" style="background-image: url({{ item.mediaOutlet.one().featuredImage.one().url }})" target="_blank"></a>
+                    <a href="{{ item.sourceUrl }}"
+                       class="d-block d-inline-block img-cover media-outlet-img overflow-hidden"
+                       style="background-image: url({{ item.mediaOutlet.one().featuredImage.one().url }})"
+                       target="_blank"></a>
                 </div>
             {% endfor %}
         </div>
     </div>
-    <div class="border-bottom"></div>
-    <div class="container py-5">
+</section>
+<section>
+    <div class="container p-3 p-md-4 p-lg-5">
         <div class="row row-cols-1 row-cols-lg-2 align-items-center text-center">
             <div class="col-12 col-lg-9">
-                <h2 class="text-lg-start mb-3 m-lg-auto">{{ entry.pressReleaseListTitle }}</h2>
+                <h2 class="display-6 fw-bold lh-sm text-lg-start mb-3 m-lg-auto">{{ entry.pressReleaseListTitle }}</h2>
             </div>
             <div class="col-12 col-lg-3">
                 <div class="text-center">
                     <div class="text-lg-end">
-                        <a href="{{ craft.entries().section('pressReleaseArchive').one().url }}" class="fw-bold d-inline-block fs-5 border-bottom">{{ entry.pressReleaseLinkText }}  &#8594;</a>
+                        <a href="{{ craft.entries().section('pressReleaseArchive').one().url }}"
+                           class="fw-bold d-inline-block fs-5 border-bottom">{{ entry.pressReleaseLinkText }}
+                            &#8594;</a>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="row row-cols-1 row-cols-lg-2 align-items-stretch g-4 pt-5 pb-lg-5 ">
+        <div class="row row-cols-1 row-cols-lg-2 align-items-stretch g-4 pt-5 ">
             {% for item in craft.entries().section('pressReleaseEntry').limit(2).orderBy('id DESC').all() %}
                 <div class="col">
-                    <a href="#" class="card img-cover img-cover-shadow h-100 overflow-hidden rounded-5" style="background-image: url({{ item.featuredImage.one() ? item.featuredImage.one().url : ''}})">
-                        <div class="d-flex flex-column h-100 px-5">
-                            <h3 class="pt-7 mt-5 mb-4 display-6 lh-1 fw-bold text-white">{{ item.title }}</h3>
+                    <a href="#" class="card img-cover img-cover-shadow h-100 overflow-hidden rounded-5"
+                       style="background-image: url({{ item.featuredImage.one() ? item.featuredImage.one().url : '' }})">
+                        <div class="d-flex flex-column h-100 w-100 px-5">
+                            <h3 class="pt-7 mt-5 mb-4 display-6 lh-1 fw-bold text-white w-100">{{ item.title }}</h3>
                         </div>
                     </a>
                 </div>
             {% endfor %}
         </div>
     </div>
+</section>
 
 {% endblock %}

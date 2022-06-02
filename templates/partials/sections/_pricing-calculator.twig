@@ -1,6 +1,7 @@
-<div class="container py-5">
-    <h2 class="mb-5 text-center">{{ entry.pricingCalculatorTitle|nl2br }}</h2>
-    <section id="pricing-calculator">
+<section>
+    <div class="container py-5">
+    <h2 class="display-6 fw-bold lh-sm mb-4 text-center">{{ entry.pricingCalculatorTitle|nl2br }}</h2>
+    <div id="pricing-calculator">
         <div class="row">
             <div class="col-12 col-lg-8">
                 <div class="card p-4 m-0">
@@ -126,6 +127,7 @@
                             <p class="lead">Bill at <span class="payment-year-amount"></span> year</p>
                         </div>
                     {% endfor %}
+
                     <div class="tab-content m-0" id="tab-payment-action">
                         {% for item in pricingCalculatorItems %}
                             <div class="tab-pane tab-pane-{{ item.id }} fade {{ loop.index == 1 ? 'show active' : '' }}" id="plan-summary-tab-pane-{{ item.id }}">
@@ -156,8 +158,9 @@
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 </div>
+</section>
 <script>
     /* VREF Online Products */
 

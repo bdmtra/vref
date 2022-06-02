@@ -1,68 +1,71 @@
-<div class="container py-5">
-    <h2 class="pb-2 text-center">{{ entry.compareTitle|nl2br }}</h2>
-    <p class="lead pb-2 text-center mb-5">{{ entry.compareText|nl2br }}</p>
-    <div class="d-none d-lg-block">
-        <table class="table table-compare">
-        <thead class="text-center">
-        <tr>
-            {% for key, column in entry.compareTable.columns %}
-                <th scope="col"><strong>{{ column.heading }}</strong></th>
-            {% endfor %}
-        </tr>
-        </thead>
-        <tbody>
-        {% for row in entry.compareTable.rows %}
-            <tr class="{% if row[0]|trim == '' %}transparent{% endif %}">
-                {% for key, data in row %}
-                    {% if key == 0 %}
-                        <th scope="row">{{ data }}</th>
-                    {% else %}
-                        <td>
-                            {% if data|trim == '*' %}
-                                <img src="/assets/images/tick.png">
-                            {% elseif data|first == '/' %}
-                                <a href="{{ data }}" class="fs-5 border-bottom">Learn More</a>
-                            {% else %}
-                                {{ data }}
-                            {% endif %}
-                        </td>
-                    {% endif %}
-                {% endfor %}
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-    </div>
-    <div class="row row-cols-1 gy-4 d-lg-none">
-        {% for key, column in entry.compareTable.columns[1:] %}
-            <div class="col">
-                <table class="table table-compare">
-                    <thead class="text-center">
-                    <tr>
-                        <th scope="col"><strong>{{ entry.compareTable.columns[0].heading }}</strong></th>
+<section>
+    <div class="container p-3 p-md-4 p-lg-5 text-center">
+        <h2 class="display-6 fw-bold lh-sm mb-3">{{ entry.compareTitle|nl2br }}</h2>
+        <p class="lead text-center mb-4">{{ entry.compareText|nl2br }}</p>
+        <div class="d-none d-lg-block">
+            <table class="table table-compare">
+                <thead class="text-center">
+                <tr>
+                    {% for key, column in entry.compareTable.columns %}
                         <th scope="col"><strong>{{ column.heading }}</strong></th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    {% set column_key = key %}
-                    {% for row in entry.compareTable.rows %}
-                        <tr class="{% if row[0]|trim == '' %}transparent{% endif %}">
-                            <th scope="row">{{ row[0] }}</th>
-                            {% set data = row[column_key+ 1] %}
-                            <td>
-                                {% if data|trim == '*' %}
-                                    <img src="/assets/images/tick.png">
-                                {% elseif data|first == '/' %}
-                                    <a href="{{ data }}" class="fs-5 border-bottom">Learn More</a>
-                                {% else %}
-                                    {{ data }}
-                                {% endif %}
-                            </td>
-                        </tr>
                     {% endfor %}
-                    </tbody>
-                </table>
-            </div>
-        {% endfor %}
+                </tr>
+                </thead>
+                <tbody>
+                {% for row in entry.compareTable.rows %}
+                    <tr class="{% if row[0]|trim == '' %}transparent{% endif %}">
+                        {% for key, data in row %}
+                            {% if key == 0 %}
+                                <th scope="row">{{ data }}</th>
+                            {% else %}
+                                <td>
+                                    {% if data|trim == '*' %}
+                                        <img src="/assets/images/tick.png">
+                                    {% elseif data|first == '/' %}
+                                        <a href="{{ data }}" class="fs-5 border-bottom">Learn More</a>
+                                    {% else %}
+                                        {{ data }}
+                                    {% endif %}
+                                </td>
+                            {% endif %}
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="row row-cols-1 gy-4 d-lg-none">
+            {% for key, column in entry.compareTable.columns[1:] %}
+                <div class="col">
+                    <table class="table table-compare">
+                        <thead class="text-center">
+                        <tr>
+                            <th scope="col"><strong>{{ entry.compareTable.columns[0].heading }}</strong></th>
+                            <th scope="col"><strong>{{ column.heading }}</strong></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% set column_key = key %}
+                        {% for row in entry.compareTable.rows %}
+                            {% set rowEmpty = (row[0]|trim == '') %}
+                            <tr class="{% if rowEmpty %}transparent{% endif %}">
+                                {% if not rowEmpty %}<th scope="row">{{ row[0] }}</th>{% endif %}
+                                {% set data = row[column_key+ 1] %}
+                                <td {% if rowEmpty %}colspan="2"{% endif %}>
+                                    {% if data|trim == '*' %}
+                                        <img src="/assets/images/tick.png">
+                                    {% elseif data|first == '/' %}
+                                        <a href="{{ data }}" class="fs-5 border-bottom">Learn More</a>
+                                    {% else %}
+                                        {{ data }}
+                                    {% endif %}
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            {% endfor %}
+        </div>
     </div>
-</div> 
+</section>

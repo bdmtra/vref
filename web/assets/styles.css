@@ -2397,14 +2397,6 @@ footer .footer-btm-wrap p a:hover {
   transition: all 0.3s ease;
 }
 
-.text-center {
-  text-align: center !important;
-}
-
-.text-right {
-  text-align: right !important;
-}
-
 /* Table */
 .table {
   color: #5d5f61;
@@ -7272,16 +7264,20 @@ h3.subpricing-head {
   opacity: 0.7;
 }
 
-.feature-img {
-  height: 200px;
+.feature-img, .service-img {
+  width: 100%;
+  height: 0;
+  padding-top: 65%;
 }
 
-.logo-img, .report-image, .cta-twin-img {
+.report-img, .cta-twin-img, .value-img {
+  width: 100%;
+  height: 0;
+  padding-bottom: 100%;
+}
+
+.logo-img {
   height: 50px;
-}
-
-.value-img {
-  width: 58px;
 }
 
 .bg-primary {
@@ -7294,6 +7290,15 @@ ul.nav li {
 
 .nav-link {
   color: #34826a !important;
+}
+
+#pricing-tabs .nav-item {
+  width: 50%;
+  text-align: center;
+}
+#pricing-tabs .nav-item .nav-link {
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .nav-item {
@@ -7472,6 +7477,10 @@ input[type=range]::-webkit-slider-thumb {
 
 .table-compare tr.transparent {
   border-width: 0 !important;
+  text-align: center;
+}
+.table-compare tr.transparent td[colspan="2"] {
+  padding-top: 20px !important;
 }
 .table-compare tr.transparent td, .table-compare tr.transparent th, .table-compare tr.transparent tr {
   background: transparent !important;
@@ -7516,13 +7525,24 @@ input[type=range]::-webkit-slider-thumb {
 
 .card-product .user-number {
   display: none;
-  border-radius: 0.25rem !important;
-  border-top-right-radius: 0 !important;
-  border-bottom-right-radius: 0 !important;
+  border-radius: 0 !important;
   margin-left: 0px !important;
 }
 .card-product .user-number.active {
   display: block;
+}
+.card-product .btn-number {
+  width: 38px;
+  padding: 0px 9px;
+  height: 38px;
+}
+.card-product .btn-number[data-type=minus] {
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+.card-product .btn-number[data-type=plus] {
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
 }
 
 #pricing-calculator .button-add-addon,
@@ -7555,9 +7575,46 @@ input[type=range]::-webkit-slider-thumb {
   opacity: 0.5;
 }
 
-.team-member-title,
+@media (min-width: 993px) {
+  .team-member-title,
 .team-member-designation {
-  min-height: 4rem;
+    min-height: 4rem;
+  }
+}
+
+@media (min-width: 993px) {
+  .team-member-title {
+    word-spacing: 100vw;
+  }
+}
+@media (min-width: 993px) and (max-width: 1065px) {
+  .team-member-title {
+    font-size: 1.25rem;
+  }
+}
+
+.fw-xbold {
+  font-weight: 800 !important;
+}
+
+.fw-400 {
+  font-weight: 400 !important;
+}
+
+body > section {
+  border-top: 1px solid #34826a !important;
+}
+
+body > .rsidebar-wrap + section {
+  border-top: 0 !important;
+}
+
+.lead {
+  font-weight: 400;
+}
+
+.border.border-transparent {
+  border-color: transparent !important;
 }
 
 p {
