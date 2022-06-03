@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f536512e453fa642ac3c7cb7d2d3148f",
+    "content-hash": "d0d89a9420e7fab37276f2ba4ffd2035",
     "packages": [
         {
             "name": "aelvan/mailchimp-subscribe",
@@ -318,6 +318,57 @@
                 "markdown-extra"
             ],
             "time": "2018-03-26T11:24:36+00:00"
+        },
+        {
+            "name": "clubstudioltd/craft-inline-svg",
+            "version": "0.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/clubstudioltd/craft-inline-svg.git",
+                "reference": "9f5abb7093ffcab2546fa1737903b97f347d9e25"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/clubstudioltd/craft-inline-svg/zipball/9f5abb7093ffcab2546fa1737903b97f347d9e25",
+                "reference": "9f5abb7093ffcab2546fa1737903b97f347d9e25",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.0.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "0.9.*",
+                "phpunit/php-token-stream": "<2",
+                "phpunit/phpunit": "~5.0"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Inline SVG",
+                "handle": "inlinesvg",
+                "hasCpSettings": false,
+                "hasCpSection": false,
+                "changelogUrl": "https://github.com/clubstudioltd/craft-inline-svg/blob/master/CHANGELOG.md",
+                "documentationUrl": "https://github.com/clubstudioltd/craft-inline-svg",
+                "downloadUrl": "https://github.com/clubstudioltd/craft-inline-svg/archive/master.zip",
+                "developer": "Club Studio Ltd",
+                "developerUrl": "https://clubstudio.co.uk",
+                "class": "club\\inlinesvg\\InlineSvg"
+            },
+            "autoload": {
+                "psr-4": {
+                    "club\\inlinesvg\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "A plugin to aid inlining SVGs in Craft 3",
+            "support": {
+                "issues": "https://github.com/clubstudioltd/craft-inline-svg/issues",
+                "source": "https://github.com/clubstudioltd/craft-inline-svg/tree/master"
+            },
+            "time": "2019-08-11T17:13:46+00:00"
         },
         {
             "name": "composer/ca-bundle",

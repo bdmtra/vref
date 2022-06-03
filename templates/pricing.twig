@@ -61,51 +61,55 @@
                                         <p class="mb-3 text-center fs-6">{{ item.text|nl2br }}</p>
                                     {% endif %}
                                     {% if item.isPro %}
-                                        <div class="input-group mb-3 w-50">
-                                            {#<span class="input-group-btn">
-                                                <button type="button" class="btn btn-brand btn-number" data-type="minus">
-                                                    <img src="/assets/images/minus-solid.svg" alt=""/>
-                                                </button>
-                                            </span>#}
-                                            {% set max_user_number_annual = 0 %}
-                                            {% for range in plansIndexById[item.apiAnnualPlanId].addon_pricing_brackets %}
-                                                {% if range.end_quantity > max_user_number_annual %}
-                                                    {% set max_user_number_annual = range.end_quantity %}
-                                                {% endif %}
-                                            {% endfor %}
-                                            {% set max_user_number_annual = max_user_number_annual + 1 %}
-                                            <input type="number"
-                                                   class="form-control user-number {% if default_payment_period_type == payment_period_types['monthly'].id %}active{% endif %}"
-                                                   min="1" max="{{ max_user_number_annual }}"
-                                                   name="users_number_monthly" value="{{ default_users_number }}"
-                                                   placeholder="{{ default_users_number }}"
-                                                   data-addon-pricing="{{ plansIndexById[item.apiAnnualPlanId].addon_pricing_brackets|json_encode() }}"
-                                                   data-payment-period-type-id="{{ payment_period_types['monthly'].id }}">
-                                            {% set max_user_number_monthly = 0 %}
-                                            {% for range in plansIndexById[item.apiMonthlyPlanId].addon_pricing_brackets %}
-                                                {% if range.end_quantity > max_user_number_monthly %}
-                                                    {% set max_user_number_monthly = range.end_quantity %}
-                                                {% endif %}
-                                            {% endfor %}
-                                            {% set max_user_number_monthly = max_user_number_monthly + 1 %}
-                                            <input type="number"
-                                                   class="form-control user-number {% if default_payment_period_type == payment_period_types['annual'].id %}active{% endif %}"
-                                                   min="1" max="{{ max_user_number_monthly }}"
-                                                   name="users_number_annual" value="{{ default_users_number }}"
-                                                   placeholder="{{ default_users_number }}"
-                                                   data-addon-pricing="{{ plansIndexById[item.apiMonthlyPlanId].addon_pricing_brackets|json_encode() }}"
-                                                   data-payment-period-type-id="{{ payment_period_types['annual'].id }}">
-                                            {#<span class="input-group-btn">
-                                                <button type="button" class="btn btn-brand btn-number" data-type="plus">
-                                                    <img src="/assets/images/plus-solid.svg" alt=""/>
-                                                </button>
-                                            </span>#}
-                                            <label class="input-group-text m-0">Users</label>
+                                        <div class="input-group mb-3 justify-content-center">
+                                            <div class="input-elements d-flex justify-content-end mx-0">
+                                                <span class="input-group-btn mx-0">
+                                                    <button type="button" class="btn btn-brand btn-number"
+                                                            data-type="minus">
+                                                        {{ svg(alias('@webroot/assets/images/minus-solid.svg')) }}
+                                                    </button>
+                                                </span>
+                                                {% set max_user_number_annual = 0 %}
+                                                {% for range in plansIndexById[item.apiAnnualPlanId].addon_pricing_brackets %}
+                                                    {% if range.end_quantity > max_user_number_annual %}
+                                                        {% set max_user_number_annual = range.end_quantity %}
+                                                    {% endif %}
+                                                {% endfor %}
+                                                {% set max_user_number_annual = max_user_number_annual + 1 %}
+                                                <input type="number"
+                                                       class="form-control user-number {% if default_payment_period_type == payment_period_types['monthly'].id %}active{% endif %}"
+                                                       min="1" max="{{ max_user_number_annual }}"
+                                                       name="users_number_monthly" value="{{ default_users_number }}"
+                                                       placeholder="{{ default_users_number }}"
+                                                       data-addon-pricing="{{ plansIndexById[item.apiAnnualPlanId].addon_pricing_brackets|json_encode() }}"
+                                                       data-payment-period-type-id="{{ payment_period_types['monthly'].id }}">
+                                                {% set max_user_number_monthly = 0 %}
+                                                {% for range in plansIndexById[item.apiMonthlyPlanId].addon_pricing_brackets %}
+                                                    {% if range.end_quantity > max_user_number_monthly %}
+                                                        {% set max_user_number_monthly = range.end_quantity %}
+                                                    {% endif %}
+                                                {% endfor %}
+                                                {% set max_user_number_monthly = max_user_number_monthly + 1 %}
+                                                <input type="number"
+                                                       class="form-control user-number {% if default_payment_period_type == payment_period_types['annual'].id %}active{% endif %}"
+                                                       min="1" max="{{ max_user_number_monthly }}"
+                                                       name="users_number_annual" value="{{ default_users_number }}"
+                                                       placeholder="{{ default_users_number }}"
+                                                       data-addon-pricing="{{ plansIndexById[item.apiMonthlyPlanId].addon_pricing_brackets|json_encode() }}"
+                                                       data-payment-period-type-id="{{ payment_period_types['annual'].id }}">
+                                                <span class="input-group-btn mx-0">
+                                                    <button type="button" class="btn btn-brand btn-number"
+                                                            data-type="plus">
+                                                        {{ svg(alias('@webroot/assets/images/plus-solid.svg')) }}
+                                                    </button>
+                                                </span>
+                                            </div>
+                                            <label class="input-group-text m-0 fw-bold">Users</label>
                                         </div>
                                     {% else %}
-                                        <div class="user-number-note fw-bold lead mb-3 p-1 border border-1 border-transparent">
+                                        <label class="user-number-note fw-bold mb-3 p-1 border border-1 border-transparent">
                                             1 User
-                                        </div>
+                                        </label>
                                     {% endif %}
                                     {% if item.textSecondary %}
                                         <p class="mb-3 text-center fs-6">{{ item.textSecondary|nl2br }}</p>
@@ -158,14 +162,28 @@
                             <div class="col">
                                 <div class="card card-product p-4 p-lg-5 m-0 h-100">
                                     <h2 class="fs-4 mb-3 text-center lh-sm">{{ item.heading|nl2br }}</h2>
-                                    <p class="mb-3 text-center fs-6">
-                                        ${{ plansIndexById[item.apiPlanId].recurring_price|number_format }}/Copy</p>
+                                    <label class="mb-3 text-center fs-5 fw-bold">
+                                        ${{ plansIndexById[item.apiPlanId].recurring_price|number_format }}/Copy</label>
                                     <form action="{{ plansIndexById[item.apiPlanId].plan_url }}" class="w-100">
-                                        <div class="input-group mb-3 w-50">
-                                            <input type="number" class="form-control" name="addon_number"
-                                                   value="{{ default_copies_number }}"
-                                                   placeholder="{{ default_copies_number }}" min="1"
-                                                   max="{{ plansIndexById[item.apiPlanId].book_addon_pricing_brackets[0].end_quantity }}">
+                                        <div class="input-group mb-3 justify-content-center">
+                                            <div class="input-elements d-flex justify-content-end mx-0">
+                                                <span class="input-group-btn mx-0">
+                                                    <button type="button" class="btn btn-brand btn-number"
+                                                            data-type="minus">
+                                                        {{ svg(alias('@webroot/assets/images/minus-solid.svg')) }}
+                                                    </button>
+                                                </span>
+                                                <input type="number" class="form-control user-number active" name="addon_number"
+                                                       value="{{ default_copies_number }}"
+                                                       placeholder="{{ default_copies_number }}" min="1"
+                                                       max="{{ plansIndexById[item.apiPlanId].book_addon_pricing_brackets[0].end_quantity }}">
+                                                <span class="input-group-btn mx-0">
+                                                    <button type="button" class="btn btn-brand btn-number"
+                                                            data-type="plus">
+                                                        {{ svg(alias('@webroot/assets/images/plus-solid.svg')) }}
+                                                    </button>
+                                                </span>
+                                            </div>
                                             <label class="input-group-text m-0">Copies</label>
                                         </div>
                                         <p class="mb-3 text-center fs-6">{{ item.text|nl2br }}</p>
@@ -232,5 +250,23 @@
                 }
             }
         }
+
+        $('.btn-number').click(function (e) {
+            e.preventDefault();
+            type = $(this).attr('data-type');
+            var inputs = $(this).closest(".input-group").find('input');
+            var currentVal = parseInt(inputs.val());
+            if (!isNaN(currentVal)) {
+                if (type == 'minus') {
+                    if (currentVal > inputs.attr('min')) {
+                        inputs.val(currentVal - 1).change();
+                    }
+                } else if (type == 'plus') {
+                    if (currentVal < inputs.attr('max')) {
+                        inputs.val(currentVal + 1).change();
+                    }
+                }
+            }
+        });
     </script>
 {% endblock %}

@@ -2,6 +2,7 @@
   "require": {
     "ext-gd": "*",
     "aelvan/mailchimp-subscribe": "3.0.3",
+    "clubstudioltd/craft-inline-svg": "^0.1.2",
     "craftcms/aws-s3": "^1.2",
     "craftcms/cms": "3.6.10",
     "craftcms/element-api": "2.6.0",

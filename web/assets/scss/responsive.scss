@@ -152,9 +152,10 @@
     visibility: visible;
     pointer-events: auto;
     top: 100%;
-    background-color: transparent;
+    background-color: #2e2f30;
     margin-top: 15px !important;
     display: none !important;
+    padding: 8px 0 !important;
     li {
       padding: 0 !important;
       a {
@@ -259,10 +260,10 @@
       .right-main-nav {
         position: absolute;
         display: block;
-        top: 93px;
+        top: 60px;
         background: #222324;
         width: 100%;
-        max-width: 380px;
+        max-width: 5000px;
         padding: 25px 20px;
         box-shadow: 0px 11px 12px 0 rgba(35, 36, 36, 0.8);
         right: -110%;
@@ -279,9 +280,13 @@
           &.cart-menu,
           ul {
             display: block;
+            margin-top: 10px !important;
+            ul {
+              margin-top: 15px !important;
+            }
             li {
               display: block;
-              padding: 15px 5px;
+              padding: 7px 5px;
               a {
                 color: #898c8e;
                 font-size: 16px;
@@ -367,7 +372,7 @@
           padding: 5px 10px 10px;
           .logo {
             margin-top: 0;
-            max-width: 80px;
+            max-width: 80px !important;
           }
           .cart-icons {
             position: absolute;
@@ -688,9 +693,9 @@
       nav {
         ul {
           li {
-            a {
-              padding-top: 5px;
-              padding-bottom: 5px;
+            li a {
+              padding-top: 7px !important;
+              padding-bottom: 7px !important;
             }
           }
         }
@@ -1190,7 +1195,7 @@
   }
 
   .rsidebar-wrap + * {
-    margin-top: 120px;
+    margin-top: 60px;
   }
 
   /* 1.1 Mobile
@@ -1260,7 +1265,7 @@ button.menu-toggle {
     order: 4;
   }
   .footer-container {
-    padding-top: 10px !important;
+    padding-top: 5px !important;
   }
 
   .inner-banner .rightbanner-img.residbann-img {
@@ -1591,11 +1596,11 @@ button.menu-toggle {
       width: 100%;
       max-width: 100%;
       padding: 0;
-      margin-bottom: 15px;
+      margin-bottom: 0px;
     }
     .ftr-about-caption,
     .ftr-contact-caption {
-      margin-bottom: 30px;
+      margin-bottom: 15px;
     }
     .ftr-news-caption {
       padding-right: 0;
@@ -1605,7 +1610,7 @@ button.menu-toggle {
         }
       }
       h6 {
-        margin-bottom: 10px;
+        margin-bottom: 20px;
       }
       .social-media {
         text-align: left;
@@ -3774,12 +3779,11 @@ button.menu-toggle {
   .main-footer-wrap .ftr-news-caption {
     width: 100% !important;
     max-width: initial !important;
-    margin-bottom: 15px;
+    margin-bottom: 0px;
     .sign-up-field{
       width: 50%;
       margin-left: auto !important;
       margin-right: auto !important;
-      
     }
     h6{
       text-align: center;
@@ -3794,7 +3798,7 @@ button.menu-toggle {
   }
   .social-media {
     display: flex;
-    padding: 10px 20px;
+    padding: 0px;
   }
   .testi-card-cont {
     width: 100% !important;
@@ -3828,5 +3832,16 @@ button.menu-toggle {
   }
   .social-media {
     width: 60%;
+  }
+}
+
+#menu-legal {
+  @media (min-width: 576px) and (max-width: 767px) {
+    span {
+      display: none;
+    }
+    a {
+      display: block;
+    }
   }
 }

@@ -326,7 +326,9 @@ nav div {
 
 .header-main .lg-container.flex .logo {
   max-width: none !important;
-  margin-top: 15px !important;
+  @media (min-width: 1024px) {
+    margin-top: 15px !important;
+  }
 }
 
 .footer-btm-wrap .flex {
