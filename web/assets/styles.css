@@ -3650,13 +3650,12 @@ strong {
   padding: 35px 12px;
   color: #fff;
   font-size: 14px;
+  font-weight: 600;
 }
 .header-main .right-main-nav nav ul li a:hover {
   color: #c09434;
-  font-weight: 600;
 }
 .header-main .right-main-nav nav ul li.active a {
-  font-weight: 600;
   color: #c09434;
 }
 .header-main .right-main-nav .cart-menu {
