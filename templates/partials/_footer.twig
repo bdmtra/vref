@@ -1,10 +1,10 @@
 {% set entry = craft.entries.section('footer').one() %}
 
 {% for block in entry.footerInfo.all() %}
-    <footer class="footer-container">
+    <footer class="footer-container p-0">
         <div class="container">
-            <div class="main-footer-wrap">
-                <div class="ftr-news-caption">
+            <div class="main-footer-wrap py-lg-4 pb-3">
+                <div class="ftr-news-caption py-4 py-md-5 py-lg-0">
                     <h6>Sign Up For Our Newsletter</h6>
                     <form class="ftr-newsltr-wrap" action="" method="post">
                         {{ csrfInput() }}
