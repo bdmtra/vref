@@ -1,122 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  {# <title>VREF Craft</title> #}
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" integrity="sha256-BAg/zs3Z4ZsqzR4Ac0N6oHyY0jDwGY1/H9RwqyIP72Q=" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="/assets/scripts/slick-1.8.1/slick/slick.css"/>
-  <link rel="stylesheet" href="/assets/styles.css">
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon.ico">
-  {% block css %}
-  {% endblock %}
-  {% hook "seo" %}
-  <script src="/assets/scripts/jquery-3.6.0.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha256-Ml0Z+aH2Ktgvnzgqh39Cv0R8jLspPdfNLAPPO88vFGo=" crossorigin="anonymous"></script>
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-T394DJP');</script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {# <title>VREF Craft</title> #}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css"
+          integrity="sha256-BAg/zs3Z4ZsqzR4Ac0N6oHyY0jDwGY1/H9RwqyIP72Q=" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/assets/scripts/slick-1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" href="/assets/styles.css">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon.ico">
+    {% block css %}
+    {% endblock %}
+    {% hook "seo" %}
+    <script src="/assets/scripts/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha256-Ml0Z+aH2Ktgvnzgqh39Cv0R8jLspPdfNLAPPO88vFGo=" crossorigin="anonymous"></script>
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+            var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-T394DJP');</script>
 </head>
 
 <body>
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T394DJP" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T394DJP" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe>
+</noscript>
 
 
-  {# Begin Header/Navbar Section #}
+{# Begin Header/Navbar Section #}
+{% include 'partials/_header' %}
 
-    <header>
-      <div class="header-main">
-        <button type="button" class="menu-toggle">
-          <span class="top-bar"></span>
-          <span class="middle-bar"></span>
-          <span class="bottom-bar"></span>
-        </button>
-        <div class="lg-container flex">
-          <a href="/" class="logo"><img src="/assets/images/logo.png" alt="VREF" /></a>
-          <div class="right-main-nav flex">
-            <nav>
-              <div>
-                <a href="https://values.vref.com/account/aircraft-selection/list" class="btn btn-secondary" id="onlineBtn">Request Demo</a>
-                <a class="btn btn-brand" href="https://values.vref.com/account/aircraft-selection/list">Login</a>
-              </div>
-              <ul>
-                <li class="dropdown">
-                  <a href="javascript:void(0);">Solutions</a>
-                  <span class="menu-arrow"></span>
-                  <ul class="sub-menu" style="display:block !important;">
-                    <li><a href="/aircraft-appraisals">Aircraft Appraisal Services</a></li>
-                    <li><a href="/aircraft-appraisals/faq"> Aircraft Appraisal FAQ</a></li>
-                    <li><a href="/aircraft-appraisals/uspap">USPAP Appraisal Standards</a></li>
-                    <li><a href="/aircraft-appraisals/asa">ASA Appraisal Standards</a></li>
-                  </ul>
-                </li>
-                <li class="dropdown">
-                  <a href="javascript:void(0);">About Us</a>
-                  <span class="menu-arrow"></span>
-                  <ul class="sub-menu" style="display:block !important;">
-                    <li><a href="/aircraft-values/verified">Verified Value Reports</a></li>
-                    <li><a href="/aircraft-values/residual">Residual Value Reports</a></li>
-                  </ul>
-                </li>
-                <li><a href="/aviation-expert-witness">Pricing</a></li>
-                <li><a href="/aviation-blockchain">Insights</a></li>
-              </ul>
-            </nav>
-          </div>
-        </div>
-      </div>
-    </header>
+{# Begin Content Section #}
+{% block content %}
+{% endblock %}
 
-  {# Begin Login/Signup/Forgot password/Reset password Section #}
+{# Begin Footer Section #}
+{% include 'partials/_footer' %}
 
-    <div class="rsidebar-wrap">
-      <div class="rsidebar-inner flex">
-        <div class="rsidebar-header">
-          <a class="close-rsidebar rsidebar-toggle"><img src="/assets/images/close-icon-white.png" alt=""/></a>
-        </div>
-        <div class="rsidebar-content flex">
-          <app-login class="form-wrap"></app-login>
-          <app-sign-up class="form-wrap"></app-sign-up>
-          <app-forgot-password class="form-wrap"></app-forgot-password>
-          <app-reset-password class="form-wrap"></app-reset-password>
-        </div>
-      </div>
-    </div>
-  
-  {# Begin Content Section #}
-  
-    {% block content %}
-    {% endblock %}
-
-  {# Begin Footer Section #}
-    {% include 'partials/_footer' %}
-  {# Begin Script Section #}
-    <script src="/assets/scripts/slick-1.8.1/slick/slick.min.js"></script>
-    <script>
-      $( document ).ready(function() {
-        $('.mydt').click(function() {
-          $('.mydropdown-list').toggle();
-        })
-        $('.menu-toggle').click(function() {
-          let val = "0";
-          if ($('.right-main-nav').hasClass("nav-open")) { val = "-110%"; }
-          $('.right-main-nav').toggleClass('nav-open');
-          $('.right-main-nav').css("right", val);
-        })
-        $('.rsidebar-toggle').click(function() {
-          $('.rsidebar-wrap').toggleClass('rsidebar-open');
-        })
-        $('.client-slider').slick({
-          dots: true,
-          arrows: true,
-          slidesToShow: 4,
-          slidesToScroll: 1,
-          autoplay: false,
-          autoplaySpeed: 3000,
-          responsive: [ { breakpoint: 992, settings: { slidesToShow: 3 } }, { breakpoint: 768, settings: { slidesToShow: 1 } } ]
-        });
-      })
-    </script>
+{# Begin Script Section #}
+{% include 'partials/_scripts' %}
 
 </body>
-
-
 </html>

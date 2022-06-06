@@ -1,0 +1,28 @@
+handle: footerLegalLinks
+instructions: ''
+maxNodes: ''
+name: 'Footer Legal Links'
+permissions:
+  craft\elements\Asset:
+    enabled: '1'
+    permissions: '*'
+  craft\elements\Category:
+    enabled: '1'
+    permissions: '*'
+  craft\elements\Entry:
+    enabled: '1'
+    permissions: '*'
+  craft\elements\Tag:
+    enabled: ''
+    permissions: '*'
+  custom:
+    enabled: '1'
+  verbb\navigation\nodetypes\PassiveType:
+    enabled: '1'
+propagateNodes: false
+siteSettings:
+  d66119ad-8f5f-41e8-8169-49f2c51c36b6: null # VREF Aircraft Values & Appraisals
+sortOrder: 4
+structure:
+  maxLevels: '1'
+  uid: e8644ad3-e874-4b30-ae00-c9e4eca31cc9

@@ -1,0 +1,61 @@
+<header>
+    <div class="header-main">
+        <button type="button" class="menu-toggle">
+            <span class="top-bar"></span>
+            <span class="middle-bar"></span>
+            <span class="bottom-bar"></span>
+        </button>
+        <div class="lg-container flex">
+            <a href="/" class="logo"><img src="/assets/images/logo.png" alt="VREF"/></a>
+            <div class="right-main-nav flex">
+                <nav>
+                    <div>
+                        {% set nodes = craft.navigation.nodes('headerButtons').all() %}
+                        {% nav node in nodes %}
+                            <a {{ node.linkAttributes }}>{{ node.title }}</a>
+                        {% endnav %}
+                    </div>
+                    <ul>
+                        {% set nodes = craft.navigation.nodes('headerLinks').level(1).all() %}
+                        {% nav node in nodes %}
+                            <li class="{% if node.classes | length %}{{ node.classes }}{% endif %} {% if node.children|length %}dropdown{% endif %}">
+                                <a href="{% if node.url %}{{ node.url }}{% else %}javascript:void(0);{% endif %}" class="{% if node.active %}is-active{% endif %}"{% if node.newWindow %} target="_blank" rel="noopener"{% endif %} {% for attribute in node.customAttributes %}{{ attribute.attribute }}="{{ attribute.value }}"{% endfor %}>
+                                {{- node.title -}}
+                                </a>
+
+                                {% if node.children|length %}
+                                    <span class="menu-arrow"></span>
+                                    <ul class="sub-menu" style="display: block !important;">
+                                        {% for subnode in node.children %}
+                                            <li>
+                                                <a href="{{ subnode.url }}" class="menu__sub-link">
+                                                    {{ subnode.title }}
+                                                </a>
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                {% endif%}
+                            </li>
+                        {% endnav %}
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+{# Begin Login/Signup/Forgot password/Reset password Section #}
+
+<div class="rsidebar-wrap">
+    <div class="rsidebar-inner flex">
+        <div class="rsidebar-header">
+            <a class="close-rsidebar rsidebar-toggle"><img src="/assets/images/close-icon-white.png" alt=""/></a>
+        </div>
+        <div class="rsidebar-content flex">
+            <app-login class="form-wrap"></app-login>
+            <app-sign-up class="form-wrap"></app-sign-up>
+            <app-forgot-password class="form-wrap"></app-forgot-password>
+            <app-reset-password class="form-wrap"></app-reset-password>
+        </div>
+    </div>
+</div>

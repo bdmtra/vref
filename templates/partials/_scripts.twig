@@ -1,0 +1,28 @@
+<script src="/assets/scripts/slick-1.8.1/slick/slick.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('.mydt').click(function () {
+            $('.mydropdown-list').toggle();
+        })
+        $('.menu-toggle').click(function () {
+            let val = "0";
+            if ($('.right-main-nav').hasClass("nav-open")) {
+                val = "-110%";
+            }
+            $('.right-main-nav').toggleClass('nav-open');
+            $('.right-main-nav').css("right", val);
+        })
+        $('.rsidebar-toggle').click(function () {
+            $('.rsidebar-wrap').toggleClass('rsidebar-open');
+        })
+        $('.client-slider').slick({
+            dots: true,
+            arrows: true,
+            slidesToShow: 4,
+            slidesToScroll: 1,
+            autoplay: false,
+            autoplaySpeed: 3000,
+            responsive: [{breakpoint: 992, settings: {slidesToShow: 3}}, {breakpoint: 768, settings: {slidesToShow: 1}}]
+        });
+    })
+</script>

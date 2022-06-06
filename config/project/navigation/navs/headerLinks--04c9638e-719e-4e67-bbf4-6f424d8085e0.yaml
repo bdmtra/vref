@@ -1,0 +1,28 @@
+handle: headerLinks
+instructions: ''
+maxNodes: ''
+name: 'Header Links'
+permissions:
+  craft\elements\Asset:
+    enabled: '1'
+    permissions: '*'
+  craft\elements\Category:
+    enabled: '1'
+    permissions: '*'
+  craft\elements\Entry:
+    enabled: '1'
+    permissions: '*'
+  craft\elements\Tag:
+    enabled: ''
+    permissions: '*'
+  custom:
+    enabled: '1'
+  verbb\navigation\nodetypes\PassiveType:
+    enabled: '1'
+propagateNodes: false
+siteSettings:
+  d66119ad-8f5f-41e8-8169-49f2c51c36b6: null # VREF Aircraft Values & Appraisals
+sortOrder: 2
+structure:
+  maxLevels: '2'
+  uid: 0356acc6-d347-463b-9fbe-0aef01fa0138

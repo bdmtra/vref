@@ -23,6 +23,7 @@
     "twbs/bootstrap": "5.0.0-beta2",
     "verbb/cloner": "1.2.2",
     "verbb/field-manager": "2.2.4",
+    "verbb/navigation": "1.4.26",
     "verbb/super-table": "2.6.8",
     "vlucas/phpdotenv": "^3.4.0",
     "wrav/simplesharing": "1.0.8"

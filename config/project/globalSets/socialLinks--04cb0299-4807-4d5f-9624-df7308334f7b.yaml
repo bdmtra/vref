@@ -1,0 +1,36 @@
+fieldLayouts:
+  27f7fe1f-9ad1-4ba8-ac61-8ad94ff9613c:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 50b5a118-9124-4c66-8913-08b503da1379 # LinkedIn Link
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 8c3f3b4f-ac9f-4f87-97ed-f7db024ba2ed # Facebook Link
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 08109c4d-8852-449d-98a5-5926c3a7ce94 # Twitter Link
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Main
+        sortOrder: 1
+handle: socialLinks
+name: 'Social Links'

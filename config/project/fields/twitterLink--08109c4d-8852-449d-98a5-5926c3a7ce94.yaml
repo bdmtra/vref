@@ -1,0 +1,14 @@
+contentColumnType: string(255)
+fieldGroup: 4d7a9283-626d-4523-b2f3-4d97d6be26ec # Social Links
+handle: twitterLink
+instructions: ''
+name: 'Twitter Link'
+searchable: false
+settings:
+  maxLength: '255'
+  placeholder: null
+  types:
+    - url
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Url
