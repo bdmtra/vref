@@ -20,8 +20,8 @@
   </div>
   <div class="sm-block-row white-bg">
     <div class="container">
-      <div class="flex-content flex flex-news-blog-row mt--80">
-        <div class="flex-content-main">
+      <div class="row article-row">
+        <div class="col-12 col-lg-9 flex-content-main">
           <div class="news-details-wrap ">
             <h3>{{ entry.pageTitle }}</h3>
             <div class="post-by">
@@ -33,22 +33,21 @@
               </p>
             </div>
             <p>{{ entry.richText }}</p>
-
-            <div class="social-media-wrap">
+            <div class="social-media-wrap my-3">
               <label for="">Share this story, choose your platform!</label>
-              <ul class="social-media">
-                <li>
-                  <a shareButton="facebook" href="{{ craft.simpleSharing.link(pageurl, 'facebook') }}">
+              <ul class="social-media row d-flex py-0">
+                <li class="col-auto d-flex">
+                  <a class="d-flex align-items-center" shareButton="facebook" href="{{ craft.simpleSharing.link(pageurl, 'facebook') }}">
                     <img src="/assets/images/fb-gray.png" alt="" />
                   </a>
                 </li>
-                <li>
-                  <a shareButton="linkedin" href="{{ craft.simpleSharing.link(pageurl, 'linkedin') }}">
+                <li class="col-auto d-flex">
+                  <a class="d-flex align-items-center" shareButton="linkedin" href="{{ craft.simpleSharing.link(pageurl, 'linkedin') }}">
                     <img src="/assets/images/linkedin-gray.png" alt="" />
                   </a>
                 </li>
-                <li>
-                  <a shareButton="twitter" href="{{ craft.simpleSharing.link(pageurl, 'twitter') }}">
+                <li class="col-auto d-flex">
+                  <a class="d-flex align-items-center" shareButton="twitter" href="{{ craft.simpleSharing.link(pageurl, 'twitter') }}">
                     <img src="/assets/images/twitt-gray.png" alt=""/>
                   </a>
                 </li>
@@ -56,7 +55,7 @@
             </div>
           </div>
         </div>
-        <aside class="flex-content-aside">
+        <aside class="col-12 col-lg-3 flex-content-aside">
           <div class="news-search-wrap mt-10">
             <form class="form-group" action="{{ url('/news') }}">
               <div class="news-search-inner">

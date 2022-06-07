@@ -1864,9 +1864,6 @@ button.menu-toggle {
       -o-flex-wrap: wrap;
       flex-wrap: wrap;
     }
-    .flex-content-aside {
-      order: -1;
-    }
   }
   .artical-wrap {
     .artical-inner {
@@ -1902,13 +1899,10 @@ button.menu-toggle {
     }
   }
   .inner-banner.lines-btm-bdr:after {
-    width: calc(100% - 15px);
-    left: 15px;
-  }
-  .flex-content-aside {
-    .news-search-wrap {
-      padding: 0 15px;
-    }
+    width: 100%;
+    left: 0;
+    height: 0;
+    bottom: 0;
   }
   .new-news-wrap {
     display: block;
@@ -3791,10 +3785,6 @@ button.menu-toggle {
   .text-group{
     width: 100% !important;  
   }
-  .social-media {
-    display: flex;
-    padding: 0px;
-  }
   .testi-card-cont {
     width: 100% !important;
   }
@@ -3824,9 +3814,6 @@ button.menu-toggle {
 @media (max-width: 480px) {
   .main-footer-wrap .ftr-contact-caption {
     width: 100% !important;
-  }
-  .social-media {
-    width: 60%;
   }
 }
 
