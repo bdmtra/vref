@@ -1547,7 +1547,6 @@ strong {
     margin: 0;
     width: 50%;
     max-width: 570px;
-    min-height: 350px;
     background: #fff;
     box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.5);
   }
@@ -4567,6 +4566,10 @@ h3.subpricing-head {
   padding-top: 12rem;
 }
 
+.mb-6 {
+  margin-bottom: 6rem;
+}
+
 .slick-prev {
   margin-left: -90px;
 }
@@ -5076,7 +5079,6 @@ input[type='range']::-webkit-slider-thumb {
   }
 }
 
-
 .fw-xbold {
   font-weight: 800 !important;
 }
@@ -5099,4 +5101,9 @@ body > .rsidebar-wrap + section {
 
 .border.border-transparent {
   border-color: transparent !important;
+}
+
+.row>* {
+  margin-left: 0;
+  margin-right: 0;
 }
