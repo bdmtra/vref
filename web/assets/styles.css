@@ -7157,7 +7157,7 @@ h3.subpricing-head {
 }
 
 .testi-card-cont {
-  width: 65%;
+  width: 80%;
 }
 
 .testi-card {
@@ -7166,11 +7166,10 @@ h3.subpricing-head {
   background: #F4F7FB;
   border: 1px solid #E8EBEF;
   border-radius: 5px;
-  height: 350px;
-  padding-left: 100px;
-  padding-right: 100px;
+  padding: 30px 30px;
   align-items: center;
   justify-content: center;
+  text-align: center;
 }
 
 .testi-profiles-cont {
@@ -7210,6 +7209,15 @@ h3.subpricing-head {
 @media (min-width: 992px) {
   #testi-captions {
     text-align: left;
+  }
+  #testi-captions .slick-track {
+    display: flex;
+  }
+  #testi-captions .slick-track .slick-slide {
+    display: flex;
+    height: auto;
+    align-items: stretch;
+    justify-content: center;
   }
 }
 

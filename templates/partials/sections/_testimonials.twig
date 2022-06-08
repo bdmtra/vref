@@ -10,9 +10,9 @@
                     <div id="testi-captions">
                         {% for block in blocks %}
                             <div class="testi-flex">
-                                <div id="testimonial_{{ block.id }}">
-                                    <h6>{{ block.testimonialHeader }}</h6>
-                                    <p>{{ block.testimonialExcerpt }}</p>
+                                <div id="testimonial_{{ block.id }}" class="d-flex flex-column justify-content-center">
+                                    <h6 class="text-center">{{ block.testimonialHeader }}</h6>
+                                    <p class="text-center">{{ block.testimonialExcerpt }}</p>
                                 </div>
                             </div>
                         {% endfor %}
@@ -29,6 +29,7 @@
             slidesToShow: 1,
             slidesToScroll: 1,
             fade: true,
+            dots: true,
         });
     });
 </script>      

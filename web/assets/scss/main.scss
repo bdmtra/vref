@@ -1185,6 +1185,7 @@ strong {
     @media (max-width: 576px) {
       height: 165px;
     }
+
     img {
       -webkit-object-fit: cover;
       object-fit: cover;
@@ -2030,7 +2031,7 @@ strong {
     border-color: #cfcfcf;
   }
 
-  h2{
+  h2 {
     margin: 16px auto;
     line-height: 44px;
   }
@@ -4569,7 +4570,7 @@ h3.subpricing-head {
 }
 
 .testi-card-cont {
-  width: 65%;
+  width: 80%;
 }
 
 .testi-card {
@@ -4578,11 +4579,10 @@ h3.subpricing-head {
   background: #F4F7FB;
   border: 1px solid #E8EBEF;
   border-radius: 5px;
-  height: 350px;
-  padding-left: 100px;
-  padding-right: 100px;
+  padding: 30px 30px;
   align-items: center;
   justify-content: center;
+  text-align: center;
 }
 
 .testi-profiles-cont {
@@ -4619,6 +4619,16 @@ h3.subpricing-head {
   }
   @media (min-width: 992px) {
     text-align: left;
+    .slick-track {
+      display: flex;
+
+      .slick-slide {
+        display: flex;
+        height: auto;
+        align-items: stretch;
+        justify-content: center; //optional
+      }
+    }
   }
 }
 
@@ -4686,14 +4696,16 @@ ul.nav li {
 #pricing-tabs .nav-item {
   width: 100%;
   text-align: center;
+
   .nav-link {
     padding-left: 0;
     padding-right: 0;
   }
-  @media (min-width: 380px) and (max-width: 767px){
+
+  @media (min-width: 380px) and (max-width: 767px) {
     width: 50%;
   }
-  @media (min-width: 768px){
+  @media (min-width: 768px) {
     width: auto;
   }
 }
@@ -5093,12 +5105,12 @@ body > .rsidebar-wrap + section {
   border-color: transparent !important;
 }
 
-.row>* {
+.row > * {
   margin-left: 0;
   margin-right: 0;
 }
 
-.news-details-wrap h2{
+.news-details-wrap h2 {
   margin: 16px auto;
   line-height: 44px;
 }
