@@ -23,8 +23,8 @@
       <div class="main-title-row">
         <h3>VREF News</h3>
       </div>
-      <div class="flex-content flex flex-news-blog-row">
-        <div class="flex-content-main">
+      <div class="row">
+        <div class="col-12 col-lg-8 flex-content-main mb-4 mb-lg-0">
           <div class="news-list-wrap">
             {% if entries|length %}
               {# initial content #}
@@ -48,8 +48,7 @@
             {% endif %}
           </div>
         </div>
-
-        <aside class="flex-content-aside">
+        <aside class="col-12 col-lg-4 flex-content-aside">
           <div class="news-search-wrap mt-10">
             <form class="form-group" action="{{ url('/news') }}">
               <div class="news-search-inner">
