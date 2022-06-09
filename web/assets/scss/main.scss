@@ -5122,3 +5122,58 @@ body > .rsidebar-wrap + section {
     position: relative;
   }
 }
+.slick-slider {
+  .slick-prev, .slick-next {
+    font-size: 0;
+    line-height: 0;
+    position: absolute;
+    top: 50%;
+    display: block;
+    width: 60px;
+    height: 60px;
+    padding: 0;
+    cursor: pointer;
+    color: transparent;
+    border: none;
+    outline: none;
+    background: transparent;
+    background-size: 100% auto;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    opacity: 1;
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: absolute;
+    -webkit-border-radius: 50px;
+    -ms-border-radius: 50px;
+    border-radius: 50px;
+    background-size: 25% auto;
+    background-color: #e4e8eb;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    &:before {
+      content: "" !important;
+    }
+    &:hover,
+    &:focus {
+      opacity: 1;
+      background-color: #f4f7fb;
+    }
+  }
+  .slick-next {
+    background-image: url(./images/slick-next.png);
+    right: 0;
+  }
+  .slick-prev {
+    background-image: url(./images/slick-prev.png);
+    z-index: 9;
+    left: 0;
+  }
+}
+.slick-dots {
+  bottom: -36px;
+  li button:before{
+    font-size: 20px;
+  }
+}
