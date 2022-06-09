@@ -3177,10 +3177,7 @@ input.csc-number {
       &:before {
         background-size: 0 0;
         content: counter(numbes) ". ";
-        //position: static;
-        padding-right: 5px;
-        left: -20px;
-        top: 0;
+        position: static;
       }
     }
   }
@@ -3200,10 +3197,32 @@ input.csc-number {
     .caption-area {
       display: inline-block;
       vertical-align: top;
-      width: 90%;
-      /*max-width: calc(100% - 300px);*/
       max-width: 100%;
       margin-left: 30px;
+      p {
+        margin-bottom: 20px;
+      }
+      ul {
+        &.row-text-2-columns {
+          margin: 0 20px;
+        }
+        li {
+          font-size: initial;
+        }
+      }
+      p em {
+        font-style: italic;
+        color: initial;
+      }
+      img {
+        display: inline-block;
+        margin-bottom: 2rem;
+      }
+      @media (min-width: 768px) {
+        .btn + .btn {
+          margin-left: 2rem;
+        }
+      }
     }
 
     &.full-leftblock {
@@ -5173,7 +5192,4 @@ body > .rsidebar-wrap + section {
 }
 .slick-dots {
   bottom: -36px;
-  li button:before{
-    font-size: 20px;
-  }
 }

@@ -65,7 +65,16 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 563bfcb1-fa15-4a2b-aaa3-aca5388caab2 # Rich Text
+            fieldUid: c778d873-e586-4085-b762-f71123f1a621 # Page Content
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: d0701fb7-ccbe-4b03-b118-9500745c89d7 # Page Content Builder
             instructions: null
             label: null
             required: false
@@ -86,9 +95,9 @@ fieldLayouts:
             width: 100
         name: Content
         sortOrder: 1
-handle: dynamicPageContent
+handle: dynamicPage
 hasTitleField: true
-name: 'Dynamic Page Content'
+name: 'Default Dynamic Page'
 section: ae36c8fb-655b-43a2-a284-e1d0554f3c3d # Dynamic Pages
 sortOrder: 1
 titleFormat: null

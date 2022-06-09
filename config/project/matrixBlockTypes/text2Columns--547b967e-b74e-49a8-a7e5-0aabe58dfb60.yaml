@@ -1,0 +1,62 @@
+field: d0701fb7-ccbe-4b03-b118-9500745c89d7 # Page Content Builder
+fieldLayouts:
+  fac426c2-f672-4584-9cea-30d9877a1457:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: cacb6f0f-e6a4-40c2-8fae-723de77dea34 # Column 1
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 42faeffd-12da-4d1b-b635-c0b0b3cdb81a # Column 2
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  42faeffd-12da-4d1b-b635-c0b0b3cdb81a: # Column 2
+    contentColumnType: text
+    fieldGroup: null
+    handle: column2
+    instructions: ''
+    name: 'Column 2'
+    searchable: false
+    settings:
+      assetsFilesSource: 'folder:1'
+      assetsFilesSubPath: ''
+      assetsImagesSource: 'folder:1'
+      assetsImagesSubPath: ''
+      editorConfig: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: froala\craftfroalawysiwyg\Field
+  cacb6f0f-e6a4-40c2-8fae-723de77dea34: # Column 1
+    contentColumnType: text
+    fieldGroup: null
+    handle: column1
+    instructions: ''
+    name: 'Column 1'
+    searchable: false
+    settings:
+      assetsFilesSource: 'folder:1'
+      assetsFilesSubPath: ''
+      assetsImagesSource: 'folder:1'
+      assetsImagesSubPath: ''
+      editorConfig: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: froala\craftfroalawysiwyg\Field
+handle: text2Columns
+name: 'Text 2 Columns'
+sortOrder: 3

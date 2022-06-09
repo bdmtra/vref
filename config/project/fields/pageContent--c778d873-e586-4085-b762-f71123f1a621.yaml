@@ -1,0 +1,15 @@
+contentColumnType: text
+fieldGroup: b50b9ada-b26b-42ed-83f0-de7ce60c770c # Common
+handle: pageContent
+instructions: ''
+name: 'Page Content'
+searchable: false
+settings:
+  assetsFilesSource: 'folder:1'
+  assetsFilesSubPath: ''
+  assetsImagesSource: 'folder:1'
+  assetsImagesSubPath: ''
+  editorConfig: common.json
+translationKeyFormat: null
+translationMethod: none
+type: froala\craftfroalawysiwyg\Field

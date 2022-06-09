@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "28bf6ae57827f29cb68ac9c3c42f64da",
+    "content-hash": "b243a04725c825ed94ebdc162292fd30",
     "packages": [
         {
             "name": "aelvan/mailchimp-subscribe",
@@ -1716,6 +1716,86 @@
                 "html"
             ],
             "time": "2021-12-25T01:21:49+00:00"
+        },
+        {
+            "name": "froala/craft-froala-wysiwyg",
+            "version": "4.0.12",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/froala/Craft-3-Froala-WYSIWYG/zipball/a937301d82a83d09fcc2e8c42a541bda3668f2fa",
+                "reference": "a937301d82a83d09fcc2e8c42a541bda3668f2fa",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.1",
+                "froala/wysiwyg-editor": "4.0.12"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Froala WYSIWYG Editor",
+                "handle": "froala-editor",
+                "hasSettings": true,
+                "developer": "Bert Oost",
+                "developerUrl": "https://bertoost.com",
+                "documentationUrl": "https://github.com/froala/Craft-3-Froala-WYSIWYG/blob/master/README.md"
+            },
+            "autoload": {
+                "psr-4": {
+                    "froala\\craftfroalawysiwyg\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Craft 3 CMS plugin for Froala WYSIWYG HTML Rich Text Editor.",
+            "homepage": "https://github.com/froala/Craft-3-Froala-WYSIWYG",
+            "keywords": [
+                "craft",
+                "craftcms",
+                "craftcms plugin",
+                "froala",
+                "plugin",
+                "wysiwyg"
+            ],
+            "time": "2022-06-09T07:37:04+00:00"
+        },
+        {
+            "name": "froala/wysiwyg-editor",
+            "version": "v4.0.12",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/froala/wysiwyg-editor/zipball/e9b3bb048e4320a40cb2652fd7d6f4f48bdf01da",
+                "reference": "e9b3bb048e4320a40cb2652fd7d6f4f48bdf01da",
+                "shasum": ""
+            },
+            "type": "component",
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "Froala Labs",
+                    "email": "support@froala.com"
+                }
+            ],
+            "description": "A beautiful jQuery WYSIWYG HTML rich text editor. High performance and modern design make it easy to use for developers and loved by users.",
+            "homepage": "https://www.froala.com/wysiwyg-editor",
+            "keywords": [
+                "editor",
+                "froala",
+                "froala-editor",
+                "froala-wysiwyg",
+                "html",
+                "javascript",
+                "jquery",
+                "jquery-plugin",
+                "rich editor",
+                "rich text editor",
+                "rte",
+                "text",
+                "wysiwyg"
+            ],
+            "time": "2022-06-08T12:58:52+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",

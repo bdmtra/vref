@@ -1,0 +1,62 @@
+field: 14f8dc38-b2e0-4e57-aa72-15ccf39e0c06 # Items
+fieldLayouts:
+  a30b7f36-8749-4a79-9c2d-3f9b0c6c05ca:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: e7970464-640c-48f0-9be6-374a978152b8 # Heading
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 437e32b7-0b1b-4ce6-a672-48f472f82fa0 # Text
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  437e32b7-0b1b-4ce6-a672-48f472f82fa0: # Text
+    contentColumnType: text
+    fieldGroup: null
+    handle: text
+    instructions: ''
+    name: Text
+    searchable: false
+    settings:
+      assetsFilesSource: 'folder:1'
+      assetsFilesSubPath: ''
+      assetsImagesSource: 'folder:1'
+      assetsImagesSubPath: ''
+      editorConfig: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: froala\craftfroalawysiwyg\Field
+  e7970464-640c-48f0-9be6-374a978152b8: # Heading
+    contentColumnType: text
+    fieldGroup: null
+    handle: heading
+    instructions: ''
+    name: Heading
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText

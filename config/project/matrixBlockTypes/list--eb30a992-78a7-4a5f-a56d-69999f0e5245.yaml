@@ -1,0 +1,56 @@
+field: d0701fb7-ccbe-4b03-b118-9500745c89d7 # Page Content Builder
+fieldLayouts:
+  1c919a54-81bc-4751-97a2-8582f47467fd:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 14f8dc38-b2e0-4e57-aa72-15ccf39e0c06 # Items
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  14f8dc38-b2e0-4e57-aa72-15ccf39e0c06: # Items
+    contentColumnType: string
+    fieldGroup: null
+    handle: items
+    instructions: ''
+    name: Items
+    searchable: false
+    settings:
+      columns:
+        __assoc__:
+          -
+            - e7970464-640c-48f0-9be6-374a978152b8 # Heading
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - 437e32b7-0b1b-4ce6-a672-48f472f82fa0 # Text
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+      contentTable: '{{%stc_37_items}}'
+      fieldLayout: matrix
+      maxRows: ''
+      minRows: ''
+      placeholderKey: null
+      propagationMethod: all
+      selectionLabel: ''
+      staticField: ''
+    translationKeyFormat: null
+    translationMethod: site
+    type: verbb\supertable\fields\SuperTableField
+handle: list
+name: List
+sortOrder: 4

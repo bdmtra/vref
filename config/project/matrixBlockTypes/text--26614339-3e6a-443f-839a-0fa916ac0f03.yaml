@@ -1,0 +1,37 @@
+field: d0701fb7-ccbe-4b03-b118-9500745c89d7 # Page Content Builder
+fieldLayouts:
+  a855ab1f-7fc2-43d6-9d77-1ce1084bd463:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 3830fe34-d496-4c35-a518-2d8dc7728b02 # Text
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  3830fe34-d496-4c35-a518-2d8dc7728b02: # Text
+    contentColumnType: text
+    fieldGroup: null
+    handle: text
+    instructions: ''
+    name: Text
+    searchable: false
+    settings:
+      assetsFilesSource: 'folder:1'
+      assetsFilesSubPath: ''
+      assetsImagesSource: 'folder:1'
+      assetsImagesSubPath: ''
+      editorConfig: Common.json
+    translationKeyFormat: null
+    translationMethod: none
+    type: froala\craftfroalawysiwyg\Field
+handle: text
+name: Text
+sortOrder: 1
