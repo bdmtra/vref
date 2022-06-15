@@ -1,6 +1,8 @@
+{% set backgroundImage = entry.ctaBackgroundImage.one() ?? (imagePlaceholders.ctaBackgroundImagePlaceholder.one().url ?? null) %}
+{% set transformedBackgroundImage = craft.imager.transformImage(backgroundImage, { format: 'webp' }) %}
 <section>
     <div class="img-cover img-cover-shadow"
-         style="background-image: url({{ entry.ctaBackgroundImage.one() ?? (imagePlaceholders.ctaBackgroundImagePlaceholder.one().url ?? null) }})">
+         style="background-image: url({{ transformedBackgroundImage.url }})">
         <div class="container py-5 text-center">
             <h2 class="display-6 fw-bold lh-sm mb-3 text-white">{{ entry.ctaTitle|nl2br }}</h2>
             <div class="row">

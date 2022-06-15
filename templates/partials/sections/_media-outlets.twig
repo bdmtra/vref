@@ -5,9 +5,12 @@
             <div class="row g-4 py-2 py-lg-4 row-cols-4">
                 {% for item in entry.mediaOutletsItems.all() %}
                     <div class="col">
+                        {% set itemBackgroundImage =  item.mediaOutlet.one().featuredImage.one().url %}
+                        {% set itemTransformedBackgroundImage = craft.imager.transformImage(itemBackgroundImage, { format: 'webp' }) %}
+
                         <a href="{{ item.sourceUrl }}"
                            class="d-block d-inline-block img-cover media-outlet-img overflow-hidden"
-                           style="background-image: url({{ item.mediaOutlet.one().featuredImage.one().url }})"
+                           style="background-image: url({{ itemTransformedBackgroundImage.url }})"
                            target="_blank"></a>
                     </div>
                 {% endfor %}
