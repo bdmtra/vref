@@ -1,4 +1,4 @@
-dateModified: 1655294412
+dateModified: 1655496665
 email:
   fromEmail: andrew@andrewlynn.co
   fromName: vref.com
@@ -10,7 +10,7 @@ plugins:
     schemaVersion: '1.2'
   blitz:
     edition: standard
-    enabled: false
+    enabled: true
     licenseKey: VC19XLL0ENUQN24MZFFGZDVS
     schemaVersion: 3.6.6
     settings:
@@ -20,25 +20,14 @@ plugins:
       cacheElementQueries: true
       cacheElements: true
       cachePurgerType: putyourlightson\blitz\drivers\purgers\DummyPurger
-      cacheStorageSettings:
-        __assoc__:
-          -
-            - folderPath
-            - '@webroot/cache/blitz'
-          -
-            - createGzipFiles
-            - ''
-          -
-            - createBrotliFiles
-            - ''
-      cacheStorageType: putyourlightson\blitz\drivers\storage\FileStorage
+      cacheStorageType: putyourlightson\blitz\drivers\storage\YiiCacheStorage
       cacheWarmerSettings:
         __assoc__:
           -
             - concurrency
             - '3'
       cacheWarmerType: putyourlightson\blitz\drivers\warmers\GuzzleWarmer
-      cachingEnabled: '1'
+      cachingEnabled: ''
       clearCacheAutomatically: '1'
       customSiteUris: ''
       debug: false
@@ -78,6 +67,10 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0
+  cookies:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
   element-api:
     edition: standard
     enabled: true
@@ -112,6 +105,10 @@ plugins:
     enabled: true
     schemaVersion: 1.0.0
   jsonclient:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  kint:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0
@@ -210,6 +207,14 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0
+  turbo:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+    settings:
+      cacheVersion: 1
+      durationInMinutes: '2'
+      enabled: ''
 system:
   edition: pro
   live: true

@@ -1,20 +1,23 @@
+{% set baseUrl = alias('@web') ~ '/' %}
 {% minify %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {# <title>VREF Craft</title> #}
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css"
-          integrity="sha256-BAg/zs3Z4ZsqzR4Ac0N6oHyY0jDwGY1/H9RwqyIP72Q=" crossorigin="anonymous">
-    <link rel="stylesheet" href="/assets/styles.css">
+        <style>
+            {{ source ('_criticalcss/'~craft.app.requestedParams.template~'_critical.css', ignore_missing = true) }}
+        </style>
+        <link rel="preload" href="{{ baseUrl }}assets/styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="{{ baseUrl }}assets/styles.css"></noscript>
+        <script>
+            {{ source('_inlinejs/loadCSS.js') }}
+        </script>
+
+    <script src="/assets/libs/jquery-3.6.0.min.js"></script>
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon.ico">
-    {% block css %}
-    {% endblock %}
+
     {% hook "seo" %}
-    <script src="/assets/scripts/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
-            integrity="sha256-Ml0Z+aH2Ktgvnzgqh39Cv0R8jLspPdfNLAPPO88vFGo=" crossorigin="anonymous"></script>
     <script>(function (w, d, s, l, i) {
             w[l] = w[l] || [];
             w[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
@@ -30,20 +33,19 @@
     <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T394DJP" height="0" width="0"
             style="display:none;visibility:hidden"></iframe>
 </noscript>
-
-
 {# Begin Header/Navbar Section #}
 {% include 'partials/_header' %}
 
 {# Begin Content Section #}
 {% block content %}
-{% endblock %}
+{% endblock content %}
 
 {# Begin Footer Section #}
 {% include 'partials/_footer' %}
 
 {# Begin Script Section #}
 {% include 'partials/_scripts' %}
+
 
 </body>
 </html>

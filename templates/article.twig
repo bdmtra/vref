@@ -1,9 +1,5 @@
 {% extends "base" %}
 
-{% block css %}
-  <link rel="stylesheet" href="/assets/scss/dynamic-pages.css">
-{% endblock %}
-
 {% block content %}
   {% do craft.entryCount.increment(entry.id) %}
   {% cache %}

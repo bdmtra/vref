@@ -1,1 +1,99 @@
-{}
+{
+  "devDependencies": {
+    "critical": "^4.0.1",
+    "gulp-purgecss": "^4.1.3"
+  },
+  "urls": {
+    "critical": "http://vref.test/"
+  },
+  "paths": {
+    "criticalDist": "./templates/_criticalcss/",
+    "templates": "./templates/"
+  },
+  "globs": {
+    "critical": [
+      {
+        "url": "",
+        "template": "index"
+      },
+      {
+        "url": "aircraft-valuations",
+        "template": "aircraft_valuations"
+      },
+      {
+        "url": "aviation-consulting",
+        "template": "aviation_consulting"
+      },
+      {
+        "url": "aviation-database",
+        "template": "aviation_database"
+      },
+      {
+        "url": "aviation-expert-witness-new",
+        "template": "aviation_expert_witness"
+      },
+      {
+        "url": "aviation-manufacturers",
+        "template": "solution"
+      },
+      {
+        "url": "certificates-of-value",
+        "template": "certificates_of_value"
+      },
+      {
+        "url": "contact",
+        "template": "contact"
+      },
+      {
+        "url": "data-quality",
+        "template": "data_quality"
+      },
+      {
+        "url": "faq",
+        "template": "faq"
+      },
+      {
+        "url": "news",
+        "template": "news"
+      },
+      {
+        "url": "shopsubscription",
+        "template": "subscriptions"
+      },
+      {
+        "url": "press-coverage",
+        "template": "press_archive"
+      },
+      {
+        "url": "press-room",
+        "template": "press_room"
+      },
+      {
+        "url": "pricing",
+        "template": "pricing"
+      },
+      {
+        "url": "who-we-are",
+        "template": "who_we_are"
+      },
+      {
+        "url": "services",
+        "template": "dynamic"
+      },
+      {
+        "url": "news/how-to-trade-a-plane-5-helpful-tips-for-buying-selling-aircraft",
+        "template": "article"
+      },
+      {
+        "url": "about/zilberbrand",
+        "template": "about_details"
+      }
+    ]
+  },
+  "dependencies": {
+    "chalk": "^5.0.1",
+    "fancy-log": "^2.0.0",
+    "gulp": "^4.0.2",
+    "gulp-load-plugins": "^2.0.7"
+  }
+}
