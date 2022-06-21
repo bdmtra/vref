@@ -1,10 +1,14 @@
+{% set heroImage = entry.heroImage.one().url ?? (imagePlaceholders.heroImagePlaceholder.one().url ?? null) %}
+{% set transformedHeroImage = heroImage ? craft.imager.transformImage(heroImage, { format: 'webp' }) : null %}
 <section>
     <div class="container">
         <div class="row flex-lg-row-reverse align-items-center">
             <div class="col-12 col-sm-8 col-lg-6 my-3 my-lg-0">
-                <img src="{{ entry.heroImage.one().url ?? (imagePlaceholders.heroImagePlaceholder.one().url ?? 'null') }}"
-                     class="d-block mx-lg-auto img-fluid"
-                     alt="{{ entry.heroImage.one().title ?? (imagePlaceholders.heroImagePlaceholder.one().title ?? 'null') }}">
+                <picture class="d-block mx-lg-auto img-fluid">
+                    <source srcset="{{ transformedHeroImage.url ?? null }}" type="image/webp">
+                    <source srcset="{{ heroImage ?? null }}" type="image/jpeg">
+                    <img src="{{ heroImage ?? null }}">
+                </picture>
             </div>
             <div class="col-12 col-lg-6 mt-0 my-4 my-lg-0 text-center text-lg-start">
                 <div class="row">

@@ -4598,7 +4598,7 @@ h3.subpricing-head {
   background: #F4F7FB;
   border: 1px solid #E8EBEF;
   border-radius: 5px;
-  padding: 30px 30px;
+  padding: 40px 30px;
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -4859,6 +4859,9 @@ input[type='range']::-webkit-slider-thumb {
   background-color: #dde9e5 !important;
 }
 
+.table-compare > * {
+    border-top: 0 !important;
+}
 .table-compare td {
   font-size: 18px !important;
   text-align: center !important;
@@ -5122,11 +5125,6 @@ body > .rsidebar-wrap + section {
 
 .border.border-transparent {
   border-color: transparent !important;
-}
-
-.row > * {
-  margin-left: 0;
-  margin-right: 0;
 }
 
 .news-details-wrap h2 {

@@ -9,9 +9,15 @@
             <div class="row g-4 py-3 py-lg-4 row-cols-2 row-cols-sm-4 row-cols-lg-{{ items|length }}">
                 {% set imageTransformHandle = 'logosItemImage' %}
                 {% for item in items %}
+                    {% set itemImage = item.getUrl(imageTransformHandle) %}
+                    {% set transformedItemImage = itemImage ? craft.imager.transformImage(itemImage, { format: 'webp' }) : null %}
                     <div class="col">
-                        <div class="logo-img d-flex">
-                            <img src="{{ item.getUrl(imageTransformHandle) }}" class="img-fluid align-self-center">
+                        <div class="logo-img d-flex justify-content-center">
+                            <picture class="img-fluid">
+                                <source srcset="{{ transformedItemImage.url ?? null }}" type="image/webp">
+                                <source srcset="{{ itemImage ?? null }}" type="image/jpeg">
+                                <img src="{{ itemImage ?? null }}">
+                            </picture>
                         </div>
                     </div>
                 {% endfor %}

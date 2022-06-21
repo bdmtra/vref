@@ -9,11 +9,13 @@
         <div class="row row-cols-1 row-cols-sm-2 align-items-stretch">
             {% set imageTransformHandle = 'featuresItemImage' %}
             {% for item in entry.ctaTwinItems.all() %}
+                {% set itemImage = item.image.one().getUrl(imageTransformHandle) ?? (imagePlaceholders.listItemImagePlaceholder.one().getUrl(imageTransformHandle) ?? null) %}
+                {% set transformedItemImage = itemImage ? craft.imager.transformImage(itemImage, { format: 'webp' }) : null %}
                 <div class="col mb-4">
                     <div class="card rounded-5 border p-4 p-md-5 m-0">
                         <div class="w-25">
                             <div class="cta-twin-img img-cover"
-                                 style="background-image:url({{ item.image.one().getUrl(imageTransformHandle) ?? (imagePlaceholders.listItemImagePlaceholder.one().getUrl(imageTransformHandle) ?? null) }})"></div>
+                                 style="background-image:url({{ transformedItemImage.url ?? null }})" data-background-image-url-fallback="{{ itemImage }}"></div>
                         </div>
                         <h2 class="fs-4 my-3 text-center lh-sm">{{ item.heading|nl2br }}</h2>
                         <p class="mb-3 text-center fs-6">{{ item.text|nl2br }}</p>
@@ -55,10 +57,13 @@
         </div>
         <div class="row row-cols-4 align-items-stretch g-4 pt-5">
             {% for item in craft.entries().section('pressCoverageEntry').limit(8).orderBy('id DESC').all() %}
+                {% set itemImage = item.mediaOutlet.one().featuredImage.one().url ?? null %}
+                {% set transformedItemImage = itemImage ? craft.imager.transformImage(itemImage, { format: 'webp' }) : null %}
                 <div class="col">
                     <a href="{{ item.sourceUrl }}"
                        class="d-block d-inline-block img-cover media-outlet-img overflow-hidden"
-                       style="background-image: url({{ item.mediaOutlet.one().featuredImage.one().url }})"
+                       style="background-image: url({{ transformedItemImage.url ?? null }})"
+                       data-background-image-url-fallback="{{ itemImage }}"
                        target="_blank"></a>
                 </div>
             {% endfor %}
@@ -83,9 +88,13 @@
         </div>
         <div class="row row-cols-1 row-cols-lg-2 align-items-stretch g-4 pt-5 ">
             {% for item in craft.entries().section('pressReleaseEntry').limit(2).orderBy('id DESC').all() %}
+                {% set itemImage = item.featuredImage.one().url  ?? null %}
+                {% set transformedItemImage = itemImage ? craft.imager.transformImage(itemImage, { format: 'webp' }) : null %}
+
                 <div class="col">
                     <a href="#" class="card img-cover img-cover-shadow h-100 overflow-hidden rounded-5"
-                       style="background-image: url({{ item.featuredImage.one() ? item.featuredImage.one().url : '' }})">
+                       style="background-image: url({{ transformedItemImage.url ?? null }})"
+                       data-background-image-url-fallback="{{ itemImage }}">
                         <div class="d-flex flex-column h-100 w-100 px-5">
                             <h3 class="pt-7 mt-5 mb-4 display-6 lh-1 fw-bold text-white w-100">{{ item.title }}</h3>
                         </div>

@@ -1,13 +1,9 @@
 {% extends "base" %}
 
-{% block css %}
-  <link rel="stylesheet" href="/assets/scss/dynamic-pages.css">
-  {# <meta name="description" content="{{ entry.metaDescription }}"> #}
-{% endblock %}
-
 {% block content %}
-  {% set image = entry.headerImage.one() %}
-  <div class="inner-banner ptb-full block-row dark-bg-img lines-btm-warn" {% if image %} style="background-image:url( {{ url(image.getUrl(), {v: image.dateModified.timestamp}) }} )" {% endif %}>
+  {% set image = entry.headerImage.one().url ?? null %}
+  {% set transformedImage = image ? craft.imager.transformImage(image, { format: 'webp' }) : null %}
+  <div class="inner-banner ptb-full block-row dark-bg-img lines-btm-warn" style="background-image:url({{ transformedImage.url ?? null }})" data-background-image-url-fallback="{{ image }}">
     <div class="container">
       <div class="about-half-wrap wrap-dynam">
         <div class="title-row white-txt">
@@ -36,7 +32,14 @@
                 {% case 'textAndImage' %}
                   <div class="row gx-5 flex-lg-row align-items-start mb-5">
                     <div class="col-12 col-sm-3 col-lg-4 order-sm-1">
-                      <img src="{{ block.image.one().url ?? null }}" class="img-fluid">
+                      {% set blockImage = entry.headerImage.one().url ?? null %}
+                      {% set transformedBlockImage = blockImage ? craft.imager.transformImage(blockImage, { format: 'webp' }) : null %}
+                      <img src="{{ block.image.one().url ?? null }}">
+                      <picture class="img-fluid">
+                        <source srcset="{{ transformedBlockImage.url ?? null }}" type="image/webp">
+                        <source srcset="{{ blockImage }}" type="image/jpeg">
+                        <img src="{{ blockImage }}">
+                      </picture>
                     </div>
                     <div class="col-12 col-sm-9 col-lg-8 my-0  order-sm-0">
                       {{ block.text }}
@@ -71,7 +74,12 @@
           {% include 'partials/_sidebar' %}
           {% if entry.type != "aboutPage" %}
             <div class="valrep-aside mt-30">
-              <img class="valrep-img" src="/assets/images/vref-online-valuations.jpg" alt="" />
+              <img  src="" alt="" />
+              <picture class="valrep-img">
+                <source srcset="/assets/images/vref-online-valuations.webp" type="image/webp">
+                <source srcset="/assets/images/vref-online-valuations.jpg" type="image/jpeg">
+                <img src="/assets/images/vref-online-valuations.jpg">
+              </picture>
               <div class="valrep-caption">
                 <p>Subscribe now to get full access to our complete library of current and historical aircraft data.</p>
                 <a href="/shopsubscription/shop"><button type="button" class="btn btn-warning btn-block">View Subscriptions </button></a>

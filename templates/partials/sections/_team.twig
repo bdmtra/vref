@@ -4,17 +4,20 @@
         <p class="lead text-center">{{ entry.teamMembersText|nl2br }}</p>
         {% if entry.teamMembersList %}
             <div class="row g-4 pt-4 pt-lg-5 row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5">
+                {% set imageTransformHandle = 'teamMembersItemImage' %}
                 {% for item in entry.teamMembersList.all() %}
                     <div class="col">
                         <div class="card card-team-member rounded-5 border h-100">
-                            {% set itemImageAsset =  item.profilePicture.one() %}
-                            {% if itemImageAsset %}
-                                <div class="w-100">
-                                    <img src="{{ itemImageAsset.getUrl('teamMembersItemImage') }}"
-                                         class="img-fluid mb-3">
-                                </div>
-                            {% endif %}
-                            <h3 class="h4 mb-3 px-3 text-center lh-sm team-member-title">{{ item.title }}</h3>
+                            {% set itemImage = item.profilePicture.one().getUrl(imageTransformHandle) ?? null %}
+                            {% set transformedItemImage = itemImage ? craft.imager.transformImage(itemImage, { format: 'webp' }) : null %}
+                            <div class="w-100">
+                                <picture class="img-fluid mb-3">
+                                    <source srcset="{{ transformedItemImage.url ?? null }}" type="image/webp">
+                                    <source srcset="{{ itemImage ?? null }}" type="image/jpeg">
+                                    <img src="{{ itemImage ?? null }}">
+                                </picture>
+                            </div>
+                            <h3 class="h4 mt-2 mb-3 px-3 text-center lh-sm team-member-title">{{ item.title }}</h3>
                             <h4 class="h5 mb-3 px-3 text-center lh-sm team-member-designation">{{ item.personDesignation }}</h4>
                             <div>
                                 <a href="{{ item.url }}" class="fs-5 border-bottom">Read Bio</a>

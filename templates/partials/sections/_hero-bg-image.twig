@@ -1,7 +1,7 @@
 {% set backgroundImage = entry.heroBackgroundImage.one().url ?? (imagePlaceholders.heroBackgroundImagePlaceholder.one().url ?? null) %}
-{% set transformedBackgroundImage = craft.imager.transformImage(backgroundImage, { format: 'webp' }) %}
+{% set transformedBackgroundImage = backgroundImage ? craft.imager.transformImage(backgroundImage, { format: 'webp' }) : null %}
 <section>
-    <div class="img-cover img-cover-shadow" style="background-image: url({{ transformedBackgroundImage.url }})">
+    <div class="img-cover img-cover-shadow" style="background-image: url({{ transformedBackgroundImage.url ?? null }})" data-background-image-url-fallback="{{ backgroundImage }}">
         <div class="container py-2 py-sm-3 py-lg-5">
             <div class="row align-items-center py-2 py-sm-3 py-lg-5">
                 <div class="col-12 col-md-10 col-lg-8 align-self-center mx-auto my-4 my-lg-0 text-start py-2 py-sm-3 py-lg-5">

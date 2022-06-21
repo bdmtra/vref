@@ -7,7 +7,8 @@
 {% endif %}
 
 {% for item in items %}
-    {% set itemImage = item.image ? item.image.one() : false %}
+    {% set itemImage = item.image.one().url ?? (imagePlaceholders.listItemImagePlaceholder.one().url ?? null) %}
+    {% set transformedItemImage = itemImage ? craft.imager.transformImage(itemImage, { format: 'webp' }) : null %}
     {% set itemLinkUrl = false %}
     {% set itemLinkEntry = item.linkEntry ? item.linkEntry.one() : false %}
     {% if itemLinkEntry %}
@@ -30,7 +31,7 @@
                         </div>
                     {% else %}
                         <div class="service-img img-cover"
-                             style="background-image: url({{ item.image.one().url ?? (imagePlaceholders.listItemImagePlaceholder.one().url ?? null) }})"></div>
+                             style="background-image: url({{ transformedItemImage.url }})" data-background-image-url-fallback="{{ itemImage }}"></div>
                     {% endif %}
                 </div>
                 <div class="col-12 col-lg-8 my-0 my-lg-5 {% if item.linkPosition == 'side' %} order-0 {% endif %} text-center text-lg-start">

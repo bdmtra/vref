@@ -1,9 +1,5 @@
 {% extends "base" %}
 
-{% block css %}
-  <link rel="stylesheet" href="/assets/scss/contact.css">
-{% endblock %}
-
 {% block content %}
   <div id="content-area">
     {% for block in entry.contactGroup.all() %}
@@ -31,7 +27,17 @@
                 </div>
               </div>
               <div class="main-banner-map">
-                <figure><img src="{{ block.mapImage.one().getUrl() }}" alt="" /></figure>
+                {% set mapImage = block.mapImage.one() %}
+                {% set transformedMapImage = mapImage ? craft.imager.transformImage(mapImage, { format: 'webp' }) : null %}
+                <figure>
+                  {% if mapImage %}
+                    <picture>
+                      <source srcset="{{ transformedMapImage.url ?? null }}" type="image/webp">
+                      <source srcset="{{ mapImage.url }}" type="image/jpeg">
+                      <img src="{{ mapImage.url  }}">
+                    </picture>
+                  {% endif %}
+                </figure>
               </div>
             </div>
           </div>
@@ -44,7 +50,8 @@
         <div class="row gy-4 mb-6 mb-lg-4 justify-content-start">
           {% for block in entry.contactGroup.all() %}
             {% if block.type == "mainBlock" %}
-              <div class="col-6 col-lg-3 office-item" style="background-image: url({{ block.mapImage.one().getUrl() }})">
+              {% set mapImage = block.mapImage.one().url ?? null %}
+              <div class="col-6 col-lg-3 office-item" style="background-image: url({{ mapImage }}">
                 <div class="office-inner">
                   {% if block.stateName %}<h4>{{ block.stateName }}</h4>{% endif %}
                   <address>
@@ -70,7 +77,7 @@
     <div class="sm-block-row dark-bg pb-dbl pt-0">
       <div class="container">
         <div class="card contact-img-card">
-          <figure class="contact-img-figure"><img src="/assets/images/fly.svg" alt="" /></figure>
+          <figure class="contact-img-figure">{{ svg('@webroot/assets/images/fly.svg') }}</figure>
           <div class="card-body">
             <div class="contact-title text-center">
               <h4>Contact Us</h4>

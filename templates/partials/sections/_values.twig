@@ -6,11 +6,13 @@
             <div class="row g-4 pt-4 pt-lg-5 row-cols-1 row-cols-sm-2">
                 {% set imageTransformHandle = 'valuesItemImage' %}
                 {% for item in entry.valuesItems.all() %}
+                    {% set itemImage = item.image.one().getUrl(imageTransformHandle) ?? (imagePlaceholders.listItemImagePlaceholder.one().getUrl(imageTransformHandle) ?? null) %}
+                    {% set transformedItemImage = itemImage ? craft.imager.transformImage(itemImage, { format: 'webp' }) : null %}
                     <div class="col">
                         <div class="card rounded-5 border p-4 p-lg-5 text-center text-lg-start h-100">
                             <div class="row align-items-center mb-3">
                                 <div class="col-4 col-sm-3 col-lg-2 mx-lg-0">
-                                    <div class="value-img" style="background-image: url({{ item.image.one().getUrl(imageTransformHandle) ?? (imagePlaceholders.listItemImagePlaceholder.one().getUrl(imageTransformHandle) ?? null) }})"></div>
+                                    <div class="value-img" style="background-image: url({{ transformedItemImage }})" data-background-image-url-fallback="{{ itemImage }}"></div>
                                 </div>
                                 <div class="col-12 col-lg-8 mx-lg-0">
                                     <h3 class="h4 mt-3 mt-lg-0 mb-0">{{ item.heading|nl2br }}</h3>

@@ -6,7 +6,13 @@
             <span class="bottom-bar"></span>
         </button>
         <div class="lg-container flex">
-            <a href="/" class="logo"><img src="/assets/images/logo.png" alt="VREF"/></a>
+            <a href="/" class="logo">
+                <picture>
+                    <source srcset="/assets/images/logo.webp" type="image/webp">
+                    <source srcset="/assets/images/logo.png" type="image/jpeg">
+                    <img src="/assets/images/logo.png" alt="VREF">
+                </picture>
+            </a>
             <div class="right-main-nav flex">
                 <nav>
                     <div>
@@ -43,19 +49,3 @@
         </div>
     </div>
 </header>
-
-{# Begin Login/Signup/Forgot password/Reset password Section #}
-
-<div class="rsidebar-wrap">
-    <div class="rsidebar-inner flex">
-        <div class="rsidebar-header">
-            <a class="close-rsidebar rsidebar-toggle"><img src="/assets/images/close-icon-white.png" alt=""/></a>
-        </div>
-        <div class="rsidebar-content flex">
-            <app-login class="form-wrap"></app-login>
-            <app-sign-up class="form-wrap"></app-sign-up>
-            <app-forgot-password class="form-wrap"></app-forgot-password>
-            <app-reset-password class="form-wrap"></app-reset-password>
-        </div>
-    </div>
-</div>

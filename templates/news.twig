@@ -66,10 +66,19 @@
                   <div href="javascript:void(0);" class="artical-inner flex">
                     <figure>
                       {% set image = article.headerImage.one() %}
+                      {% set transformedImage = image ? craft.imager.transformImage(image, { format: 'webp' }) : null %}
                       {% if image %}
-                        <img src="{{ url(image.getUrl(), {v: image.dateModified.timestamp}) }}" alt="" />
+                        <picture>
+                          <source srcset="{{ transformedImage.url ?? null }}" type="image/webp">
+                          <source srcset="{{ image }}" type="image/jpeg">
+                          <img src="{{ image }}">
+                        </picture>
                       {% else %}
-                        <img src="/assets/images/inner-banner-bg.png" alt=""/>
+                        <picture>
+                          <source srcset="/assets/images/inner-banner-bg.webp" type="image/webp">
+                          <source srcset="/assets/images/inner-banner-bg.png" type="image/jpeg">
+                          <img src="/assets/images/inner-banner-bg.png">
+                        </picture>
                       {% endif %}
                     </figure>
                     <p>

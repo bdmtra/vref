@@ -1,104 +1,130 @@
 {% extends "base" %}
 
 {% block content %}
-  {% do craft.entryCount.increment(entry.id) %}
-  {% cache %}
-  {% set image = entry.headerImage.one() %}
-  {% set pageurl = craft.app.request.absoluteUrl %}
-  <div class="inner-banner lines-btm-bdr">
-    <figure class="full-img">
-      {% if image %}
-        <img src="{{ url(image.getUrl(), {v: image.dateModified.timestamp}) }}" alt="" />
-      {% else %}
-        <img src="/assets/images/inner-banner-bg.png" alt=""/>
-      {% endif %}
-    </figure>
-  </div>
-  <div class="sm-block-row white-bg">
-    <div class="container">
-      <div class="row article-row">
-        <div class="col-12 col-lg-9 flex-content-main">
-          <div class="news-details-wrap ">
-            <h3>{{ entry.pageTitle }}</h3>
-            <div class="post-by">
-              <a class="post-owner" href="/about/{{ entry.author.lastName }}">By {{ entry.author.fullName }}</a>
-              <p>
-                {% if entry.originalPostedDate %} {{ entry.originalPostedDate|date("long") }}
-                {% else %} {{ entry.postDate|date("long") }} {% endif %}
-                {% if entry.category %} <a href="javascript:void(0);" style="text-transform:uppercase;">{{ entry.category.label }}</a> {% endif %}
-              </p>
-            </div>
-            <p>{{ entry.richText }}</p>
-            <div class="social-media-wrap my-3">
-              <label for="">Share this story, choose your platform!</label>
-              <ul class="social-media row d-flex py-0">
-                <li class="col-auto d-flex">
-                  <a class="d-flex align-items-center" shareButton="facebook" href="{{ craft.simpleSharing.link(pageurl, 'facebook') }}">
-                    <img src="/assets/images/fb-gray.png" alt="" />
-                  </a>
-                </li>
-                <li class="col-auto d-flex">
-                  <a class="d-flex align-items-center" shareButton="linkedin" href="{{ craft.simpleSharing.link(pageurl, 'linkedin') }}">
-                    <img src="/assets/images/linkedin-gray.png" alt="" />
-                  </a>
-                </li>
-                <li class="col-auto d-flex">
-                  <a class="d-flex align-items-center" shareButton="twitter" href="{{ craft.simpleSharing.link(pageurl, 'twitter') }}">
-                    <img src="/assets/images/twitt-gray.png" alt=""/>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
+    {% do craft.entryCount.increment(entry.id) %}
+    {% cache %}
+        {% set image = entry.headerImage.one().url %}
+        {% set transformedImage = image ? craft.imager.transformImage(image, { format: 'webp' }) : null %}
+        {% set pageurl = craft.app.request.absoluteUrl %}
+        <div class="inner-banner lines-btm-bdr">
+            <figure class="full-img">
+                {% if image %}
+                    <picture>
+                        <source srcset="{{ transformedImage.url ?? null }}" type="image/webp">
+                        <source srcset="{{ image }}" type="image/jpeg">
+                        <img src="{{ image }}">
+                    </picture>
+                {% else %}
+                    <picture>
+                        <source srcset="/assets/images/inner-banner-bg.webp" type="image/webp">
+                        <source srcset="/assets/images/inner-banner-bg.png" type="image/jpeg">
+                        <img src="/assets/images/inner-banner-bg.png">
+                    </picture>
+                {% endif %}
+            </figure>
         </div>
-        <aside class="col-12 col-lg-3 flex-content-aside">
-          <div class="news-search-wrap mt-10">
-            <form class="form-group" action="{{ url('/news') }}">
-              <div class="news-search-inner">
-                <input class="form-control"  type="search" name="q" aria-label="Search" placeholder="Search News" id="searchInput" />
-                <button type="submit">Go</button>
-              </div>
-            </form>
-          </div>
-          <div class="artical-wrap">
-            <h6 class="aside-title">Recent News</h6>
-            <div class="artical-list">
-              {% for article in craft.entries.section('newsArticles').limit(5).all() %}
-                <div class="artical-item">
-                  <div href="javascript:void(0);" class="artical-inner flex">
-                    <figure>
-                      {% set image = article.headerImage.one() %}
-                      {% if image %}
-                        <img src="{{ url(image.getUrl(), {v: image.dateModified.timestamp}) }}" alt="" />
-                      {% else %}
-                        <img src="/assets/images/inner-banner-bg.png" alt=""/>
-                      {% endif %}
-                    </figure>
-                    {% if entry.originalPostedDate %}
-                      <p><a href="/news/{{article.slug}}">{{ article.pageTitle }}<span>{{ article.originalPostedDate|date("long") }}</span></a></p>
-                    {% else %}
-                      <p><a href="/news/{{article.slug}}">{{ article.pageTitle }}<span>{{ article.postDate|date("long") }}</span></a></p>
-                    {% endif %}
-                  </div>
+        <div class="sm-block-row white-bg">
+            <div class="container">
+                <div class="row article-row">
+                    <div class="col-12 col-lg-8 flex-content-main">
+                        <div class="news-details-wrap ">
+                            <h3>{{ entry.pageTitle }}</h3>
+                            <div class="post-by">
+                                <a class="post-owner"
+                                   href="/about/{{ entry.author.lastName }}">By {{ entry.author.fullName }}</a>
+                                <p>
+                                    {% if entry.originalPostedDate %} {{ entry.originalPostedDate|date("long") }}
+                                    {% else %} {{ entry.postDate|date("long") }} {% endif %}
+                                    {% if entry.category %} <a href="javascript:void(0);"
+                                                               style="text-transform:uppercase;">{{ entry.category.label }}</a> {% endif %}
+                                </p>
+                            </div>
+                            <p>{{ entry.richText }}</p>
+                            <div class="social-media-wrap my-3">
+                                <label for="">Share this story, choose your platform!</label>
+                                <ul class="social-media row d-flex py-0">
+                                    <li class="col-auto d-flex">
+                                        <a class="d-flex align-items-center" shareButton="facebook"
+                                           href="{{ craft.simpleSharing.link(pageurl, 'facebook') }}">
+                                            <img src="/assets/images/fb-gray.png" alt=""/>
+                                        </a>
+                                    </li>
+                                    <li class="col-auto d-flex">
+                                        <a class="d-flex align-items-center" shareButton="linkedin"
+                                           href="{{ craft.simpleSharing.link(pageurl, 'linkedin') }}">
+                                            <img src="/assets/images/linkedin-gray.png" alt=""/>
+                                        </a>
+                                    </li>
+                                    <li class="col-auto d-flex">
+                                        <a class="d-flex align-items-center" shareButton="twitter"
+                                           href="{{ craft.simpleSharing.link(pageurl, 'twitter') }}">
+                                            <img src="/assets/images/twitt-gray.png" alt=""/>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <aside class="col-12 col-lg-4 flex-content-aside">
+                        <div class="news-search-wrap mt-10">
+                            <form class="form-group" action="{{ url('/news') }}">
+                                <div class="news-search-inner">
+                                    <input class="form-control" type="search" name="q" aria-label="Search"
+                                           placeholder="Search News" id="searchInput"/>
+                                    <button type="submit">Go</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="artical-wrap">
+                            <h6 class="aside-title">Recent News</h6>
+                            <div class="artical-list">
+                                {% for article in craft.entries.section('newsArticles').limit(5).all() %}
+                                    <div class="artical-item">
+                                        <div href="javascript:void(0);" class="artical-inner flex">
+                                            <figure>
+                                                {% set image = article.headerImage.one().url %}
+                                                {% if image %}
+                                                    <picture>
+                                                        <source srcset="{{ transformedImage.url ?? null }}" type="image/webp">
+                                                        <source srcset="{{ image }}" type="image/jpeg">
+                                                        <img src="{{ image }}">
+                                                    </picture>
+                                                {% else %}
+                                                    <picture>
+                                                        <source srcset="/assets/images/inner-banner-bg.webp" type="image/webp">
+                                                        <source srcset="/assets/images/inner-banner-bg.png" type="image/jpeg">
+                                                        <img src="/assets/images/inner-banner-bg.png">
+                                                    </picture>
+                                                {% endif %}
+                                            </figure>
+                                            {% if entry.originalPostedDate %}
+                                                <p><a href="/news/{{ article.slug }}">{{ article.pageTitle }}
+                                                        <span>{{ article.originalPostedDate|date("long") }}</span></a>
+                                                </p>
+                                            {% else %}
+                                                <p><a href="/news/{{ article.slug }}">{{ article.pageTitle }}
+                                                        <span>{{ article.postDate|date("long") }}</span></a></p>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        {% set allEntries = craft.entries().section('newsArticles').all() %}
+                        <div class="archives-wrap">
+                            <h6 class="aside-title">Archives</h6>
+                            <ul class="archives-list">
+                                {% for date, entries in allEntries|group("originalPostedDate|date('F Y')") %}
+                                    <li><a href="/news?archiveFilter={{ date }}">{{ date }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        {% include 'partials/_sidebar' %}
+                    </aside>
                 </div>
-              {% endfor %}
             </div>
-          </div>
-          {% set allEntries = craft.entries().section('newsArticles').all() %}
-          <div class="archives-wrap">
-            <h6 class="aside-title">Archives</h6>
-            <ul class="archives-list">
-              {% for date, entries in allEntries|group("originalPostedDate|date('F Y')") %}
-                <li><a href="/news?archiveFilter={{date}}">{{ date }}</a></li>
-              {% endfor %}
-            </ul>
-          </div>
-          {% include 'partials/_sidebar' %}
-        </aside>
-      </div>
-    </div>
-  </div>
-  {# <div class="white-bg">
+        </div>
+        {# <div class="white-bg">
     <div class="lg-container ">
       <div class="new-news-wrap flex">
         <div class="new-news-item">
@@ -115,5 +141,5 @@
       </div>
     </div>
   </div> #}
-  {% endcache %}
+    {% endcache %}
 {% endblock %}

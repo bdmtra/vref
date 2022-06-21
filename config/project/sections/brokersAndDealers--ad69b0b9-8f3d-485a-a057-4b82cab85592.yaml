@@ -18,6 +18,6 @@ siteSettings:
   d66119ad-8f5f-41e8-8169-49f2c51c36b6: # VREF Aircraft Values & Appraisals
     enabledByDefault: true
     hasUrls: true
-    template: solution.twig
+    template: solution
     uriFormat: brokers-and-dealers
 type: single

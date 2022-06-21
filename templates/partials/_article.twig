@@ -1,6 +1,7 @@
 {% if article is defined %}
 
-  {% set image = article.headerImage.one() %}
+  {% set image = article.headerImage.one().url ?? null %}
+  {% set transformedImage = image ? craft.imager.transformImage(image, { format: 'webp' }) : null %}
   <div class="card news-item">
     {% if article.originalPostedDate %}
       <p class="news-post-date"><strong>{{ article.originalPostedDate|date("d") }}</strong>{{ article.originalPostedDate|date("M") }}</p>
@@ -9,9 +10,17 @@
     {% endif %}
     <figure>
       {% if image %}
-        <img src="{{ url(image.getUrl(), {v: image.dateModified.timestamp}) }}" alt="" />
+        <picture>
+          <source srcset="{{ transformedImage.url ?? null }}" type="image/webp">
+          <source srcset="{{ image }}" type="image/jpeg">
+          <img src="{{ image }}">
+        </picture>
       {% else %}
-        <img src="/assets/images/inner-banner-bg.png" alt=""/>
+        <picture>
+          <source srcset="/assets/images/inner-banner-bg.webp" type="image/webp">
+          <source srcset="/assets/images/inner-banner-bg.png" type="image/jpeg">
+          <img src="/assets/images/inner-banner-bg.png">
+        </picture>
       {% endif %}
       <span class="news-lbl">{{ article.category.label }}</span>
     </figure>
@@ -31,7 +40,13 @@
         {% endif %}
       </div>
       <div class="btn-group">
-        <a class="btn-txt btn-arrow btn-btm-bdr" href="news/{{article.slug}}">Read more <img alt="" src="/assets/images/next-arrow.png"/></a>
+        <a class="btn-txt btn-arrow btn-btm-bdr" href="news/{{article.slug}}">Read more
+          <picture>
+            <source srcset="/assets/images/next-arrow.webp" type="image/webp">
+            <source srcset="/assets/images/next-arrow.png" type="image/jpeg">
+            <img src="/assets/images/next-arrow.png">
+          </picture>
+        </a>
       </div>
     </div>
   </div>

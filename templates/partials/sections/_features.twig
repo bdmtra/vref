@@ -10,8 +10,10 @@
             <div class="row gy-4 gx-lg-4 gy-lg-5 mt-0 mb-3 row-cols-1 row-cols-md-2 row-cols-lg-{{ columns }}">
                 {% for item in entry.featuresItems.all() %}
                     <div class="col">
+                        {% set itemImage = item.image.one().getUrl(imageTransformHandle) ?? (imagePlaceholders.listItemImagePlaceholder.one().getUrl(imageTransformHandle) ?? null) %}
+                        {% set transformedItemImage = itemImage ? craft.imager.transformImage(itemImage, { format: 'webp' }) : null %}
                         <div class="feature-img img-cover"
-                             style="background-image: url({{ item.image.one().getUrl(imageTransformHandle) ?? (imagePlaceholders.listItemImagePlaceholder.one().getUrl(imageTransformHandle) ?? null) }})"></div>
+                             style="background-image: url({{ transformedItemImage.url ?? null }})" data-background-image-url-fallback="{{ itemImage }}"></div>
                         <h3 class="h4 mt-3">{{ item.heading|nl2br }}</h3>
                         <p class="lead">{{ item.text|nl2br }}</p>
                         {% set itemLinkEntry = item.linkEntry ? item.linkEntry.one() : false %}

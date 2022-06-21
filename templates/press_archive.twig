@@ -14,10 +14,15 @@
         {% for page in pageEntries %}
             <div class="mb-5">
                 <div class="row g-4">
-                    {% set image = page.featuredImage ? page.featuredImage.one() : false  %}
+                    {% set image = page.featuredImage.one().getUrl('thumb') ?? null %}
+                    {% set transformedImage = image ? craft.imager.transformImage(image, { format: 'webp' }) : null %}
                     {% if image %}
                     <div class="col-md-4">
-                        <img src="{{ image.getUrl('thumb') }}" class="img-fluid" alt="{{ page.title }}">
+                        <picture class="img-fluid">
+                            <source srcset="{{ transformedImage.url ?? null }}" type="image/webp">
+                            <source srcset="{{ image }}" type="image/jpeg">
+                            <img src="{{ image }}">
+                        </picture>
                     </div>
                     <div class="col-md-8">
                     {% else %}

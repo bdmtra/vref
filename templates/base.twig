@@ -28,7 +28,7 @@
         })(window, document, 'script', 'dataLayer', 'GTM-T394DJP');</script>
 </head>
 
-<body class="{% if entry is defined %}entry-{{ entry.slug}}{% endif %}">
+<body class="{% if entry is defined %}entry-{{ entry.slug}}{% endif %} template-{{ craft.app.requestedParams.template }}">
 <noscript>
     <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T394DJP" height="0" width="0"
             style="display:none;visibility:hidden"></iframe>

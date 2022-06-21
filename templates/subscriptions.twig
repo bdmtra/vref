@@ -1,12 +1,16 @@
 {% extends "base" %}
 
-{% block css %}
-<link rel="stylesheet" href="/assets/scss/vrefstore.css">
-{% endblock %}
+{% macro tickImage() %}
+  <picture>
+    <source srcset="/assets/images/tick.webp" type="image/webp">
+    <source srcset="/assets/images/tick.png" type="image/jpeg">
+    <img src="/assets/images/tick.png">
+  </picture>
+{% endmacro %}
 
 {% block content %}
 <div class="green-strip"></div>
-<div class="inner-banner sm-block-row dark-bg-img lines-btm-warn fix-banner" style="background-image: url(/assets/images/shopsub-bg.png);">
+<div class="inner-banner sm-block-row dark-bg-img lines-btm-warn fix-banner" style="background-image: url(/assets/images/shopsub-bg.webp);" data-background-image-url-fallback="/assets/images/shopsub-bg.png">
   <div class="container">
     <div class="title-row text-center white-txt">
       <h1>VREF Online & Book Subscriptions</h1>
@@ -101,7 +105,11 @@
             </div>
             <div class="inline-col-4">
               <div class="booksub-right">
-                <img alt="" class="mr-0" src="https://vrefprodbucketnew.blob.core.windows.net/media/page/2/vrefbooks-subscription.jpg" />
+                <picture class="mr-0" >
+                  <source srcset="/assets/images/vrefbooks-subscription.webp" type="image/webp">
+                  <source srcset="/assets/images/vrefbooks-subscription.jpg" type="image/jpeg">
+                  <img src="/assets/images/vrefbooks-subscription.jpg">
+                </picture>
               </div>
             </div>
           </div>
@@ -189,96 +197,96 @@
                   <p>Access To The Entire Database Of Aircraft Models</p>
                 </div>
                 <div class="titem titem-3">&nbsp;</div>
-                <div class="titem titem-3"><i class="checked-icon"><img alt="" src="/assets/images/tick.png"></i></div>
-                <div class="titem titem-3"><i class="checked-icon"><img alt="" src="/assets/images/tick.png"></i></div>
+                <div class="titem titem-3"><i class="checked-icon">{{  _self.tickImage() }}</i></div>
+                <div class="titem titem-3"><i class="checked-icon">{{  _self.tickImage() }}</i></div>
               </div>
               <div class="titem-row">
                 <div class="titem full-titem">
                   <p>Create Unlimited Valuation Custom Reports With Save, Present Value, And Export Capabilities</p>
                 </div>
                 <div class="titem titem-3">&nbsp;</div>
-                <div class="titem titem-3"><i class="checked-icon"><img alt="" src="/assets/images/tick.png"></i></div>
-                <div class="titem titem-3"><i class="checked-icon"><img alt="" src="/assets/images/tick.png"></i></div>
+                <div class="titem titem-3"><i class="checked-icon">{{  _self.tickImage() }}</i></div>
+                <div class="titem titem-3"><i class="checked-icon">{{  _self.tickImage() }}</i></div>
               </div>
               <div class="titem-row">
                 <div class="titem full-titem">
                   <p>Full Access To Historical Reference Charts, Analytic Charts, And Market Data</p>
                 </div>
                 <div class="titem titem-3">&nbsp;</div>
-                <div class="titem titem-3"><i class="checked-icon"><img alt="" src="/assets/images/tick.png"></i></div>
-                <div class="titem titem-3"><i class="checked-icon"><img alt="" src="/assets/images/tick.png"></i></div>
+                <div class="titem titem-3"><i class="checked-icon">{{  _self.tickImage() }}</i></div>
+                <div class="titem titem-3"><i class="checked-icon">{{  _self.tickImage() }}</i></div>
               </div>
               <div class="titem-row">
                 <div class="titem full-titem">
                   <p>See The Entire VREF Avionics Database - The Largest Of Its Kind</p>
                 </div>
                 <div class="titem titem-3">&nbsp;</div>
-                <div class="titem titem-3"><i class="checked-icon"><img alt="" src="/assets/images/tick.png"></i></div>
-                <div class="titem titem-3"><i class="checked-icon"><img alt="" src="/assets/images/tick.png"></i></div>
+                <div class="titem titem-3"><i class="checked-icon">{{  _self.tickImage() }}</i></div>
+                <div class="titem titem-3"><i class="checked-icon">{{  _self.tickImage() }}</i></div>
               </div>
               <div class="titem-row">
                 <div class="titem full-titem">
                   <p>View The Modification And Conversion Database That Includes Popular STCs And Optional Equipment – The Largest Of Its Kind</p>
                 </div>
                 <div class="titem titem-3">&nbsp;</div>
-                <div class="titem titem-3"><i class="checked-icon"><img alt="" src="/assets/images/tick.png"></i></div>
-                <div class="titem titem-3"><i class="checked-icon"><img alt="" src="/assets/images/tick.png"></i></div>
+                <div class="titem titem-3"><i class="checked-icon">{{  _self.tickImage() }}</i></div>
+                <div class="titem titem-3"><i class="checked-icon">{{  _self.tickImage() }}</i></div>
               </div>
               <div class="titem-row">
                 <div class="titem full-titem">
                   <p>VREF Aircraft Index's By Cabin Classification</p>
                 </div>
                 <div class="titem titem-3">&nbsp;</div>
-                <div class="titem titem-3"><i class="checked-icon"><img alt="" src="/assets/images/tick.png"></i></div>
-                <div class="titem titem-3"><i class="checked-icon"><img alt="" src="/assets/images/tick.png"></i></div>
+                <div class="titem titem-3"><i class="checked-icon">{{  _self.tickImage() }}</i></div>
+                <div class="titem titem-3"><i class="checked-icon">{{  _self.tickImage() }}</i></div>
               </div>
               <div class="titem-row">
                 <div class="titem full-titem">
                   <p>VREF Custom Reports </p>
                 </div>
                 <div class="titem titem-3">&nbsp;</div>
-                <div class="titem titem-3"><i class="checked-icon"><img alt="" src="/assets/images/tick.png"></i></div>
-                <div class="titem titem-3"><i class="checked-icon"><img alt="" src="/assets/images/tick.png"></i></div>
+                <div class="titem titem-3"><i class="checked-icon">{{  _self.tickImage() }}</i></div>
+                <div class="titem titem-3"><i class="checked-icon">{{  _self.tickImage() }}</i></div>
               </div>
               <div class="titem-row">
                 <div class="titem full-titem">
                   <p>Historical Airworthiness Directives</p>
                 </div>
                 <div class="titem titem-3">&nbsp;</div>
-                <div class="titem titem-3"><i class="checked-icon"><img alt="" src="/assets/images/tick.png"></i></div>
-                <div class="titem titem-3"><i class="checked-icon"><img alt="" src="/assets/images/tick.png"></i></div>
+                <div class="titem titem-3"><i class="checked-icon">{{  _self.tickImage() }}</i></div>
+                <div class="titem titem-3"><i class="checked-icon">{{  _self.tickImage() }}</i></div>
               </div>
               <div class="titem-row">
                 <div class="titem full-titem">
                   <p>Interior And Exterior Condition Modifier Tool</p>
                 </div>
                 <div class="titem titem-3">&nbsp;</div>
-                <div class="titem titem-3"><i class="checked-icon"><img alt="" src="/assets/images/tick.png"></i></div>
-                <div class="titem titem-3"><i class="checked-icon"><img alt="" src="/assets/images/tick.png"></i></div>
+                <div class="titem titem-3"><i class="checked-icon">{{  _self.tickImage() }}</i></div>
+                <div class="titem titem-3"><i class="checked-icon">{{  _self.tickImage() }}</i></div>
               </div>
               <div class="titem-row">
                 <div class="titem full-titem">
                   <p>Engine Conversion Tool</p>
                 </div>
                 <div class="titem titem-3">&nbsp;</div>
-                <div class="titem titem-3"><i class="checked-icon"><img alt="" src="/assets/images/tick.png"></i></div>
-                <div class="titem titem-3"><i class="checked-icon"><img alt="" src="/assets/images/tick.png"></i></div>
+                <div class="titem titem-3"><i class="checked-icon">{{  _self.tickImage() }}</i></div>
+                <div class="titem titem-3"><i class="checked-icon">{{  _self.tickImage() }}</i></div>
               </div>
               <div class="titem-row">
                 <div class="titem full-titem">
                   <p>Live Chat Support (Ask The Appraiser)</p>
                 </div>
                 <div class="titem titem-3">&nbsp;</div>
-                <div class="titem titem-3"><i class="checked-icon"><img alt="" src="/assets/images/tick.png"></i></div>
-                <div class="titem titem-3"><i class="checked-icon"><img alt="" src="/assets/images/tick.png"></i></div>
+                <div class="titem titem-3"><i class="checked-icon">{{  _self.tickImage() }}</i></div>
+                <div class="titem titem-3"><i class="checked-icon">{{  _self.tickImage() }}</i></div>
               </div>
               <div class="titem-row">
                 <div class="titem full-titem">
                   <p>Retail And Wholesale Values</p>
                 </div>
                 <div class="titem titem-3">&nbsp;</div>
-                <div class="titem titem-3"><i class="checked-icon"><img alt="" src="/assets/images/tick.png"></i></div>
-                <div class="titem titem-3"><i class="checked-icon"><img alt="" src="/assets/images/tick.png"></i></div>
+                <div class="titem titem-3"><i class="checked-icon">{{  _self.tickImage() }}</i></div>
+                <div class="titem titem-3"><i class="checked-icon">{{  _self.tickImage() }}</i></div>
               </div>
               <div class="titem-row">
                 <div class="titem full-titem">
@@ -294,7 +302,7 @@
                 </div>
                 <div class="titem titem-3">&nbsp;</div>
                 <div class="titem titem-3">&nbsp;</div>
-                <div class="titem titem-3"><i class="checked-icon"><img alt="" src="/assets/images/tick.png"></i></div>
+                <div class="titem titem-3"><i class="checked-icon">{{  _self.tickImage() }}</i></div>
               </div>
               <div class="titem-row">
                 <div class="titem full-titem">
@@ -302,7 +310,7 @@
                 </div>
                 <div class="titem titem-3">&nbsp;</div>
                 <div class="titem titem-3">&nbsp;</div>
-                <div class="titem titem-3"><i class="checked-icon"><img alt="" src="/assets/images/tick.png"></i></div>
+                <div class="titem titem-3"><i class="checked-icon">{{  _self.tickImage() }}</i></div>
               </div>
               <div class="titem-row">
                 <div class="titem full-titem">
@@ -310,7 +318,7 @@
                 </div>
                 <div class="titem titem-3">&nbsp;</div>
                 <div class="titem titem-3">&nbsp;</div>
-                <div class="titem titem-3"><i class="checked-icon"><img alt="" src="/assets/images/tick.png"></i></div>
+                <div class="titem titem-3"><i class="checked-icon">{{  _self.tickImage() }}</i></div>
               </div>
               <div class="titem-row">
                 <div class="titem full-titem">
@@ -342,7 +350,7 @@
                 </div>
                 <div class="titem titem-3">&nbsp;</div>
                 <div class="titem titem-3">&nbsp;</div>
-                <div class="titem titem-3"><i class="checked-icon"><img alt="" src="/assets/images/tick.png"></i></div>
+                <div class="titem titem-3"><i class="checked-icon">{{  _self.tickImage() }}</i></div>
               </div>
             </div>
             <div class="titem-row footer-titems">

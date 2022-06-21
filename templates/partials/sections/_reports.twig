@@ -4,15 +4,17 @@
         <p class="lead mb-4">{{ entry.reportsText|nl2br }}</p>
         {% if entry.reportsItems %}
             <div class="row">
-                <div class="col col-lg-10">
-                    <div class="row g-4 row-cols-1 row-cols-lg-2">
+                <div class="col col-lg-10 offset-lg-1">
+                    <div class="row g-4 row-cols-1 row-cols-lg-2 justify-content-center">
                         {% set imageTransformHandle = 'reportsItemImage' %}
                         {% for item in entry.reportsItems.all() %}
+                            {% set itemImage = item.image.one().getUrl(imageTransformHandle) ?? (imagePlaceholders.listItemImagePlaceholder.one().getUrl(imageTransformHandle) ?? null) %}
+                            {% set transformedItemImage = itemImage ? craft.imager.transformImage(itemImage, { format: 'webp' }) : null %}
                             <div class="col">
                                 <div class="card rounded-5 border p-4 p-md-5 m-0">
                                     <div class="w-25">
                                         <div class="report-img img-cover"
-                                             style="background-image: url({{ item.image.one().getUrl(imageTransformHandle) ?? (imagePlaceholders.listItemImagePlaceholder.one().getUrl(imageTransformHandle) ?? null) }})"></div>
+                                             style="background-image: url({{ transformedItemImage.url ?? null }})" data-background-image-url-fallback="{{ itemImage }}"></div>
                                     </div>
                                     <h3 class="h4 mt-3">{{ item.heading|nl2br }}</h3>
                                     <p class="lead">{{ item.text|nl2br }}</p>
