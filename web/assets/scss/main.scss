@@ -4589,6 +4589,9 @@ h3.subpricing-head {
   width: 80%;
 }
 
+body section:nth-of-type(even) .testi-card{
+  background: #fff;
+}
 .testi-card {
   position: relative;
   width: 100%;
@@ -5108,14 +5111,9 @@ input[type='range']::-webkit-slider-thumb {
   font-weight: 400 !important;
 }
 
-body > section {
-  border-top: 1px solid $brand-color !important;
+body section:nth-of-type(even) {
+  background: #f4f7fb;
 }
-
-body > .rsidebar-wrap + section {
-  border-top: 0 !important;
-}
-
 .lead {
   font-weight: 400;
 }
