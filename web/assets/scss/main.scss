@@ -5186,3 +5186,13 @@ body section:nth-of-type(even) {
 .slick-dots {
   bottom: -36px;
 }
+.form-contact {
+  label {
+    display: block;
+    text-align: left;
+    margin-bottom: 8px;
+  }
+  .form-group + .form-group {
+    margin-top: 1rem;
+  }
+}

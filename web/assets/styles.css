@@ -18962,6 +18962,15 @@ body section:nth-of-type(even) {
   bottom: -36px;
 }
 
+.form-contact label {
+  display: block;
+  text-align: left;
+  margin-bottom: 8px;
+}
+.form-contact .form-group + .form-group {
+  margin-top: 1rem;
+}
+
 p {
   margin-bottom: 0;
 }

@@ -104,5 +104,36 @@
         </div>
     </div>
 </section>
+<section>
+    <div class="container p-3 p-md-4 p-lg-5 text-center">
+        <h2 class="display-6 fw-bold lh-sm mb-4">{{ entry.pressRoomFormTitle|nl2br }}</h2>
+        <div class="row">
+            <div class="col-12 col-lg-6 offset-lg-3">
+                <form class="form-contact">
+                    <div class="form-group">
+                        <label for="press-room-form-first-name">First Name</label>
+                        <input type="text" class="form-control" id="press-room-form-first-name">
+                    </div>
+                    <div class="form-group">
+                        <label for="press-room-form-last-name">Last Name</label>
+                        <input type="text" class="form-control" id="press-room-form-last-name">
+                    </div>
+                    <div class="form-group">
+                        <label for="press-room-form-email-address">Email Address</label>
+                        <input type="email" class="form-control" id="press-room-form-email-address">
+                    </div>
+                    <div class="form-group">
+                        <label for="press-room-form-company">Media Outlet</label>
+                        <input type="text" class="form-control" id="press-room-form-company">
+                    </div>
+                    <p class="text-start my-3">{{ entry.pressRoomFormText|nl2br }}</p>
+                    <div class="form-group mt-3">
+                        <buttton type="submit" class="btn btn-lg btn-brand w-100">Sign Up</buttton>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
 
 {% endblock %}

@@ -197,8 +197,12 @@ fieldLayouts:
             type: craft\fieldlayoutelements\CustomField
             warning: null
             width: 100
+        name: Certificates
+        sortOrder: 4
+      -
+        elements:
           -
-            fieldUid: bc634f9f-b74c-465a-859c-6b0754141a97 # Certificates Pricing Items
+            fieldUid: 8c606104-3bda-4aca-8d8a-0df389eda91a # Consulting Pricing Title
             instructions: null
             label: null
             required: false
@@ -206,12 +210,17 @@ fieldLayouts:
             type: craft\fieldlayoutelements\CustomField
             warning: null
             width: 100
-        name: Certificates
-        sortOrder: 4
-      -
-        elements:
           -
-            fieldUid: 8c606104-3bda-4aca-8d8a-0df389eda91a # Consulting Pricing Title
+            fieldUid: 8d5172a7-ea0b-4a38-baa0-49c23f4df77d # Consulting Pricing Text
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 5e0e4a47-fd44-454a-a9a6-3a0b0c951d78 # Consulting Pricing Form Text
             instructions: null
             label: null
             required: false
