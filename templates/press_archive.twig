@@ -51,17 +51,19 @@
                 </div>
             </div>
         {% endfor %}
-        {{ craft.pagination.render(pageInfo, 'elipsis', {
-            ulClass: 'pagination justify-content-center pt-4',
-            liClass: 'page-item',
-            aClass: 'page-link fs-5 py-2 px-3',
-            activeClass: 'active',
-            includeFirstLast: true,
-            includePrevNext: true,
-            prevText: '<i class="fa fa-angle-double-left" aria-hidden="true"></i> Prev',
-            nextText: 'Next <i class="fa fa-angle-double-right" aria-hidden="true"></i>',
-            pageRange: 10
-        }) }}
+        {% if pageInfo.totalPages > 1 %}
+            {{ craft.pagination.render(pageInfo, 'elipsis', {
+                ulClass: 'pagination justify-content-center pt-4',
+                liClass: 'page-item',
+                aClass: 'page-link fs-6 py-2 px-3',
+                activeClass: 'active',
+                includeFirstLast: true,
+                includePrevNext: true,
+                prevText: '<i class="fa fa-angle-double-left" aria-hidden="true"></i> Prev',
+                nextText: 'Next <i class="fa fa-angle-double-right" aria-hidden="true"></i>',
+                pageRange: 10
+            }) }}
+        {% endif %}
     </div>
 
 {% endblock %}
