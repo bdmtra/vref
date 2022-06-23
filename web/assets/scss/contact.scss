@@ -1,200 +1,221 @@
-@import "_variables";
+.template-contact {
+  .office-item {
+    background-position: left top;
+    background-size: contain;
+    background-repeat: no-repeat;
+    min-height: 165px;
 
-.office-item {
-  background-position: left top;
-  background-size: contain;
-  background-repeat: no-repeat;
-  min-height: 165px;
-  h4 {
-    @media (min-width: 380px) {
-      padding-left: 30px;
+    h4 {
+      @media (min-width: 380px) {
+        padding-left: 30px;
+      }
+      margin-bottom: 10px;
     }
-    margin-bottom: 10px;
-  }
-  address {
-    padding-left: 0px;
-    text-indent: 22px;
-    @media (min-width: 380px) {
-      padding-left: 30px;
-      text-indent: 0px;
+
+    address {
+      padding-left: 0px;
+      text-indent: 22px;
+      @media (min-width: 380px) {
+        padding-left: 30px;
+        text-indent: 0px;
+      }
+      margin-bottom: 15px;
+      display: block;
+      color: #222324;
+      font-size: 14px;
+      letter-spacing: -0.009em;
+      line-height: 24px;
+      font-weight: 400;
+      font-style: normal;
+      background-image: url("/assets/images/map-marker.svg");
+      background-repeat: no-repeat;
+      background-position: 0 2px;
     }
-    margin-bottom: 15px;
-    display: block;
-    color: #222324;
-    font-size: 14px;
-    letter-spacing: -0.009em;
-    line-height: 24px;
-    font-weight: 400;
-    font-style: normal;
-    background-image: url("/assets/images/map-marker.svg");
-    background-repeat: no-repeat;
-    background-position: 0 2px;
-  }
-  .call-item {
-    padding-left: 30px;
-    margin: 0 auto;
-    background-image: url("/assets/images/call-icon.svg");
-    background-repeat: no-repeat;
-    background-position: 0 5px;
-    line-height: 24px;
-    font-size: 14px;
-    color: #222324;
-    a {
+
+    .call-item {
+      padding-left: 30px;
+      margin: 0 auto;
+      background-image: url("/assets/images/call-icon.svg");
+      background-repeat: no-repeat;
+      background-position: 0 5px;
       line-height: 24px;
       font-size: 14px;
       color: #222324;
-    }
-  }
-}
 
-.contact-inner-wrap {
-  width: 100%;
-  @media (max-width: 768px) {
-    margin-bottom: 20px;
-  }
-  .contact-fleft {
-    width: 50%;
-    margin: 0;
-    padding-right: 15px;
-  }
-  .contact-fright {
-    /*height: 414px;*/
-    width: 435px;
-    background-color: rgba(255, 255, 255, 0);
-    margin: 0;
-    padding-left: 15px;
-    textarea {
-      height: calc(100% - 45px);
-    }
-  }
-}
-
-.contact-form-wrap {
-  max-width: 970px;
-  margin: 0 auto;
-  padding: 30px;
-  .btn-group {
-    .btn-lg {
-      min-width: 270px;
-    }
-  }
-}
-
-.contact-img-card {
-  display: inline-block;
-  width: 100%;
-  position: relative;
-  box-shadow: none;
-  border-radius: 0 0 8px 8px;
-  .card-body {
-    box-shadow: -1px 17px 16px -10px rgba(0, 0, 0, 0.25);
-    border-radius: 0 0 8px 8px;
-    background: #fff;
-    padding: 0;
-  }
-  figure.contact-img-figure {
-    width: 100%;
-    height: auto;
-    background-image: url("/assets/images/service-bg.png");
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: 107px auto;
-    align-items: center;
-    justify-content: center;
-    display: -webkit-flex;
-    display: flex;
-    margin-top: -125px;
-    min-height: 107px;
-    position: relative;
-    z-index: inherit;
-    img, svg {
-      margin: 0;
-      margin-top: -8px;
-      max-width: 40px;
-    }
-    &:after,
-    &:before {
-      width: calc(50% - 49px);
-      position: absolute;
-      content: "";
-      background: #fff;
-      height: 100%;
-      left: 0;
-      top: 45px;
-      -webkit-border-radius: 10px 0 0 0;
-      border-radius: 10px 0 0 0;
-      pointer-events: none;
-      box-shadow: 0 5px 25px -5px rgba(0, 0, 0, 0.25);
-      z-index: -1;
-    }
-    &:after {
-      left: auto;
-      right: 0;
-      -webkit-border-radius: 0 10px 0 0;
-      border-radius: 0 10px 0 0;
-    }
-  }
-}
-agm-map {
-  height: 350px;
-}
-
-invalid-feedback {
-  display: none;
-  width: 100%;
-  margin-top: 0.25rem;
-  font-size: 80%;
-  color: #dc3545;
-}
-
-@media (max-width: 767px) {
-  .main-contact-row {
-    -webkit-flex-wrap: wrap;
-    -moz-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-    -o-flex-wrap: wrap;
-    flex-wrap: wrap;
-    .main-contact-wrap {
-      width: 100%;
-      max-width: 100%;
-      margin-bottom: 20px;
-      h3 {
-        font-size: 20px;
+      a {
+        line-height: 24px;
+        font-size: 14px;
+        color: #222324;
       }
-      .meadquarters-wrap {
-        p {
-          font-size: 14px;
-          line-height: 20px;
+    }
+  }
+
+  .contact-inner-wrap {
+    width: 100%;
+    @media (max-width: 768px) {
+      margin-bottom: 20px;
+    }
+
+    .contact-fleft {
+      width: 50%;
+      margin: 0;
+      padding-right: 15px;
+    }
+
+    .contact-fright {
+      /*height: 414px;*/
+      width: 435px;
+      background-color: rgba(255, 255, 255, 0);
+      margin: 0;
+      padding-left: 15px;
+
+      textarea {
+        height: calc(100% - 45px);
+      }
+    }
+  }
+
+  .contact-form-wrap {
+    max-width: 970px;
+    margin: 0 auto;
+    padding: 30px;
+
+    .btn-group {
+      .btn-lg {
+        min-width: 270px;
+      }
+    }
+  }
+
+  .contact-img-card {
+    display: inline-block;
+    width: 100%;
+    position: relative;
+    box-shadow: none;
+    border-radius: 0 0 8px 8px;
+
+    .card-body {
+      box-shadow: -1px 17px 16px -10px rgba(0, 0, 0, 0.25);
+      border-radius: 0 0 8px 8px;
+      background: #fff;
+      padding: 0;
+    }
+
+    figure.contact-img-figure {
+      width: 100%;
+      height: auto;
+      background-image: url("/assets/images/service-bg.png");
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: 107px auto;
+      align-items: center;
+      justify-content: center;
+      display: -webkit-flex;
+      display: flex;
+      margin-top: -125px;
+      min-height: 107px;
+      position: relative;
+      z-index: inherit;
+
+      img, svg {
+        margin: 0;
+        margin-top: -8px;
+        max-width: 40px;
+      }
+
+      &:after,
+      &:before {
+        width: calc(50% - 49px);
+        position: absolute;
+        content: "";
+        background: #fff;
+        height: 100%;
+        left: 0;
+        top: 45px;
+        -webkit-border-radius: 10px 0 0 0;
+        border-radius: 10px 0 0 0;
+        pointer-events: none;
+        box-shadow: 0 5px 25px -5px rgba(0, 0, 0, 0.25);
+        z-index: -1;
+      }
+
+      &:after {
+        left: auto;
+        right: 0;
+        -webkit-border-radius: 0 10px 0 0;
+        border-radius: 0 10px 0 0;
+      }
+    }
+  }
+
+  agm-map {
+    height: 350px;
+  }
+
+  invalid-feedback {
+    display: none;
+    width: 100%;
+    margin-top: 0.25rem;
+    font-size: 80%;
+    color: #dc3545;
+  }
+
+  @media (max-width: 767px) {
+    .main-contact-row {
+      -webkit-flex-wrap: wrap;
+      -moz-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+      -o-flex-wrap: wrap;
+      flex-wrap: wrap;
+
+      .main-contact-wrap {
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 20px;
+
+        h3 {
+          font-size: 20px;
+        }
+
+        .meadquarters-wrap {
+          p {
+            font-size: 14px;
+            line-height: 20px;
+          }
+        }
+      }
+
+      .main-banner-map {
+        width: 100%;
+        max-width: 100%;
+
+        agm-map {
+          height: 240px;
         }
       }
     }
-    .main-banner-map {
-      width: 100%;
-      max-width: 100%;
-      agm-map {
-        height: 240px;
+    .contact-inner-wrap {
+      &.flex {
+        flex-wrap: wrap;
+        align-items: flex-start;
+      }
+
+      .contact-fleft {
+        width: 100%;
+        padding: 0;
+      }
+
+      .contact-fright {
+        width: 100%;
+        padding: 0;
       }
     }
-  }
-  .contact-inner-wrap {
-    &.flex {
-      flex-wrap: wrap;
-      align-items: flex-start;
-    }
-    .contact-fleft {
-      width: 100%;
-      padding: 0;
-    }
-    .contact-fright {
-      width: 100%;
-      padding: 0;
-    }
-  }
-  .contact-form-wrap {
-    .btn-group {
-      .btn-lg {
-        min-width: 10px;
-        width: 100%;
+    .contact-form-wrap {
+      .btn-group {
+        .btn-lg {
+          min-width: 10px;
+          width: 100%;
+        }
       }
     }
   }
