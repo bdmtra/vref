@@ -1,104 +1,111 @@
 {% extends "base" %}
 
 {% block content %}
-  {% set image = entry.headerImage.one().url ?? null %}
-  {% set transformedImage = image ? craft.imager.transformImage(image, { format: 'webp' }) : null %}
-  <div class="inner-banner ptb-full block-row dark-bg-img lines-btm-warn" style="background-image:url({{ transformedImage.url ?? null }})" data-background-image-url-fallback="{{ image }}">
-    <div class="container">
-      <div class="about-half-wrap wrap-dynam">
-        <div class="title-row white-txt">
-          <h1>{{ entry.pageTitle }}</h1>
-          <hr />
-          <p>{{ entry.pageSubtitle }}</p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="container">
-    <div class="block-row">
-      <div class="flex-content flex full-leftblock appraisal-wrap">
-        <div class="flex-content-main">
-          <div class="caption-area ml-0">
-            {% set pageContent = entry.pageContentBuilder.all() %}
-            {% if pageContent %}
-              {% for block in pageContent %}
-                {% switch block.type %}
-                {% case 'text' %}
-                  <div class="row">
-                    <div class="col-12">
-                      {{ block.text }}
-                    </div>
-                  </div>
-                {% case 'textAndImage' %}
-                  <div class="row gx-5 flex-lg-row align-items-start mb-5">
-                    <div class="col-12 col-sm-3 col-lg-4 order-sm-1">
-                      {% set blockImage = entry.headerImage.one().url ?? null %}
-                      {% set transformedBlockImage = blockImage ? craft.imager.transformImage(blockImage, { format: 'webp' }) : null %}
-                      <img src="{{ block.image.one().url ?? null }}">
-                      <picture class="img-fluid">
-                        <source srcset="{{ transformedBlockImage.url ?? null }}" type="image/webp">
-                        <source srcset="{{ blockImage }}" type="image/jpeg">
-                        <img src="{{ blockImage }}">
-                      </picture>
-                    </div>
-                    <div class="col-12 col-sm-9 col-lg-8 my-0  order-sm-0">
-                      {{ block.text }}
-                    </div>
-                  </div>
-                {% case 'text2Columns' %}
-                  <div class="row gx-5 align-items-start row-text-2-columns">
-                    <div class="col-12 col-lg-6">
-                      {{ block.column1 }}
-                    </div>
-                    <div class="col-12 col-lg-6">
-                      {{ block.column2 }}
-                    </div>
-                  </div>
-                {% case 'list' %}
-                  <div class="row gx-5 mb-5">
-                    {% for item in block.items.all() %}
-                      <div class="col-12 col-md-6">
-                        <h3>{{ item.heading }}</h3>
-                        <p>{{ item.text }}</p>
-                      </div>
-                    {% endfor %}
-                  </div>
-                {% endswitch %}
-              {% endfor %}
-            {% else %}
-              {{ entry.richText }}
-            {% endif %}
-          </div>
-        </div>
-        <aside class="flex-content-aside">
-          {% include 'partials/_sidebar' %}
-          {% if entry.type != "aboutPage" %}
-            <div class="valrep-aside mt-30">
-              <img  src="" alt="" />
-              <picture class="valrep-img">
-                <source srcset="/assets/images/vref-online-valuations.webp" type="image/webp">
-                <source srcset="/assets/images/vref-online-valuations.jpg" type="image/jpeg">
-                <img src="/assets/images/vref-online-valuations.jpg">
-              </picture>
-              <div class="valrep-caption">
-                <p>Subscribe now to get full access to our complete library of current and historical aircraft data.</p>
-                <a href="/shopsubscription/shop"><button type="button" class="btn btn-warning btn-block">View Subscriptions </button></a>
-              </div>
+    {% set image = entry.headerImage.one().url ?? null %}
+    {% set transformedImage = image ? craft.imager.transformImage(image, { format: 'webp' }) : null %}
+    <div class="inner-banner ptb-full block-row dark-bg-img lines-btm-warn"
+         style="background-image:url({{ transformedImage.url ?? null }})"
+         data-background-image-url-fallback="{{ image }}">
+        <div class="container">
+            <div class="about-half-wrap wrap-dynam">
+                <div class="title-row white-txt">
+                    <h1>{{ entry.pageTitle }}</h1>
+                    <hr/>
+                    <p>{{ entry.pageSubtitle }}</p>
+                </div>
             </div>
-           {% endif %}
-        </aside>
-      </div>
+        </div>
     </div>
+    <div class="container">
+        <div class="block-row">
+            <div class="flex-content flex full-leftblock appraisal-wrap">
+                <div class="flex-content-main">
+                    <div class="caption-area ml-0">
+                        {% set pageContent = entry.pageContentBuilder.all() %}
+                        {% if pageContent %}
+                            {% for block in pageContent %}
+                                {% switch block.type %}
+                                {% case 'text' %}
+                                    <div class="row">
+                                        <div class="col-12">
+                                            {{ block.text }}
+                                        </div>
+                                    </div>
+                                {% case 'textAndImage' %}
+                                    <div class="row gx-5 flex-lg-row align-items-start mb-5">
+                                        <div class="col-12 col-sm-3 col-lg-4 order-sm-1">
+                                            {% set blockImage = entry.headerImage.one().url ?? null %}
+                                            {% set transformedBlockImage = blockImage ? craft.imager.transformImage(blockImage, { format: 'webp' }) : null %}
+                                            <img src="{{ block.image.one().url ?? null }}">
+                                            <picture class="img-fluid">
+                                                <source srcset="{{ transformedBlockImage.url ?? null }}"
+                                                        type="image/webp">
+                                                <source srcset="{{ blockImage }}" type="image/jpeg">
+                                                <img src="{{ blockImage }}">
+                                            </picture>
+                                        </div>
+                                        <div class="col-12 col-sm-9 col-lg-8 my-0  order-sm-0">
+                                            {{ block.text }}
+                                        </div>
+                                    </div>
+                                {% case 'text2Columns' %}
+                                    <div class="row gx-5 align-items-start row-text-2-columns">
+                                        <div class="col-12 col-lg-6">
+                                            {{ block.column1 }}
+                                        </div>
+                                        <div class="col-12 col-lg-6">
+                                            {{ block.column2 }}
+                                        </div>
+                                    </div>
+                                {% case 'list' %}
+                                    <div class="row gx-5 mb-5">
+                                        {% for item in block.items.all() %}
+                                            <div class="col-12 col-md-6">
+                                                <h3>{{ item.heading }}</h3>
+                                                <p>{{ item.text }}</p>
+                                            </div>
+                                        {% endfor %}
+                                    </div>
+                                {% endswitch %}
+                            {% endfor %}
+                        {% else %}
+                            {{ entry.richText }}
+                        {% endif %}
+                    </div>
+                </div>
+                <aside class="flex-content-aside">
+                    {% include 'partials/_sidebar' %}
+                    {% if entry.type != "aboutPage" %}
+                        <div class="valrep-aside mt-30">
+                            <img src="" alt=""/>
+                            <picture class="valrep-img">
+                                <source srcset="/assets/images/vref-online-valuations.webp" type="image/webp">
+                                <source srcset="/assets/images/vref-online-valuations.jpg" type="image/jpeg">
+                                <img src="/assets/images/vref-online-valuations.jpg">
+                            </picture>
+                            <div class="valrep-caption">
+                                <p>Subscribe now to get full access to our complete library of current and historical
+                                    aircraft data.</p>
+                                <a href="/shopsubscription/shop">
+                                    <button type="button" class="btn btn-warning btn-block">View Subscriptions</button>
+                                </a>
+                            </div>
+                        </div>
+                    {% endif %}
+                </aside>
+            </div>
+        </div>
 
-  </div>
-  {% if entry.type == "aboutPage" %}
-    <div>
-      {% include 'partials/_team' %}
     </div>
-  {% endif %}
-  <script>
-    $(document).ready(function () {
-      $('.caption-area a.btn').parent().addClass('d-flex row row-cols-1 row-cols-md-auto g-2');
-    });
-  </script>
+    {% if entry.type == "aboutPage" %}
+        <div>
+            {% include 'partials/_team' %}
+        </div>
+    {% endif %}
 {% endblock %}
+
+{% js at endBody %}
+    $(document).ready(function () {
+        $('.caption-area a.btn').parent().addClass('d-flex row row-cols-1 row-cols-md-auto g-2');
+    });
+{% endjs %}

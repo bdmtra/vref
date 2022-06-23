@@ -49,3 +49,17 @@
         </div>
     </div>
 </header>
+
+
+{% js at endBody %}
+    $(document).ready(function () {
+        $('.menu-toggle1').click(function () {
+            let val = "0";
+            if ($('.right-main-nav').hasClass("nav-open")) {
+                val = "-110%";
+            }
+            $('.right-main-nav').toggleClass('nav-open');
+            $('.right-main-nav').css("right", val);
+        })
+    });
+{% endjs %}

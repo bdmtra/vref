@@ -22,8 +22,8 @@
         </div>
     </div>
 </section>
-
-<script>
+{% js "/assets/libs/slick-1.8.1/slick/slick.min.js" %}
+{% js at endBody %}
     $(document).ready(function () {
         $('#testi-captions').slick({
             adaptiveHeight: true,
@@ -41,4 +41,4 @@
             ]
         });
     });
-</script>
+{% endjs %}

@@ -250,50 +250,51 @@
     </section>
     {% include 'partials/sections/_services' %}
     {% include 'partials/sections/_pricing-calculator' %}
-    <script>
-        $(document).ready(() => {
-            showTab();
-            $('a:not([data-bs-target])').click(function () {
-                showTab($(this));
-            });
+{% endblock %}
+
+{% js at endBody %}
+    $(document).ready(() => {
+        showTab();
+        $('a:not([data-bs-target])').click(function () {
+            showTab($(this));
         });
+    });
 
-        function showTab(element = false) {
-            var url = element ? element.attr('href') : window.location.href;
+    function showTab(element = false) {
+        var url = element ? element.attr('href') : window.location.href;
+        console.log(url);
+        if (url.indexOf("#") > -1) {
+            var activeTab = url.substring(url.indexOf("#") + 1);
             console.log(url);
-            if (url.indexOf("#") > -1) {
-                var activeTab = url.substring(url.indexOf("#") + 1);
-                console.log(url);
 
-                var nav = $('.nav[role="tablist"]');
-                var tab = nav.find('a[data-bs-target="#' + activeTab + '"]');
-                if (tab.length) {
-                    tab.tab('show');
-                    var position = nav.offset().top - parseInt(nav.css('marginTop'));
-                    $("html, body").animate({
-                        scrollTop: position
-                    }, 1000);
+            var nav = $('.nav[role="tablist"]');
+            var tab = nav.find('a[data-bs-target="#' + activeTab + '"]');
+            if (tab.length) {
+                tab.tab('show');
+                var position = nav.offset().top - parseInt(nav.css('marginTop'));
+                $("html, body").animate({
+                    scrollTop: position
+                }, 1000);
 
+            }
+        }
+    }
+
+    $('.btn-number').click(function (e) {
+        e.preventDefault();
+        type = $(this).attr('data-type');
+        var inputs = $(this).closest(".input-group").find('input');
+        var currentVal = parseInt(inputs.val());
+        if (!isNaN(currentVal)) {
+            if (type == 'minus') {
+                if (currentVal > inputs.attr('min')) {
+                    inputs.val(currentVal - 1).change();
+                }
+            } else if (type == 'plus') {
+                if (currentVal < inputs.attr('max')) {
+                    inputs.val(currentVal + 1).change();
                 }
             }
         }
-
-        $('.btn-number').click(function (e) {
-            e.preventDefault();
-            type = $(this).attr('data-type');
-            var inputs = $(this).closest(".input-group").find('input');
-            var currentVal = parseInt(inputs.val());
-            if (!isNaN(currentVal)) {
-                if (type == 'minus') {
-                    if (currentVal > inputs.attr('min')) {
-                        inputs.val(currentVal - 1).change();
-                    }
-                } else if (type == 'plus') {
-                    if (currentVal < inputs.attr('max')) {
-                        inputs.val(currentVal + 1).change();
-                    }
-                }
-            }
-        });
-    </script>
-{% endblock %}
+    });
+{% endjs %}
