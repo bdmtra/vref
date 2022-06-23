@@ -290,6 +290,7 @@ strong {
             padding: 35px 12px;
             color: $white;
             font-size: 14px;
+
             &:hover {
               color: #c09434;
             }
@@ -3196,25 +3197,31 @@ input.csc-number {
       vertical-align: top;
       max-width: 100%;
       margin-left: 30px;
+
       p {
         margin-bottom: 20px;
       }
+
       ul {
         &.row-text-2-columns {
           margin: 0 20px;
         }
+
         li {
           font-size: initial;
         }
       }
+
       p em {
         font-style: italic;
         color: initial;
       }
+
       img {
         display: inline-block;
         margin-bottom: 2rem;
       }
+
       @media (min-width: 768px) {
         .btn + .btn {
           margin-left: 2rem;
@@ -4589,9 +4596,10 @@ h3.subpricing-head {
   width: 80%;
 }
 
-body section:nth-of-type(even) .testi-card{
+body section:nth-of-type(even) .testi-card {
   background: #fff;
 }
+
 .testi-card {
   position: relative;
   width: 100%;
@@ -4860,8 +4868,9 @@ input[type='range']::-webkit-slider-thumb {
 }
 
 .table-compare > * {
-    border-top: 0 !important;
+  border-top: 0 !important;
 }
+
 .table-compare td {
   font-size: 18px !important;
   text-align: center !important;
@@ -5114,6 +5123,7 @@ input[type='range']::-webkit-slider-thumb {
 body section:nth-of-type(even) {
   background: #f4f7fb;
 }
+
 .lead {
   font-weight: 400;
 }
@@ -5134,6 +5144,7 @@ body section:nth-of-type(even) {
     position: relative;
   }
 }
+
 .slick-slider {
   .slick-prev, .slick-next {
     font-size: 0;
@@ -5164,35 +5175,48 @@ body section:nth-of-type(even) {
     background-color: #e4e8eb;
     -webkit-transform: translateY(-50%);
     transform: translateY(-50%);
+
     &:before {
       content: "" !important;
     }
+
     &:hover,
     &:focus {
       opacity: 1;
       background-color: #f4f7fb;
     }
   }
+
   .slick-next {
     background-image: url(./images/slick-next.png);
     right: 0;
   }
+
   .slick-prev {
     background-image: url(./images/slick-prev.png);
     z-index: 9;
     left: 0;
   }
 }
+
 .slick-dots {
   bottom: -36px;
 }
+
 .form-contact {
   label {
     display: block;
     text-align: left;
     margin-bottom: 8px;
   }
+
   .form-group + .form-group {
     margin-top: 1rem;
+  }
+}
+
+@media (max-width:1023px) {
+  header + section {
+    margin-top: 60px;
   }
 }

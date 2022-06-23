@@ -18971,6 +18971,11 @@ body section:nth-of-type(even) {
   margin-top: 1rem;
 }
 
+@media (max-width: 1023px) {
+  header + section {
+    margin-top: 60px;
+  }
+}
 p {
   margin-bottom: 0;
 }
