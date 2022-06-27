@@ -1,4 +1,4 @@
-dateModified: 1655940914
+dateModified: 1656338275
 email:
   fromEmail: andrew@andrewlynn.co
   fromName: vref.com
@@ -147,6 +147,10 @@ plugins:
     edition: standard
     enabled: true
   schema:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  scss:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0

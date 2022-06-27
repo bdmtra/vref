@@ -15,7 +15,7 @@
                         <input id="emailInput" type="email" name="email" class="input-bdr px-3"
                                 placeholder="Enter your email"
                                 {% if subscribeResponse and not subscribeResponse.success %}value="{{ subscribeResponse.values.email ?? '' }}"{% endif %}/>
-                        <input class="btn btn-brand btn-sent" type="submit" name="" value="Sign Up"/>
+                        <input class="btn btn-primary btn-sent" type="submit" name="" value="Sign Up"/>
                     </div>
                 </form>
             </div>

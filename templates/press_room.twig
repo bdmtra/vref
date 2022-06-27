@@ -30,7 +30,7 @@
                                 {% set url = linkEntry ? linkEntry.url : '#' %}
                                 {% set target = '_self' %}
                             {% endswitch %}
-                            <a class="btn btn-brand" target="{{ target }}"
+                            <a class="btn btn-primary" target="{{ target }}"
                                href="{{ url }}">{{ item.buttonText }}</a>
                         </div>
                     </div>
@@ -128,7 +128,7 @@
                     </div>
                     <p class="text-start my-3">{{ entry.pressRoomFormText|nl2br }}</p>
                     <div class="form-group mt-3">
-                        <buttton type="submit" class="btn btn-lg btn-brand w-100">Sign Up</buttton>
+                        <buttton type="submit" class="btn btn-primary w-100">Sign Up</buttton>
                     </div>
                 </form>
             </div>
@@ -137,3 +137,11 @@
 </section>
 
 {% endblock %}
+
+{% scss %}
+.cta-twin-img {
+  width: 100%;
+  height: 0;
+  padding-bottom: 100%;
+}
+{% endscss %}

@@ -112,7 +112,7 @@
                                                         <div class="input-group justify-content-start justify-content-xl-end">
                                                             <div class="input-elements d-flex justify-content-start mx-0">
                                                                 <span class="input-group-btn mx-0">
-                                                                    <button type="button" class="btn btn-brand btn-number"
+                                                                    <button type="button" class="btn btn-primary btn-number"
                                                                             data-type="minus">
                                                                         {{ svg(alias('@webroot/assets/images/minus-solid.svg')) }}
                                                                     </button>
@@ -124,7 +124,7 @@
                                                                        max="{{ temp_book_addon_pricing_brackets[0].end_quantity }}">
 
                                                                 <span class="input-group-btn mx-0">
-                                                                    <button type="button" class="btn btn-brand btn-number"
+                                                                    <button type="button" class="btn btn-primary btn-number"
                                                                             data-type="plus">
                                                                         {{ svg(alias('@webroot/assets/images/plus-solid.svg')) }}
                                                                     </button>
@@ -141,10 +141,10 @@
                                                         <p class="mt-xl-2 text-start d-block">{{ entry.pricingCalculatorAddonText }}</p>
                                                     </div>
                                                     <div class="col col-lg-3 text-right mt-2 mt-xl-0">
-                                                        <button class="btn btn-brand button-add-addon float-xl-end"
+                                                        <button class="btn btn-primary button-add-addon float-xl-end"
                                                                 type="button">Add
                                                         </button>
-                                                        <button class="btn btn-brand button-remove-addon float-xl-end"
+                                                        <button class="btn btn-primary button-remove-addon float-xl-end"
                                                                 type="button">Remove
                                                         </button>
                                                     </div>
@@ -175,7 +175,7 @@
                                                data-payment-period-type-id="{{ payment_period_types['monthly'].id }}" {% if item.isPro %}data-allow-users="true"{% endif %}
                                                data-recurring-price="{{ plansIndexById[item.apiMonthlyPlanId].recurring_price }}"
                                                data-plan-id="{{ item.apiMonthlyPlanId }}">
-                                        <label class="btn btn-brand btn-first mx-0"
+                                        <label class="btn btn-primary btn-first mx-0"
                                                for="calculator_payment_action_monthly_{{ item.id }}">Pay Monthly</label>
                                         <input type="radio" class="btn-check payment-action"
                                                id="calculator_payment_action_annual_{{ item.id }}" autocomplete="off"
@@ -186,7 +186,7 @@
                                                data-recurring-price="{{ plansIndexById[item.apiAnnualPlanId].recurring_price }}"
                                                data-plan-id="{{ item.apiAnnualPlanId }}" data-allow-book-addon="true"
                                                data-book-addon-price="{{ temp_book_addon_pricing_brackets[0].price }}">
-                                        <label class="btn btn-brand btn-last mx-0"
+                                        <label class="btn btn-primary btn-last mx-0"
                                                for="calculator_payment_action_annual_{{ item.id }}">Pay Upfront</label>
                                     </div>
                                 </div>
@@ -241,7 +241,7 @@
                         </div>
                         <form id="pricing-calculator-form">
                             <div class="input-group justify-content-center">
-                                <button class="btn btn-brand" type="submit">Buy now</button>
+                                <button class="btn btn-primary" type="submit">Buy now</button>
                             </div>
                         </form>
                     </div>

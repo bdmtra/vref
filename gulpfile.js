@@ -32,7 +32,7 @@ function doSynchronousLoop(data, processData, done) {
 }
 
 function processCriticalCSS(element, i, callback) {
-    const criticalSrc = pkg.urls.critical + element.url;
+    const criticalSrc = pkg.urls.critical + element.url + '?exclude_criticalcss=1';
     const criticalDist = pkg.paths.criticalDist;
 
     console.log("-> Generating critical CSS: " + criticalSrc );

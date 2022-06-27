@@ -64,7 +64,7 @@
                                         <div class="input-group mb-3 justify-content-center">
                                             <div class="input-elements d-flex justify-content-end mx-0">
                                                 <span class="input-group-btn mx-0">
-                                                    <button type="button" class="btn btn-brand btn-number"
+                                                    <button type="button" class="btn btn-primary btn-number"
                                                             data-type="minus">
                                                         {{ svg(alias('@webroot/assets/images/minus-solid.svg')) }}
                                                     </button>
@@ -98,7 +98,7 @@
                                                        data-addon-pricing="{{ plansIndexById[item.apiMonthlyPlanId].addon_pricing_brackets|json_encode() }}"
                                                        data-payment-period-type-id="{{ payment_period_types['annual'].id }}">
                                                 <span class="input-group-btn mx-0">
-                                                    <button type="button" class="btn btn-brand btn-number"
+                                                    <button type="button" class="btn btn-primary btn-number"
                                                             data-type="plus">
                                                         {{ svg(alias('@webroot/assets/images/plus-solid.svg')) }}
                                                     </button>
@@ -121,7 +121,7 @@
                                                value="{{ plansIndexById[item.apiMonthlyPlanId].plan_url }}"
                                                {% if default_payment_period_type == payment_period_types['monthly'].id %}checked{% endif %}
                                                data-payment-period-type-id="{{ payment_period_types['monthly'].id }}">
-                                        <label class="btn btn-brand btn-first"
+                                        <label class="btn btn-primary btn-first"
                                                for="payment_action_{{ item.id }}_monthly">Pay Monthly</label>
                                         <input type="radio" class="btn-check payment-action"
                                                id="payment_action_{{ item.id }}_annual" autocomplete="off"
@@ -129,7 +129,7 @@
                                                value="{{ plansIndexById[item.apiAnnualPlanId].plan_url }}"
                                                {% if default_payment_period_type == payment_period_types['annual'].id %}checked{% endif %}
                                                data-payment-period-type-id="{{ payment_period_types['annual'].id }}">
-                                        <label class="btn btn-brand btn-last" for="payment_action_{{ item.id }}_annual">Pay
+                                        <label class="btn btn-primary btn-last" for="payment_action_{{ item.id }}_annual">Pay
                                             Upfront</label>
                                     </div>
                                     <form>
@@ -137,7 +137,7 @@
                                             <input type="hidden" name="addon_number" class="addon-number">
                                         {% endif %}
                                         <div class="input-group justify-content-center">
-                                            <button class="btn btn-brand" type="submit">Buy now</button>
+                                            <button class="btn btn-primary" type="submit">Buy now</button>
                                         </div>
                                     </form>
                                     {% set includes = item.includes|split('\n')|filter %}
@@ -168,7 +168,7 @@
                                         <div class="input-group mb-3 justify-content-center">
                                             <div class="input-elements d-flex justify-content-end mx-0">
                                                 <span class="input-group-btn mx-0">
-                                                    <button type="button" class="btn btn-brand btn-number"
+                                                    <button type="button" class="btn btn-primary btn-number"
                                                             data-type="minus">
                                                         {{ svg(alias('@webroot/assets/images/minus-solid.svg')) }}
                                                     </button>
@@ -178,7 +178,7 @@
                                                        placeholder="{{ default_copies_number }}" min="1"
                                                        max="{{ plansIndexById[item.apiPlanId].book_addon_pricing_brackets[0].end_quantity }}">
                                                 <span class="input-group-btn mx-0">
-                                                    <button type="button" class="btn btn-brand btn-number"
+                                                    <button type="button" class="btn btn-primary btn-number"
                                                             data-type="plus">
                                                         {{ svg(alias('@webroot/assets/images/plus-solid.svg')) }}
                                                     </button>
@@ -189,7 +189,7 @@
                                         <p class="mb-3 text-center fs-6">{{ item.text|nl2br }}</p>
 
                                         <div class="input-group justify-content-center">
-                                            <button class="btn btn-brand" type="submit">Buy now</button>
+                                            <button class="btn btn-primary" type="submit">Buy now</button>
                                         </div>
                                     </form>
                                 </div>
@@ -239,7 +239,7 @@
                                 </div>
                                 <p class="text-start my-3">{{ entry.consultingPricingFormText|nl2br }}</p>
                                 <div class="form-group mt-3">
-                                    <buttton type="submit" class="btn btn-lg btn-brand w-100">Submit Request</buttton>
+                                    <buttton type="submit" class="btn btn-primary w-100">Submit Request</buttton>
                                 </div>
                             </form>
                         </div>

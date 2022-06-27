@@ -1,15 +1,17 @@
-{% set baseUrl = alias('@web') ~ '/' %}
 {% minify %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <style>
-            {{ source ('_criticalcss/'~craft.app.requestedParams.template~'_critical.css', ignore_missing = true) }}
-        </style>
-        <link rel="preload" href="{{ baseUrl }}assets/styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-        <noscript><link rel="stylesheet" href="{{ baseUrl }}assets/styles.css"></noscript>
+        {% if not craft.app.request.get('exclude_criticalcss') %}
+            <style>
+                {{ source ('_criticalcss/'~craft.app.requestedParams.template~'_critical.css', ignore_missing = true) }}
+            </style>
+        {% endif %}
+        {% set cssUrl = alias('@web') ~ (craft.app.request.get('legacy') ? '/assets/css/legacy.css' : '/assets/css/' ~ craft.app.requestedParams.template ~ '.css') %}
+        <link rel="preload" href="{{ cssUrl }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="{{ cssUrl }}"></noscript>
         <script>
             {{ source('_inlinejs/loadCSS.js') }}
         </script>

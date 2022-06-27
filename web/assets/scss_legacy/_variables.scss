@@ -1,0 +1,137 @@
+// Variables
+//
+// Variables should follow the `$component-state-property-size` formula for
+// consistent naming. Ex: $nav-link-disabled-color and $modal-content-box-shadow-xs.
+
+// Color system
+$color-base: #5d5f61;
+$color-base-dark: #222324;
+
+$white: #fff;
+$gray: #e6e6f5;
+$black: #000;
+$black-gray-bg: #182643;
+$black-gray-color: #222324;
+
+$blue: #34826a;
+$yellow: #c09434;
+$green: #28a745;
+$primary: $blue;
+$secondary: $gray;
+$success: $green;
+$warning: $yellow;
+$danger: #c53737;
+$lt-gray: #f4f7fb;
+$mdlt-gray: #e2e7ee;
+$lt-green: #34aa44;
+$dk-gray: #d3d8df;
+$lt-white: #898c8e;
+
+// Body
+//
+// Settings for the `<body>` element.
+$font-size-base: 14px;
+$font-size-base-sm: 12px;
+$font-family-base: "Open Sans", sans-serif;
+$font-weight-normal: 400;
+
+$body-bg: #fff;
+$white-bg: #fff;
+
+// Paragraphs
+//
+// Style p element.
+$paragraph-margin-bottom: 20px;
+$brand-color: #34826a;
+$brand-color-bg: #34826a;
+$btn-brand-bg-dark: #34826a;
+
+// Typography
+//
+// Font, line-height, and color for body text, headings, and more.
+$font-family-sbase: "Montserrat", sans-serif;
+$heading-margin-bottom: 20px;
+$h1-font-size: 48px;
+$h2-font-size: 38px;
+$h3-font-size: 28px;
+$h4-font-size: 24px;
+$h5-font-size: 18px;
+$h6-font-size: 16px;
+
+// Forms
+$btn-font-size: 14px;
+$btn-padding: 8px 25px;
+$btn-border-radius: 4px;
+$btn-color: #f9f9f9;
+$btn-color-bg: #5d5f61;
+$btn-border-color: #5d5f61;
+$btn-focus-border: #5d5f61;
+$btn-focus-color: #5d5f61;
+$btn-focus-color-bg: #fff;
+
+$btn-brand-bg: #34826a;
+$btn-brand-bdr: #34826a;
+$btn-brand-color: #f9f9f9;
+$btn-focus-brand-bg: #fff;
+$btn-focus-brand-bdr: #34826a;
+$btn-focus-brand-color: #34826a;
+
+$btn-success-bg: $green;
+$btn-success-bdr: $green;
+$btn-success-color: #fff;
+$btn-focus-success-bg: #fff;
+$btn-focus-success-bdr: $green;
+$btn-focus-success-color: $green;
+
+$btn-danger-bg: $danger;
+$btn-danger-bdr: $danger;
+$btn-danger-color: #fff;
+$btn-focus-danger-bg: #fff;
+$btn-focus-danger-bdr: $danger;
+$btn-focus-danger-color: $danger;
+
+$btn-warning-bg: $warning;
+$btn-warning-bdr: $warning;
+$btn-warning-color: #fff;
+$btn-focus-warning-bg: #fff;
+$btn-focus-warning-bdr: $warning;
+$btn-focus-warning-color: $warning;
+
+$btn-gray-bg: #e6e6f5;
+$btn-gray-bdr: #e6e6f5;
+$btn-gray-color: #34826a;
+$btn-focus-gray-bg: #fff;
+$btn-focus-gray-bdr: #34826a;
+$btn-focus-gray-color: #34826a;
+
+$btn-bdr-bg: rgba(0, 0, 0, 0);
+$btn-bdr-color: #fff;
+$btn-bdrcolor: #fff;
+
+$btn-bdr-black-bg: rgba(0, 0, 0, 0);
+$btn-bdr-black-color: #34826a;
+$btn-bdr-black-color: #34826a;
+$btn-focus-bdr-black-bg: rgb(243, 243, 243);
+$btn-focus-bdr-black-color: #34826a;
+$btn-focus-bdr-black-color: #34826a;
+
+$label-color: #222324;
+$label-font-size: 16px;
+$label-margin-bottom: 5px;
+
+$input-placeholder-color: #5d5f61;
+$input-padding: 5px 10px;
+$input-border-radius: 4px;
+$input-color: #5d5f61;
+$input-bg: #fff;
+$input-font-size: 14px;
+$input-border-color: #d0d3d9;
+$input-border-color-focus: #34826a;
+
+$lblrequired: #ff615e;
+$error-color: #ff615e;
+
+$color-link: #34826a;
+$color-link-hover: #34826a;
+
+$white-bdr: #fff;

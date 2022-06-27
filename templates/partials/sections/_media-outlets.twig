@@ -1,20 +1,25 @@
-<section>
-    <div class="container p-3 p-md-4 p-lg-5 text-center">
-        <h2 class="display-6 fw-bold lh-sm mb-3">{{ entry.mediaOutletsTitle|nl2br }}</h2>
-        {% if entry.logosItems %}
+{% set items = entry.mediaOutletsItems.all() %}
+{% if items %}
+    <section>
+        <div class="container p-3 p-md-4 p-lg-5 text-center">
+            <h2 class="display-6 fw-bold lh-sm mb-3">{{ entry.mediaOutletsTitle|nl2br }}</h2>
             <div class="row g-4 py-2 py-lg-4 row-cols-4">
-                {% for item in entry.mediaOutletsItems.all() %}
+                {% for item in items %}
                     <div class="col">
                         {% set itemBackgroundImage =  item.mediaOutlet.one().featuredImage.one().url %}
                         {% set itemTransformedBackgroundImage = craft.imager.transformImage(itemBackgroundImage, { format: 'webp' }) %}
-
                         <a href="{{ item.sourceUrl }}"
-                           class="d-block d-inline-block img-cover media-outlet-img overflow-hidden"
-                           style="background-image: url({{ itemTransformedBackgroundImage.url }})" data-background-image-url-fallback="{{ itemBackgroundImage }}"
-                           target="_blank"></a>
+                        class="d-block d-inline-block img-cover media-outlet-img overflow-hidden"
+                        style="background-image: url({{ itemTransformedBackgroundImage.url }})" data-background-image-url-fallback="{{ itemBackgroundImage }}"
+                        target="_blank"></a>
                     </div>
                 {% endfor %}
             </div>
-        {% endif %}
-    </div>
-</section>
+        </div>
+    </section>
+{% endif %}
+{% scss %}
+.media-outlet-img {
+  padding-top: 100%;
+}
+{% endscss %}
