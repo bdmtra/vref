@@ -1,58 +1,76 @@
-<footer class="footer-container p-0">
+<footer class="bg-dark text-white">
     <div class="container">
-        <div class="main-footer-wrap py-lg-4 pb-3">
-            <div class="ftr-news-caption py-4 py-md-5 py-lg-0">
-                <h6>Sign Up For Our Newsletter</h6>
-                <form class="ftr-newsltr-wrap" action="" method="post">
-                    {{ csrfInput() }}
-                    <input type="hidden" name="action" value="mailchimp-subscribe/audience/subscribe">
-                    {% set subscribeResponse = mailchimpSubscribe is defined and mailchimpSubscribe.action == 'subscribe' ? mailchimpSubscribe : null %}
-                    {% if subscribeResponse %}
-                        {% if not subscribeResponse.success %} <p>An error
-                            occured: {{ subscribeResponse.message }}</p> {% endif %}
-                    {% endif %}
-                    <div class="sign-up-field mx-0">
-                        <input id="emailInput" type="email" name="email" class="input-bdr px-3"
-                                placeholder="Enter your email"
-                                {% if subscribeResponse and not subscribeResponse.success %}value="{{ subscribeResponse.values.email ?? '' }}"{% endif %}/>
-                        <input class="btn btn-primary btn-sent" type="submit" name="" value="Sign Up"/>
+        <footer class="py-4 py-lg-5">
+            <div class="row">
+                <div class="col-12 col-lg-5 mb-3 mb-lg-0">
+                    <div class="row">
+                        <div class="col-12 col-lg-11">
+                            {% set subscribeResponse = mailchimpSubscribe is defined and mailchimpSubscribe.action == 'subscribe' ? mailchimpSubscribe : null %}
+                            <form method="post" action>
+                                {{ csrfInput() }}
+                                <input type="hidden" name="action" value="mailchimp-subscribe/audience/subscribe">
+                                <h5 class="mb-4 text-center text-lg-start text-white">Sign Up For Our Newsletter</h5>
+                                <label for="emailInput" class="visually-hidden">Email address</label>
+                                <div class="input-group">
+                                    <input id="emailInput" type="email" name="email" class="form-control"
+                                           placeholder="Enter your email" {% if subscribeResponse and not subscribeResponse.success %}value="{{ subscribeResponse.values.email ?? '' }}"{% endif %}>
+                                    <button class="btn btn-primary" type="submit">Sign Up</button>
+                                </div>
+                                {% if subscribeResponse %}
+                                    {% if not subscribeResponse.success %}
+                                        <p class="text-white text-center text-lg-start my-2 fs-6">An error occured: {{ subscribeResponse.message }}</p>
+                                    {% endif %}
+                                {% endif %}
+                            </form>
+                        </div>
                     </div>
-                </form>
-            </div>
-
-            {% set nodes = craft.navigation.nodes('footerLinks').level(1).all() %}
-            {% nav node in nodes %}
-                <div class="ftr-contact-caption">
-                    <h6>{{- node.title -}}</h6>
-                    {% for subnode in node.children %}
-                        <a href="{{ subnode.url }}">{{ subnode.title }}</a>
-                    {% endfor %}
                 </div>
-            {% endnav %}
-        </div>
+                <div class="col-12 col-lg-7 text-center text-lg-start">
+                    <div class="row">
+                        {% set nodes = craft.navigation.nodes('footerLinks').level(1).all() %}
+                        {% nav node in nodes %}
+                            <div class="col-12 col-lg-4 mt-4 mt-lg-0">
+                                <h5 class="text-white mb-3 mb-lg-4">{{- node.title -}}</h5>
+                                <ul class="nav flex-column">
+                                    {% for subnode in node.children %}
+                                        <li class="nav-item mb-2">
+                                            <a href="{{ subnode.url }}" class="nav-link p-0 text-grey-light">
+                                                {{ subnode.title }}
+                                            </a>
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        {% endnav %}
+                    </div>
+                </div>
+            </div>
+        </footer>
     </div>
-    <div class="footer-btm-wrap">
+    <div id="footer-bottom" class="bg-dark-heavy py-3 py-lg-4">
         <div class="container">
-            <div class="row align-items-center">
-                <p class="col-12 col-sm-4 mx-0 mb-3 mb-sm-0" id="menu-legal">
+            <div class="row">
+                <div class="col-12 col-lg-4 text-center mb-3 my-lg-auto">
                     {% set nodes = craft.navigation.nodes('footerLegalLinks').level(1).all() %}
                     {% nav node in nodes %}
-                        <a {{ node.linkAttributes }}>{{ node.title }}</a>
+                        <a class="text-gold mx-1">{{ node.title }}</a>
                         {% if not loop.last %}
                             <span> | </span>
                         {% endif %}
                     {% endnav %}
-                <div class="col-12 col-sm-4 mb-3 mb-sm-0">
-                    <ul class="social-media d-flex justify-content-center">
-                        <li class="mx-1 mx-md-1"><a href="{{ socialLinks.linkedinLink }}">{{ svg('@webroot/assets/images/social-linkedin.svg') }}</a></li>
-                        <li class="mx-1 mx-md-1"><a href="{{ socialLinks.facebookLink }}/">{{ svg('@webroot/assets/images/social-facebook.svg') }}</a></li>
-                        <li class="mx-1 mx-md-1"><a href="{{ socialLinks.twitterLink }}">{{ svg('@webroot/assets/images/social-twitter.svg') }}</a>
+                </div>
+                <div class="col-12 col-lg-4">
+                    <ul class="list-unstyled d-flex mb-0 justify-content-center">
+                        <li class="mx-3"><a href="{{ socialLinks.linkedinLink }}">{{ svg('@webroot/assets/images/social-linkedin.svg') }}</a></li>
+                        <li class="mx-3"><a href="{{ socialLinks.facebookLink }}/">{{ svg('@webroot/assets/images/social-facebook.svg') }}</a></li>
+                        <li class="mx-3"><a href="{{ socialLinks.twitterLink }}">{{ svg('@webroot/assets/images/social-twitter.svg') }}</a></li>
                     </ul>
                 </div>
-                <p class="col-12 col-sm-4 mx-0">
-                    © Copyright {{ now|date('Y') }} VREF . All Rights Reserved.
-                </p>
+                <div class="col-12 col-lg-4 text-center mt-3 my-lg-auto">
+                    <p class="text-white mb-0"> © Copyright {{ now|date('Y') }} VREF . All Rights Reserved.</p>
+                </div>
             </div>
         </div>
     </div>
 </footer>
+

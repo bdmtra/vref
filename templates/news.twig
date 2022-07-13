@@ -18,6 +18,7 @@
 
 
 {% block content %}
+{% if craft.app.request.get('legacy') %}
   <div class="container">
     <div class="block-row pt-full">
       <div class="main-title-row">
@@ -60,27 +61,18 @@
           <div class="artical-wrap">
             <h6 class="aside-title">Featured Articles</h6>
             <div class="artical-list">
+              {% set imageTransformHandle = 'articleThumb' %}
               {% for article in craft.entryCount.entries.limit(5).all() %}
               {# {% for article in craft.entries.section('newsArticles').orderBy('count desc').limit(5).all() %} #}
                 <div class="artical-item">
                   <div href="javascript:void(0);" class="artical-inner flex">
-                    <figure>
-                      {% set image = article.headerImage.one() %}
-                      {% set transformedImage = image ? craft.imager.transformImage(image, { format: 'webp' }) : null %}
-                      {% if image %}
-                        <picture>
-                          <source srcset="{{ transformedImage.url ?? null }}" type="image/webp">
-                          <source srcset="{{ image }}" type="image/jpeg">
-                          <img src="{{ image }}">
-                        </picture>
-                      {% else %}
-                        <picture>
-                          <source srcset="/assets/images/inner-banner-bg.webp" type="image/webp">
-                          <source srcset="/assets/images/inner-banner-bg.png" type="image/jpeg">
-                          <img src="/assets/images/inner-banner-bg.png">
-                        </picture>
-                      {% endif %}
-                    </figure>
+                    {% set image = article.headerImage.one() ?? (imagePlaceholders.articleImagePlaceholder.one() ?? null) %}
+                    {% set transformedImage = image ? craft.imager.transformImage(image.url, { format: 'webp' }) : null %}
+                    <picture>
+                      <source srcset="{{ transformedImage.url ?? null }}" type="image/webp">
+                      <source srcset="{{ image.getUrl(imageTransformHandle) ?? null }}" type="image/jpeg">
+                      <img src="{{ image.getUrl(imageTransformHandle) ?? null }}">
+                    </picture>
                     <p>
                       <a href="/news/{{article.slug}}">{{ article.pageTitle }}
                         {% if article.originalPostedDate %} <span>{{ article.originalPostedDate|date("long") }}</span>
@@ -97,6 +89,44 @@
       </div>
     </div>
   </div>
+{% else %}
+  <div class="container">
+    <h1 class="my-5">VREF News</h1>
+    <div class="row">
+        <div class="col-12 col-lg-8 mb-4 mb-lg-0">
+          <div class="">
+            {% if entries|length %}
+              {# initial content #}
+              <div class="js-lazy-wrapper">
+                  <ul class="js-lazy-list list-unstyled">
+                    {# If a data range is selected, only show posts within selected date range #}
+                    {% if archiveFilter is not empty %}
+                      {% for page in craft.entries.section(settings.section).search(settings.searchQuery).orderBy(settings.orderBy).limit(settings.limit).all()|filter(v => v.originalPostedDate|date('F Y') == archiveFilter) %}
+                        {% include settings.templatePath with {(settings.variableName): page} %}
+                      {% endfor %}
+                    {% else %}
+                      {% for page in craft.entries.section(settings.section).search(settings.searchQuery).orderBy(settings.orderBy).limit(settings.limit).all()%}
+                        {% include settings.templatePath with {(settings.variableName): page} %}
+                      {% endfor %}
+                    {% endif %}
+                  </ul>
+                  <button class="js-load-more btn d-block btn-primary">{{'More Articles'|t}}</button>
+              </div>
+            {% else %}
+              <p>Your search for “{{ searchQuery }}” didn’t return any results.</p>
+            {% endif %}
+          </div>
+        </div>
+        <aside class="col-12 col-lg-4">
+          {% include 'partials/_articles-form' %}
+          <h6 class="my-4">Featured Articles</h6>
+          {% set articles = craft.entries.section('newsArticles').limit(5).all() %}
+          {% include 'partials/_articles-list' with {articles: articles} %}
+          {% include 'partials/_sidebar' %}
+        </aside>
+      </div>
+  </div>
+{% endif %}
 {% endblock %}
 
 {# ajax request #}
@@ -141,3 +171,28 @@
     }
   });
 {% endjs %}
+{% scss %}
+.news-article {
+  date {
+    position: absolute;
+    background-color: var(--bs-white);
+    top: 20px;
+    left: 20px;
+    z-index: 1;
+    color: var(--bs-dark-heavy);
+    font-family: "Montserrat", sans-serif;
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: 300;
+    text-transform: uppercase;
+    padding: 10px 5px;
+    min-width: 66px;
+    strong {
+        display: block;
+        font-weight: 700;
+        line-height: 28px;
+        font-size: 36px;
+    }
+  }
+}
+{% endscss %}

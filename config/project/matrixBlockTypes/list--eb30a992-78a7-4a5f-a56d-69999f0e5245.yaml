@@ -22,7 +22,7 @@ fields:
     handle: items
     instructions: ''
     name: Items
-    searchable: false
+    searchable: true
     settings:
       columns:
         __assoc__:

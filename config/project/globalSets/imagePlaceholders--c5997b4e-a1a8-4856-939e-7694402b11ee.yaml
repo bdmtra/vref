@@ -48,6 +48,15 @@ fieldLayouts:
             type: craft\fieldlayoutelements\CustomField
             warning: null
             width: 100
+          -
+            fieldUid: cf6d8db8-6a46-42f0-8a7c-e899eb4e7a94 # Article Image Placeholder
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
         name: Main
         sortOrder: 1
 handle: imagePlaceholders

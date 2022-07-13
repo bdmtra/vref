@@ -1,160 +1,261 @@
 {% extends "base" %}
 
 {% block content %}
-  <div id="content-area">
-    {% for block in entry.contactGroup.all() %}
-      {% if block.type == "headquartersBlock" %}
-        <div class="inner-bg dark-bg sm-block-row">
-          <div class="container">
-            <div class="flex ai-center main-contact-row">
-              <div class="main-contact-wrap">
-                <div class="title-row white-txt pt-0">
-                  <h3>Main Number: {{block.mainPhoneNumber}}<span>General Inquiries: <a href="{{ block.email }}">{{ block.emailDisplayName }}</a></span></h3>
+{% for block in entry.contactGroup.all() %}
+    {% if block.type == "headquartersBlock" %}
+        <div class="bg-dark text-white py-4 py-lg-5">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-12 col-lg-6">
+                        <h3 class="text-white h4 mb-0">Main Number: {{ block.mainPhoneNumber }}</h3>
+                        <p class="text-white text-decorate pb-4">General Inquiries: <a href="{{ block.email }}">{{ block.emailDisplayName }}</a></p>
+                        <h3 class="text-white h4 mt-4 mb-3">Headquarters</h3>
+                        <p class="lh-base mb-4 m-lg-0">
+                            {% if block.businessName %} {{ block.businessName }} <br/> {% endif %}
+                            {% if block.addressLine1 %} {{ block.addressLine1 }}, {% endif %}
+                            {% if block.addressLine2 %} {{ block.addressLine2 }} <br/> {% endif %}
+                            {% if block.city %} {{ block.city }}{% endif %}
+                            {% if block.stateAbbreviation %}, {{ block.stateAbbreviation }} {% endif %}
+                            {% if block.postalCode %} {{ block.postalCode }} {% endif %}
+                            {% if block.countryAbbreviation %} {{ block.countryAbbreviation }} {% endif %}
+                            <br/>
+                            {% if block.secondaryPhoneNumber %} {{ block.secondaryPhoneNumber }} {% endif %}
+                        </p>
+                    </div>
+                    <div class="col-12 col-lg-6">
+                        {% set mapImage = block.mapImage.one() %}
+                        {% set transformedMapImage = mapImage ? craft.imager.transformImage(mapImage.url, { format: 'webp' }) : null %}
+                        {% if mapImage %}
+                            <picture>
+                                <source srcset="{{ transformedMapImage.url ?? null }}" type="image/webp">
+                                <source srcset="{{ mapImage.url ?? null }}" type="image/jpeg">
+                                <img src="{{ mapImage.url ?? null }}" class="img-fluid">
+                            </picture>
+                        {% endif %}
+                    </div>
                 </div>
-                <div class="meadquarters-wrap">
-                  <h3>Headquarters</h3>
-                  <p>
-                    {% if block.businessName %} {{block.businessName}} <br /> {% endif %}
-                    {% if block.addressLine1 %} {{block.addressLine1}}, {% endif %}
-                    {% if block.addressLine2 %} {{block.addressLine2}} <br /> {% endif %}
-                    {% if block.city %} {{block.city}}{% endif %}
-                    {% if block.stateAbbreviation %}, {{block.stateAbbreviation}} {% endif %}
-                    {% if block.postalCode %} {{block.postalCode}} {% endif %}
-                    {% if block.countryAbbreviation %} {{block.countryAbbreviation}} {% endif %}
-                    <br />
-                    {% if block.secondaryPhoneNumber %} {{block.secondaryPhoneNumber}} {% endif %}
-                  </p>
-                </div>
-              </div>
-              <div class="main-banner-map">
-                {% set mapImage = block.mapImage.one() %}
-                {% set transformedMapImage = mapImage ? craft.imager.transformImage(mapImage, { format: 'webp' }) : null %}
-                <figure>
-                  {% if mapImage %}
-                    <picture>
-                      <source srcset="{{ transformedMapImage.url ?? null }}" type="image/webp">
-                      <source srcset="{{ mapImage.url }}" type="image/jpeg">
-                      <img src="{{ mapImage.url  }}">
-                    </picture>
-                  {% endif %}
-                </figure>
-              </div>
             </div>
-          </div>
         </div>
-      {% endif %}
-    {% endfor %}
+    {% endif %}
+{% endfor %}
 
-    <div class="sm-block-row pb-dbl">
-      <div class="container">
-        <div class="row gy-4 mb-6 mb-lg-4 justify-content-start">
-          {% for block in entry.contactGroup.all() %}
+<div class="container py-4 py-lg-5">
+    <div class="row g-4 g-lg-5 mb-5 mb-lg-4 justify-content-start">
+        {% for block in entry.contactGroup.all() %}
             {% if block.type == "mainBlock" %}
-              {% set mapImage = block.mapImage.one().url ?? null %}
-              <div class="col-6 col-lg-3 office-item" style="background-image: url({{ mapImage }}">
-                <div class="office-inner">
-                  {% if block.stateName %}<h4>{{ block.stateName }}</h4>{% endif %}
-                  <address>
-                    {% if block.addressLine1 %} {{block.addressLine1}} <br /> {% endif %}
-                    {% if block.addressLine2 %} {{block.addressLine2}} <br /> {% endif %}
-                    {% if block.cityName %} {{block.cityName}} {% endif %}
-                    {% if block.stateAbbreviation %}, {{block.stateAbbreviation}} {% endif %}
-                    {% if block.postalCode %} {{block.postalCode}} {% endif %}
-                    {% if block.countryAbbreviation %} {{block.countryAbbreviation}} {% endif %}
-                  </address>
-                  {# <p class="call-item">
-                  {% if block.phoneNumber1 %} {{block.phoneNumber1}} <br /> {% endif %}
-                  {% if block.phoneNumber2 %} {{block.phoneNumber2}} <br /> {% endif %}
-                  {% if block.phoneNumber3 %} {{block.phoneNumber3}} {% endif %}
-                </p> #}
+                {% set mapImage = block.mapImage.one().url ?? null %}
+                <div class="col-6 col-lg-3 office-col">
+                    <div class="office-col-inner" style="background-image: url({{ mapImage }}">
+                        {% if block.stateName %}<h4>{{ block.stateName }}</h4>{% endif %}
+                        <address class="mb-3">
+                            {% if block.addressLine1 %} {{ block.addressLine1 }} <br/> {% endif %}
+                            {% if block.addressLine2 %} {{ block.addressLine2 }} <br/> {% endif %}
+                            {% if block.cityName %} {{ block.cityName }} {% endif %}
+                            {% if block.stateAbbreviation %}, {{ block.stateAbbreviation }} {% endif %}
+                            {% if block.postalCode %} {{ block.postalCode }} {% endif %}
+                            {% if block.countryAbbreviation %} {{ block.countryAbbreviation }} {% endif %}
+                        </address>
+                    </div>
                 </div>
-              </div>
             {% endif %}
-          {% endfor %}
-        </div>
-      </div>
+        {% endfor %}
     </div>
-    <div class="sm-block-row dark-bg pb-dbl pt-0">
-      <div class="container">
-        <div class="card contact-img-card">
-          <figure class="contact-img-figure">{{ svg('@webroot/assets/images/fly.svg') }}</figure>
-          <div class="card-body">
-            <div class="contact-title text-center">
-              <h4>Contact Us</h4>
-            </div>
-            <form class="contact-form-wrap form-group lbl-left-gourp" action="https://forms.zohopublic.com/vrefaircraftvaluereference/form/VrefMarketingContactForm/formperma/dDiWSeKYnTQFrs8XdITzyzOx6KEFwiKXLBoPL0upm1k/htmlRecords/submit" name="zohoForm" id="form" method="POST" accept-charset="UTF-8" enctype="multipart/form-data" #zohoForm [formGroup]="contactForm">
-              {# <div class="alert alert-success alert-dismissible fade show" role="alert">
-              Your request has been submitted!
-              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div> #}
-              <input type="hidden" name="zf_redirect_url" value="https://vref.com/" />
-              <div class="flex ai-stretch contact-inner-wrap">
-                <div class="contact-fleft">
-                  <input type="hidden" name="zf_referrer_name" value="" />
-                  <!-- To Track referrals , place the referrer name within the " " in the above hidden input field -->
-                  <input type="hidden" name="zf_redirect_url" value="" />
-                  <!-- To redirect to a specific page after record submission , place the respective url within the " " in the above hidden input field -->
-                  <input type="hidden" name="zc_gad" value="" />
-                  <!-- If GCLID is enabled in Zoho CRM Integration, click details of AdWords Ads will be pushed to Zoho CRM -->
-                  <div class="fitem">
-                    <label>Interested In<em>*</em></label>
-                    <select name="Dropdown" class="form-control" formControlName="feilds">
-                      <option value="" disabled>Choose one...</option>
-                      <option value="Online&#x20;Subscription">Online Subscription</option>
-                      <option value="Printed&#x20;Value&#x20;Guide">Printed Value Guide</option>
-                      <option value="Appraisals">Appraisals</option>
-                      <option value="Verified&#x20;Opinions">Verified Opinions</option>
-                      <option value="Expert&#x20;Witness">Expert Witness</option>
-                      <option value="General&#x20;Inquiry">General Inquiry</option>
-                    </select>
-                  </div>
-                  <div class="fitem">
-                    <label for="firstName">First Name<em>*</em></label>
-                    <input id="firstName" type="text" maxlength="255" name="Name_First" fieldType="7" class="form-control" formControlName="firstName" />
-                  </div>
-                  <div class="fitem">
-                    <label for="lastName">Last Name<em>*</em></label>
-                    <input id="lastName" type="text" maxlength="255" name="Name_Last" fieldType="7" class="form-control" formControlName="lastName"/>
-                  </div>
-                  <div class="fitem">
-                    <label>Email<em>*</em></label>
-                    <input type="text" maxlength="255" name="Email" value="" fieldType="9" class="form-control" formControlName="email"/>
-                  </div>
-                  <div class="fitem">
-                    <label>Company (if applicable) </label>
-                    <input type="text" name="SingleLine" value="" fieldType="1" maxlength="255" class="form-control" formControlName="company"/>
-                  </div>
-                  <div class="fitem">
-                    <label>Phone number<em>*</em></label>
-                    <input type="text" compname="PhoneNumber" name="PhoneNumber_countrycode" phoneFormat="1" isCountryCodeEnabled="false" maxlength="15" value="" fieldType="11" id="international_PhoneNumber_countrycode" class="form-control" formControlName="number"/>
-                  </div>
-                </div>
-                <div class="contact-fright">
-                  <label>Message<em>*</em></label>
-                  <textarea name="MultiLine" maxlength="65535" class="form-control" formControlName="message" placeholder="Type message here..."></textarea>
-                </div>
-              </div>
-              <div class="fitem">
-                <div class="fitem-check">
-                  <input type="checkbox" id="member" name="Checkbox" value="I&#x20;am&#x20;an&#x20;AOPA&#x20;member" class="fitem-ck-input"/>
-                  <label class="fitem-ck-txt" for="member">I&#x20;am&#x20;an&#x20;AOPA&#x20;member</label>
-                </div>
-              </div>
-              <div class="fitem check-list">
-                <div class="fitem-check">
-                  <input type="checkbox" id="urgentFeild" name="Checkbox" value="This&#x20;is&#x20;urgent" class="fitem-ck-input"/>
-                  <label class="fitem-ck-txt" for="urgentFeild">This&#x20;is&#x20;urgent</label>
-                </div>
-              </div>
-              <div class="btn-group text-center" style="width:100%;">
-                <button id="buttonId" class="btn btn-primary" type="submit" (click)="submitZohoForm()">Submit</button>
-              </div>
-            </form>
-          </div>
+</div>
+
+<div class="contact-form bg-dark mt-4 mt-lg-5">
+    <div class="container">
+        <div class="card pb-4 pb-lg-5">
+            <figure class="header">{{ svg('@webroot/assets/images/fly.svg') }}</figure>
+            <h4 class="text-center mb-4 mb-lg-5">Contact Us</h4>
+            <form action="https://forms.zohopublic.com/vrefaircraftvaluereference/form/VrefMarketingContactForm/formperma/dDiWSeKYnTQFrs8XdITzyzOx6KEFwiKXLBoPL0upm1k/htmlRecords/submit"
+                      name="zohoForm" id="form" method="POST" accept-charset="UTF-8"
+                      enctype="multipart/form-data" #zohoForm [formGroup]="contactForm">
+                    <input type="hidden" name="zf_redirect_url" value="https://vref.com/"/>
+                    <input type="hidden" name="zf_referrer_name" value=""/>
+                    <!-- To Track referrals , place the referrer name within the " " in the above hidden input field -->
+                    <input type="hidden" name="zf_redirect_url" value=""/>
+                    <!-- To redirect to a specific page after record submission , place the respective url within the " " in the above hidden input field -->
+                    <input type="hidden" name="zc_gad" value=""/>
+                    <!-- If GCLID is enabled in Zoho CRM Integration, click details of AdWords Ads will be pushed to Zoho CRM -->
+                    <div class="row">
+                        <div class="col-12 col-lg-10 offset-lg-1">
+                            <div class="row">
+                                <div class="col-12 col-lg-6">
+                                    <div class="px-4 px-lg-4">
+                                        <div class="mb-3">
+                                            <label class="form-label fw-bold text-dark" for="Dropdown">Interested
+                                                In<em>*</em></label>
+                                            <select name="Dropdown" class="form-select" formControlName="feilds">
+                                                <option value="" disabled>Choose one...</option>
+                                                <option value="Online&#x20;Subscription">Online Subscription</option>
+                                                <option value="Printed&#x20;Value&#x20;Guide">Printed Value Guide
+                                                </option>
+                                                <option value="Appraisals">Appraisals</option>
+                                                <option value="Verified&#x20;Opinions">Verified Opinions</option>
+                                                <option value="Expert&#x20;Witness">Expert Witness</option>
+                                                <option value="General&#x20;Inquiry">General Inquiry</option>
+                                            </select>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label fw-bold text-dark" for="firstName">First
+                                                Name<em>*</em></label>
+                                            <input id="firstName" type="text" maxlength="255" name="Name_First"
+                                                   fieldType="7" class="form-control" formControlName="firstName"/>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label fw-bold text-dark" for="lastName">Last
+                                                Name<em>*</em></label>
+                                            <input id="lastName" type="text" maxlength="255" name="Name_Last"
+                                                   fieldType="7" class="form-control" formControlName="lastName"/>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label fw-bold text-dark"
+                                                   for="Email">Email<em>*</em></label>
+                                            <input id="Email" type="text" maxlength="255" name="Email" value=""
+                                                   fieldType="9" class="form-control" formControlName="email"/>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label fw-bold text-dark" for="SingleLine">Company (if
+                                                applicable) </label>
+                                            <input id="SingleLine" type="text" name="SingleLine" value="" fieldType="1"
+                                                   maxlength="255" class="form-control" formControlName="company"/>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label fw-bold text-dark" id="PhoneNumber_countrycode">Phone
+                                                number<em>*</em></label>
+                                            <input id="PhoneNumber_countrycode" type="text" compname="PhoneNumber"
+                                                   name="PhoneNumber_countrycode" phoneFormat="1"
+                                                   isCountryCodeEnabled="false" maxlength="15" value="" fieldType="11"
+                                                   id="international_PhoneNumber_countrycode" class="form-control"
+                                                   formControlName="number"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg-6">
+                                    <div class="px-4 px-lg-4">
+                                        <div class="mb-3">
+                                            <label class="form-label fw-bold text-dark"
+                                                   for="MultiLine">Message<em>*</em></label>
+                                            <textarea id="MultiLine" name="MultiLine" maxlength="65535" class="form-control"
+                                                      formControlName="message"
+                                                      placeholder="Type message here..."></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg-6">
+                                    <div class="px-4 px-lg-4">
+                                        <div class="mb-3">
+                                            <div class="form-check">
+                                                <input type="checkbox" id="member" name="Checkbox"
+                                                       value="I&#x20;am&#x20;an&#x20;AOPA&#x20;member"
+                                                       class="form-check-input"/>
+                                                <label class="form-check-label text-dark" for="member">I&#x20;am&#x20;an&#x20;AOPA&#x20;member</label>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                        <div class="form-check">
+                                            <input type="checkbox" id="urgentFeild" name="Checkbox"
+                                                   value="This&#x20;is&#x20;urgent" class="form-check-input"/>
+                                            <label class="form-check-label text-dark"
+                                                   for="urgentFeild">This&#x20;is&#x20;urgent</label>
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="mt-2">
+                                        <div class="px-4 px-lg-4">
+                                            <button id="buttonId" class="btn btn-primary w-100" type="submit"
+                                                    (click)="submitZohoForm()">Submit
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
         </div>
-      </div>
     </div>
-  </div>
+</div>
 {% endblock %}
+
+{% scss %}
+.office-col-inner {
+    background-position: left top;
+    background-size: contain;
+    background-repeat: no-repeat;
+    address {
+        text-indent: 22px;
+        color: var(--bs-dark);
+        background-image: url(/assets/images/map-marker.svg);
+        background-repeat: no-repeat;
+        background-position: 0 2px;
+        @media (min-width: 380px){
+            padding-left: 30px;
+            text-indent: 0px;
+        }
+    }
+    @media (min-width: 992px){
+        min-height: 250px;
+    }
+}
+.contact-form {
+    .card {
+        border-top: 0px !important;
+        border-radius: 10px;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        @media (min-width: 992px) {
+            textarea {
+                height: 468px;
+            }
+        }
+    }
+    .header{
+        width: 100%;
+        height: auto;
+        background-image: url("/assets/images/service-bg.png");
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 107px auto;
+        align-items: center;
+        justify-content: center;
+        display: -webkit-flex;
+        display: flex;
+        margin-top: -107px;
+        min-height: 107px;
+        position: relative;
+        z-index: inherit;
+
+        svg {
+            margin: 0;
+            margin-top: -8px;
+            max-width: 40px;
+        }
+
+        &:after,
+        &:before {
+            width: calc(50% - 49px);
+            position: absolute;
+            content: "";
+            background: #fff;
+            height: 100%;
+            left: 0;
+            top: 45px;
+            -webkit-border-radius: 10px 0 0 0;
+            border-radius: 10px 0 0 0;
+            pointer-events: none;
+            box-shadow: 0 5px 25px -5px rgba(0, 0, 0, 0.25);
+            z-index: -1;
+        }
+
+        &:after {
+            left: auto;
+            right: 0;
+            -webkit-border-radius: 0 10px 0 0;
+            border-radius: 0 10px 0 0;
+        }
+    }
+}
+{% endscss %}

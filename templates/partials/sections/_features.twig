@@ -1,7 +1,7 @@
 {% if columns is not defined %}
     {% set columns = 3 %}
 {% endif %}
-<section>
+<section class="features-section">
     <div class="container p-3 p-md-4 p-lg-5 text-center">
         <h2 class="display-6 fw-bold lh-sm mb-3">{{ entry.featuresTitle|nl2br }}</h2>
         <p class="lead">{{ entry.featuresText|nl2br }}</p>
@@ -9,13 +9,15 @@
         {% if entry.featuresItems %}
             <div class="row gy-4 gx-lg-4 gy-lg-5 mt-0 mb-3 row-cols-1 row-cols-md-2 row-cols-lg-{{ columns }}">
                 {% for item in entry.featuresItems.all() %}
-                    <div class="col">
-                        {% set itemImage = item.image.one().getUrl(imageTransformHandle) ?? (imagePlaceholders.listItemImagePlaceholder.one().getUrl(imageTransformHandle) ?? null) %}
-                        {% set transformedItemImage = itemImage ? craft.imager.transformImage(itemImage, { format: 'webp' }) : null %}
+                    <div class="col-12 col-sm-8 col-lg mx-auto">
+                        {% set itemImage = item.image.one() ?? (imagePlaceholders.listItemImagePlaceholder.one() ?? null) %}
+                        {% set transformedItemImage = itemImage ? craft.imager.transformImage(itemImage.url, { format: 'webp', height: 200, mode: 'fit' }) : null %}
                         <div class="feature-img img-cover"
-                             style="background-image: url({{ transformedItemImage.url ?? null }})" data-background-image-url-fallback="{{ itemImage }}"></div>
+                             style="background-image: url({{ transformedItemImage.url ?? null }})"
+                             data-background-image-url-fallback="{{ itemImage.getUrl(imageTransformHandle) ?? null }}">
+                        </div>
                         <h3 class="h4 mt-3">{{ item.heading|nl2br }}</h3>
-                        <p class="lead">{{ item.text|nl2br }}</p>
+                        <p class="fs-6">{{ item.text|nl2br }}</p>
                         {% set itemLinkEntry = item.linkEntry ? item.linkEntry.one() : false %}
                         {% if itemLinkEntry %}
                             <div class="text-center mt-2">
@@ -30,9 +32,16 @@
     </div>
 </section>
 {% scss %}
-.feature-img{
-  width: 100%;
-  height: 0;
-  padding-top: 65%;
+.features-section {
+    p:not(.lead) {
+        @media (max-width:991px) {
+            font-size: 1.25rem !important;
+        }
+    }
+    .feature-img {
+        width: 100%;
+        height: 0;
+        padding-top: 65%;
+    }
 }
 {% endscss %}

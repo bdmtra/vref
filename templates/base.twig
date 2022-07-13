@@ -4,12 +4,12 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        {% if not craft.app.request.get('exclude_criticalcss') %}
+        {% if 0 %}
             <style>
-                {{ source ('_criticalcss/'~craft.app.requestedParams.template~'_critical.css', ignore_missing = true) }}
+                {{ source ('_criticalcss/index_critical.css', ignore_missing = true) }}
             </style>
         {% endif %}
-        {% set cssUrl = alias('@web') ~ (craft.app.request.get('legacy') ? '/assets/css/legacy.css' : '/assets/css/' ~ craft.app.requestedParams.template ~ '.css') %}
+        {% set cssUrl = alias('@web') ~ (craft.app.request.get('legacy') ? '/assets/legacy.css' : '/assets/css/index.css') %}
         <link rel="preload" href="{{ cssUrl }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="{{ cssUrl }}"></noscript>
         <script>
@@ -28,11 +28,12 @@
         })(window, document, 'script', 'dataLayer', 'GTM-T394DJP');</script>
 </head>
 
-<body class="{% if entry is defined %}entry-{{ entry.slug}}{% endif %} template-{{ craft.app.requestedParams.template }}">
+<body class="{% if entry is defined %}entry-{{ entry.slug}}{% endif %} template-{{ craft.app.requestedParams.template ?? null }}">
 <noscript>
     <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T394DJP" height="0" width="0"
             style="display:none;visibility:hidden"></iframe>
 </noscript>
+
 {# Begin Header/Navbar Section #}
 {% include 'partials/_header' %}
 

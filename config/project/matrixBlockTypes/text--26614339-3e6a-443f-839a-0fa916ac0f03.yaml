@@ -22,7 +22,7 @@ fields:
     handle: text
     instructions: ''
     name: Text
-    searchable: false
+    searchable: true
     settings:
       assetsFilesSource: 'folder:1'
       assetsFilesSubPath: ''

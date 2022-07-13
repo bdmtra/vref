@@ -1,54 +1,41 @@
 {% if article is defined %}
-
-  {% set image = article.headerImage.one().url ?? null %}
-  {% set transformedImage = image ? craft.imager.transformImage(image, { format: 'webp' }) : null %}
-  <div class="card news-item">
-    {% if article.originalPostedDate %}
-      <p class="news-post-date"><strong>{{ article.originalPostedDate|date("d") }}</strong>{{ article.originalPostedDate|date("M") }}</p>
-    {% else %}
-      <p class="news-post-date"><strong>{{ article.postDate|date("d") }}</strong>{{ article.postDate|date("M") }}</p>
-    {% endif %}
-    <figure>
-      {% if image %}
+    {% set image = article.headerImage.one().url ?? (imagePlaceholders.articleImagePlaceholder.one() ?? null) %}
+    {% set transformedImage = image ? craft.imager.transformImage(image, { format: 'webp' }) : null %}
+    <div class="card shadow rounded position-relative">
+        <div class="news-article">
+        <date class="text-center mx-auto"><strong>{{ article.originalPostedDate ? article.originalPostedDate|date("d") : article.postDate|date("d") }}</strong>{{ article.originalPostedDate ? article.originalPostedDate|date("M") : article.postDate|date("M") }}</date>
         <picture>
           <source srcset="{{ transformedImage.url ?? null }}" type="image/webp">
           <source srcset="{{ image }}" type="image/jpeg">
-          <img src="{{ image }}">
+          <img src="{{ image }}" class="img-fluid">
         </picture>
-      {% else %}
-        <picture>
-          <source srcset="/assets/images/inner-banner-bg.webp" type="image/webp">
-          <source srcset="/assets/images/inner-banner-bg.png" type="image/jpeg">
-          <img src="/assets/images/inner-banner-bg.png">
-        </picture>
-      {% endif %}
-      <span class="news-lbl">{{ article.category.label }}</span>
-    </figure>
-    <div class="news-item-caption">
-      <h5>
-        <a href="news/{{article.slug}}">{{ article.pageTitle }}</a>
-      </h5>
-      <div class="news-post-details">
-        {% if article.originalPostedDate %}
-          <p>
-            Posted by <a href="javascript:void(0);">{{ article.author.fullName }}</a> / {{ article.originalPostedDate|date("long") }} / <a href="javascript:void(0);" style="text-transform:uppercase">{{ article.category.label }}</a>
-          </p>
-        {% else %}
-          <p>
-            Posted by <a href="javascript:void(0);">{{ article.author.fullName }}</a> / {{ article.postDate|date("long") }} / <a href="javascript:void(0);" style="text-transform:uppercase">{{ article.category.label }}</a>
-          </p>
-        {% endif %}
-      </div>
-      <div class="btn-group">
-        <a class="btn-txt btn-arrow btn-btm-bdr" href="news/{{article.slug}}">Read more
-          <picture>
-            <source srcset="/assets/images/next-arrow.webp" type="image/webp">
-            <source srcset="/assets/images/next-arrow.png" type="image/jpeg">
-            <img src="/assets/images/next-arrow.png">
-          </picture>
-        </a>
+        <span class="">{{ article.category.label }}</span>
+      </figure>
+      <div class="">
+        <h5>
+          <a href="{{article.url}}">{{ article.pageTitle }}</a>
+        </h5>
+        <div class="">
+          {% if article.originalPostedDate %}
+            <p>
+              Posted by <a href="javascript:void(0);">{{ article.author.fullName }}</a> / {{ article.originalPostedDate|date("long") }} / <a href="javascript:void(0);" style="text-transform:uppercase">{{ article.category.label }}</a>
+            </p>
+          {% else %}
+            <p>
+              Posted by <a href="javascript:void(0);">{{ article.author.fullName }}</a> / {{ article.postDate|date("long") }} / <a href="javascript:void(0);" style="text-transform:uppercase">{{ article.category.label }}</a>
+            </p>
+          {% endif %}
+        </div>
+        <div class="">
+          <a class="" href="{{article.url }}">Read more
+            <picture>
+              <source srcset="/assets/images/next-arrow.webp" type="image/webp">
+              <source srcset="/assets/images/next-arrow.png" type="image/jpeg">
+              <img src="/assets/images/next-arrow.png">
+            </picture>
+          </a>
+        </div>
       </div>
     </div>
-  </div>
-
+    </div>
 {% endif %}

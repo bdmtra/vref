@@ -1,0 +1,26 @@
+<div class="d-grid gap-3">
+    {% set imageTransformHandle = 'articleThumb' %}
+    {% for article in articles %}
+        <div class="d-flex">
+            {% set image = article.headerImage.one() ?? (imagePlaceholders.articleImagePlaceholder.one() ?? null) %}
+            {% set transformedImage = image ? craft.imager.transformImage(image.url, { format: 'webp', width: 70, height: 70, mode: 'crop', position: '50% 50%' }) : null %}
+            <a href="{{ article.url }}" class="me-3">
+                <picture class="img-fluid">
+                    <source srcset="{{ transformedImage.url ?? null }}" type="image/webp">
+                    <source srcset="{{ image.getUrl(imageTransformHandle) ?? null }}" type="image/jpeg">
+                    <img src="{{ image.getUrl(imageTransformHandle) ?? null }}">
+                </picture>
+            </a>
+            <a href="{{ article.url }}" class="small lh-sm">
+                <span class="d-block fw-bold">{{ article.pageTitle }}</span>
+                <span class="d-block text-default mt-1">
+                    {% if entry.originalPostedDate %}
+                        {{ article.originalPostedDate|date("long") }}
+                    {% else %}
+                        {{ article.postDate|date("long") }}
+                    {% endif %}
+                </span>
+            </a>
+        </div>
+    {% endfor %}
+</div>

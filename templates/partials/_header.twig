@@ -1,86 +1,38 @@
-<header class="bg-primary">
-    <div class="header-main">
-        <button type="button" class="menu-toggle">
-            <span class="top-bar"></span>
-            <span class="middle-bar"></span>
-            <span class="bottom-bar"></span>
-        </button>
-        <div class="lg-container flex">
-            <a href="/" class="logo">
-
-                <picture>
-                    <source srcset="/assets/images/logo.webp" type="image/webp">
-                    <source srcset="/assets/images/logo.png" type="image/jpeg">
-                    <img src="/assets/images/logo.png" alt="VREF">
-                </picture>
-            </a>
-            <div class="right-main-nav flex">
-                <nav>
-                    <div>
-                        <a class="btn btn-white" href="https://values.vref.com/account/aircraft-selection/list">Request Demo</a>
-                        <a class="btn btn-primary" href="https://values.vref.com/account/aircraft-selection/list">Login</a>
-                    </div>
-                    <ul>
-                        {% set nodes = craft.navigation.nodes('headerLinks').level(1).all() %}
-                        {% nav node in nodes %}
-                            <li class="{% if node.classes | length %}{{ node.classes }}{% endif %} {% if node.children|length %}dropdown{% endif %}">
-                                <a href="{% if node.url %}{{ node.url }}{% else %}javascript:void(0);{% endif %}" class="{% if node.active %}is-active{% endif %}"{% if node.newWindow %} target="_blank" rel="noopener"{% endif %} {% for attribute in node.customAttributes %}{{ attribute.attribute }}="{{ attribute.value }}"{% endfor %}>
-                                {{- node.title -}}
-                                </a>
-
-                                {% if node.children|length %}
-                                    <span class="menu-arrow"></span>
-                                    <ul class="sub-menu" style="display: block !important;">
-                                        {% for subnode in node.children %}
-                                            <li>
-                                                <a href="{{ subnode.url }}" class="menu__sub-link">
-                                                    {{ subnode.title }}
-                                                </a>
-                                            </li>
-                                        {% endfor %}
-                                    </ul>
-                                {% endif%}
-                            </li>
-                        {% endnav %}
-                    </ul>
-                </nav>
-            </div>
-        </div>
-    </div>
-</header>
-
-<header class="bg-dark text-white">
+<header class="bg-dark">
     <div class="container-fluid">
-        <div class="p-4 d-flex flex-wrap align-items-center justify-content-center justify-content-lg-between">
-            <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+        <div class="d-flex justify-content-between">
+            <a href="/" class="my-2 my-lg-3 logo">
                 <picture>
                     <source srcset="/assets/images/logo.webp" type="image/webp">
                     <source srcset="/assets/images/logo.png" type="image/jpeg">
                     <img src="/assets/images/logo.png" alt="VREF">
                 </picture>
             </a>
-
-            <div class="text-end">
-                <div>
+            <button type="button" class="menu-toggle d-lg-none">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div id="menu">
+                <div class="text-end mt-lg-3">
                     {% set nodes = craft.navigation.nodes('headerButtons').all() %}
                     {% nav node in nodes %}
                         <a {{ node.linkAttributes }}>{{ node.title }}</a>
                     {% endnav %}
                 </div>
-                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0 mt-3">
+                <ul class="nav flex-column flex-lg-row mb-2 mb-lg-0">
                     {% set nodes = craft.navigation.nodes('headerLinks').level(1).all() %}
                     {% nav node in nodes %}
-                        <li class="{% if node.classes | length %}{{ node.classes }}{% endif %} {% if node.children|length %}dropdown{% endif %}">
-                            <a href="{% if node.url %}{{ node.url }}{% else %}javascript:void(0);{% endif %}" class="{% if node.active %}is-active{% endif %} text-white"{% if node.newWindow %} target="_blank" rel="noopener"{% endif %} {% for attribute in node.customAttributes %}{{ attribute.attribute }}="{{ attribute.value }}"{% endfor %}>
-                            {{- node.title -}}
+                        <li class="mt-3 mt-lg-0 py-lg-4 {% if node.classes | length %}{{ node.classes }}{% endif %} {% if node.children|length %}dropdown{% endif %}">
+                            <a href="{% if node.url %}{{ node.url }}{% else %}javascript:void(0);{% endif %}" class="text-white" {% if node.newWindow %} target="_blank" rel="noopener"{% endif %} {% for attribute in node.customAttributes %}{{ attribute.attribute }}="{{ attribute.value }}"{% endfor %}>
+                                {{- node.title -}}
                             </a>
 
                             {% if node.children|length %}
-                                <span class="menu-arrow"></span>
-                                <ul class="sub-menu" style="display: block !important;">
+                                <ul class="sub-menu d-block mt-3 mt-lg-0 mt-lg-0 p-3 p-lg-0">
                                     {% for subnode in node.children %}
-                                        <li>
-                                            <a href="{{ subnode.url }}" class="menu__sub-link">
+                                        <li {% if loop.index != 1 %}class="mt-2 mt-lg-0"{% endif %}>
+                                            <a href="{{ subnode.url }}">
                                                 {{ subnode.title }}
                                             </a>
                                         </li>
@@ -98,12 +50,7 @@
 {% js at endBody %}
     $(document).ready(function () {
         $('.menu-toggle').click(function () {
-            let val = "0";
-            if ($('.right-main-nav').hasClass("nav-open")) {
-                val = "-110%";
-            }
-            $('.right-main-nav').toggleClass('nav-open');
-            $('.right-main-nav').css("right", val);
-        })
+            $('#menu').toggleClass('open');
+        });
     });
 {% endjs %}

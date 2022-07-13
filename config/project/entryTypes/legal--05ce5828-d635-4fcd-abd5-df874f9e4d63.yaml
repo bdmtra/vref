@@ -56,7 +56,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: c778d873-e586-4085-b762-f71123f1a621 # Page Content
+            fieldUid: c778d873-e586-4085-b762-f71123f1a621
             instructions: null
             label: null
             required: false

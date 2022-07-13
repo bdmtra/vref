@@ -1,7 +1,7 @@
 <section>
     <div class="container py-3 py-md-4 py-lg-5 text-center">
-        <h2 class="display-6 fw-bold lh-sm">{{ entry.digitsTitle }}</h2>
-        <div class="row row-cols-2 row-cols-lg-4">
+        <h2 class="display-6 fw-bold lh-sm mb-4">{{ entry.digitsTitle }}</h2>
+        <div class="row row-cols-2 row-cols-md-auto justify-content-center justify-content-md-around">
             {% for item in entry.digitsList.all() %}
                 <div class="col mb-4 mb-lg-0">
                     <h5 class="display-6 fw-bold mb-1">{{ item.heading }}</h5>

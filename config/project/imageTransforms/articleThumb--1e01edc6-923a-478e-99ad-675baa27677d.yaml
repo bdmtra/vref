@@ -1,9 +1,9 @@
 format: null
-handle: reportsItemImage
-height: 115
+handle: articleThumb
+height: 70
 interlace: partition
 mode: crop
-name: 'Reports Item Image'
+name: 'Article Thumb'
 position: center-center
 quality: 60
-width: 115
+width: 70

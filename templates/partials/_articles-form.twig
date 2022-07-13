@@ -1,0 +1,9 @@
+<form action="{{ url('/news') }}">
+    <label for="searchInput" class="visually-hidden">Search News</label>
+    <div class="position-relative">
+        <input id="searchInput" type="searchInput" name="q" class="form-control pe-5"
+               placeholder="Search News">
+        <button class="btn px-3 h-100 position-absolute top-0 bottom-0 end-0"
+                type="submit">{{ svg('@webroot/assets/images/search.svg') }}</button>
+    </div>
+</form>

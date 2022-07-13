@@ -31,7 +31,7 @@ fields:
     handle: column2
     instructions: ''
     name: 'Column 2'
-    searchable: false
+    searchable: true
     settings:
       assetsFilesSource: 'folder:1'
       assetsFilesSubPath: ''
@@ -47,7 +47,7 @@ fields:
     handle: column1
     instructions: ''
     name: 'Column 1'
-    searchable: false
+    searchable: true
     settings:
       assetsFilesSource: 'folder:1'
       assetsFilesSubPath: ''

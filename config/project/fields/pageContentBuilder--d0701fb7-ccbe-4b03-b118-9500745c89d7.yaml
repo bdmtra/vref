@@ -3,7 +3,7 @@ fieldGroup: b50b9ada-b26b-42ed-83f0-de7ce60c770c # Common
 handle: pageContentBuilder
 instructions: ''
 name: 'Page Content Builder'
-searchable: false
+searchable: true
 settings:
   contentTable: '{{%matrixcontent_pagecontentbuilder}}'
   maxBlocks: ''

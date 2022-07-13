@@ -1,11 +1,11 @@
-{% set backgroundImage = entry.heroBackgroundImage.one().url ?? (imagePlaceholders.heroBackgroundImagePlaceholder.one().url ?? null) %}
-{% set transformedBackgroundImage = backgroundImage ? craft.imager.transformImage(backgroundImage, { format: 'webp' }) : null %}
+{% set backgroundImage = entry.heroBackgroundImage.one() ?? (imagePlaceholders.heroBackgroundImagePlaceholder.one() ?? null) %}
+{% set transformedBackgroundImage = backgroundImage ? craft.imager.transformImage(backgroundImage.url, { format: 'webp' }) : null %}
 <section>
-    <div class="img-cover img-cover-shadow" style="background-image: url({{ transformedBackgroundImage.url ?? null }})" data-background-image-url-fallback="{{ backgroundImage }}">
+    <div class="img-cover img-cover-shadow" style="background-image: url({{ transformedBackgroundImage.url ?? null }})" data-background-image-url-fallback="{{ backgroundImage.url ?? null }}">
         <div class="container py-2 py-sm-3 py-lg-5">
             <div class="row align-items-center py-2 py-sm-3 py-lg-5">
                 <div class="col-12 col-md-10 col-lg-8 align-self-center mx-auto my-4 my-lg-0 text-start py-2 py-sm-3 py-lg-5">
-                    <h1 class="display-5 fw-xbold lh-sm mb-3 text-white">{{ entry.heroTitle|nl2br }}</h1>
+                    <h1 class="display-5 fw-bolder lh-sm mb-3 text-white">{{ entry.heroTitle|nl2br }}</h1>
                     <p class="lead lh-base text-uppercase text-white fw-400">{{ entry.heroText|nl2br }}</p>
                     {% set heroLinkUrl = false %}
                     {% set heroLinkEntry = entry.heroButtonLink ? entry.heroButtonLink.one() : false %}

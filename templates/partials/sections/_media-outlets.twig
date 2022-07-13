@@ -6,11 +6,11 @@
             <div class="row g-4 py-2 py-lg-4 row-cols-4">
                 {% for item in items %}
                     <div class="col">
-                        {% set itemBackgroundImage =  item.mediaOutlet.one().featuredImage.one().url %}
-                        {% set itemTransformedBackgroundImage = craft.imager.transformImage(itemBackgroundImage, { format: 'webp' }) %}
+                        {% set itemBackgroundImage =  item.mediaOutlet.one().featuredImage.one() %}
+                        {% set itemTransformedBackgroundImage = craft.imager.transformImage(itemBackgroundImage.url, { format: 'webp' }) %}
                         <a href="{{ item.sourceUrl }}"
                         class="d-block d-inline-block img-cover media-outlet-img overflow-hidden"
-                        style="background-image: url({{ itemTransformedBackgroundImage.url }})" data-background-image-url-fallback="{{ itemBackgroundImage }}"
+                        style="background-image: url({{ itemTransformedBackgroundImage.url }})" data-background-image-url-fallback="{{ itemBackgroundImage.url ?? null }}"
                         target="_blank"></a>
                     </div>
                 {% endfor %}

@@ -1,49 +1,41 @@
-<form class="contact-form-wrap form-group lbl-left-gourp"
-      action="https://forms.zohopublic.com/vrefaircraftvaluereference/form/VrefMarketingContactForm/formperma/dDiWSeKYnTQFrs8XdITzyzOx6KEFwiKXLBoPL0upm1k/htmlRecords/submit"
-      name="zohoForm" id="apparaisal-form" method="POST" accept-charset="UTF-8" enctype="multipart/form-data">
-    <input type="hidden" name="zf_redirect_url" value="https://vref.com/"/>
-    <div class="pb-4">
-        <a href="/aircraft-values">
-            <picture>
-                <source srcset="/assets/images/button-vrefonline.webp" type="image/webp">
-                <source srcset="/assets/images/button-vrefonline.png" type="image/jpeg">
-                <img src="/assets/images/button-vrefonline.png" alt=""/>
-            </picture>
-        </a>
-        <a href="/aircraft-appraisals">
-            <picture>
-                <source srcset="/assets/images/button-vref-appraisals.webp" type="image/webp">
-                <source srcset="/assets/images/button-vref-appraisals.png" type="image/jpeg">
-                <img src="/assets/images/button-vref-appraisals.png" alt=""/>
-            </picture>
+<div>
+    <a href="/aircraft-values">
+        <picture>
+            <source srcset="/assets/images/button-vrefonline.webp" type="image/webp">
+            <source srcset="/assets/images/button-vrefonline.png" type="image/jpeg">
+            <img src="/assets/images/button-vrefonline.png" class="d-block mx-auto"/>
+        </picture>
+    </a>
+    <a href="/aircraft-appraisals">
+        <picture>
+            <source srcset="/assets/images/button-vref-appraisals.webp" type="image/webp">
+            <source srcset="/assets/images/button-vref-appraisals.png" type="image/jpeg">
+            <img src="/assets/images/button-vref-appraisals.png" class="d-block mx-auto"/>
+        </picture>
 
-        </a>
-        <a href="/aircraft-values/verified">
-            <picture>
-                <source srcset="/assets/images/button-vref-verified.webp" type="image/webp">
-                <source srcset="/assets/images/button-vref-verified.png" type="image/jpeg">
-                <img src="/assets/images/button-vref-verified.png" alt=""/>
-            </picture>
-        </a>
-        <a href="/aviation-expert-witness">
-            <picture>
-                <source srcset="/assets/images/button-vref-expert-witness.webp" type="image/webp">
-                <source srcset="/assets/images/button-vref-expert-witness.png" type="image/jpeg">
-                <img src="/assets/images/button-vref-expert-witness.png" alt=""/>
-            </picture>
-        </a>
-    </div>
-    <h5 class="contact-form-title">Request More Information</h5>
-    <div class="light-bg green-bg form-group" style="padding:30px">
-        <div class="fitem" style="display:none;">
-            <div class="alert alert-success alert-dismissible fade show" role="alert">
-                Your request has been submitted!
-                <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            </div>
-        </div>
-        <div class="fitem">
-            <label for="">Interested in</label>
-            <select name="Dropdown" class="form-control" formControlName="feilds" required>
+    </a>
+    <a href="/aircraft-values/verified">
+        <picture>
+            <source srcset="/assets/images/button-vref-verified.webp" type="image/webp">
+            <source srcset="/assets/images/button-vref-verified.png" type="image/jpeg">
+            <img src="/assets/images/button-vref-verified.png" class="d-block mx-auto"/>
+        </picture>
+    </a>
+    <a href="/aviation-expert-witness">
+        <picture>
+            <source srcset="/assets/images/button-vref-expert-witness.webp" type="image/webp">
+            <source srcset="/assets/images/button-vref-expert-witness.png" type="image/jpeg">
+            <img src="/assets/images/button-vref-expert-witness.png" class="d-block mx-auto"/>
+        </picture>
+    </a>
+</div>
+<h5 class="my-4 text-center">Request More Information</h5>
+<form class="bg-primary-light p-4 mb-4" action="https://forms.zohopublic.com/vrefaircraftvaluereference/form/VrefMarketingContactForm/formperma/dDiWSeKYnTQFrs8XdITzyzOx6KEFwiKXLBoPL0upm1k/htmlRecords/submit"
+      method="POST" accept-charset="UTF-8" enctype="multipart/form-data">
+    <input type="hidden" name="zf_redirect_url" value="https://vref.com/"/>
+        <div class="mb-3">
+            <label class="form-label fw-bold text-dark" for="Dropdown" >Interested in</label>
+            <select id="Dropdown" name="Dropdown" class="form-select" formControlName="feilds" required>
                 <option value="" disabled selected>Choose one...</option>
                 <option value="Online&#x20;Subscription">Online Subscription</option>
                 <option value="Printed&#x20;Value&#x20;Guide">Printed Value Guide</option>
@@ -53,57 +45,45 @@
                 <option value="General&#x20;Inquiry">General Inquiry</option>
             </select>
         </div>
-        <!--First Name-->
-        <div class="fitem">
-            <label for="firstName">First Name<em>*</em></label>
+        <div class="mb-3">
+            <label class="form-label fw-bold text-dark" for="firstName">First Name<em>*</em></label>
             <input id="firstName" type="text" maxlength="255" name="Name_First" fieldType="7" class="form-control"
                    formControlName="firstName" required/>
         </div>
 
-        <!--Last Name-->
-        <div class="fitem">
-            <label for="lastName">Last Name<em>*</em>
-            </label>
+        <div class="mb-3">
+            <label class="form-label fw-bold text-dark" for="lastName">Last Name<em>*</em></label>
             <input id="lastName" type="text" maxlength="255" name="Name_Last" fieldType="7" class="form-control"
                    formControlName="lastName" required/>
         </div>
-
-        <!--Email-->
-        <div class="fitem">
-            <label>Email<em>*</em></label>
+        <div class="mb-3">
+            <label class="form-label fw-bold text-dark">Email<em>*</em></label>
             <input type="text" maxlength="255" name="Email" value="" fieldType="9" class="form-control"
                    formControlName="email" required/>
         </div>
-
-        <!--Company -->
-        <div class="fitem">
-            <label>Company (if applicable) </label>
+        <div class="mb-3">
+            <label class="form-label fw-bold text-dark">Company (if applicable) </label>
             <input type="text" name="SingleLine" value="" fieldType="1" maxlength="255" class="form-control"
                    formControlName="company"/>
         </div>
-
-        <!--Phone-->
-        <div class="fitem">
-            <label>Phone number<em>*</em>
-            </label>
+        <div class="mb-3">
+            <label class="form-label fw-bold text-dark">Phone number<em>*</em></label>
             <input type="text" compname="PhoneNumber" name="PhoneNumber_countrycode" phoneFormat="1"
                    isCountryCodeEnabled="false" maxlength="15" value="" fieldType="11"
                    id="international_PhoneNumber_countrycode" class="form-control" formControlName="number" required/>
         </div>
-        <div class="fitem check">
-            <div class="fitem-check">
-                <input type="checkbox" id="urgentFeild" name="Checkbox" value="This&#x20;is&#x20;urgent"
-                       class="fitem-ck-input"/>
-                <label class="fitem-ck-txt" for="urgentFeild">This&#x20;is&#x20;urgent</label>
+        <div class="mb-3">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="urgentFeild" name="Checkbox" value="This&#x20;is&#x20;urgent"/>
+                <label class="form-check-label text-dark" for="urgentFeild">This&#x20;is&#x20;urgent</label>
             </div>
         </div>
-        <div class="fitem">
-            <label>Message<em>*</em></label>
-            <textarea name="MultiLine" maxlength="65535" class="form-control" formControlName="message"
+        <div class="mb-3">
+            <label for="MultiLine" class="form-label fw-bold text-dark">Message<em>*</em></label>
+            <textarea id="MultiLine" name="MultiLine" maxlength="65535" class="form-control" formControlName="message"
                       placeholder="Type message here..." required></textarea>
         </div>
-        <div class="fitem mb-0">
-            <button type="submit" class="btn btn-primary btn-full">Submit</button>
+        <div>
+            <button type="submit" class="btn btn-primary w-100">Submit</button>
         </div>
-    </div>
 </form>

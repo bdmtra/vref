@@ -1,6 +1,6 @@
 {
     "linkStyles": {
-        "btn btn-brand": "Button"
+        "btn btn-primary": "Button"
     },
     "colorsText": [
         "#c09434"
