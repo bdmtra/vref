@@ -1,0 +1,26 @@
+handle: footerLinks
+instructions: null
+maxNodes: null
+name: 'Footer Links'
+permissions:
+  craft\elements\Asset:
+    enabled: '1'
+    permissions: '*'
+  craft\elements\Category:
+    enabled: '1'
+    permissions: '*'
+  craft\elements\Entry:
+    enabled: '1'
+    permissions: '*'
+  craft\elements\Tag:
+    enabled: ''
+    permissions: '*'
+  custom:
+    enabled: '1'
+  verbb\navigation\nodetypes\PassiveType:
+    enabled: '1'
+propagateNodes: false
+sortOrder: 31
+structure:
+  maxLevels: null
+  uid: f3b0fa98-32a9-4663-8ba6-019c15d7f422

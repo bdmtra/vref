@@ -1,0 +1,23 @@
+enableVersioning: true
+handle: thanks
+name: Thanks
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primary entry page'
+      -
+        - urlFormat
+        - '{url}'
+      -
+        - refresh
+        - '1'
+propagationMethod: all
+siteSettings:
+  d66119ad-8f5f-41e8-8169-49f2c51c36b6: # VREF Aircraft Values & Appraisals
+    enabledByDefault: true
+    hasUrls: true
+    template: thanks
+    uriFormat: thanks
+type: single

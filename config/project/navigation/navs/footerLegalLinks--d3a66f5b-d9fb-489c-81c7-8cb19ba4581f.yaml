@@ -1,0 +1,26 @@
+handle: footerLegalLinks
+instructions: null
+maxNodes: null
+name: 'Footer Legal Links'
+permissions:
+  craft\elements\Asset:
+    enabled: '1'
+    permissions: '*'
+  craft\elements\Category:
+    enabled: '1'
+    permissions: '*'
+  craft\elements\Entry:
+    enabled: '1'
+    permissions: '*'
+  craft\elements\Tag:
+    enabled: ''
+    permissions: '*'
+  custom:
+    enabled: '1'
+  verbb\navigation\nodetypes\PassiveType:
+    enabled: '1'
+propagateNodes: false
+sortOrder: 32
+structure:
+  maxLevels: null
+  uid: 95024fa8-0cea-4e16-b2a1-9885665d70fe

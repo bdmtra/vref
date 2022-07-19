@@ -1,0 +1,26 @@
+handle: headerButtons42362
+instructions: null
+maxNodes: null
+name: 'Header Buttons42362'
+permissions:
+  craft\elements\Asset:
+    enabled: '1'
+    permissions: '*'
+  craft\elements\Category:
+    enabled: '1'
+    permissions: '*'
+  craft\elements\Entry:
+    enabled: '1'
+    permissions: '*'
+  craft\elements\Tag:
+    enabled: ''
+    permissions: '*'
+  custom:
+    enabled: '1'
+  verbb\navigation\nodetypes\PassiveType:
+    enabled: '1'
+propagateNodes: false
+sortOrder: 9
+structure:
+  maxLevels: null
+  uid: 8bf3c161-53d2-49b0-a196-82cf45b56e33
